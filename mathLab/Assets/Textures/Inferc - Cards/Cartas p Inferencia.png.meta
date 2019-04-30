@@ -1,0 +1,389 @@
+fileFormatVersion: 2
+guid: a73749edaed394c4db02d7b92164173e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 541525738549354807
+    second: Cartas p Inferencia_0
+  - first:
+      213: -2931364381664906976
+    second: Cartas p Inferencia_1
+  - first:
+      213: -5359180988993066733
+    second: Cartas p Inferencia_2
+  - first:
+      213: -8578373963029187863
+    second: Cartas p Inferencia_3
+  - first:
+      213: -7698338248988644295
+    second: Cartas p Inferencia_4
+  - first:
+      213: -6800532128424925149
+    second: Cartas p Inferencia_5
+  - first:
+      213: 8696632688018397821
+    second: Cartas p Inferencia_6
+  - first:
+      213: 7433993298540790835
+    second: Cartas p Inferencia_7
+  - first:
+      213: -7469370217679064184
+    second: Cartas p Inferencia_8
+  - first:
+      213: 3696414220415365839
+    second: Cartas p Inferencia_9
+  - first:
+      213: -6050431279379237876
+    second: Cartas p Inferencia_10
+  - first:
+      213: -1155185550716435131
+    second: Cartas p Inferencia_11
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Cartas p Inferencia_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 254
+        width: 180
+        height: 221
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 766e8f007b6337d4bb193e735be8820b
+      internalID: 541525738549354807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cartas p Inferencia_1
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 253
+        width: 180
+        height: 221
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18f8d3a4938f96c40bf7842c629d30b7
+      internalID: -2931364381664906976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cartas p Inferencia_2
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 17
+        width: 180
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b81e61fc9755efd459ce387db26c8ce5
+      internalID: -5359180988993066733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cartas p Inferencia_3
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 17
+        width: 180
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20084281ab1bad84cbdfc8a95146c5f3
+      internalID: -8578373963029187863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cartas p Inferencia_4
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 17
+        width: 180
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 147877c5e757bbe4db69c402a99ab6c3
+      internalID: -7698338248988644295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cartas p Inferencia_5
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 17
+        width: 180
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13577a269c42a004c994b054986d7393
+      internalID: -6800532128424925149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cartas p Inferencia_6
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 254
+        width: 180
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e4553c9b3062c24ebf5595d31475db9
+      internalID: 8696632688018397821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cartas p Inferencia_7
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 254
+        width: 180
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72d0a8680581be74bb055492de22f866
+      internalID: 7433993298540790835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cartas p Inferencia_8
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 254
+        width: 180
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 742e6f17324af574a974c3e5c7d060e9
+      internalID: -7469370217679064184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cartas p Inferencia_9
+      rect:
+        serializedVersion: 2
+        x: 1119
+        y: 254
+        width: 180
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9ae5e1fd1edc834e8d65013ea80d981
+      internalID: 3696414220415365839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cartas p Inferencia_10
+      rect:
+        serializedVersion: 2
+        x: 913
+        y: 18
+        width: 180
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f0b16304e6ab2f40885170c397703c0
+      internalID: -6050431279379237876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cartas p Inferencia_11
+      rect:
+        serializedVersion: 2
+        x: 1117
+        y: 18
+        width: 180
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aef46b4c0f63b39499421c26bab3ecea
+      internalID: -1155185550716435131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: a822af9da3dca0044a1023ce51cc0810
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

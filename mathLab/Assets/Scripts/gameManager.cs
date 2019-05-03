@@ -7,7 +7,8 @@ using System.Collections.Generic;
 public class gameManager : MonoBehaviour {
 
 	public Sprite[] cardFace;
-	public Sprite cardBack;
+    public Sprite[] cardFacePair;
+    public Sprite cardBack;
 	public GameObject[] cards;
 	public GameObject gameTime;
 
@@ -32,21 +33,36 @@ public class gameManager : MonoBehaviour {
 				int choice = 0;
 				while (!test) {
 					choice = Random.Range (0, cards.Length);
-                    Debug.Log("choice is" + choice);
 					test = !(cards [choice].GetComponent<cardScript> ().initialized);
-                
-				}
+                   // Debug.Log("carta numero " + choice);
+                }
 				cards [choice].GetComponent<cardScript> ().cardValue = i;
-				cards [choice].GetComponent<cardScript> ().initialized = true;
+                Debug.Log("valor da carta "+ choice + " é " + cards[choice].GetComponent<cardScript>().cardValue);
+                cards [choice].GetComponent<cardScript> ().initialized = true;
 			}
 		}
 
-		foreach (GameObject c in cards)
-			c.GetComponent<cardScript> ().setupGraphics ();
+       
+        //foreach (GameObject c in cards)
+        for (int h = 0; h < cards.Length; h++) {
+            for (int j = 0; j < cards.Length; j++) {
+                if (cards[h].GetComponent<cardScript>().cardValue == cards[j].GetComponent<cardScript>().cardValue && h != j) {
+                    Debug.Log("Its a match!" + h + "e " + j + "value = " + cards[j].GetComponent<cardScript>().cardValue);
+                    GameObject c = cards[h];
+                    c.GetComponent<cardScript>().setupGraphics();
+                    GameObject b = cards[j];
+                    b.GetComponent<cardScript>().setupGraphicsPair();
+                }
+            }
+        }
 
-		if (!_init)
-			_init = true;
-	}
+        if (!_init)
+        {
+            Debug.Log("começa o jogo");
+            _init = true;
+        }
+            
+    }
 
 	public Sprite getCardBack() {
 		return cardBack;
@@ -55,8 +71,12 @@ public class gameManager : MonoBehaviour {
 	public Sprite getCardFace(int i) {
 		return cardFace[i - 1];
 	}
+    public Sprite getCardFacePair(int i)
+    {
+        return cardFacePair[i - 1];
+    }
 
-	void checkCards() {
+    void checkCards() {
 		List<int> c = new List<int> ();
 
 		for (int i = 0; i < cards.Length; i++) {

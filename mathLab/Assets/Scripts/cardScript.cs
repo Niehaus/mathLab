@@ -30,7 +30,16 @@ public class cardScript : MonoBehaviour {
 		flipcard ();
 	}
 
-	public void flipcard() {
+    public void setupGraphicsPair()
+    {
+        _cardBack = _manager.GetComponent<gameManager>().getCardBack();
+        _cardFace = _manager.GetComponent<gameManager>().getCardFacePair(_cardValue);
+
+        flipcard();
+    }
+
+
+    public void flipcard() {
 		if (_state == 0)
 			_state = 1;
 		else if (_state == 1)

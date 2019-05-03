@@ -19,7 +19,7 @@ public class cardScript : MonoBehaviour {
 	private GameObject _manager;
 
 	void Start(){
-		_state = 1;
+		_state = 0;
 		_manager = GameObject.FindGameObjectWithTag ("Manager");
 	}
 

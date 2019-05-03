@@ -62,7 +62,7 @@ public class cardScript : MonoBehaviour {
 	}
 
 	IEnumerator pause() {
-		yield return new WaitForSeconds(0.2F);
+		yield return new WaitForSeconds(0.4F);
 		if(_state == 0)
 			GetComponent<Image>().sprite = _cardBack;
 		else if(_state == 1)

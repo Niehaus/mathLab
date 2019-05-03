@@ -32,7 +32,9 @@ public class gameManager : MonoBehaviour {
 				int choice = 0;
 				while (!test) {
 					choice = Random.Range (0, cards.Length);
+                    Debug.Log("choice is" + choice);
 					test = !(cards [choice].GetComponent<cardScript> ().initialized);
+                
 				}
 				cards [choice].GetComponent<cardScript> ().cardValue = i;
 				cards [choice].GetComponent<cardScript> ().initialized = true;
@@ -62,7 +64,7 @@ public class gameManager : MonoBehaviour {
 				c.Add (i);
 		}
 
-		if (c.Count == 2)
+        if (c.Count == 2)
 			cardComparison (c);
 	}
 

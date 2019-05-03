@@ -34,20 +34,16 @@ public class gameManager : MonoBehaviour {
 				while (!test) {
 					choice = Random.Range (0, cards.Length);
 					test = !(cards [choice].GetComponent<cardScript> ().initialized);
-                   // Debug.Log("carta numero " + choice);
                 }
 				cards [choice].GetComponent<cardScript> ().cardValue = i;
-                Debug.Log("valor da carta "+ choice + " é " + cards[choice].GetComponent<cardScript>().cardValue);
                 cards [choice].GetComponent<cardScript> ().initialized = true;
 			}
 		}
 
        
-        //foreach (GameObject c in cards)
         for (int h = 0; h < cards.Length; h++) {
             for (int j = 0; j < cards.Length; j++) {
                 if (cards[h].GetComponent<cardScript>().cardValue == cards[j].GetComponent<cardScript>().cardValue && h != j) {
-                    Debug.Log("Its a match!" + h + "e " + j + "value = " + cards[j].GetComponent<cardScript>().cardValue);
                     GameObject c = cards[h];
                     c.GetComponent<cardScript>().setupGraphics();
                     GameObject b = cards[j];
@@ -58,7 +54,6 @@ public class gameManager : MonoBehaviour {
 
         if (!_init)
         {
-            Debug.Log("começa o jogo");
             _init = true;
         }
             

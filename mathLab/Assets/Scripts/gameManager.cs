@@ -83,7 +83,7 @@ public class gameManager : MonoBehaviour {
 			cardComparison (c);
 	}
 
-	void cardComparison(List<int> c){
+	void cardComparison(List<int> c) {
 		cardScript.DO_NOT = true;
 
 		int x = 0;
@@ -103,11 +103,11 @@ public class gameManager : MonoBehaviour {
 	
 	}
 
-	public void reGame(){
+	public void reGame() {
 		SceneManager.LoadScene ("gameScene");
 	}
 
-	public void reMenu(){
+	public void reMenu() {
 		SceneManager.LoadScene ("menuScene");
 	}
 }

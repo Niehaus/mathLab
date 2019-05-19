@@ -1,14 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-
+using UnityEngine.UI;
 public class GridGenerator : MonoBehaviour {
     private GridTile[,] grid;
 
     private List<GridTile> gridTiles;
     private List<float> xValues;
     private List<float> yValues;
-    int[,] resultado = new int[10, 10];
+    public InputField[] inputs;
+    public string result = "Grid:\n";
     public GridTile[,] Grid {
         get {
             return grid;
@@ -38,7 +39,7 @@ public class GridGenerator : MonoBehaviour {
         float[] xValuesSorted = xValues.ToArray();
         float[] yValuesSorted = yValues.ToArray();
         grid = new GridTile[xValues.Count, yValues.Count];
-        string result = "Grid:\n";
+        
         for (int y = 0; y < yValuesSorted.Length; y++) {
             for (int x = 0; x < xValuesSorted.Length; x++) {
                 foreach (GridTile tile in gridTiles) {
@@ -46,10 +47,8 @@ public class GridGenerator : MonoBehaviour {
                         grid[x, y] = tile;
                         if (tile.wall) {
                             result += "1 ";
-                            resultado[x, y] = 1;
                         } else {
                             result += "0 ";
-                            resultado[x, y] = 0;
                         }
                     }
                 }
@@ -57,7 +56,104 @@ public class GridGenerator : MonoBehaviour {
             result += "\n";
         }
         Debug.Log(result);
-        Debug.Log("matriz int " + resultado[2,1]);
-        
+        for (int i = 0; i < result.Length; i++) {
+            Debug.Log("matriz " + i + "resultado " + result[i]);
+        }      
+
     }
+
+    public void input(int inputNumber) {
+        switch (inputNumber) {
+            case (0):
+
+                Debug.Log("resposta = " + result[6]);
+                Debug.Log("input = " + inputs[0].text);
+                
+                if (inputs[0].text.Equals("v")) {
+                    if (result[6].ToString().Equals("1")) {
+                        Debug.Log("resposta certa 1");
+                        inputs[0].image.color = new Color32(69, 202, 35, 255); 
+                    } else {
+                        Debug.Log("resposta errada");
+                        inputs[0].image.color = new Color32(202, 41, 49, 255);
+                    }
+                } else if (inputs[0].text.Equals("f")) {
+                    if (result[6].ToString().Equals("0")) {
+                        Debug.Log("resposta certa 1");
+                        inputs[0].image.color = new Color32(69, 202, 35, 255);
+                    } else {
+                        Debug.Log("resposta errada");
+                        inputs[0].image.color = new Color32(202, 41, 49, 255);
+                    }
+                }
+
+                break;
+            case (1):
+                Debug.Log("resposta = " + result[13]);
+                Debug.Log("input = " + inputs[1].text);
+
+                if (inputs[1].text.Equals("v")) {
+                    if (result[13].ToString().Equals("1")) {
+                        Debug.Log("resposta certa 2");
+                        inputs[1].image.color = new Color32(69, 202, 35, 255);
+                    } else {
+                        Debug.Log("resposta errada");
+                        inputs[1].image.color = new Color32(202, 41, 49, 255);
+                    }
+                } else if (inputs[1].text.Equals("f")) {
+                    if (result[13].ToString().Equals("0")) {
+                        Debug.Log("resposta certa 2");
+                        inputs[1].image.color = new Color32(69, 202, 35, 255);
+                    } else {
+                        Debug.Log("resposta errada");
+                        inputs[1].image.color = new Color32(202, 41, 49, 255);
+                    }
+                }
+                break;
+            case (2):
+                Debug.Log("resposta = " + result[20]);
+                Debug.Log("input = " + inputs[2].text);
+
+                if (inputs[2].text.Equals("v")) {
+                    if (result[20].ToString().Equals("1")) {
+                        Debug.Log("resposta certa 3");
+                        inputs[2].image.color = new Color32(69, 202, 35, 255);
+                    } else {
+                        Debug.Log("resposta errada");
+                        inputs[2].image.color = new Color32(202, 41, 49, 255);
+                    }
+                } else if (inputs[2].text.Equals("f")) {
+                    if (result[20].ToString().Equals("0")) {
+                        Debug.Log("resposta certa 3");
+                        inputs[2].image.color = new Color32(69, 202, 35, 255);
+                    } else {
+                        Debug.Log("resposta errada");
+                        inputs[2].image.color = new Color32(202, 41, 49, 255);
+                    }
+                }
+                break;
+            case (3):
+                
+                if (inputs[3].text.Equals("v")) {
+                    if (result[28].ToString().Equals("1")) {
+                        Debug.Log("resposta certa 4");
+                        inputs[3].image.color = new Color32(69, 202, 35, 255);
+                    } else {
+                        Debug.Log("resposta errada");
+                        inputs[3].image.color = new Color32(202, 41, 49, 255);
+                    }
+                } else if (inputs[3].text.Equals("f")) {
+                    if (result[28].ToString().Equals("0")) {
+                        Debug.Log("resposta certa 4");
+                        inputs[3].image.color = new Color32(69, 202, 35, 255);
+                    } else {
+                        Debug.Log("resposta errada");
+                        inputs[3].image.color = new Color32(202, 41, 49, 255);
+                    }
+                }
+                break;
+        }
+
+    }
+
 }

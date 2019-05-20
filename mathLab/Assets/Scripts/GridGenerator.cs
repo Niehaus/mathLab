@@ -11,8 +11,11 @@ public class GridGenerator : MonoBehaviour {
     public InputField[] inputs;
     public GameObject endGame;
 
+    private Hashtable hashResult; 
+
     public string result = "Grid:\n";
-    private int acertos = 0;
+    private int[] acertos = new int[4];
+    private int certo;
     public GridTile[,] Grid {
         get {
             return grid;
@@ -20,12 +23,13 @@ public class GridGenerator : MonoBehaviour {
     }
 
     void Start() {
+        hashResult = new Hashtable();
         gridTiles = new List<GridTile>();
         xValues = new List<float>();
         yValues = new List<float>();
         foreach (Transform child in transform) {
             bool wall = false;
-            if (child.tag == "Wall") {
+            if (child.tag == "True") {
                 wall = true;
             }
             gridTiles.Add(new GridTile(child.position.x, child.position.y, wall));
@@ -58,131 +62,45 @@ public class GridGenerator : MonoBehaviour {
             }
             result += "\n";
         }
-        Debug.Log(result);
+        Debug.Log(result); //vê index do Grid
         for (int i = 0; i < result.Length; i++) {
            // Debug.Log("matriz " + i + "resultado " + result[i]);
-        }      
-
+        }
+        //Declaração da hash de respota
+            hashResult.Add(0, 6);
+            hashResult.Add(1, 13);
+            hashResult.Add(2, 20);
+            hashResult.Add(3, 27);
     }
 
-    public void input(int inputNumber) {
-
-        switch (inputNumber) {
-            case (0): 
-                if (inputs[0].text.Equals("v")) {
-                    if (result[6].ToString().Equals("1")) {
-                        Debug.Log("resposta certa 1");
-                        inputs[0].image.color = new Color32(69, 202, 35, 255);
-                        acertos++;
-                    } else {
-                        Debug.Log("resposta errada");
-                        inputs[0].image.color = new Color32(202, 41, 49, 255);
-                    }
-                } else if (inputs[0].text.Equals("f")) {
-                    if (result[6].ToString().Equals("0")) {
-                        Debug.Log("resposta certa 1");
-                        inputs[0].image.color = new Color32(69, 202, 35, 255);
-                        acertos++;
-                    } else {
-                        Debug.Log("resposta errada");
-                        inputs[0].image.color = new Color32(202, 41, 49, 255);
-                    }
-                }
-                Debug.Log(acertos);
-                if (acertos == 4) {
-                    endGame.SetActive(true);
-                    Debug.Log("fim de jogo");
-                }
-                break;
-
-            case (1):
-                if (inputs[1].text.Equals("v")) {
-                    if (result[13].ToString().Equals("1")) {
-                        Debug.Log("resposta certa 2");
-                        inputs[1].image.color = new Color32(69, 202, 35, 255);
-                        acertos++;
-                    } else {
-                        Debug.Log("resposta errada");
-                        inputs[1].image.color = new Color32(202, 41, 49, 255);
-                    }
-                } else if (inputs[1].text.Equals("f")) {
-                    if (result[13].ToString().Equals("0")) {
-                        Debug.Log("resposta certa 2");
-                        inputs[1].image.color = new Color32(69, 202, 35, 255);
-                        acertos++;
-                    } else {
-                        Debug.Log("resposta errada");
-                        inputs[1].image.color = new Color32(202, 41, 49, 255);
-                    }
-                }
-                Debug.Log(acertos);
-                if (acertos == 4) {
-                    endGame.SetActive(true);
-                    Debug.Log("fim de jogo");
-                }
-                break;
-
-            case (2):              
-                if (inputs[2].text.Equals("v")) {
-                    if (result[20].ToString().Equals("1")) {
-                        Debug.Log("resposta certa 3");
-                        inputs[2].image.color = new Color32(69, 202, 35, 255);
-                        acertos++;
-                    } else {
-                        Debug.Log("resposta errada");
-                        inputs[2].image.color = new Color32(202, 41, 49, 255);
-                    }
-                } else if (inputs[2].text.Equals("f")) {
-                    if (result[20].ToString().Equals("0")) {
-                        Debug.Log("resposta certa 3");
-                        inputs[2].image.color = new Color32(69, 202, 35, 255);
-                        acertos++;
-                    } else {
-                        Debug.Log("resposta errada");
-                        inputs[2].image.color = new Color32(202, 41, 49, 255);
-                    }
-                }
-                Debug.Log(acertos);
-                if (acertos == 4) {
-                    endGame.SetActive(true);
-                    Debug.Log("fim de jogo");
-                }
-                break;
-
-            case (3):
-                Debug.Log("res = " + result[27]);
-                if (inputs[3].text.Equals("v")) {
-                    if (result[27].ToString().Equals("1")) {
-                        Debug.Log("resposta certa 4");
-                        inputs[3].image.color = new Color32(69, 202, 35, 255);
-                        acertos++;
-                    } else {
-                        Debug.Log("resposta errada");
-                        inputs[3].image.color = new Color32(202, 41, 49, 255);
-                    }
-                } else if (inputs[3].text.Equals("f")) {
-                    if (result[27].ToString().Equals("0")) {
-                        Debug.Log("resposta certa 4");
-                        inputs[3].image.color = new Color32(69, 202, 35, 255);
-                        acertos++;
-                    } else {
-                        Debug.Log("resposta errada");
-                        inputs[3].image.color = new Color32(202, 41, 49, 255);
-                    }
-                }
-                Debug.Log(acertos);
-                if (acertos == 4) {
-                    endGame.SetActive(true);
-                    Debug.Log("fim de jogo");
-                }
-                break;
-
-            default:
-                Debug.Log("Input não reconheecido");
-                break;
-
+    public void input2(int inputNum) {
+        if (inputs[inputNum].text.Equals("v")) {
+            if (result[hashResult[inputNum].GetHashCode()].ToString().Equals("1")) {
+                //Debug.Log("resposta certa 1");
+                inputs[inputNum].image.color = new Color32(69, 202, 35, 255);
+                acertos[inputNum] = 1;
+            } else {
+                //Debug.Log("resposta errada");
+                inputs[inputNum].image.color = new Color32(202, 41, 49, 255);
+                acertos[inputNum] = 0;
+            }
+        } else if (inputs[inputNum].text.Equals("f")) {
+            if (result[hashResult[inputNum].GetHashCode()].ToString().Equals("0")) {
+                //Debug.Log("resposta certa 1");
+                inputs[inputNum].image.color = new Color32(69, 202, 35, 255);
+                acertos[inputNum] = 1;
+            } else {
+                //Debug.Log("resposta errada");
+                inputs[inputNum].image.color = new Color32(202, 41, 49, 255);
+                acertos[inputNum] = 0;
+            }
         }
-               
+
+        if (acertos[0] == 1 && acertos[1] == 1 && acertos[2] == 1 && acertos[3] == 1) {//contabiliza acertos
+            endGame.SetActive(true);
+            //Debug.Log("fim de jogo");
+        }
+        
     }
 
 }

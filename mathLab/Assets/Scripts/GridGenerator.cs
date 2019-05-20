@@ -9,7 +9,10 @@ public class GridGenerator : MonoBehaviour {
     private List<float> xValues;
     private List<float> yValues;
     public InputField[] inputs;
+    public GameObject endGame;
+
     public string result = "Grid:\n";
+    private int acertos = 0;
     public GridTile[,] Grid {
         get {
             return grid;
@@ -57,22 +60,20 @@ public class GridGenerator : MonoBehaviour {
         }
         Debug.Log(result);
         for (int i = 0; i < result.Length; i++) {
-            Debug.Log("matriz " + i + "resultado " + result[i]);
+           // Debug.Log("matriz " + i + "resultado " + result[i]);
         }      
 
     }
 
     public void input(int inputNumber) {
-        switch (inputNumber) {
-            case (0):
 
-                Debug.Log("resposta = " + result[6]);
-                Debug.Log("input = " + inputs[0].text);
-                
+        switch (inputNumber) {
+            case (0): 
                 if (inputs[0].text.Equals("v")) {
                     if (result[6].ToString().Equals("1")) {
                         Debug.Log("resposta certa 1");
-                        inputs[0].image.color = new Color32(69, 202, 35, 255); 
+                        inputs[0].image.color = new Color32(69, 202, 35, 255);
+                        acertos++;
                     } else {
                         Debug.Log("resposta errada");
                         inputs[0].image.color = new Color32(202, 41, 49, 255);
@@ -81,21 +82,25 @@ public class GridGenerator : MonoBehaviour {
                     if (result[6].ToString().Equals("0")) {
                         Debug.Log("resposta certa 1");
                         inputs[0].image.color = new Color32(69, 202, 35, 255);
+                        acertos++;
                     } else {
                         Debug.Log("resposta errada");
                         inputs[0].image.color = new Color32(202, 41, 49, 255);
                     }
                 }
-
+                Debug.Log(acertos);
+                if (acertos == 4) {
+                    endGame.SetActive(true);
+                    Debug.Log("fim de jogo");
+                }
                 break;
-            case (1):
-                Debug.Log("resposta = " + result[13]);
-                Debug.Log("input = " + inputs[1].text);
 
+            case (1):
                 if (inputs[1].text.Equals("v")) {
                     if (result[13].ToString().Equals("1")) {
                         Debug.Log("resposta certa 2");
                         inputs[1].image.color = new Color32(69, 202, 35, 255);
+                        acertos++;
                     } else {
                         Debug.Log("resposta errada");
                         inputs[1].image.color = new Color32(202, 41, 49, 255);
@@ -104,20 +109,25 @@ public class GridGenerator : MonoBehaviour {
                     if (result[13].ToString().Equals("0")) {
                         Debug.Log("resposta certa 2");
                         inputs[1].image.color = new Color32(69, 202, 35, 255);
+                        acertos++;
                     } else {
                         Debug.Log("resposta errada");
                         inputs[1].image.color = new Color32(202, 41, 49, 255);
                     }
                 }
+                Debug.Log(acertos);
+                if (acertos == 4) {
+                    endGame.SetActive(true);
+                    Debug.Log("fim de jogo");
+                }
                 break;
-            case (2):
-                Debug.Log("resposta = " + result[20]);
-                Debug.Log("input = " + inputs[2].text);
 
+            case (2):              
                 if (inputs[2].text.Equals("v")) {
                     if (result[20].ToString().Equals("1")) {
                         Debug.Log("resposta certa 3");
                         inputs[2].image.color = new Color32(69, 202, 35, 255);
+                        acertos++;
                     } else {
                         Debug.Log("resposta errada");
                         inputs[2].image.color = new Color32(202, 41, 49, 255);
@@ -126,34 +136,53 @@ public class GridGenerator : MonoBehaviour {
                     if (result[20].ToString().Equals("0")) {
                         Debug.Log("resposta certa 3");
                         inputs[2].image.color = new Color32(69, 202, 35, 255);
+                        acertos++;
                     } else {
                         Debug.Log("resposta errada");
                         inputs[2].image.color = new Color32(202, 41, 49, 255);
                     }
                 }
+                Debug.Log(acertos);
+                if (acertos == 4) {
+                    endGame.SetActive(true);
+                    Debug.Log("fim de jogo");
+                }
                 break;
+
             case (3):
-                
+                Debug.Log("res = " + result[27]);
                 if (inputs[3].text.Equals("v")) {
-                    if (result[28].ToString().Equals("1")) {
+                    if (result[27].ToString().Equals("1")) {
                         Debug.Log("resposta certa 4");
                         inputs[3].image.color = new Color32(69, 202, 35, 255);
+                        acertos++;
                     } else {
                         Debug.Log("resposta errada");
                         inputs[3].image.color = new Color32(202, 41, 49, 255);
                     }
                 } else if (inputs[3].text.Equals("f")) {
-                    if (result[28].ToString().Equals("0")) {
+                    if (result[27].ToString().Equals("0")) {
                         Debug.Log("resposta certa 4");
                         inputs[3].image.color = new Color32(69, 202, 35, 255);
+                        acertos++;
                     } else {
                         Debug.Log("resposta errada");
                         inputs[3].image.color = new Color32(202, 41, 49, 255);
                     }
                 }
+                Debug.Log(acertos);
+                if (acertos == 4) {
+                    endGame.SetActive(true);
+                    Debug.Log("fim de jogo");
+                }
                 break;
-        }
 
+            default:
+                Debug.Log("Input não reconheecido");
+                break;
+
+        }
+               
     }
 
 }

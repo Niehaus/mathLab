@@ -68,12 +68,21 @@ public class GridGenerator : MonoBehaviour {
         }
         //Declaração da hash de respota
             hashResult.Add(0, 6);
-            hashResult.Add(1, 13);
-            hashResult.Add(2, 20);
-            hashResult.Add(3, 27);
+            hashResult.Add(1, 17);
+            hashResult.Add(2, 28);
+            hashResult.Add(3, 39);
+            hashResult.Add(4, 50);
+            hashResult.Add(5, 61);
+            hashResult.Add(6, 72);
+            hashResult.Add(7, 83);
+       // Debug.Log(result[6]);
+        /// Debug.Log(result[25]);
+       
     }
 
     public void input2(int inputNum) {
+        Debug.Log("input " + inputNum);
+        Debug.Log("resultado " + result[hashResult[inputNum].GetHashCode()]);
         if (inputs[inputNum].text.Equals("v")) {
             if (result[hashResult[inputNum].GetHashCode()].ToString().Equals("1")) {
                 //Debug.Log("resposta certa 1");

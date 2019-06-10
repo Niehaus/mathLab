@@ -36,8 +36,9 @@ que já foi proposto por ele.
 #### Tabelas Verdade
 #### Equivalência Lógica
 #### Inferência Lógica 
-
-
+#### Jogo da Memória
+##### Jogo da Memória p/ Inferências Lógicas - As Cartas
+   ![](https://github.com/Niehaus/mathLab/blob/master/mathLab/Assets/Screenshots/memoryGame.png?raw=true)
 
 
 

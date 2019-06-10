@@ -1,4 +1,4 @@
-# Laboratorio de Matemática Discreta 
+# Laboratório de Matemática Discreta 
 ## Recurso Educacional Aberto (REA) para auxiliar o ensino de matemática discreta no ensino superior. 
 
 Em formato de jogo, afim de gameficar o ensino de matemática discreta, o projeto utiliza-se de artificios pedagógicos para fornecer uma revisão sobre o conteúdo da disciplina, e ou uma nova visão com possibilidade de sanar as dúvidas ao jogá-lo. Contudo, o jogo não abrange a disciplina em questão em sua totalidade, mas passa por três tópicos de grande importância para iniciar os estudos na área, são eles:

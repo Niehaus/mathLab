@@ -10,6 +10,17 @@ Inferência Lógica
 ```
 ### Como é o jogo
 Dividido em três blocos, um para cada tópico citado acima e cada um deles possui uma sequência de tarefas que deve constituir o processo de aprendizagem que o jogo propõe.
+  ![](https://github.com/Niehaus/mathLab/blob/master/mathLab/Assets/Screenshots/MenuScreenshoot.png?raw=true)
+### Configurações
+Nesse caso é possível configurar as opções de áudio, como também contribuir para que o jogo cresça localmente. É possível adicionar novos conteúdos acerca dos exercicios já existentes no jogo, como: 
+#### Adicionar Tabela Verdade
+  Aqui é possível adicionar novas tabelas verdade que vão compor o cenário da primeira parte do jogo, dessa forma, o professor que assim desejar encaixar o jogo com os exercicios passados em sala pode assim fazê-lo. 
+#### Adicionar Equivalências
+  Aqui analogamente pode-se adicionar novas equivalências para compor o cenário do jogo de acordo ao que já foi proposto por ele. 
+#### Adicionar Inferências
+Aqui analogamente pode-se adicionar novas equivalências para compor o cenário do jogo de acordo ao que já foi proposto por ele. 
+
+
 #### Tabelas Verdade
 #### Equivalência Lógica
 #### Inferência Lógica 

@@ -11,9 +11,14 @@ public class configMaster : MonoBehaviour {
          switch (panelNum) {
             case (0):
                 audioPanel.SetActive(true);
+                truthPanel.SetActive(false);
+                equivPanel.SetActive(false);
+                infPanel.SetActive(false);
+                prefPanel.SetActive(false);
                 break;
             case (1):
                 prefPanel.SetActive(true);
+                audioPanel.SetActive(false);
                 break;
             case (2):
                 truthPanel.SetActive(true);

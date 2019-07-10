@@ -1,11 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using System.IO;
 
 public class configMaster : MonoBehaviour {
 
-    public GameObject audioPanel, prefPanel,truthPanel, equivPanel, infPanel;
-    
+    public GameObject audioPanel, prefPanel,truthPanel, equivPanel, infPanel; // paineis
+    public InputField[] inputs; /*guarda as respostas recebidas, 
+                                cada posição é um input diferente*/
+    private int tableCounter = 0;
+    protected string pathTable = "Assets/NewAdds/tabelaVerdade.txt";
+    protected string expr, num, resp;
+    void CriaArquivo() {
+        if (!File.Exists(pathTable))
+        {
+    }
     public void openPanel(int panelNum) {
          
          switch (panelNum) {
@@ -59,5 +69,33 @@ public class configMaster : MonoBehaviour {
                     break;
             }
     }
+
+    public void getTruthTable(int inputNum){
+
+        switch (inputNum){
+            case (0): //Expressão
+                print(inputs[inputNum].text);
+                expr = inputs[inputNum].text;
+                break;
+            case (1): //N° Var
+                print(inputs[inputNum].text);
+                num = inputs[inputNum].text;
+                break;
+            case (2): // Vetor Respostas
+                print(inputs[inputNum].text);
+                resp = inputs[inputNum].text;
+                break;
+        }
+    }
+
+    public void buttonWrite(){
+        CriaArquivo();
+        File.AppendAllText(pathTable, "Expr: " + expr + "\n");
+        File.AppendAllText(pathTable, "Nº Var: " + num + "\n");
+        File.AppendAllText(pathTable, "Respotas: " + resp + "\n");
+        inputs.text = "";
+        tableCounter += 1;
+    }
+
 
 }

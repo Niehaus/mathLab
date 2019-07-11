@@ -1,9 +1,4 @@
-
-LOG FILE - ADICIONAR NOVA TABELA VERDADE 0
-Expr: p ^q
-Nº Var: 12
-Respotas: dsa
 LOG FILE - ADICIONAR NOVA TABELA VERDADE 1
-Expr: qq
-Nº Var: tab2
-Respotas: fdks
+Expr: ad
+Nº Var: 33
+Respotas: v v v 

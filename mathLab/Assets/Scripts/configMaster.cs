@@ -91,6 +91,7 @@ public class configMaster : MonoBehaviour {
             case (1): //N° Var
                 print(inputs[inputNum].text);
                 num = inputs[inputNum].text;
+                geraTabelaExemplo(inputs[inputNum].text);
                 break;
             case (2): // Vetor Respostas
                 print(inputs[inputNum].text);
@@ -118,4 +119,9 @@ public class configMaster : MonoBehaviour {
         addConfirm.SetActive(false);   
     }
 
+    public void geraTabelaExemplo(string numVar){
+        int intVar = System.Convert.ToInt32(numVar);
+        //Debug.Log(intVar.GetType());
+        
+    }
 }

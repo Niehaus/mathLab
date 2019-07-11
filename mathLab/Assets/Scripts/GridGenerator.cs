@@ -11,12 +11,10 @@ public class GridGenerator : MonoBehaviour {
     private List<float> yValues;
     public InputField[] inputs;
     public GameObject endGame;
-
+    private int[] acertos = new int[8];
     private Hashtable hashResult; 
-
-    public string result = "Grid:\n";
-    private int[] acertos = new int[4];
     private int certo;
+    public string result = "Grid:\n";
     public GridTile[,] Grid {
         get {
             return grid;
@@ -68,17 +66,14 @@ public class GridGenerator : MonoBehaviour {
            // Debug.Log("matriz " + i + "resultado " + result[i]);
         }
         //Declaração da hash de respota
-            hashResult.Add(0, 6);
-            hashResult.Add(1, 17);
-            hashResult.Add(2, 28);
-            hashResult.Add(3, 39);
-            hashResult.Add(4, 50);
-            hashResult.Add(5, 61);
-            hashResult.Add(6, 72);
-            hashResult.Add(7, 83);
-       // Debug.Log(result[6]);
-        /// Debug.Log(result[25]);
-       
+        hashResult.Add(0, 6);
+        hashResult.Add(1, 17);
+        hashResult.Add(2, 28);
+        hashResult.Add(3, 39);
+        hashResult.Add(4, 50);
+        hashResult.Add(5, 61);
+        hashResult.Add(6, 72);
+        hashResult.Add(7, 83);
     }
 
     public void input2(int inputNum) {
@@ -105,12 +100,26 @@ public class GridGenerator : MonoBehaviour {
                 acertos[inputNum] = 0;
             }
         }
-
-        if (acertos[0] == 1 && acertos[1] == 1 && acertos[2] == 1 && acertos[3] == 1) {//contabiliza acertos
-            endGame.SetActive(true);
-            //Debug.Log("fim de jogo");
-        }
-        
+        verficaAcertos();     
     }
 
+    public void verficaAcertos(){
+        certo = 0;
+        for (int i = 0; i <= acertos.Length; i++) {
+            Debug.Log("indice = " + i);
+            if (acertos[i] == 1) {
+                certo += 1;
+                Debug.Log("acerto: " + certo);
+                if (certo == acertos.Length) {
+                    Debug.Log("fim de jogo");
+                    endGame.SetActive(true);
+                }
+            }
+            else {
+                Debug.Log("Ainda não acabou");
+                break;
+            }
+        }
+    }
 }
+

@@ -7,14 +7,22 @@ using System.IO;
 public class configMaster : MonoBehaviour {
 
     public GameObject audioPanel, prefPanel,truthPanel, equivPanel, infPanel; // paineis
+    public GameObject addConfirm; //texto de confirmação de adição!
     public InputField[] inputs; /*guarda as respostas recebidas, 
                                 cada posição é um input diferente*/
-    private int tableCounter = 0;
+    private static int tableCounter = 0;
     protected string pathTable = "Assets/NewAdds/tabelaVerdade.txt";
     protected string expr, num, resp;
+
     void CriaArquivo() {
         if (!File.Exists(pathTable))
         {
+            File.WriteAllText(pathTable, "LOG FILE - ADICIONAR NOVA TABELA VERDADE " + tableCounter.ToString() + "\n");    
+        }else
+        {
+            File.AppendAllText(pathTable, "LOG FILE - ADICIONAR NOVA TABELA VERDADE " + tableCounter.ToString() + "\n");
+        }
+        
     }
     public void openPanel(int panelNum) {
          
@@ -57,6 +65,9 @@ public class configMaster : MonoBehaviour {
                     break;
                 case (1):
                     prefPanel.SetActive(false);
+                    truthPanel.SetActive(false);
+                    equivPanel.SetActive(false);
+                    infPanel.SetActive(false);
                     break;
                 case (2):
                     truthPanel.SetActive(false);
@@ -93,9 +104,18 @@ public class configMaster : MonoBehaviour {
         File.AppendAllText(pathTable, "Expr: " + expr + "\n");
         File.AppendAllText(pathTable, "Nº Var: " + num + "\n");
         File.AppendAllText(pathTable, "Respotas: " + resp + "\n");
-        inputs.text = "";
+        inputs[0].text = "";
+        inputs[1].text = "";
+        inputs[2].text = "";
+        addConfirm.SetActive(true);
+        StartCoroutine(undisplay()); 
         tableCounter += 1;
     }
 
+    IEnumerator undisplay()
+    {
+        yield return new WaitForSeconds(1);
+        addConfirm.SetActive(false);   
+    }
 
 }

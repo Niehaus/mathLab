@@ -7,15 +7,18 @@ public class menuScript : MonoBehaviour {
 
     public void triggerMenu(int trigger) {
 		switch (trigger) {
-		case(0) :
-			SceneManager.LoadScene("introScene1");
-			break;
-		case(1) :
-			Application.Quit();
-			break;
-         case (2):
-            SceneManager.LoadScene("settingsScene");
-            break;
+            case (0):
+                SceneManager.LoadScene("introScene1");
+                break;
+		    case (1):
+                Application.Quit();
+                break;
+            case (2):
+                SceneManager.LoadScene("settingsScene");
+                break;
+            case (3):
+                SceneManager.LoadScene("menuScene");
+                break;
 		}
 	}
 

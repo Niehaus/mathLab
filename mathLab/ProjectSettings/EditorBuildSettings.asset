@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Inferencias - Memory Game/settingsScene.unity
     guid: add90f1e62c76014685cd469db635d5d
+  - enabled: 1
+    path: Assets/Scenes/Inferencias - Memory Game/menuScene.unity
+    guid: 17fbb95549f494d4ba90e749f65092fd
   m_configObjects: {}

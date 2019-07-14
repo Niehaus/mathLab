@@ -2,3 +2,8 @@ LOG FILE - ADICIONAR NOVA TABELA VERDADE 1
 Expr: ad
 Nº Var: 33
 Respotas: v v v 
+LOG FILE - ADICIONAR NOVA TABELA VERDADE 0
+Expr: p ^ q
+Nº Var: 4
+Linhas Tabela: 
+Respotas: v f v f v f v f f

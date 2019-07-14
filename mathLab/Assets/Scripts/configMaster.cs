@@ -143,9 +143,10 @@ public class configMaster : MonoBehaviour {
                 linha[i] = new int();
                 linha[i] = randNum.Next(0, 2); //Gera um num. aleatório entre 0 e 1;
             }
-
+            LinhaString += LinhasGeradas.ToString() + ".   ";
             for (int i = 0; i < Entradas; i++) //Transforma o vetor de combinações em uma única string. (Ex: 0 - 1 - 0 - 1)
             {
+            
                 if (i == Entradas - 1) // Se for o ultimo número da combinação, não irá ter traço após ele.
                 {
                     if (linha[i] == 1)

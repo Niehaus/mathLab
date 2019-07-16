@@ -16,9 +16,8 @@ public class configMaster : MonoBehaviour {
     private static int tableCounter = 0;
     protected string pathTable = "Assets/NewAdds/tabelaVerdade.txt";
     protected string expr, num, resp, linhasTabela,writeTabela;
-    char[] vec1 = new char[2];
-    
-
+    protected string[] retornaArray = new String[32];
+    public string[] guardaResp = new String[32];
     void CriaArquivo() {
         if (!File.Exists(pathTable))
         {
@@ -63,7 +62,6 @@ public class configMaster : MonoBehaviour {
     }
     
     public void closePanel(int panelNum) {
-        
             switch (panelNum) {
                 case (0):
                     audioPanel.SetActive(false);
@@ -87,11 +85,12 @@ public class configMaster : MonoBehaviour {
     }
 
     public void getTruthTable(int inputNum){
-
         switch (inputNum){
             case (0): //Expressão
                 print(inputs[inputNum].text);
                 expr = inputs[inputNum].text;
+                //Tratamento da expressao
+                splitString(expr);
                 break;
             case (1): //N° Var
                 print(inputs[inputNum].text);
@@ -101,8 +100,21 @@ public class configMaster : MonoBehaviour {
             case (2): // Vetor Respostas
                 print(inputs[inputNum].text);
                 resp = inputs[inputNum].text;
-                break;
+                guardaResp = splitString(resp);
+                break;         
         }
+    }
+    public String[] splitString(string expr) {  //separa a string a partir dos operadores - get variaveis
+        int k = 0;
+        string[] multiArray = expr.Split(new Char[] { ' ', '^', '|', '(', ')', '[', ']' });
+        foreach (string author in multiArray) {
+            if (author.Trim() != ""){
+                //Debug.Log(k + " " + author);
+                retornaArray[k] = author;
+                k++;
+            }
+        }
+        return retornaArray;
     }
 
     public void buttonWrite(){
@@ -117,7 +129,7 @@ public class configMaster : MonoBehaviour {
         addConfirm.SetActive(true);
         StartCoroutine(undisplay()); 
         tableCounter += 1;
-    }
+    } 
 
     IEnumerator undisplay()
     {
@@ -125,10 +137,8 @@ public class configMaster : MonoBehaviour {
         addConfirm.SetActive(false);   
     }
 
-    public void geraTabelaExemplo(string numVar){
-        int Entradas = System.Convert.ToInt32(numVar);
-        //Debug.Log(intVar.GetType());
-        //Algoritmo de multicombinação a partir de random numbers
+    public void geraTabelaExemplo(string numVar) { //Algoritmo de multicombinação a partir de random numbers
+        int Entradas = System.Convert.ToInt32(numVar); //Debug.Log(intVar.GetType());
         double TotalDeLinhas = Math.Pow(2, Convert.ToDouble(Entradas)); // Calcula o total de linhas a serem geradas;
         int[] linha = new int[Entradas]; // Cada elemento da linha é jogado em uma posição do vetor
         int LinhasGeradas = 0;
@@ -136,40 +146,27 @@ public class configMaster : MonoBehaviour {
         List<string> linhas = new List<string>();
         System.Random randNum = new System.Random();
 
-        while (LinhasGeradas < TotalDeLinhas) //Permanece no loop enquanto não completar todas as combinações.
-        {
-            for (int i = 0; i < Entradas; i++) // Gera uma combinação
-            {
+        while (LinhasGeradas < TotalDeLinhas) { //Permanece no loop enquanto não completar todas as combinações.
+            for (int i = 0; i < Entradas; i++) { // Gera uma combinação
                 linha[i] = new int();
                 linha[i] = randNum.Next(0, 2); //Gera um num. aleatório entre 0 e 1;
             }
-            
-            for (int i = 0; i < Entradas; i++) //Transforma o vetor de combinações em uma única string. (Ex: 0 - 1 - 0 - 1)
-            {
-                if (i == Entradas - 1) // Se for o ultimo número da combinação, não irá ter traço após ele.
-                {
-                    if (linha[i] == 1)
-                    {
-                        LinhaString += 'V';    
-                    }else
-                    {
+            for (int i = 0; i < Entradas; i++) { //Transforma o vetor de combinações em uma única string. (Ex: 0 - 1 - 0 - 1)
+                if (i == Entradas - 1) { // Se for o ultimo número da combinação, não irá ter traço após ele.
+                    if (linha[i] == 1) {
+                       LinhaString += 'V';    
+                    }else {
                         LinhaString += 'F';
                     }
-                }
-                else
-                {
-                    if (linha[i] == 1)
-                    {
+                }else {
+                    if (linha[i] == 1) {
                         LinhaString += 'V' + " ";
-                    }
-                    else
-                    {
+                    }else {
                         LinhaString += 'F' + " ";
                     }
                 }
             }
-            if (!linhas.Contains(LinhaString)) // Se não tiver esta combinação na lista, adiciona.
-            {
+            if (!linhas.Contains(LinhaString)) { // Se não tiver esta combinação na lista, adiciona.  
                 linhas.Add(LinhaString);
                 LinhasGeradas++;
             }

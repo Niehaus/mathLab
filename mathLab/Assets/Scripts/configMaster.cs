@@ -15,17 +15,17 @@ public class configMaster : MonoBehaviour {
                                 cada posição é um input diferente*/
     private static int tableCounter = 0;
     protected string pathTable = "Assets/NewAdds/tabelaVerdade.txt";
-    protected string expr, num, resp, linhasTabela;
+    protected string expr, num, resp, linhasTabela,writeTabela;
     char[] vec1 = new char[2];
     
 
     void CriaArquivo() {
         if (!File.Exists(pathTable))
         {
-            File.WriteAllText(pathTable, "LOG FILE - ADICIONAR NOVA TABELA VERDADE " + tableCounter.ToString() + "\n");    
+            File.WriteAllText(pathTable, "\nLOG FILE - ADICIONAR NOVA TABELA VERDADE " + tableCounter.ToString() + "\n");    
         }else
         {
-            File.AppendAllText(pathTable, "LOG FILE - ADICIONAR NOVA TABELA VERDADE " + tableCounter.ToString() + "\n");
+            File.AppendAllText(pathTable, "\nLOG FILE - ADICIONAR NOVA TABELA VERDADE " + tableCounter.ToString() + "\n");
         }
         
     }
@@ -109,7 +109,7 @@ public class configMaster : MonoBehaviour {
         CriaArquivo();
         File.AppendAllText(pathTable, "Expr: " + expr + "\n");
         File.AppendAllText(pathTable, "Nº Var: " + num + "\n");
-        File.AppendAllText(pathTable, "Linhas Tabela: " + linhasTabela + "\n");
+        File.AppendAllText(pathTable, "Linhas Tabela: " + writeTabela + "\n"); writeTabela = "";
         File.AppendAllText(pathTable, "Respotas: " + resp + "\n");
         inputs[0].text = "";
         inputs[1].text = "";
@@ -143,10 +143,9 @@ public class configMaster : MonoBehaviour {
                 linha[i] = new int();
                 linha[i] = randNum.Next(0, 2); //Gera um num. aleatório entre 0 e 1;
             }
-            LinhaString += LinhasGeradas.ToString() + ".   ";
+            
             for (int i = 0; i < Entradas; i++) //Transforma o vetor de combinações em uma única string. (Ex: 0 - 1 - 0 - 1)
             {
-            
                 if (i == Entradas - 1) // Se for o ultimo número da combinação, não irá ter traço após ele.
                 {
                     if (linha[i] == 1)
@@ -169,7 +168,6 @@ public class configMaster : MonoBehaviour {
                     }
                 }
             }
-
             if (!linhas.Contains(LinhaString)) // Se não tiver esta combinação na lista, adiciona.
             {
                 linhas.Add(LinhaString);
@@ -178,10 +176,11 @@ public class configMaster : MonoBehaviour {
             LinhaString = "";
         }
         for (int i = 0; i < TotalDeLinhas; i++) {
-            linhasTabela += linhas[i] + "\n";  
+            linhasTabela += String.Concat(i.ToString() + ".   ", linhas[i])  + "\n";
         }
-        Debug.Log(linhasTabela);
+        //Debug.Log(linhasTabela);
         linhasTableText.text = linhasTabela;
+        writeTabela = linhasTabela;
         linhasTabela = "";
     }
 }

@@ -16,15 +16,15 @@ public class configMaster : MonoBehaviour {
     private static int tableCounter = 0;
     protected string pathTable = "Assets/NewAdds/tabelaVerdade.txt";
     protected string expr, num, resp, linhasTabela,writeTabela;
-    protected string[] retornaArray = new String[32];
-    public string[] guardaResp = new String[32];
-    void CriaArquivo() {
+    
+    public void CriaArquivo() {
         if (!File.Exists(pathTable))
         {
-            File.WriteAllText(pathTable, "\nLOG FILE - ADICIONAR NOVA TABELA VERDADE " + tableCounter.ToString() + "\n");    
-        }else
-        {
-            File.AppendAllText(pathTable, "\nLOG FILE - ADICIONAR NOVA TABELA VERDADE " + tableCounter.ToString() + "\n");
+            File.WriteAllText(pathTable,"NOVA TABELA VERDADE");
+            File.WriteAllText(pathTable, "\n" + tableCounter.ToString() + "\n");    
+        }else {
+            File.AppendAllText(pathTable, "NOVA TABELA VERDADE");
+            File.AppendAllText(pathTable, "\n" + tableCounter.ToString() + "\n");
         }
         
     }
@@ -89,8 +89,6 @@ public class configMaster : MonoBehaviour {
             case (0): //Expressão
                 print(inputs[inputNum].text);
                 expr = inputs[inputNum].text;
-                //Tratamento da expressao
-                splitString(expr);
                 break;
             case (1): //N° Var
                 print(inputs[inputNum].text);
@@ -100,29 +98,16 @@ public class configMaster : MonoBehaviour {
             case (2): // Vetor Respostas
                 print(inputs[inputNum].text);
                 resp = inputs[inputNum].text;
-                guardaResp = splitString(resp);
                 break;         
         }
-    }
-    public String[] splitString(string expr) {  //separa a string a partir dos operadores - get variaveis
-        int k = 0;
-        string[] multiArray = expr.Split(new Char[] { ' ', '^', '|', '(', ')', '[', ']' });
-        foreach (string author in multiArray) {
-            if (author.Trim() != ""){
-                //Debug.Log(k + " " + author);
-                retornaArray[k] = author;
-                k++;
-            }
-        }
-        return retornaArray;
     }
 
     public void buttonWrite(){
         CriaArquivo();
-        File.AppendAllText(pathTable, "Expr: " + expr + "\n");
-        File.AppendAllText(pathTable, "Nº Var: " + num + "\n");
-        File.AppendAllText(pathTable, "Linhas Tabela: " + writeTabela + "\n"); writeTabela = "";
-        File.AppendAllText(pathTable, "Respotas: " + resp + "\n");
+        File.AppendAllText(pathTable, expr + "\n");
+        File.AppendAllText(pathTable, num + "\n");
+        File.AppendAllText(pathTable, writeTabela + "\n"); writeTabela = "";
+        File.AppendAllText(pathTable, resp + "\n");
         inputs[0].text = "";
         inputs[1].text = "";
         inputs[2].text = "";

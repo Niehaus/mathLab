@@ -2,18 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using System.IO;
+using System;
 
-public class gameMasterTable : MonoBehaviour
-{
-
-    
+public class gameMasterTable : MonoBehaviour {   
     public GameObject jogarButton, tablePanel, mainText, dicasPanel, proxButton;
     public Text textDica;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    protected string pathTable = "Assets/NewAdds/tabelaVerdade.txt";
+    
     public void jogarTable() {
         mainText.SetActive(false);
         tablePanel.SetActive(true); // desativa gameobjet e childrens
@@ -34,5 +31,13 @@ public class gameMasterTable : MonoBehaviour
     }
     public void proxDica() {
         textDica.text = " Segunda otima dica aqui!";
+    }
+    public void nextTabela(){
+        if (!File.Exists(pathTable)) {
+            Debug.Log("Fim das tabelas");
+            Application.Quit();
+        }else {
+            SceneManager.LoadScene("Jogo - Tabela Verdade Next (2)");
+        }
     }
 }

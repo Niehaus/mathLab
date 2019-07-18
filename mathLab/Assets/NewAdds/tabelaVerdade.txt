@@ -1,24 +1,30 @@
 
-LOG FILE - ADICIONAR NOVA TABELA VERDADE 0
-Expr: p
-Nº Var: 3
-Linhas Tabela: 0.   V V V
-1.   F F V
-2.   V F V
-3.   V V F
-4.   V F F
-5.   F V F
-6.   F V V
-7.   F F F
+NOVA TABELA VERDADE
+0
+p ^ q || -t
+3
+0.   V V F
+1.   V V V
+2.   F F F
+3.   F V V
+4.   F F V
+5.   V F F
+6.   V F V
+7.   F V F
 
-Respotas: v f v f v f v f v f v
+v f v f v f v f f
+NOVA TABELA VERDADE
+1
+p ^ q || t 
+3
+0.   V V F
+1.   V V V
+2.   F V F
+3.   F F V
+4.   F F F
+5.   F V V
+6.   V F F
+7.   V F V
 
-LOG FILE - ADICIONAR NOVA TABELA VERDADE 1
-Expr: -t
-Nº Var: 2
-Linhas Tabela: 0.   V V
-1.   V F
-2.   F F
-3.   F V
+v f v f v v v v 
 
-Respotas: v f v f

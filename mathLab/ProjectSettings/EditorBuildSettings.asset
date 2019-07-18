@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Inferencias - Memory Game/menuScene.unity
     guid: 17fbb95549f494d4ba90e749f65092fd
+  - enabled: 1
+    path: Assets/Scenes/Inferencias - Memory Game/Jogo - Tabela Verdade 1.unity
+    guid: a1fcb2942cd720b499e728257e8c9971
+  - enabled: 1
+    path: Assets/Scenes/Inferencias - Memory Game/Jogo - Tabela Verdade Next (2).unity
+    guid: dc35533b62828ab48a3f2e4b7884ed59
   m_configObjects: {}

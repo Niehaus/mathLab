@@ -5093,7 +5093,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 809875808}
-        m_MethodName: proxDica
+        m_MethodName: nextTabela
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

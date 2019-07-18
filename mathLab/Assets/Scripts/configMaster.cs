@@ -15,8 +15,8 @@ public class configMaster : MonoBehaviour {
                                 cada posição é um input diferente*/
     private static int tableCounter = 0;
     protected string pathTable = "Assets/NewAdds/tabelaVerdade.txt";
-    protected string expr, num, resp, linhasTabela,writeTabela;
-    
+    protected string expr, num, resp, linhasTabela, linhasTabelaScreen, writeTabela;
+
     public void CriaArquivo() {
         if (!File.Exists(pathTable))
         {
@@ -84,7 +84,7 @@ public class configMaster : MonoBehaviour {
             }
     }
 
-    public void getTruthTable(int inputNum){
+    public void getTruthTable(int inputNum) {
         switch (inputNum){
             case (0): //Expressão
                 print(inputs[inputNum].text);
@@ -102,7 +102,7 @@ public class configMaster : MonoBehaviour {
         }
     }
 
-    public void buttonWrite(){
+    public void buttonWrite() {
         CriaArquivo();
         File.AppendAllText(pathTable, expr + "\n");
         File.AppendAllText(pathTable, num + "\n");
@@ -116,13 +116,13 @@ public class configMaster : MonoBehaviour {
         tableCounter += 1;
     } 
 
-    IEnumerator undisplay()
-    {
+    IEnumerator undisplay() {
         yield return new WaitForSeconds(1);
         addConfirm.SetActive(false);   
     }
 
     public void geraTabelaExemplo(string numVar) { //Algoritmo de multicombinação a partir de random numbers
+        
         int Entradas = System.Convert.ToInt32(numVar); //Debug.Log(intVar.GetType());
         double TotalDeLinhas = Math.Pow(2, Convert.ToDouble(Entradas)); // Calcula o total de linhas a serem geradas;
         int[] linha = new int[Entradas]; // Cada elemento da linha é jogado em uma posição do vetor
@@ -158,11 +158,12 @@ public class configMaster : MonoBehaviour {
             LinhaString = "";
         }
         for (int i = 0; i < TotalDeLinhas; i++) {
-            linhasTabela += String.Concat(i.ToString() + ".   ", linhas[i])  + "\n";
+            linhasTabelaScreen += String.Concat(i.ToString() + ".   ", linhas[i])  + "\n";
+            linhasTabela += linhas[i] + "\n";
         }
         //Debug.Log(linhasTabela);
-        linhasTableText.text = linhasTabela;
         writeTabela = linhasTabela;
+        linhasTableText.text = linhasTabelaScreen;
         linhasTabela = "";
     }
 }

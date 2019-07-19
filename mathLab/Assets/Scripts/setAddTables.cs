@@ -4,11 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
 using System;
+
 public class setAddTables : MonoBehaviour { 
     public Text[] colunas;
     public Text expressao;
-    protected string pathTable = "Assets/NewAdds/tabelaVerdade.txt", line;
-    protected string[] retornaArray = new String[32], resp, expr;
+    protected string pathTable = "Assets/NewAdds/tabelaVerdade.txt", line, resps;
+    protected string[] resp, expr;
     private int tableNumber = 0, numLinhas, count = 0;
     static int counter = 0;
     private Hashtable convertColunas = new Hashtable();
@@ -29,6 +30,9 @@ public class setAddTables : MonoBehaviour {
     }
     public void setaTabela() {
         System.IO.StreamReader file = new System.IO.StreamReader(pathTable);
+        for (int i = 0; i < colunas.Length; i++) {   
+            colunas[i].text = "";
+        }
         while ((line = file.ReadLine()) != null)  {
             if (line == "NOVA TABELA VERDADE" ) { //verifica se é um tabela
                 line = file.ReadLine();
@@ -38,6 +42,10 @@ public class setAddTables : MonoBehaviour {
                     line = file.ReadLine(); //pega expressao
                     expressao.text = line;
                     expr = splitString(line); //separa expr pra associar uma coluna da tabela a uma variavel
+                    foreach (var item in expr)
+                    {
+                        Debug.Log("O que tem na expr?? " + item);
+                    }
                     line = file.ReadLine(); //pega num de linhas da tabela
                     numLinhas = convert(line[0]);
                     Debug.Log(numLinhas);
@@ -48,14 +56,13 @@ public class setAddTables : MonoBehaviour {
                         Debug.Log(line = file.ReadLine());
                         foreach (var item in expr) { //associa cada coluna da tabela a uma variavel e printa na tela
                             if (item != null) {
-                                Debug.Log("ITEM = " + item);
+                                Debug.Log("ITEM aqui = " + item);
                                 if (item.Contains("-")) {
-                                    Debug.Log("ITEM2 = " + item + "code: " +  convertColunas[item].GetHashCode()) ;
+                                    Debug.Log("ITEM2 = " + item + "code: " +  convertColunas[item].GetHashCode());
                                     Debug.Log("Code positivo: " + (convertColunas[item].GetHashCode() - 5));
                                     Debug.Log("Pos linha: " + count + "linha: " + line[count]);
                                     colunas[(convertColunas[item].GetHashCode() - 5)].text += line[count] + "\n"; //escreve a linha da tabela no postivo
                                     if (line[count] == 'V') { // nega a linha da tabela e escreve no negativo    
-                                        Debug.Log("entra aqui?");
                                         colunas[convertColunas[item].GetHashCode()].text += 'F' + "\n"; 
                                     }else {
                                         colunas[convertColunas[item].GetHashCode()].text += 'V' + "\n";
@@ -70,11 +77,11 @@ public class setAddTables : MonoBehaviour {
                         count = 0;
                     }
                     file.ReadLine(); //lê o espaço entre a tabela e as respostas
-                    line = file.ReadLine();
-                    resp = splitString(line); //separa o vetor de respostas p associar aos inputs
+                    resps = file.ReadLine();
+                    resp = splitString(resps); //separa o vetor de respostas p associar aos inputs
                     foreach (var item in resp) {
                         if (item != null) {
-                            Debug.Log(item);
+                        //    Debug.Log(item);
                         }
                     }
                     counter++;
@@ -93,6 +100,7 @@ public class setAddTables : MonoBehaviour {
 
     public String[] splitString(string expr) {  //separa a string a partir dos operadores - get variaveis
         int k = 0;
+        string[] retornaArray = new String[32];
         string[] multiArray = expr.Split(new Char[] { ' ', '^', '|', '(', ')', '[', ']' });
         foreach (string author in multiArray) {
             if (author.Trim() != "") {

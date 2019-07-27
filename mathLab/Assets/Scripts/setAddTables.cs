@@ -10,7 +10,7 @@ public class setAddTables : MonoBehaviour {
     public Text expressao;
     protected string pathTable = "Assets/NewAdds/tabelaVerdade.txt", line, resps;
     protected string[] resp, expr;
-    private int tableNumber = 0, numLinhas, count = 0;
+    private int tableNumber = 0, numLinhas, count = 0, vars = 0;
     static int counter = 0;
     private Hashtable convertColunas = new Hashtable();
     
@@ -42,10 +42,6 @@ public class setAddTables : MonoBehaviour {
                     line = file.ReadLine(); //pega expressao
                     expressao.text = line;
                     expr = splitString(line); //separa expr pra associar uma coluna da tabela a uma variavel
-                    foreach (var item in expr)
-                    {
-                        Debug.Log("O que tem na expr?? " + item);
-                    }
                     line = file.ReadLine(); //pega num de linhas da tabela
                     numLinhas = convert(line[0]);
                     Debug.Log(numLinhas);
@@ -54,27 +50,36 @@ public class setAddTables : MonoBehaviour {
                     Debug.Log("Linhas da tabela");
                     for (int i = 0; i < TotalDeLinhas; i++) { //a partir da conta do total de linhas pega tdas as linhas
                         Debug.Log(line = file.ReadLine());
-                        foreach (var item in expr) { //associa cada coluna da tabela a uma variavel e printa na tela
-                            if (item != null) {
-                                Debug.Log("ITEM aqui = " + item);
-                                if (item.Contains("-")) {
-                                    Debug.Log("ITEM2 = " + item + "code: " +  convertColunas[item].GetHashCode());
-                                    Debug.Log("Code positivo: " + (convertColunas[item].GetHashCode() - 5));
-                                    Debug.Log("Pos linha: " + count + "linha: " + line[count]);
-                                    colunas[(convertColunas[item].GetHashCode() - 5)].text += line[count] + "\n"; //escreve a linha da tabela no postivo
-                                    if (line[count] == 'V') { // nega a linha da tabela e escreve no negativo    
-                                        colunas[convertColunas[item].GetHashCode()].text += 'F' + "\n"; 
-                                    }else {
-                                        colunas[convertColunas[item].GetHashCode()].text += 'V' + "\n";
+                        Debug.Log("NUMB DE VARS " + vars);
+                        Debug.Log("numLinhas " + numLinhas);
+                        if (vars > numLinhas) {
+                            //comandos aqui
+                            Debug.Log("to aqui vars > numlinhas");
+                        }else {
+                            foreach (var item in expr) { //associa cada coluna da tabela a uma variavel e printa na tela
+                                if (item != null) {
+                                    Debug.Log("ITEM aqui = " + item);
+                                    Debug.Log("+COUNT VALUE " + count + "i value " + i);
+                                    if (item.Contains("-")) {
+                                        Debug.Log("ITEM2 = " + item + "code: " + convertColunas[item].GetHashCode());
+                                        Debug.Log("-COUNT VALUE" + count);
+                                        colunas[(convertColunas[item].GetHashCode() - 5)].text += line[count] + "\n"; //escreve a linha da tabela no postivo
+                                        if (line[count] == 'V') { // nega a linha da tabela e escreve no negativo    
+                                            colunas[convertColunas[item].GetHashCode()].text += 'F' + "\n";
+                                        }else {
+                                            colunas[convertColunas[item].GetHashCode()].text += 'V' + "\n";
+                                        }
+                                        count += 2;
                                     }
-                                    count += 2;
-                                }else {
-                                    colunas[convertColunas[item].GetHashCode()].text += line[count] + "\n";
-                                    count += 2;    
+                                    else {
+                                        colunas[convertColunas[item].GetHashCode()].text += line[count] + "\n";
+                                        count += 2;
+                                    }
                                 }
                             }
+                            count = 0;
                         }
-                        count = 0;
+                        
                     }
                     file.ReadLine(); //lê o espaço entre a tabela e as respostas
                     resps = file.ReadLine();
@@ -100,6 +105,7 @@ public class setAddTables : MonoBehaviour {
 
     public String[] splitString(string expr) {  //separa a string a partir dos operadores - get variaveis
         int k = 0;
+        vars = 0;
         string[] retornaArray = new String[32];
         string[] multiArray = expr.Split(new Char[] { ' ', '^', '|', '(', ')', '[', ']' });
         foreach (string author in multiArray) {
@@ -108,6 +114,7 @@ public class setAddTables : MonoBehaviour {
                 k++;
             }
         }
+        vars = k;
         return retornaArray;
     }
 

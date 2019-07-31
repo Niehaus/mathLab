@@ -1,15 +1,15 @@
 NOVA TABELA VERDADE
 0
-p ^ -t || -p
-2
-F F 
-V V 
-F V 
-V F 
-F F 
-F V 
-V F 
-V V 
+p ^ -t || -r
+3
+F F F 
+V V V
+F V F
+V F F
+F F V
+F V F
+V F V
+V V V
 
 v f v f v f f f
 NOVA TABELA VERDADE

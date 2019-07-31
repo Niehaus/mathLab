@@ -13,6 +13,9 @@ public class setAddTables : MonoBehaviour {
     private int tableNumber = 0, numLinhas, count = 0, vars = 0;
     static int counter = 0;
     private Hashtable convertColunas = new Hashtable();
+    public InputField inputPrefab;
+    public InputField[] inputs;
+    private Transform ResultadoTransform;
     
     void Start() { // Ler o arquivo e pegar a tabela - setar o ponteiro no arquivo pra ler a prox tabela 
         //colunas positivas
@@ -27,6 +30,8 @@ public class setAddTables : MonoBehaviour {
         convertColunas.Add("-r", 7);
         convertColunas.Add("-s", 8);
         convertColunas.Add("-t", 9);
+        //transform p/ setar inputs como Childs de Respostas na hierarquia 
+        ResultadoTransform = GameObject.FindWithTag("Respostas").transform;
     }
     public void setaTabela() {
         System.IO.StreamReader file = new System.IO.StreamReader(pathTable);
@@ -50,6 +55,10 @@ public class setAddTables : MonoBehaviour {
                     Debug.Log("Linhas da tabela");
                     for (int i = 0; i < TotalDeLinhas; i++) { //a partir da conta do total de linhas pega tdas as linhas
                         Debug.Log(line = file.ReadLine());
+                        inputs[i] = Instantiate(inputPrefab, new Vector3(0, 194.7f - (46f * i), 0), Quaternion.identity);
+                        inputs[i].transform.SetParent(ResultadoTransform, false); //seta como child de Resultados
+                        
+                        inputs[i].text = i.ToString();
                         Debug.Log("NUMB DE VARS " + vars);
                         Debug.Log("numLinhas " + numLinhas);
                         if (vars > numLinhas) {
@@ -118,4 +127,8 @@ public class setAddTables : MonoBehaviour {
         return retornaArray;
     }
 
+    public void verificaInput(int num){
+        Debug.Log("input num = " + num);
+        Debug.Log("texto do input 0 " + inputs[num].text);
+    }
 }

@@ -32,6 +32,7 @@ public class setAddTables : MonoBehaviour {
         convertColunas.Add("-t", 9);
         //transform p/ setar inputs como Childs de Respostas na hierarquia 
         ResultadoTransform = GameObject.FindWithTag("Respostas").transform;
+        inputs =
     }
     public void setaTabela() {
         System.IO.StreamReader file = new System.IO.StreamReader(pathTable);
@@ -57,7 +58,9 @@ public class setAddTables : MonoBehaviour {
                         Debug.Log(line = file.ReadLine());
                         inputs[i] = Instantiate(inputPrefab, new Vector3(0, 194.7f - (46f * i), 0), Quaternion.identity);
                         inputs[i].transform.SetParent(ResultadoTransform, false); //seta como child de Resultados
-                        
+                        //inputs[i].onEndEdit.AddListener(delegate { verificaInput(i); });
+                        inputs[i].id.set(i);
+                        Debug.Log("VALOR DO INPUT" + inputs[i].id.get());
                         inputs[i].text = i.ToString();
                         Debug.Log("NUMB DE VARS " + vars);
                         Debug.Log("numLinhas " + numLinhas);
@@ -127,8 +130,9 @@ public class setAddTables : MonoBehaviour {
         return retornaArray;
     }
 
-    public void verificaInput(int num){
-        Debug.Log("input num = " + num);
-        Debug.Log("texto do input 0 " + inputs[num].text);
+    public void verificaInput(){
+          
+        Debug.Log("input num = ");
+        //Debug.Log("texto do input 0 " + inputs.text);
     }
 }

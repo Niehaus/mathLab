@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class GridGenerator : MonoBehaviour {
     private GridTile[,] grid;
-
     private List<GridTile> gridTiles;
     private List<float> xValues;
     private List<float> yValues;
@@ -102,7 +101,7 @@ public class GridGenerator : MonoBehaviour {
         }
         verficaAcertos();     
     }
-
+    
     public void verficaAcertos(){
         certo = 0;
         for (int i = 0; i <= acertos.Length; i++) {

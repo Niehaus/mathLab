@@ -4,16 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class gameManager2 : MonoBehaviour
-{
-
-    public Sprite cardBack;
-    /*Cada carta possui um par diferente de si, 
-     é um par [MP Func - MP Name]*/
+public class gameManager2 : MonoBehaviour {
+    public Sprite cardBack; /*Cada carta possui um par diferente de si, é um par [MP Func - MP Name]*/
     public Sprite[] cardFace;
     public Sprite[] cardFacePair;
     public GameObject[] cards;
- // private int cartaDown = 1;
+    //private int cartaDown = 1;
     private int cartaEscolhida = 0;
     
     //private bool inicia = false;
@@ -26,18 +22,6 @@ public class gameManager2 : MonoBehaviour
             Debug.Log(cartaEscolhida);
            cardInfo.Add(cartaEscolhida);
      }
-       
-
-    }
-    void Update() {
-       
-    }
-
-    private void inicializaCartas() {
-
-       
-
-
     }
 
 }

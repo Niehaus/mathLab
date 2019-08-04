@@ -122,7 +122,6 @@ public class configMaster : MonoBehaviour {
     }
 
     public void geraTabelaExemplo(string numVar) { //Algoritmo de multicombinação a partir de random numbers
-        
         int Entradas = System.Convert.ToInt32(numVar); //Debug.Log(intVar.GetType());
         double TotalDeLinhas = Math.Pow(2, Convert.ToDouble(Entradas)); // Calcula o total de linhas a serem geradas;
         int[] linha = new int[Entradas]; // Cada elemento da linha é jogado em uma posição do vetor

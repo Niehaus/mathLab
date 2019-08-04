@@ -35,7 +35,7 @@ public class setAddTables : MonoBehaviour {
         convertColunas.Add("-t", 9);
         //transform p/ setar inputs como Childs de Respostas na hierarquia 
         ResultadoTransform = GameObject.FindWithTag("Respostas").transform;
-        //inputs =
+        setaTabela();
     }
     public void setaTabela() {
         System.IO.StreamReader file = new System.IO.StreamReader(pathTable);
@@ -43,6 +43,9 @@ public class setAddTables : MonoBehaviour {
             colunas[i].text = "";
         }
         while ((line = file.ReadLine()) != null)  {
+            if (endGame) {
+                endGame.SetActive(false);
+            }
             if (line == "NOVA TABELA VERDADE" ) { //verifica se é um tabela
                 line = file.ReadLine();
                 tableNumber = convert(line[0]); // pega o numero dessa tabela e convert p int
@@ -53,16 +56,16 @@ public class setAddTables : MonoBehaviour {
                     expr = splitString(line); //separa expr pra associar uma coluna da tabela a uma variavel
                     line = file.ReadLine(); //pega num de linhas da tabela
                     numLinhas = convert(line[0]);
-                    Debug.Log(numLinhas);
-                    Debug.Log(expr);
+                    //Debug.Log(numLinhas);
+                    //Debug.Log(expr);
                     double TotalDeLinhas = Math.Pow(2, Convert.ToDouble(numLinhas));
                     acertos = new int[Convert.ToInt32(TotalDeLinhas)];
                     Debug.Log("Linhas da tabela");
                     for (int i = 0; i < TotalDeLinhas; i++) { //a partir da conta do total de linhas pega tdas as linhas
                         line = file.ReadLine(); //linha da tabela
-                        inputs[i] = Instantiate(inputPrefab, new Vector3(0, 194.7f - (46f * i), 0), Quaternion.identity); //seta novo input em sua coordenada
+                        inputs[i] = Instantiate(inputPrefab, new Vector3(0, 191.1f - (46f * i), 0), Quaternion.identity); //seta novo input em sua coordenada
                         inputs[i].transform.SetParent(ResultadoTransform, false); //seta como child de Resultados
-                        setId inputScript = inputs[i].GetComponent<setId>();
+                        setId inputScript = inputs[i].GetComponent<setId>(); //busca script pra setar o id de cada input
                         inputScript.Id = i;
                         Debug.Log("NUMB DE VARS " + vars);
                         Debug.Log("numLinhas " + numLinhas);
@@ -103,7 +106,7 @@ public class setAddTables : MonoBehaviour {
                 }
             }
         }
-        if ((line = file.ReadLine()) == null) {
+        if ((line = file.ReadLine()) == null) { //vai para algum lugar, fim do arquivo de tabelas**
             Debug.Log("não tem prox tabela");
         }
     }
@@ -129,15 +132,14 @@ public class setAddTables : MonoBehaviour {
 
     public void verificaInput(InputField input) {
         setId inputAtual = input.GetComponent<setId>();
-        Debug.Log("MEU ID É = " + inputAtual.Id);
-        // Debug.Log("entrada: " + inputs[inputAtual.Id].text); Debug.Log("reposta: " + resp[inputAtual.Id]); 
+        Debug.Log("Meu ID é = " + inputAtual.Id); // Debug.Log("entrada: " + inputs[inputAtual.Id].text); Debug.Log("reposta: " + resp[inputAtual.Id]);  
         if (resp[inputAtual.Id].Equals(inputs[inputAtual.Id].text)) {
-            //Debug.Log("resposta certa 1");
-            inputs[inputAtual.Id].image.color = new Color32(69, 202, 35, 255);
+            //Debug.Log("resposta certa");
+            inputs[inputAtual.Id].image.color = new Color32(69, 202, 35, 255); //cor verde
             acertos[inputAtual.Id] = 1;
         }else {
             //Debug.Log("resposta errada");
-            inputs[inputAtual.Id].image.color = new Color32(202, 41, 49, 255);
+            inputs[inputAtual.Id].image.color = new Color32(202, 41, 49, 255);//cor vermelha
             acertos[inputAtual.Id] = 0;
         }
         verficaAcertos();

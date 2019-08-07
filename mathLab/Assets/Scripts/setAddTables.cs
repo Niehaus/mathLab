@@ -18,8 +18,6 @@ public class setAddTables : MonoBehaviour {
     private Transform ResultadoTransform;
     private int[] acertos;
     static int counter = 0, certo;
-    
-  //  private GameObject inputScript;
     void Start() { // Ler o arquivo e pegar a tabela - setar o ponteiro no arquivo pra ler a prox tabela 
         //colunas positivas
         convertColunas.Add("p",0);
@@ -55,9 +53,7 @@ public class setAddTables : MonoBehaviour {
                     expressao.text = line;
                     expr = splitString(line); //separa expr pra associar uma coluna da tabela a uma variavel
                     line = file.ReadLine(); //pega num de linhas da tabela
-                    numLinhas = convert(line[0]);
-                    //Debug.Log(numLinhas);
-                    //Debug.Log(expr);
+                    numLinhas = convert(line[0]);//Debug.Log(numLinhas); Debug.Log(expr);
                     double TotalDeLinhas = Math.Pow(2, Convert.ToDouble(numLinhas));
                     acertos = new int[Convert.ToInt32(TotalDeLinhas)];
                     Debug.Log("Linhas da tabela");
@@ -132,13 +128,15 @@ public class setAddTables : MonoBehaviour {
 
     public void verificaInput(InputField input) {
         setId inputAtual = input.GetComponent<setId>();
-        Debug.Log("Meu ID é = " + inputAtual.Id); // Debug.Log("entrada: " + inputs[inputAtual.Id].text); Debug.Log("reposta: " + resp[inputAtual.Id]);  
+        Debug.Log("Meu ID é = " + inputAtual.Id); 
+        //Debug.Log("entrada: " + inputs[inputAtual.Id].text); Debug.Log("reposta: " + resp[inputAtual.Id]);  
+        //CONVERTER TODA A ENTRADA P MINUSCULO
         if (resp[inputAtual.Id].Equals(inputs[inputAtual.Id].text)) {
-            //Debug.Log("resposta certa");
+            Debug.Log("resposta certa");
             inputs[inputAtual.Id].image.color = new Color32(69, 202, 35, 255); //cor verde
             acertos[inputAtual.Id] = 1;
         }else {
-            //Debug.Log("resposta errada");
+            Debug.Log("resposta errada");
             inputs[inputAtual.Id].image.color = new Color32(202, 41, 49, 255);//cor vermelha
             acertos[inputAtual.Id] = 0;
         }
@@ -152,8 +150,7 @@ public class setAddTables : MonoBehaviour {
             if (acertos[i] == 1) {
                 certo += 1;
                 Debug.Log("acerto: " + certo);
-                if (certo == acertos.Length)
-                {
+                if (certo == acertos.Length) {
                     Debug.Log("fim de jogo");
                     endGame.SetActive(true);
                 }

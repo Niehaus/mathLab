@@ -12,7 +12,7 @@ public class setAddTables : MonoBehaviour {
     public InputField[] inputs;
     public GameObject endGame;
     protected string pathTable = "Assets/NewAdds/tabelaVerdade.txt", line, resps;
-    protected string[] resp, expr;
+    protected string[] resp, expr, exprComposta;
     private int tableNumber = 0, numLinhas, count = 0, vars = 0;
     private Hashtable convertColunas = new Hashtable();
     private Transform ResultadoTransform;
@@ -68,6 +68,12 @@ public class setAddTables : MonoBehaviour {
                         if (vars > numLinhas) {
                             //comandos aqui
                             Debug.Log("to aqui vars > numlinhas");
+                            knowWhatIterate(expr);
+                           foreach (var item in expr) {
+                               if (item != null) {
+                                 Debug.Log("particula: " + item);
+                               }
+                           }
                         }else {
                             foreach (var item in expr) { //associa cada coluna da tabela a uma variavel e printa na tela
                                 if (item != null) {
@@ -124,6 +130,40 @@ public class setAddTables : MonoBehaviour {
         }
         vars = k;
         return retornaArray;
+    }
+
+    public String[] knowWhatIterate(string[] expr){
+        exprComposta = new String[numLinhas];
+        string[] aux = new String[1];
+        Debug.Log("TAM " + exprComposta.Length);
+        for (int i = 0; i < numLinhas; i++) {
+            Debug.Log("POS INICIAL É " + i);
+            foreach (var item in expr) {
+                if (item != null) { //iterar apenas em itens não nulos
+                Debug.Log("ITEM P/ ADC " + item);
+                if (exprComposta[i] == null) {
+                    foreach (var it in exprComposta) {
+                        if (item == it) {
+                            Debug.Log("isso ja foi colocado");
+                        }
+                        continue;
+                    } //solução pra verificar se ja foi colado e ir pro prox já que n consigo retirar item de expr
+                     Debug.Log("vou adc " + item + " em " + i);
+                     exprComposta[i] = item;
+                    
+                 }else {
+                     Debug.Log("pos não nula " + item);
+                     if (item.Contains("-")) {
+                         Debug.Log("TENHO - ");
+                         aux[0] = "-" + exprComposta[i];
+                         Debug.Log("aux é " + aux[0]);
+                     }
+                 }
+                }
+            }
+            Debug.Log("particula adc " + exprComposta[i] + " na pos " + i);
+        }
+        return exprComposta;
     }
 
     public void verificaInput(InputField input) {

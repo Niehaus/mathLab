@@ -134,7 +134,7 @@ public class setAddTables : MonoBehaviour {
         return retornaArray;
     }
 
-    private int findMyIndex(string[] expr, string item){//encontra o index do item procurado 
+    private int findMyIndex(string[] expr, string item){ //encontra o index do item procurado 
         int index = 0;
         foreach (var it in expr) {
                 if (it == item && index != 0) {
@@ -147,53 +147,44 @@ public class setAddTables : MonoBehaviour {
         }
         return index;
     }
-    public String[] knowWhatIterate(string[] expr, int exec){//retira as particulas repetidas de uma expr
+    public String[] knowWhatIterate(string[] expr, int exec){ //retira as particulas repetidas de uma expr
         if (exec == 0) {
-        exprComposta = new String[numLinhas];
-        string[] aux = new String[1];
-        int count = 0;
-        for (int i = 0; i < numLinhas; i++) {
-            foreach (var item in expr) {
-                if (item != null) { //iterar apenas em itens não nulos
-                    if (exprComposta[i] == null) {
-                        if (item.Contains("-")) {
-                            aux = item.Split('-');
-                            count = findMyIndex(expr,aux[1]);
-                            expr[count] = null;
-                        }
-                        exprComposta[i] = item;
-                        count = findMyIndex(expr,item);
-                        expr[count] = null;
-                        foreach (var it3 in expr) {
-                            if (it3 == exprComposta[i]) {
-                                count = findMyIndex(expr,it3);
+            exprComposta = new String[numLinhas];
+            string[] aux = new String[1];
+            int count = 0;
+            for (int i = 0; i < numLinhas; i++) {
+                foreach (var item in expr) {
+                    if (item != null) { //iterar apenas em itens não nulos
+                        if (exprComposta[i] == null) {
+                            if (item.Contains("-")) {
+                                aux = item.Split('-');
+                                count = findMyIndex(expr,aux[1]);
                                 expr[count] = null;
                             }
-                        }
-                    }else {
-                        if (item.Contains("-")) {
-                            aux[0] = "-" + exprComposta[i];
-                            if (item == aux[0]) {
-                                exprComposta[i] = item;
-                                count = findMyIndex(expr,item);
-                                expr[count] = null;
+                            exprComposta[i] = item;
+                            count = findMyIndex(expr,item);
+                            expr[count] = null;
+                            foreach (var it3 in expr) {
+                                if (it3 == exprComposta[i]) {
+                                    count = findMyIndex(expr,it3);
+                                    expr[count] = null;
+                                }
+                            }
+                        }else {
+                            if (item.Contains("-")) {
+                                aux[0] = "-" + exprComposta[i];
+                                if (item == aux[0]) {
+                                    exprComposta[i] = item;
+                                    count = findMyIndex(expr,item);
+                                    expr[count] = null;
+                                }
                             }
                         }
                     }
                 }
             }
-        }
-            /*foreach (var it in exprComposta) {
-                    Debug.Log("vet final " + it);
-            } */
-            return exprComposta;
-            
-        }else{
-            /* Debug.Log("JA EXECUTEI UMA VEZ VIADO");
-            foreach (var it in exprComposta)
-            {
-                Debug.Log("vet final " + it);
-            }*/
+            return exprComposta;   
+        }else {
             return exprComposta;
         }
     }

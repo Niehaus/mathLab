@@ -10,13 +10,13 @@ public class configMaster : MonoBehaviour {
 
     public GameObject audioPanel, prefPanel,truthPanel, equivPanel, infPanel; // paineis
     public GameObject addConfirm;
-    public Text linhasTableText; //texto de confirmação de adição!
+    public Text linhasTableText, exprGuide; //texto de confirmação de adição!
     public InputField[] inputs; /*guarda as respostas recebidas, 
                                 cada posição é um input diferente*/
     private static int tableCounter = 0;
     protected string pathTable = "Assets/NewAdds/tabelaVerdade.txt";
     protected string expr, num, resp, linhasTabela, linhasTabelaScreen, writeTabela;
-
+    protected string[] writeExprGuide;
     public void CriaArquivo() {
         if (!File.Exists(pathTable))
         {
@@ -102,6 +102,21 @@ public class configMaster : MonoBehaviour {
         }
     }
 
+    public String[] splitString(string expr)
+    { //separa a string a partir dos operadores - get variaveis
+        int k = 0;
+        string[] retornaArray = new String[32];
+        string[] multiArray = expr.Split(new Char[] { ' ', '^', '|', '(', ')', '[', ']', '-' });
+        foreach (string author in multiArray)
+        {
+            if (author.Trim() != "")
+            {
+                retornaArray[k] = author;
+                k++;
+            }
+        }
+        return retornaArray;
+    }
     public void buttonWrite() {
         CriaArquivo();
         File.AppendAllText(pathTable, expr + "\n");
@@ -129,7 +144,7 @@ public class configMaster : MonoBehaviour {
         string LinhaString = ""; // Do vetor, os elementos são unidos nesta String
         List<string> linhas = new List<string>();
         System.Random randNum = new System.Random();
-
+        
         while (LinhasGeradas < TotalDeLinhas) { //Permanece no loop enquanto não completar todas as combinações.
             for (int i = 0; i < Entradas; i++) { // Gera uma combinação
                 linha[i] = new int();
@@ -161,6 +176,13 @@ public class configMaster : MonoBehaviour {
             linhasTabela += linhas[i] + "\n";
         }
         //Debug.Log(linhasTabela);
+        writeExprGuide = splitString(expr);
+        exprGuide.text = "\t";
+        foreach (var item in writeExprGuide) {
+            if (item != null) {
+                exprGuide.text += " " + item;
+            }
+        }
         writeTabela = linhasTabela;
         linhasTableText.text = linhasTabelaScreen;
         linhasTabela = "";

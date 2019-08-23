@@ -12,7 +12,7 @@ public class setAddTables : MonoBehaviour {
     public InputField[] inputs;
     public GameObject endGame;
     protected string pathTable = "Assets/NewAdds/tabelaVerdade.txt", line, resps;
-    protected string[] resp, expr, exprComposta;
+    protected string[] resp, expr, exprComposta,expr2;
     private int tableNumber = 0, numLinhas, count = 0, vars = 0;
     private Hashtable convertColunas = new Hashtable();
     private Transform ResultadoTransform;
@@ -63,25 +63,28 @@ public class setAddTables : MonoBehaviour {
                         inputs[i].transform.SetParent(ResultadoTransform, false); //seta como child de Resultados
                         setId inputScript = inputs[i].GetComponent<setId>(); //busca script pra setar o id de cada input
                         inputScript.Id = i;
-                        Debug.Log("NUMB DE VARS " + vars);
-                        Debug.Log("numLinhas " + numLinhas);
                         if (vars > numLinhas) {
-                            //comandos aqui
                             Debug.Log("to aqui vars > numlinhas");
-                            knowWhatIterate(expr,i);
-                           foreach (var item in expr) {
-                               if (item != null) {
-                                // Debug.Log("particula: " + item);
-                               }
-                           }
+                            expr2 = knowWhatIterate(expr,i);
+                            foreach (var item in expr2) {
+                                if (item.Contains("-")) {
+                                    colunas[(convertColunas[item].GetHashCode() - 5)].text += line[count] + "\n"; //escreve a linha da tabela no postivo
+                                    if (line[count] == 'V') { // nega a linha da tabela e escreve no negativo    
+                                        colunas[convertColunas[item].GetHashCode()].text += 'F' + "\n";
+                                    }else {
+                                        colunas[convertColunas[item].GetHashCode()].text += 'V' + "\n";
+                                    }
+                                    count += 2;
+                                }else{
+                                    colunas[convertColunas[item].GetHashCode()].text += line[count] + "\n";
+                                    count += 2;
+                                }  
+                            }
+                            count = 0;
                         }else {
                             foreach (var item in expr) { //associa cada coluna da tabela a uma variavel e printa na tela
                                 if (item != null) {
-                                    //Debug.Log("ITEM aqui = " + item);
-                                    //Debug.Log("+COUNT VALUE " + count + "i value " + i);
                                     if (item.Contains("-")) {
-                                        //Debug.Log("ITEM2 = " + item + "code: " + convertColunas[item].GetHashCode());
-                                        //Debug.Log("-COUNT VALUE" + count);
                                         colunas[(convertColunas[item].GetHashCode() - 5)].text += line[count] + "\n"; //escreve a linha da tabela no postivo
                                         if (line[count] == 'V') { // nega a linha da tabela e escreve no negativo    
                                             colunas[convertColunas[item].GetHashCode()].text += 'F' + "\n";
@@ -89,8 +92,7 @@ public class setAddTables : MonoBehaviour {
                                             colunas[convertColunas[item].GetHashCode()].text += 'V' + "\n";
                                         }
                                         count += 2;
-                                    }
-                                    else {
+                                    }else {
                                         colunas[convertColunas[item].GetHashCode()].text += line[count] + "\n";
                                         count += 2;
                                     }
@@ -132,81 +134,66 @@ public class setAddTables : MonoBehaviour {
         return retornaArray;
     }
 
-    private int findMyIndex(string[] expr, string item){
+    private int findMyIndex(string[] expr, string item){//encontra o index do item procurado 
         int index = 0;
         foreach (var it in expr) {
                 if (it == item && index != 0) {
-                    index++;
-                    Debug.Log("ITEM PROCURADO " + item + " na pos " + index + " ENCONTRADO ");
                     return index;
-                }else {
+                }else if(it == item){
+                    return index;
+                }else if(index < Math.Pow(2,numLinhas)){
                     index++;
                 }
-        }//arrumar essa função pra pegar o index certo e provavelmente a solução vai funcionar
-        return 0;
+        }
+        return index;
     }
-    public String[] knowWhatIterate(string[] expr, int exec){
+    public String[] knowWhatIterate(string[] expr, int exec){//retira as particulas repetidas de uma expr
         if (exec == 0) {
         exprComposta = new String[numLinhas];
         string[] aux = new String[1];
         int count = 0;
-        Debug.Log("TAM " + exprComposta.Length);
-            foreach (var item in expr) {
-                if (item != null)
-                {
-                    Debug.Log("particula: " + item);
-                }
-            }
         for (int i = 0; i < numLinhas; i++) {
-            Debug.Log("POS INICIAL É " + i);
             foreach (var item in expr) {
                 if (item != null) { //iterar apenas em itens não nulos
-                Debug.Log("ITEM P/ ADC " + item);
                     if (exprComposta[i] == null) {
-                        Debug.Log("vou adc " + item + " em " + i);
+                        if (item.Contains("-")) {
+                            aux = item.Split('-');
+                            count = findMyIndex(expr,aux[1]);
+                            expr[count] = null;
+                        }
                         exprComposta[i] = item;
                         count = findMyIndex(expr,item);
                         expr[count] = null;
-                        Debug.Log("RETIRANDO ITEM NA POSIÇÃO " + count);
-                       // count++;  
-                        foreach (var it in expr) {
-                            if (it != null)
-                                Debug.Log("EXPR COM O QUE SOBROU " + it);
+                        foreach (var it3 in expr) {
+                            if (it3 == exprComposta[i]) {
+                                count = findMyIndex(expr,it3);
+                                expr[count] = null;
+                            }
                         }
                     }else {
-                        Debug.Log("pos não nula " + item);
                         if (item.Contains("-")) {
-                            Debug.Log("TENHO - ");
                             aux[0] = "-" + exprComposta[i];
-                            Debug.Log("aux é " + aux[0]);
                             if (item == aux[0]) {
-                                Debug.Log("substituindo " + exprComposta[i] + " por " + item);
                                 exprComposta[i] = item;
                                 count = findMyIndex(expr,item);
-                                Debug.Log("RETIRAR OUTRO ITEM NA POSIÇÃO " + count);
                                 expr[count] = null;
-                                //count++;
-                                foreach (var it in expr) {
-                                    if (it != null)
-                                        Debug.Log("EXPR COM novamente O QUE SOBROU " + it);
-                                }
-                            }else{
-                               // count++
                             }
                         }
                     }
                 }
             }
-            Debug.Log("particula adc " + exprComposta[i] + " na pos " + i);
         }
-
-        foreach (var it in exprComposta) {
-                Debug.Log("vet final " + it);
-        }
-        return exprComposta;
+            /*foreach (var it in exprComposta) {
+                    Debug.Log("vet final " + it);
+            } */
+            return exprComposta;
             
         }else{
-            Debug.Log("JA EXECUTEI UMA VEZ VIADO");
+            /* Debug.Log("JA EXECUTEI UMA VEZ VIADO");
+            foreach (var it in exprComposta)
+            {
+                Debug.Log("vet final " + it);
+            }*/
             return exprComposta;
         }
     }

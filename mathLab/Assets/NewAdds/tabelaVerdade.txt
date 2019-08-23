@@ -1,6 +1,6 @@
 NOVA TABELA VERDADE
 0
-p ^ -p || t ^ -t 
+p ^ t || -t ^ -t 
 2
 F F 
 V V

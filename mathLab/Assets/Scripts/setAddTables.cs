@@ -68,10 +68,10 @@ public class setAddTables : MonoBehaviour {
                         if (vars > numLinhas) {
                             //comandos aqui
                             Debug.Log("to aqui vars > numlinhas");
-                            knowWhatIterate(expr);
+                            knowWhatIterate(expr,i);
                            foreach (var item in expr) {
                                if (item != null) {
-                                 Debug.Log("particula: " + item);
+                                // Debug.Log("particula: " + item);
                                }
                            }
                         }else {
@@ -132,38 +132,83 @@ public class setAddTables : MonoBehaviour {
         return retornaArray;
     }
 
-    public String[] knowWhatIterate(string[] expr){
+    private int findMyIndex(string[] expr, string item){
+        int index = 0;
+        foreach (var it in expr) {
+                if (it == item && index != 0) {
+                    index++;
+                    Debug.Log("ITEM PROCURADO " + item + " na pos " + index + " ENCONTRADO ");
+                    return index;
+                }else {
+                    index++;
+                }
+        }//arrumar essa função pra pegar o index certo e provavelmente a solução vai funcionar
+        return 0;
+    }
+    public String[] knowWhatIterate(string[] expr, int exec){
+        if (exec == 0) {
         exprComposta = new String[numLinhas];
         string[] aux = new String[1];
+        int count = 0;
         Debug.Log("TAM " + exprComposta.Length);
+            foreach (var item in expr) {
+                if (item != null)
+                {
+                    Debug.Log("particula: " + item);
+                }
+            }
         for (int i = 0; i < numLinhas; i++) {
             Debug.Log("POS INICIAL É " + i);
             foreach (var item in expr) {
                 if (item != null) { //iterar apenas em itens não nulos
                 Debug.Log("ITEM P/ ADC " + item);
-                if (exprComposta[i] == null) {
-                    foreach (var it in exprComposta) {
-                        if (item == it) {
-                            Debug.Log("isso ja foi colocado");
+                    if (exprComposta[i] == null) {
+                        Debug.Log("vou adc " + item + " em " + i);
+                        exprComposta[i] = item;
+                        count = findMyIndex(expr,item);
+                        expr[count] = null;
+                        Debug.Log("RETIRANDO ITEM NA POSIÇÃO " + count);
+                       // count++;  
+                        foreach (var it in expr) {
+                            if (it != null)
+                                Debug.Log("EXPR COM O QUE SOBROU " + it);
                         }
-                        continue;
-                    } //solução pra verificar se ja foi colado e ir pro prox já que n consigo retirar item de expr
-                     Debug.Log("vou adc " + item + " em " + i);
-                     exprComposta[i] = item;
-                    
-                 }else {
-                     Debug.Log("pos não nula " + item);
-                     if (item.Contains("-")) {
-                         Debug.Log("TENHO - ");
-                         aux[0] = "-" + exprComposta[i];
-                         Debug.Log("aux é " + aux[0]);
-                     }
-                 }
+                    }else {
+                        Debug.Log("pos não nula " + item);
+                        if (item.Contains("-")) {
+                            Debug.Log("TENHO - ");
+                            aux[0] = "-" + exprComposta[i];
+                            Debug.Log("aux é " + aux[0]);
+                            if (item == aux[0]) {
+                                Debug.Log("substituindo " + exprComposta[i] + " por " + item);
+                                exprComposta[i] = item;
+                                count = findMyIndex(expr,item);
+                                Debug.Log("RETIRAR OUTRO ITEM NA POSIÇÃO " + count);
+                                expr[count] = null;
+                                //count++;
+                                foreach (var it in expr) {
+                                    if (it != null)
+                                        Debug.Log("EXPR COM novamente O QUE SOBROU " + it);
+                                }
+                            }else{
+                               // count++
+                            }
+                        }
+                    }
                 }
             }
             Debug.Log("particula adc " + exprComposta[i] + " na pos " + i);
         }
+
+        foreach (var it in exprComposta) {
+                Debug.Log("vet final " + it);
+        }
         return exprComposta;
+            
+        }else{
+            Debug.Log("JA EXECUTEI UMA VEZ VIADO");
+            return exprComposta;
+        }
     }
 
     public void verificaInput(InputField input) {

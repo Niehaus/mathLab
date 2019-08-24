@@ -18,9 +18,9 @@ public class gameManager2 : MonoBehaviour {
     private void Start() {
 
      for (int i = 0; i <= 4; i++) {
-        cartaEscolhida = Random.Range(0, cards.Length);
+            cartaEscolhida = Random.Range(0, cards.Length);
             Debug.Log(cartaEscolhida);
-           cardInfo.Add(cartaEscolhida);
+            cardInfo.Add(cartaEscolhida);
      }
     }
 

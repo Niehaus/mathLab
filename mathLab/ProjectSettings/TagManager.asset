@@ -45,3 +45,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: background
+    uniqueID: 3719173437
+    locked: 0
+  - name: fasewall
+    uniqueID: 1075385957
+    locked: 0

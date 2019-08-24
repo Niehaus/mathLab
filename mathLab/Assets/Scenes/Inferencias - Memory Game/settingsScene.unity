@@ -1313,12 +1313,13 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 2057334974}
   - {fileID: 1114883592}
   m_Father: {fileID: 425626583}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3854,7 +3855,7 @@ RectTransform:
   m_LocalScale: {x: 0.93070406, y: 0.93070406, z: 0.93070406}
   m_Children: []
   m_Father: {fileID: 385470568}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -4976,7 +4977,6 @@ RectTransform:
   m_Children:
   - {fileID: 936918243}
   - {fileID: 1333796535}
-  - {fileID: 2057334974}
   m_Father: {fileID: 1558063366}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5433,7 +5433,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1558063363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7116,16 +7116,16 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2057334973}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 85.06131}
-  m_LocalScale: {x: 1.223876, y: 1.223876, z: 1.223876}
+  m_LocalPosition: {x: 0, y: 0, z: -0.0008790198}
+  m_LocalScale: {x: 0.93070406, y: 0.93070406, z: 0.93070406}
   m_Children: []
-  m_Father: {fileID: 1382358029}
-  m_RootOrder: 2
+  m_Father: {fileID: 385470568}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.028, y: 0.89535576}
   m_AnchorMax: {x: 0.9722559, y: 0.9907115}
-  m_AnchoredPosition: {x: 9.9063, y: -29.358002}
-  m_SizeDelta: {x: -50.54, y: -4}
+  m_AnchoredPosition: {x: 73.49164, y: 151.07172}
+  m_SizeDelta: {x: 128.7081, y: 19.854208}
   m_Pivot: {x: 0.5000001, y: 0.5000012}
 --- !u!114 &2057334975
 MonoBehaviour:

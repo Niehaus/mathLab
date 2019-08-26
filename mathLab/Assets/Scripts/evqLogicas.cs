@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine;
@@ -16,7 +17,7 @@ public class evqLogicas : MonoBehaviour
 
     public void closePanel(){
         gamePanel.SetActive(false);
-        /* talvez ativar um texto algo
-         pra seguir ou pra continuar o jogo */
+        /* levar para uma cena nova que contém só o jogo */
+        
     }
 }

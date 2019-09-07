@@ -13,18 +13,36 @@ public class configMaster : MonoBehaviour {
     public Text linhasTableText, exprGuide; //texto de confirmação de adição!
     public InputField[] inputs; /*guarda as respostas recebidas, 
                                 cada posição é um input diferente*/
-    private static int tableCounter = 0;
+    private static int tableCounter = 0, eqvCounter = 0;
     protected string pathTable = "Assets/NewAdds/tabelaVerdade.txt";
-    protected string expr, num, resp, linhasTabela, linhasTabelaScreen, writeTabela;
+    protected string pathTableEqvLog = "Assets/NewAdds/eqvLogica.txt";
+    protected string expr, num, resp, linhasTabela, linhasTabelaScreen, writeTabela,
+    eqvlog, respEqvlog;
     protected string[] writeExprGuide;
-    public void CriaArquivo() {
-        if (!File.Exists(pathTable))
-        {
-            File.WriteAllText(pathTable,"NOVA TABELA VERDADE");
-            File.WriteAllText(pathTable, "\n" + tableCounter.ToString() + "\n");    
-        }else {
-            File.AppendAllText(pathTable, "NOVA TABELA VERDADE");
-            File.AppendAllText(pathTable, "\n" + tableCounter.ToString() + "\n");
+
+    public void CriaArquivo(int op) {
+
+        switch (op) {
+            case (0): //criação do arquivo de tabVerdade
+                if (!File.Exists(pathTable)) {
+                    File.WriteAllText(pathTable,"NOVA TABELA VERDADE");
+                    File.AppendAllText(pathTable, "\n" + tableCounter.ToString() + "\n");    
+                }else {
+                    File.AppendAllText(pathTable, "NOVA TABELA VERDADE");
+                    File.AppendAllText(pathTable, "\n" + tableCounter.ToString() + "\n");
+                }
+                break;
+            case (1): //criação do arquivo de eqvLog
+                if (!File.Exists(pathTableEqvLog)) {
+                    File.WriteAllText(pathTableEqvLog, "NOVA EQV LOGICA");
+                    File.AppendAllText(pathTableEqvLog, "\n" + eqvCounter.ToString() + "\n");
+                }else {
+                    File.AppendAllText(pathTableEqvLog, "NOVA EQV LOGICA");
+                    File.AppendAllText(pathTableEqvLog, "\n" + eqvCounter.ToString() + "\n");
+                }
+                break;
+            case (2): //criação do arquivo de infLogica
+                break;
         }
         
     }
@@ -84,7 +102,7 @@ public class configMaster : MonoBehaviour {
             }
     }
 
-    public void getTruthTable(int inputNum) {
+    public void getTruthTable(int inputNum) {  //Função para pegar texto dos inputs
         switch (inputNum){
             case (0): //Expressão
                 print(inputs[inputNum].text);
@@ -98,7 +116,15 @@ public class configMaster : MonoBehaviour {
             case (2): // Vetor Respostas
                 print(inputs[inputNum].text);
                 resp = inputs[inputNum].text;
-                break;         
+                break;
+            case (3): // Vetor EqvLog
+                print(inputs[inputNum].text);
+                eqvlog = inputs[inputNum].text;
+                break;
+            case (4): // Vetor Respostas EqvLog
+                print(inputs[inputNum].text);
+                respEqvlog = inputs[inputNum].text;
+                break;
         }
     }
 
@@ -117,18 +143,35 @@ public class configMaster : MonoBehaviour {
         }
         return retornaArray;
     }
-    public void buttonWrite() {
-        CriaArquivo();
-        File.AppendAllText(pathTable, expr + "\n");
-        File.AppendAllText(pathTable, num + "\n");
-        File.AppendAllText(pathTable, writeTabela + "\n"); writeTabela = "";
-        File.AppendAllText(pathTable, resp + "\n");
-        inputs[0].text = "";
-        inputs[1].text = "";
-        inputs[2].text = "";
-        addConfirm.SetActive(true);
-        StartCoroutine(undisplay()); 
-        tableCounter += 1;
+    public void buttonWrite(int buttonNum) {
+        switch (buttonNum) {
+            case (0): //Botão tabela verdade
+                CriaArquivo(buttonNum);
+                File.AppendAllText(pathTable, expr + "\n");
+                File.AppendAllText(pathTable, num + "\n");
+                File.AppendAllText(pathTable, writeTabela + "\n"); writeTabela = "";
+                File.AppendAllText(pathTable, resp + "\n");
+                inputs[0].text = "";
+                inputs[1].text = "";
+                inputs[2].text = "";
+                addConfirm.SetActive(true);
+                StartCoroutine(undisplay()); 
+                tableCounter += 1;
+                break;
+            case (1): //Botão eqvLogica
+                CriaArquivo(buttonNum);
+                File.AppendAllText(pathTableEqvLog, eqvlog + "\n");
+                File.AppendAllText(pathTableEqvLog, respEqvlog + "\n");
+                inputs[3].text = "";
+                inputs[4].text = "";
+                addConfirm.SetActive(true);
+                StartCoroutine(undisplay());
+                eqvCounter += 1;
+                break;
+            case (2): //Botão infLogica
+                CriaArquivo(buttonNum);
+                break;
+        }
     } 
 
     IEnumerator undisplay() {

@@ -14,6 +14,7 @@ public class textFunction : MonoBehaviour {
    void OnTriggerEnter2D(Collider2D other) {
     if (other.CompareTag("EqvLog")) {
         Debug.Log("EQV LOG AQUI");
+        textoGame.transform.position = new Vector3(0f, 0f, 0f);
     }       
    }
 

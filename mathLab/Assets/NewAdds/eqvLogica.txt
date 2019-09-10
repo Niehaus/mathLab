@@ -4,6 +4,6 @@ NOVA EQV LOGICA
 f
 
 NOVA EQV LOGICA
-0
+1
 -(-p) == p
 v

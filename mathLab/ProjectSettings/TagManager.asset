@@ -8,6 +8,8 @@ TagManager:
   - Wall
   - True
   - Respostas
+  - Sumidouro
+  - EqvLog
   layers:
   - Default
   - TransparentFX

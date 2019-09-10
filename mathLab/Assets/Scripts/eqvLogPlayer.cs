@@ -18,8 +18,7 @@ public class eqvLogPlayer : MonoBehaviour {
     }
 
     //FixedUpdate is called at a fixed interval and is independent of frame rate. Put physics code here.
-    void FixedUpdate()
-    {
+    void FixedUpdate() {
         //Store the current horizontal input in the float moveHorizontal.
         float moveHorizontal = Input.GetAxis("Horizontal");
 

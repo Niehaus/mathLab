@@ -2,7 +2,6 @@ NOVA EQV LOGICA
 0
 -p == p
 f
-
 NOVA EQV LOGICA
 1
 -(-p) == p

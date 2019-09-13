@@ -11,7 +11,7 @@ public class setAddTables : MonoBehaviour {
     public InputField inputPrefab;
     public InputField[] inputs;
     public GameObject endGame;
-    protected string pathTable = "Assets/NewAdds/tabelaVerdade.txt", line, resps;
+    protected string pathTable = "/Assets/NewAdds/tabelaVerdade.txt", line, resps;
     protected string[] resp, expr, exprComposta,expr2;
     private int tableNumber = 0, numLinhas, count = 0, vars = 0;
     private Hashtable convertColunas = new Hashtable();
@@ -33,9 +33,13 @@ public class setAddTables : MonoBehaviour {
         convertColunas.Add("-t", 9);
         //transform p/ setar inputs como Childs de Respostas na hierarquia 
         ResultadoTransform = GameObject.FindWithTag("Respostas").transform;
+        string path = Directory.GetCurrentDirectory();
+        Debug.Log("ESSE É O CAMINHO>: " + path);
+        pathTable = path + pathTable;
         setaTabela();
     }
     public void setaTabela() {
+        
         System.IO.StreamReader file = new System.IO.StreamReader(pathTable);
         for (int i = 0; i < colunas.Length; i++) {   
             colunas[i].text = "";

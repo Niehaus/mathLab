@@ -5,22 +5,22 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Inferencias - Memory Game/MostraCards.unity
     guid: 9ac076eee26115244a076c37de708686
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Inferencias - Memory Game/Inferencia - 4 cartas.unity
     guid: 361e90bfde1c2fd4993bd03c55df37bf
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Inferencias - Memory Game/settingsScene.unity
     guid: add90f1e62c76014685cd469db635d5d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Inferencias - Memory Game/menuScene.unity
     guid: 17fbb95549f494d4ba90e749f65092fd
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Inferencias - Memory Game/Jogo - Tabela Verdade 1.unity
     guid: a1fcb2942cd720b499e728257e8c9971
   - enabled: 1

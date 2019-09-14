@@ -17,13 +17,13 @@ public class timeScript : MonoBehaviour {
 	void Update () {
 		if (timeCounter) {
 			seconds = (int)(Time.timeSinceLevelLoad % 60f);
-			counterText.text = "Seconds" + ":" + seconds.ToString ("00");
+			counterText.text = "Seconds" + ": " + seconds.ToString ("00");
 		}
 	}
 
-	public void endGame() {
+	public float endGame() {
 		timeCounter = false;
 		counterText.color = Color.yellow;
-        Debug.Log("acabou o jogo");
+		return seconds;
 	}
 }

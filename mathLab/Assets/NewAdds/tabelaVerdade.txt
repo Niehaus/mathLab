@@ -8,20 +8,3 @@ F V
 V F
 
 v f v f v f f f
-NOVA TABELA VERDADE
-1
--t ^ r || p ^ r
-3
-V V V V
-V F V V
-V V F V
-F F F V
-F V V V
-V F V V
-F F V V
-F V V V
-
-v f v f v f v v
-
-
-

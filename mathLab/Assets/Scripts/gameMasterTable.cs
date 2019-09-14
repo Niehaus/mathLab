@@ -7,7 +7,7 @@ using System.IO;
 using System;
 
 public class gameMasterTable : MonoBehaviour {   
-    public GameObject jogarButton, tablePanel, mainText, dicasPanel, proxButton;
+    public GameObject jogarButton, tablePanel, mainText, dicasPanel, proxButton, userPanel;
     public Text textDica;
     protected string pathTable = "Assets/NewAdds/tabelaVerdade.txt";
     
@@ -39,5 +39,9 @@ public class gameMasterTable : MonoBehaviour {
         }else {
             SceneManager.LoadScene("Jogo - Tabela Verdade Next (2)");
         }
+    }
+    public void jogarNovamente(){
+        userPanel.SetActive(false);
+        SceneManager.LoadScene("Jogo - Tabela Verdade Next (2)");
     }
 }

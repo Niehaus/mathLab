@@ -7,7 +7,7 @@ using System;
 
 public class setAddTables : MonoBehaviour { 
     public Text[] colunas;
-    public Text expressao,time, userTable;
+    public Text expressao, time, userTable;
     public InputField inputPrefab, userInput;
     public InputField[] inputs;
     public GameObject endGame, endFile;
@@ -50,11 +50,8 @@ public class setAddTables : MonoBehaviour {
             }
             Debug.Log("oque?" + line);
             if (line == "NOVA TABELA VERDADE" ) { //verifica se é um tabela
-                Debug.Log("aqui" + line);
                 line = file.ReadLine();
-                Debug.Log("aqui tb?" + line);
                 tableNumber = convert(line[0]); // pega o numero dessa tabela e convert p int
-                Debug.Log("num = " + tableNumber + "contador = " + counter);
                 if (tableNumber == counter) { //instruçoes de leitura aqui
                     Debug.Log("Tabela " + tableNumber);
                     line = file.ReadLine(); //pega expressao
@@ -72,7 +69,7 @@ public class setAddTables : MonoBehaviour {
                         setId inputScript = inputs[i].GetComponent<setId>(); //busca script pra setar o id de cada input
                         inputScript.Id = i;
                         if (vars > numLinhas) {
-                            Debug.Log("to aqui vars > numlinhas");
+                           // Debug.Log("to aqui vars > numlinhas");
                             expr2 = knowWhatIterate(expr,i);
                             foreach (var item in expr2) {
                                 if (item.Contains("-")) {
@@ -120,6 +117,13 @@ public class setAddTables : MonoBehaviour {
             if ((line = file.ReadLine()) == null) { //vai para algum lugar, fim do arquivo de tabelas**
                 timeScript timer = time.GetComponent<timeScript>();
                 tempos[userCount] = timer.endGame();
+                Debug.Log("atualiza text");
+                for (int i = 0; i < tempos.Length; i++) {
+                    if (users[i] != null) {
+                        //Debug.Log("USERS " + users[i] + "TEMPOS " + tempos[i]);
+                        userTable.text += String.Format("{0,-12}{1,24}\n", users[i], tempos[i] + " segundos");
+                    }
+                }
                 endFile.SetActive(true);
                 Debug.Log("não tem mais tabela");
                 file.DiscardBufferedData();
@@ -206,7 +210,7 @@ public class setAddTables : MonoBehaviour {
 
     public void verificaInput(InputField input) {
         setId inputAtual = input.GetComponent<setId>();
-        Debug.Log("Meu ID é = " + inputAtual.Id); 
+        //Debug.Log("Meu ID é = " + inputAtual.Id); 
         //Debug.Log("entrada: " + inputs[inputAtual.Id].text); Debug.Log("reposta: " + resp[inputAtual.Id]);  
         //CONVERTER TODA A ENTRADA P MINUSCULO
         if (resp[inputAtual.Id].Equals(inputs[inputAtual.Id].text)) {
@@ -224,10 +228,10 @@ public class setAddTables : MonoBehaviour {
     public void verficaAcertos() {
         certo = 0;
         for (int i = 0; i <= acertos.Length; i++) {
-            Debug.Log("indice = " + i);
+            //Debug.Log("indice = " + i);
             if (acertos[i] == 1) {
                 certo += 1;
-                Debug.Log("acerto: " + certo);
+                //Debug.Log("acerto: " + certo);
                 if (certo == acertos.Length) {
                     Debug.Log("fim de jogo");
                     endGame.SetActive(true);
@@ -242,9 +246,9 @@ public class setAddTables : MonoBehaviour {
         }
     }
     public void keepUser(){
-         users[userCount] = userInput.text;
-         userInput.text = "";
-         //userTable.text += users[userCount] + "\t\t\t\t" + tempos[userCount] + "segundos" + "\n";
-         userTable.text += String.Format("{0,-12}{1,24}\n",users[userCount],tempos[userCount] + " segundos");
+        users[userCount] = userInput.text;
+        userInput.text = "";
+        userTable.text += String.Format("{0,-12}{1,24}\n",users[userCount],tempos[userCount] + " segundos");
+        userCount++;
     }
 }

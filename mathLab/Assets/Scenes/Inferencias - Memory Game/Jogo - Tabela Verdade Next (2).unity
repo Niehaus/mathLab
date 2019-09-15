@@ -1368,8 +1368,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0.0025177002, y: -91.65}
-  m_SizeDelta: {x: 451.18, y: 28.92}
+  m_AnchoredPosition: {x: -48.34, y: -91.65}
+  m_SizeDelta: {x: 346.12, y: 28.92}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &477312122
 MonoBehaviour:
@@ -2436,6 +2436,7 @@ MonoBehaviour:
   dicasPanel: {fileID: 1635756368}
   proxButton: {fileID: 494791130}
   userPanel: {fileID: 1936479345}
+  manager: {fileID: 0}
   textDica: {fileID: 1519355465}
 --- !u!114 &809875809
 MonoBehaviour:
@@ -3791,8 +3792,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0.0025177002, y: -174.56001}
-  m_SizeDelta: {x: 451.18, y: 136.9}
+  m_AnchoredPosition: {x: 2.0962, y: -174.56001}
+  m_SizeDelta: {x: 447, y: 136.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1325830392
 MonoBehaviour:
@@ -3837,7 +3838,7 @@ MonoBehaviour:
     m_MinSize: 2
     m_MaxSize: 266
     m_Alignment: 0
-    m_AlignByGeometry: 0
+    m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
@@ -5953,7 +5954,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1886125478
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6201,7 +6202,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0.104}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}

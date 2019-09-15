@@ -19,7 +19,7 @@ public class setAddTables : MonoBehaviour {
     private int[] acertos;
     static float[] tempos = new float[32];
     static string[] users = new String[32];
-    static int counter = 0, certo, userCount = 0;
+    public static int counter = 0, certo, userCount = 0;
     void Start() { // Ler o arquivo e pegar a tabela - setar o ponteiro no arquivo pra ler a prox tabela 
         //colunas positivas
         convertColunas.Add("p",0);
@@ -52,7 +52,9 @@ public class setAddTables : MonoBehaviour {
             if (line == "NOVA TABELA VERDADE" ) { //verifica se é um tabela
                 Debug.Log("aqui" + line);
                 line = file.ReadLine();
+                Debug.Log("aqui tb?" + line);
                 tableNumber = convert(line[0]); // pega o numero dessa tabela e convert p int
+                Debug.Log("num = " + tableNumber + "contador = " + counter);
                 if (tableNumber == counter) { //instruçoes de leitura aqui
                     Debug.Log("Tabela " + tableNumber);
                     line = file.ReadLine(); //pega expressao

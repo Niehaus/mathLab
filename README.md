@@ -34,6 +34,10 @@ que já foi proposto por ele.
 
 
 #### Tabelas Verdade
+Nessa etapa é possível utilizar-se de tabelas verdade e salvar o tempo (em segundos) que levou para resolver todos os exercicíos previamente cadastradas configurando uma gama de exercícios que podem ser refeitos quantas vezes necessario ou uma possível competição entre amigos, pois é possível também escolher um nome de usuário para salvar a pontuação. 
+![](https://github.com/Niehaus/mathLab/blob/master/mathLab/Assets/Screenshots/tableTruth.png?raw=true)
+![](https://github.com/Niehaus/mathLab/blob/master/mathLab/Assets/Screenshots/users.png?raw=true)
+
 #### Equivalência Lógica
 #### Inferência Lógica 
 #### Jogo da Memória

@@ -37,6 +37,7 @@ public class gameMasterTable : MonoBehaviour {
             Debug.Log("Fim das tabelas");
             Application.Quit();
         }else {
+            userPanel.SetActive(false);
             SceneManager.LoadScene("Jogo - Tabela Verdade Next (2)");
         }
     }

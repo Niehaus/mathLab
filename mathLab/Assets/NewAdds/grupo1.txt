@@ -1,6 +1,6 @@
 NOVA TABELA VERDADE
 0
-(p ^ (q || r)) -> (p -> (-q ^r)) 
+(p ^ (q || r)) -> (p -> (-q ^ r)) 
 3
 V F V 
 V V F

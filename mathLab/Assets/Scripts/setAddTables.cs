@@ -10,16 +10,19 @@ public class setAddTables : MonoBehaviour {
     public Text expressao, time, userTable;
     public InputField inputPrefab, userInput;
     public InputField[] inputs;
-    public GameObject endGame, endFile;
-    protected string pathTable = "/Assets/NewAdds/tabelaVerdade.txt", line, resps;
+    public GameObject endGame, endFile, textIni;
+    public GameObject[] buttons;
+    protected string pathTable = "/Assets/NewAdds/", line, resps;
     protected string[] resp, expr, exprComposta, expr2;
     private int tableNumber = 0, numLinhas, count = 0, vars = 0;
     private Hashtable convertColunas = new Hashtable();
     private Transform ResultadoTransform;
     private int[] acertos;
-    static float[] tempos = new float[32];
+    static string[] tempos = new String[32];
     static string[] users = new String[32];
     public static int counter = 0, certo, userCount = 0;
+    protected string  path;
+    public gameMasterTable manager;
     void Start() { // Ler o arquivo e pegar a tabela - setar o ponteiro no arquivo pra ler a prox tabela 
         //colunas positivas
         convertColunas.Add("p",0);
@@ -33,12 +36,8 @@ public class setAddTables : MonoBehaviour {
         convertColunas.Add("-r", 7);
         convertColunas.Add("-s", 8);
         convertColunas.Add("-t", 9);
-        //transform p/ setar inputs como Childs de Respostas na hierarquia 
-        ResultadoTransform = GameObject.FindWithTag("Respostas").transform;
-        string path = Directory.GetCurrentDirectory();
-        pathTable = path + pathTable;
-        setaTabela();
     }
+
     public void setaTabela() {
         System.IO.StreamReader file = new System.IO.StreamReader(pathTable);
         for (int i = 0; i < colunas.Length; i++) {   
@@ -48,12 +47,12 @@ public class setAddTables : MonoBehaviour {
             if (endGame) {
                 endGame.SetActive(false);
             }
-            Debug.Log("oque?" + line);
+           // Debug.Log("oque?" + line);
             if (line == "NOVA TABELA VERDADE" ) { //verifica se é um tabela
                 line = file.ReadLine();
                 tableNumber = convert(line[0]); // pega o numero dessa tabela e convert p int
                 if (tableNumber == counter) { //instruçoes de leitura aqui
-                    Debug.Log("Tabela " + tableNumber);
+                   // Debug.Log("Tabela " + tableNumber);
                     line = file.ReadLine(); //pega expressao
                     expressao.text = line;
                     expr = splitString(line); //separa expr pra associar uma coluna da tabela a uma variavel
@@ -61,7 +60,7 @@ public class setAddTables : MonoBehaviour {
                     numLinhas = convert(line[0]);//Debug.Log(numLinhas); Debug.Log(expr);
                     double TotalDeLinhas = Math.Pow(2, Convert.ToDouble(numLinhas));
                     acertos = new int[Convert.ToInt32(TotalDeLinhas)];
-                    Debug.Log("Linhas da tabela");
+                   // Debug.Log("Linhas da tabela");
                     for (int i = 0; i < TotalDeLinhas; i++) { //a partir da conta do total de linhas pega tdas as linhas
                         line = file.ReadLine(); //linha da tabela
                         inputs[i] = Instantiate(inputPrefab, new Vector3(0, 191.1f - (46f * i), 0), Quaternion.identity); //seta novo input em sua coordenada
@@ -69,9 +68,8 @@ public class setAddTables : MonoBehaviour {
                         setId inputScript = inputs[i].GetComponent<setId>(); //busca script pra setar o id de cada input
                         inputScript.Id = i;
                         if (vars > numLinhas) {
-                           // Debug.Log("to aqui vars > numlinhas");
                             expr2 = knowWhatIterate(expr,i);
-                            foreach (var item in expr2) {
+                            foreach (var item in expr2) {           
                                 if (item.Contains("-")) {
                                     colunas[(convertColunas[item].GetHashCode() - 5)].text += line[count] + "\n"; //escreve a linha da tabela no postivo
                                     if (line[count] == 'V') { // nega a linha da tabela e escreve no negativo    
@@ -83,7 +81,7 @@ public class setAddTables : MonoBehaviour {
                                 }else{
                                     colunas[convertColunas[item].GetHashCode()].text += line[count] + "\n";
                                     count += 2;
-                                }  
+                                } 
                             }
                             count = 0;
                         }else {
@@ -104,8 +102,7 @@ public class setAddTables : MonoBehaviour {
                                 }
                             }
                             count = 0;
-                        }
-                        
+                        }  
                     }
                     file.ReadLine(); //lê o espaço entre a tabela e as respostas
                     resps = file.ReadLine();
@@ -116,11 +113,9 @@ public class setAddTables : MonoBehaviour {
             }
             if ((line = file.ReadLine()) == null) { //vai para algum lugar, fim do arquivo de tabelas**
                 timeScript timer = time.GetComponent<timeScript>();
-                tempos[userCount] = timer.endGame();
-                Debug.Log("atualiza text");
+                tempos[userCount] = timer.endGame();// Debug.Log("atualiza text");
                 for (int i = 0; i < tempos.Length; i++) {
-                    if (users[i] != null) {
-                        //Debug.Log("USERS " + users[i] + "TEMPOS " + tempos[i]);
+                    if (users[i] != null) { //Debug.Log("USERS " + users[i] + "TEMPOS " + tempos[i]);
                         userTable.text += String.Format("{0,-12}{1,24}\n", users[i], tempos[i] + " segundos");
                     }
                 }
@@ -128,7 +123,8 @@ public class setAddTables : MonoBehaviour {
                 Debug.Log("não tem mais tabela");
                 file.DiscardBufferedData();
                 line = file.ReadLine();
-                Debug.Log(line);
+                path = "";
+                pathTable = "/Assets/NewAdds/";
                // file.BaseStream.Seek(0, System.IO.SeekOrigin.Begin);
             }
         }
@@ -142,7 +138,7 @@ public class setAddTables : MonoBehaviour {
         int k = 0;
         vars = 0;
         string[] retornaArray = new String[32];
-        string[] multiArray = expr.Split(new Char[] { ' ', '^', '|', '(', ')', '[', ']' });
+        string[] multiArray = expr.Split(new Char[] { ' ', '^', '|', '(', ')', '[', ']'});
         foreach (string author in multiArray) {
             if (author.Trim() != "") {
                 retornaArray[k] = author;
@@ -150,6 +146,11 @@ public class setAddTables : MonoBehaviour {
             }
         }
         vars = k;
+        for (int i = 0; i < retornaArray.Length; i++) {
+            if (retornaArray[i] == ("->")) {//explit -> 
+                retornaArray[i] = null;
+            }
+        }
         return retornaArray;
     }
 
@@ -175,10 +176,10 @@ public class setAddTables : MonoBehaviour {
                 foreach (var item in expr) {
                     if (item != null) { //iterar apenas em itens não nulos
                         if (exprComposta[i] == null) {
-                            if (item.Contains("-")) {
+                            if (item.Contains("-")) {        
                                 aux = item.Split('-');
                                 count = findMyIndex(expr,aux[1]);
-                                expr[count] = null;
+                                expr[count] = null;         
                             }
                             exprComposta[i] = item;
                             count = findMyIndex(expr,item);
@@ -208,17 +209,15 @@ public class setAddTables : MonoBehaviour {
         }
     }
 
-    public void verificaInput(InputField input) {
+    public void verificaInput(InputField input) { //Debug.Log("Meu ID é = " + inputAtual.Id);      //Debug.Log("entrada: " + inputs[inputAtual.Id].text); Debug.Log("reposta: " + resp[inputAtual.Id]);  
         setId inputAtual = input.GetComponent<setId>();
-        //Debug.Log("Meu ID é = " + inputAtual.Id); 
-        //Debug.Log("entrada: " + inputs[inputAtual.Id].text); Debug.Log("reposta: " + resp[inputAtual.Id]);  
         //CONVERTER TODA A ENTRADA P MINUSCULO
         if (resp[inputAtual.Id].Equals(inputs[inputAtual.Id].text)) {
-            Debug.Log("resposta certa");
+           // Debug.Log("resposta certa");
             //inputs[inputAtual.Id].image.color = new Color32(69, 202, 35, 255); //cor verde
             acertos[inputAtual.Id] = 1;
         }else {
-            Debug.Log("resposta errada");
+            //Debug.Log("resposta errada");
             //inputs[inputAtual.Id].image.color = new Color32(202, 41, 49, 255);//cor vermelha
             acertos[inputAtual.Id] = 0;
         }
@@ -227,28 +226,34 @@ public class setAddTables : MonoBehaviour {
 
     public void verficaAcertos() {
         certo = 0;
-        for (int i = 0; i <= acertos.Length; i++) {
-            //Debug.Log("indice = " + i);
+        for (int i = 0; i <= acertos.Length; i++) {  //Debug.Log("indice = " + i);
             if (acertos[i] == 1) {
-                certo += 1;
-                //Debug.Log("acerto: " + certo);
-                if (certo == acertos.Length) {
-                    Debug.Log("fim de jogo");
+                certo += 1;//Debug.Log("acerto: " + certo); 
+                if (certo == acertos.Length) { // Debug.Log("fim de jogo");
                     endGame.SetActive(true);
-                    for (int j = 0; j < inputs.Length - 1; j++) {
+                    for (int j = 0; j < inputs.Length - 1; j++) 
                         inputs[j].image.color = new Color32(69, 202, 35, 255); //cor verde
-                    }   
                 }
-            }else {
-                Debug.Log("Ainda não acabou");
+            }else { //Debug.Log("Ainda não acabou");
                 break;
             }
         }
     }
-    public void keepUser(){
+    public void keepUser() { //cadastra usuario
         users[userCount] = userInput.text;
         userInput.text = "";
         userTable.text += String.Format("{0,-12}{1,24}\n",users[userCount],tempos[userCount] + " segundos");
         userCount++;
+    }
+
+    public void selectArquivo(string nomeDoArquivo) {
+        path = Directory.GetCurrentDirectory(); //pega diretorio do arquivo
+        pathTable = path + pathTable + nomeDoArquivo; //completa o caminho até o arquivo escolhido
+        textIni.SetActive(false);
+        for (int i = 0; i < buttons.Length; i++) //desativa os botões
+            buttons[i].SetActive(false);
+        manager.tablePanel.SetActive(true);
+        ResultadoTransform = GameObject.FindWithTag("Respostas").transform; //transform p/ setar inputs como Childs de Respostas na hierarquia 
+        setaTabela(); //chama função principal
     }
 }

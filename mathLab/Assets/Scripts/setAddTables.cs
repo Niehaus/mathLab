@@ -119,8 +119,7 @@ public class setAddTables : MonoBehaviour {
                         userTable.text += String.Format("{0,-12}{1,24}\n", users[i], tempos[i] + " segundos");
                     }
                 }
-                endFile.SetActive(true);
-                Debug.Log("não tem mais tabela");
+                endFile.SetActive(true); //Debug.Log("não tem mais tabela");
                 file.DiscardBufferedData();
                 line = file.ReadLine();
                 path = "";

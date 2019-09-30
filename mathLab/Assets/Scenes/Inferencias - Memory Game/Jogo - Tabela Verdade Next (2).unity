@@ -1870,7 +1870,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 809875808}
+      - m_Target: {fileID: 809875809}
         m_MethodName: selectArquivo
         m_Mode: 5
         m_Arguments:
@@ -3023,7 +3023,6 @@ MonoBehaviour:
   dicasPanel: {fileID: 1635756368}
   proxButton: {fileID: 494791130}
   userPanel: {fileID: 1936479345}
-  manager: {fileID: 0}
   textDica: {fileID: 1519355465}
 --- !u!114 &809875809
 MonoBehaviour:
@@ -3073,7 +3072,15 @@ MonoBehaviour:
   - {fileID: 0}
   endGame: {fileID: 776917973}
   endFile: {fileID: 1936479345}
-  nomeDoArquivo: 
+  textIni: {fileID: 215553526}
+  buttons:
+  - {fileID: 1157176110}
+  - {fileID: 1942176099}
+  - {fileID: 1530501487}
+  - {fileID: 1313835287}
+  - {fileID: 482539275}
+  - {fileID: 1018851860}
+  manager: {fileID: 809875808}
 --- !u!1 &865288962
 GameObject:
   m_ObjectHideFlags: 0
@@ -3741,7 +3748,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 809875808}
+      - m_Target: {fileID: 809875809}
         m_MethodName: selectArquivo
         m_Mode: 5
         m_Arguments:
@@ -4287,7 +4294,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 809875808}
+      - m_Target: {fileID: 809875809}
         m_MethodName: selectArquivo
         m_Mode: 5
         m_Arguments:
@@ -4595,7 +4602,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 809875808}
+      - m_Target: {fileID: 809875809}
         m_MethodName: selectArquivo
         m_Mode: 5
         m_Arguments:
@@ -6020,7 +6027,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 809875808}
+      - m_Target: {fileID: 809875809}
         m_MethodName: selectArquivo
         m_Mode: 5
         m_Arguments:
@@ -7788,7 +7795,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 809875808}
+      - m_Target: {fileID: 809875809}
         m_MethodName: selectArquivo
         m_Mode: 5
         m_Arguments:
@@ -8893,6 +8900,11 @@ PrefabInstance:
       propertyPath: textDica
       value: 
       objectReference: {fileID: 1519355465}
+    - target: {fileID: 3511735079945947919, guid: 5a6b13deb70a6f849a1fd393dc76ac09,
+        type: 3}
+      propertyPath: buttons.Array.size
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3511735079945947919, guid: 5a6b13deb70a6f849a1fd393dc76ac09,
         type: 3}
       propertyPath: colunas.Array.data[0]

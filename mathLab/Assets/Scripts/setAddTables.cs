@@ -67,6 +67,7 @@ public class setAddTables : MonoBehaviour {
                         inputs[i].transform.SetParent(ResultadoTransform, false); //seta como child de Resultados
                         setId inputScript = inputs[i].GetComponent<setId>(); //busca script pra setar o id de cada input
                         inputScript.Id = i;
+                        inputs[i].characterLimit = 1; //seta limite de caracteres como apenas 1
                         if (vars > numLinhas) {
                             expr2 = knowWhatIterate(expr,i);
                             foreach (var item in expr2) {           
@@ -212,7 +213,7 @@ public class setAddTables : MonoBehaviour {
         setId inputAtual = input.GetComponent<setId>();
         //CONVERTER TODA A ENTRADA P MINUSCULO
         if (resp[inputAtual.Id].Equals(inputs[inputAtual.Id].text)) {
-           // Debug.Log("resposta certa");
+            //Debug.Log("resposta certa");
             //inputs[inputAtual.Id].image.color = new Color32(69, 202, 35, 255); //cor verde
             acertos[inputAtual.Id] = 1;
         }else {

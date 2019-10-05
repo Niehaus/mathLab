@@ -1,0 +1,3322 @@
+fileFormatVersion: 2
+guid: 6a767ee9361e6684d9203e7b14a04cbb
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3230866459033961248
+    second: FuelSprites_1
+  - first:
+      213: 1427821531885985887
+    second: FuelSprites_2
+  - first:
+      213: 4192037508891288354
+    second: FuelSprites_4
+  - first:
+      213: -6791797175459118184
+    second: FuelSprites_5
+  - first:
+      213: 5992678490632800781
+    second: FuelSprites_7
+  - first:
+      213: -1291101837927657600
+    second: FuelSprites_9
+  - first:
+      213: -6852071914632035667
+    second: FuelSprites_11
+  - first:
+      213: -3670560496531131695
+    second: FuelSprites_12
+  - first:
+      213: -2868129596150045696
+    second: FuelSprites_13
+  - first:
+      213: 4641841833789178375
+    second: FuelSprites_15
+  - first:
+      213: 8959376243427980971
+    second: FuelSprites_16
+  - first:
+      213: 4656452379555872470
+    second: FuelSprites_18
+  - first:
+      213: 5463967723096634199
+    second: FuelSprites_19
+  - first:
+      213: -3409126348274702994
+    second: FuelSprites_23
+  - first:
+      213: -858382964048839169
+    second: FuelSprites_24
+  - first:
+      213: -9204996313714575260
+    second: FuelSprites_26
+  - first:
+      213: 1723008557415887625
+    second: FuelSprites_27
+  - first:
+      213: -4772843992543651337
+    second: FuelSprites_30
+  - first:
+      213: 4464907675933614097
+    second: FuelSprites_31
+  - first:
+      213: -988588798479104026
+    second: FuelSprites_32
+  - first:
+      213: 6743925386781956461
+    second: FuelSprites_33
+  - first:
+      213: -6320956617436891291
+    second: FuelSprites_35
+  - first:
+      213: -4547869548818500250
+    second: FuelSprites_37
+  - first:
+      213: 3185947433776196404
+    second: FuelSprites_38
+  - first:
+      213: -2323380331384316163
+    second: FuelSprites_40
+  - first:
+      213: -1522012585374750579
+    second: FuelSprites_41
+  - first:
+      213: 413575616962840595
+    second: FuelSprites_43
+  - first:
+      213: 6326658481695375029
+    second: FuelSprites_44
+  - first:
+      213: -2317966898409926548
+    second: FuelSprites_45
+  - first:
+      213: 7390490072889740804
+    second: FuelSprites_47
+  - first:
+      213: 7852955619740201951
+    second: FuelSprites_49
+  - first:
+      213: -795556343948474394
+    second: FuelSprites_50
+  - first:
+      213: 5261234156750901666
+    second: FuelSprites_51
+  - first:
+      213: -5506891719717449731
+    second: FuelSprites_52
+  - first:
+      213: -2763288736368441652
+    second: FuelSprites_54
+  - first:
+      213: 587556457975772945
+    second: FuelSprites_59
+  - first:
+      213: -6413688832645225236
+    second: FuelSprites_60
+  - first:
+      213: 8699683591054059884
+    second: FuelSprites_61
+  - first:
+      213: 8369233183377780959
+    second: FuelSprites_63
+  - first:
+      213: -2475876232001050990
+    second: FuelSprites_64
+  - first:
+      213: -6508455854499375127
+    second: FuelSprites_66
+  - first:
+      213: -8635224711607817660
+    second: FuelSprites_67
+  - first:
+      213: 3493463644444156598
+    second: FuelSprites_68
+  - first:
+      213: 5150639173479529604
+    second: FuelSprites_105
+  - first:
+      213: -8586717147540140518
+    second: FuelSprites_107
+  - first:
+      213: 2079163072702477767
+    second: FuelSprites_108
+  - first:
+      213: -7807512020881159514
+    second: FuelSprites_109
+  - first:
+      213: 2611752366825347090
+    second: FuelSprites_111
+  - first:
+      213: -432240586224248602
+    second: FuelSprites_112
+  - first:
+      213: -7048055815321444590
+    second: FuelSprites_113
+  - first:
+      213: -2594842579693341595
+    second: FuelSprites_114
+  - first:
+      213: -2830580511011242772
+    second: FuelSprites_115
+  - first:
+      213: -1621774159051529056
+    second: FuelSprites_116
+  - first:
+      213: 1687523093939458030
+    second: FuelSprites_117
+  - first:
+      213: 3031531927453839154
+    second: FuelSprites_118
+  - first:
+      213: 9080862629605274818
+    second: FuelSprites_121
+  - first:
+      213: 9166096254566979540
+    second: FuelSprites_122
+  - first:
+      213: 868874977476248944
+    second: FuelSprites_123
+  - first:
+      213: 4229559310046750416
+    second: FuelSprites_126
+  - first:
+      213: -8314720755159116163
+    second: FuelSprites_127
+  - first:
+      213: -8926688392566020635
+    second: FuelSprites_128
+  - first:
+      213: 1030744249216274236
+    second: FuelSprites_129
+  - first:
+      213: 5710102599531894081
+    second: FuelSprites_130
+  - first:
+      213: 7593671835861050728
+    second: FuelSprites_132
+  - first:
+      213: -3993639301941002584
+    second: FuelSprites_134
+  - first:
+      213: -4806958856545526205
+    second: FuelSprites_135
+  - first:
+      213: 6674428726756212222
+    second: FuelSprites_137
+  - first:
+      213: -7098349261255475526
+    second: FuelSprites_138
+  - first:
+      213: 1764294201988864464
+    second: FuelSprites_139
+  - first:
+      213: 1225394183231532326
+    second: FuelSprites_140
+  - first:
+      213: 6029771214946579196
+    second: FuelSprites_141
+  - first:
+      213: -7404560079871273276
+    second: FuelSprites_142
+  - first:
+      213: 4182805005251850036
+    second: FuelSprites_144
+  - first:
+      213: 6968245901028806537
+    second: FuelSprites_145
+  - first:
+      213: -4655838447340274342
+    second: FuelSprites_146
+  - first:
+      213: -918404980244098039
+    second: FuelSprites_148
+  - first:
+      213: 7153784171546279814
+    second: FuelSprites_163
+  - first:
+      213: -5945951392995757702
+    second: FuelSprites_164
+  - first:
+      213: -8820585450102328361
+    second: FuelSprites_165
+  - first:
+      213: 8918290883605262998
+    second: FuelSprites_166
+  - first:
+      213: -7524788913073560660
+    second: FuelSprites_167
+  - first:
+      213: -1734103480804384834
+    second: FuelSprites_169
+  - first:
+      213: -5426099915707123218
+    second: FuelSprites_171
+  - first:
+      213: 8922633624101523221
+    second: FuelSprites_172
+  - first:
+      213: -6918486663729459871
+    second: FuelSprites_173
+  - first:
+      213: -6203791523914744955
+    second: FuelSprites_174
+  - first:
+      213: -6801484882977969474
+    second: FuelSprites_175
+  - first:
+      213: 7333248662129522221
+    second: FuelSprites_176
+  - first:
+      213: 6704505831015311650
+    second: FuelSprites_177
+  - first:
+      213: -3301142603954721903
+    second: FuelSprites_178
+  - first:
+      213: -1399557127614539573
+    second: FuelSprites_179
+  - first:
+      213: -980865609969154727
+    second: FuelSprites_180
+  - first:
+      213: 7888477720437804816
+    second: FuelSprites_181
+  - first:
+      213: -1913753206109303784
+    second: FuelSprites_182
+  - first:
+      213: -5443476520155854211
+    second: FuelSprites_183
+  - first:
+      213: -8249996924607635851
+    second: FuelSprites_184
+  - first:
+      213: 926886214908794280
+    second: FuelSprites_185
+  - first:
+      213: -2164066609326295375
+    second: FuelSprites_186
+  - first:
+      213: 2209350794046324265
+    second: FuelSprites_187
+  - first:
+      213: 2985419800069473048
+    second: FuelSprites_188
+  - first:
+      213: -6151293292202716522
+    second: FuelSprites_189
+  - first:
+      213: -2784358111840187225
+    second: FuelSprites_190
+  - first:
+      213: -8760687670800341151
+    second: FuelSprites_191
+  - first:
+      213: -5660842303567481811
+    second: FuelSprites_192
+  - first:
+      213: 7996691692746869118
+    second: FuelSprites_193
+  - first:
+      213: 8437164147248860717
+    second: FuelSprites_194
+  - first:
+      213: -1922845050844230882
+    second: FuelSprites_197
+  - first:
+      213: -504372128789794264
+    second: FuelSprites_198
+  - first:
+      213: -8666471662600192774
+    second: FuelSprites_199
+  - first:
+      213: -2124758293127987125
+    second: FuelSprites_200
+  - first:
+      213: -269565326948635246
+    second: FuelSprites_201
+  - first:
+      213: 5778678619147461741
+    second: FuelSprites_202
+  - first:
+      213: 6199468586757931774
+    second: FuelSprites_205
+  - first:
+      213: -1445504016005053491
+    second: FuelSprites_206
+  - first:
+      213: -1925920896781538644
+    second: FuelSprites_207
+  - first:
+      213: -857685703454668651
+    second: FuelSprites_208
+  - first:
+      213: -5478775764148147486
+    second: FuelSprites_209
+  - first:
+      213: -4175890587568634066
+    second: FuelSprites_214
+  - first:
+      213: -2986697110744227444
+    second: FuelSprites_215
+  - first:
+      213: -8716522774077163781
+    second: FuelSprites_216
+  - first:
+      213: -2719099091310113083
+    second: FuelSprites_217
+  - first:
+      213: 3844375444526708215
+    second: FuelSprites_218
+  - first:
+      213: -7972491020107225933
+    second: FuelSprites_219
+  - first:
+      213: 543977660601019453
+    second: FuelSprites_220
+  - first:
+      213: -3826126571893235860
+    second: FuelSprites_221
+  - first:
+      213: 7364513420794725428
+    second: FuelSprites_222
+  - first:
+      213: 8587183389743599871
+    second: FuelSprites_223
+  - first:
+      213: 1432385097550825834
+    second: FuelSprites_224
+  - first:
+      213: -8608153217589224078
+    second: FuelSprites_225
+  - first:
+      213: -6716304844321166661
+    second: FuelSprites_226
+  - first:
+      213: 8097228207440647605
+    second: FuelSprites_227
+  - first:
+      213: 2188029689542336329
+    second: FuelSprites_228
+  - first:
+      213: 3968365720967692467
+    second: FuelSprites_229
+  - first:
+      213: -5184497641092202901
+    second: FuelSprites_230
+  - first:
+      213: 632462529639220019
+    second: FuelSprites_231
+  - first:
+      213: -3658068849600567045
+    second: FuelSprites_232
+  - first:
+      213: 5053903828497943176
+    second: FuelSprites_233
+  - first:
+      213: 8453164640385229275
+    second: FuelSprites_234
+  - first:
+      213: 3486560867956302193
+    second: FuelSprites_235
+  - first:
+      213: 2669055660435613623
+    second: FuelSprites_236
+  - first:
+      213: -5011311553046689008
+    second: FuelSprites_237
+  - first:
+      213: 1338967050638144268
+    second: FuelSprites_238
+  - first:
+      213: -7390691471528706789
+    second: FuelSprites_239
+  - first:
+      213: 5988845013861730674
+    second: FuelSprites_240
+  - first:
+      213: 3333451951914526803
+    second: FuelSprites_241
+  - first:
+      213: 7269740668336435625
+    second: FuelSprites_242
+  - first:
+      213: -2675733868582484880
+    second: FuelSprites_243
+  - first:
+      213: -8974186640960753343
+    second: FuelSprites_244
+  - first:
+      213: -3117340310488260882
+    second: FuelSprites_245
+  - first:
+      213: 684479501419778824
+    second: FuelSprites_249
+  - first:
+      213: -4869271552961379624
+    second: FuelSprites_250
+  - first:
+      213: 681834832343212859
+    second: FuelSprites_251
+  - first:
+      213: 535187389961520863
+    second: FuelSprites_252
+  - first:
+      213: -4737844180115783002
+    second: FuelSprites_253
+  - first:
+      213: -3439874538872845269
+    second: FuelSprites_254
+  - first:
+      213: 8288722410554189916
+    second: FuelSprites_255
+  - first:
+      213: 2379316832402545551
+    second: FuelSprites_256
+  - first:
+      213: -8159393547768659073
+    second: FuelSprites_257
+  - first:
+      213: -6196541408841611781
+    second: FuelSprites_258
+  - first:
+      213: 1914787235332100177
+    second: FuelSprites_259
+  - first:
+      213: -7306500856025947160
+    second: FuelSprites_260
+  - first:
+      213: -6667095977924205553
+    second: FuelSprites_261
+  - first:
+      213: 5471169126225750420
+    second: FuelSprites_262
+  - first:
+      213: 7799271276055694351
+    second: FuelSprites_263
+  - first:
+      213: -3585447017663216314
+    second: FuelSprites_264
+  - first:
+      213: 8282233218339587187
+    second: FuelSprites_265
+  - first:
+      213: -3003520292437537893
+    second: FuelSprites_266
+  - first:
+      213: -1408891939801731968
+    second: FuelSprites_267
+  - first:
+      213: 5176449697221129492
+    second: FuelSprites_268
+  - first:
+      213: 4348123603141731014
+    second: FuelSprites_269
+  - first:
+      213: -1096094300912055592
+    second: FuelSprites_271
+  - first:
+      213: -4260561006273948403
+    second: FuelSprites_272
+  - first:
+      213: 4211766876763109568
+    second: FuelSprites_273
+  - first:
+      213: 3952800881551836031
+    second: FuelSprites_274
+  - first:
+      213: -1231591227740207129
+    second: FuelSprites_275
+  - first:
+      213: -6158142254629502525
+    second: FuelSprites_276
+  - first:
+      213: -982196255104351058
+    second: FuelSprites_277
+  - first:
+      213: 6897512510684467394
+    second: FuelSprites_278
+  - first:
+      213: 6195033592852806967
+    second: FuelSprites_279
+  - first:
+      213: 8829887006735592503
+    second: FuelSprites_281
+  - first:
+      213: 979135045788580257
+    second: FuelSprites_282
+  - first:
+      213: 1705788717619106107
+    second: FuelSprites_283
+  - first:
+      213: 1532354903110894243
+    second: FuelSprites_285
+  - first:
+      213: -3538904688210864518
+    second: FuelSprites_286
+  - first:
+      213: -6865260930385782844
+    second: FuelSprites_287
+  - first:
+      213: 7937285088340329520
+    second: FuelSprites_288
+  - first:
+      213: -6021604910456417154
+    second: FuelSprites_289
+  - first:
+      213: 3536034114810658036
+    second: FuelSprites_290
+  - first:
+      213: -1099662240068472951
+    second: FuelSprites_291
+  - first:
+      213: -9191303845330484100
+    second: FuelSprites_292
+  - first:
+      213: -3489141058234878746
+    second: FuelSprites_293
+  - first:
+      213: 6494592864645488542
+    second: FuelSprites_294
+  - first:
+      213: 1939730730304885958
+    second: FuelSprites_295
+  - first:
+      213: -2854020408838705278
+    second: FuelSprites_297
+  - first:
+      213: -1762723667711807204
+    second: FuelSprites_298
+  - first:
+      213: -6913383759159016763
+    second: FuelSprites_299
+  - first:
+      213: 3039675776315003289
+    second: FuelSprites_300
+  - first:
+      213: 5846784240616489583
+    second: FuelSprites_301
+  - first:
+      213: -4205361378769761847
+    second: FuelSprites_302
+  - first:
+      213: -594456579932158016
+    second: FuelSprites_303
+  - first:
+      213: 3512974530871572621
+    second: FuelSprites_304
+  - first:
+      213: 8437308807477098627
+    second: FuelSprites_305
+  - first:
+      213: -3065642578995570404
+    second: FuelSprites_306
+  - first:
+      213: -8780797684022567937
+    second: FuelSprites_307
+  - first:
+      213: 8513540316777572638
+    second: FuelSprites_308
+  - first:
+      213: -8324027453645366333
+    second: FuelSprites_309
+  - first:
+      213: -9054009489630965106
+    second: FuelSprites_310
+  - first:
+      213: 304447321944489778
+    second: FuelSprites_311
+  - first:
+      213: 9149337681656625375
+    second: FuelSprites_313
+  - first:
+      213: -3970331725755259496
+    second: FuelSprites_314
+  - first:
+      213: 934403853312223644
+    second: FuelSprites_316
+  - first:
+      213: 6288904434353057785
+    second: FuelSprites_317
+  - first:
+      213: 6201475181797097409
+    second: FuelSprites_318
+  - first:
+      213: 3364404084724527700
+    second: FuelSprites_320
+  - first:
+      213: -9062483465791943162
+    second: FuelSprites_321
+  - first:
+      213: 3428252313821867012
+    second: FuelSprites_322
+  - first:
+      213: -2672049671896762981
+    second: FuelSprites_323
+  - first:
+      213: 514887150531168990
+    second: FuelSprites_324
+  - first:
+      213: 5698714512514279505
+    second: FuelSprites_325
+  - first:
+      213: -3093541951420829234
+    second: FuelSprites_327
+  - first:
+      213: 2727893476903011988
+    second: FuelSprites_328
+  - first:
+      213: -1723551689661127970
+    second: FuelSprites_329
+  - first:
+      213: 8050734223687290173
+    second: FuelSprites_330
+  - first:
+      213: -1492227501485462199
+    second: FuelSprites_331
+  - first:
+      213: 419514048460927124
+    second: FuelSprites_332
+  - first:
+      213: 2970295778434237974
+    second: FuelSprites_333
+  - first:
+      213: -5009801948522227060
+    second: FuelSprites_334
+  - first:
+      213: -6554917505013550778
+    second: FuelSprites_335
+  - first:
+      213: 2192696790422649693
+    second: FuelSprites_336
+  - first:
+      213: 1603293869133562298
+    second: FuelSprites_337
+  - first:
+      213: -8889084239459442468
+    second: FuelSprites_338
+  - first:
+      213: -8640917252405383492
+    second: FuelSprites_339
+  - first:
+      213: 3300584026170807094
+    second: FuelSprites_341
+  - first:
+      213: 2722018777618334848
+    second: FuelSprites_342
+  - first:
+      213: 2066138174109609371
+    second: FuelSprites_343
+  - first:
+      213: -6193536895860456458
+    second: FuelSprites_344
+  - first:
+      213: -4400156740276598267
+    second: FuelSprites_345
+  - first:
+      213: -4198885210422550801
+    second: FuelSprites_347
+  - first:
+      213: -479625807236561563
+    second: FuelSprites_348
+  - first:
+      213: -5324478598093188961
+    second: FuelSprites_349
+  - first:
+      213: -2686659510333616653
+    second: FuelSprites_351
+  - first:
+      213: 6552573762685075269
+    second: FuelSprites_352
+  - first:
+      213: 8835607398561429571
+    second: FuelSprites_353
+  - first:
+      213: 6787480485667138084
+    second: FuelSprites_354
+  - first:
+      213: 1739505469605310128
+    second: FuelSprites_356
+  - first:
+      213: 392852797464054548
+    second: FuelSprites_357
+  - first:
+      213: -4374710375285631531
+    second: FuelSprites_358
+  - first:
+      213: -4718527169191783814
+    second: FuelSprites_359
+  - first:
+      213: -3588939333855155530
+    second: FuelSprites_360
+  - first:
+      213: -4485852788576959131
+    second: FuelSprites_361
+  - first:
+      213: 1506959663911268146
+    second: FuelSprites_362
+  - first:
+      213: -4419520955708475950
+    second: FuelSprites_364
+  - first:
+      213: 1827120962635474564
+    second: FuelSprites_365
+  - first:
+      213: -3295997013940459422
+    second: FuelSprites_366
+  - first:
+      213: -2370638397461885500
+    second: FuelSprites_367
+  - first:
+      213: 301577298190262749
+    second: FuelSprites_368
+  - first:
+      213: -1482801422839050998
+    second: FuelSprites_369
+  - first:
+      213: -4175137530374501743
+    second: FuelSprites_370
+  - first:
+      213: -4879758944982972575
+    second: FuelSprites_371
+  - first:
+      213: -3034235117206443336
+    second: FuelSprites_372
+  - first:
+      213: -2823997152380850848
+    second: FuelSprites_373
+  - first:
+      213: -7941831029546912340
+    second: FuelSprites_374
+  - first:
+      213: 1774804207739030226
+    second: FuelSprites_375
+  - first:
+      213: 1643876962683445365
+    second: FuelSprites_376
+  - first:
+      213: 347304419967753707
+    second: FuelSprites_377
+  - first:
+      213: 1823795733284532850
+    second: FuelSprites_378
+  - first:
+      213: 7871987654522184687
+    second: FuelSprites_379
+  - first:
+      213: -8965984716089717984
+    second: FuelSprites_380
+  - first:
+      213: 5026893237925330520
+    second: FuelSprites_381
+  - first:
+      213: -4225906815964041476
+    second: FuelSprites_382
+  - first:
+      213: 7373544724363348104
+    second: FuelSprites_383
+  - first:
+      213: 9077056951518055011
+    second: FuelSprites_384
+  - first:
+      213: -4328335733643008784
+    second: FuelSprites_392
+  - first:
+      213: -1940612242242167753
+    second: FuelSprites_393
+  - first:
+      213: 7719154529711856447
+    second: FuelSprites_395
+  - first:
+      213: 2464103335753742656
+    second: FuelSprites_396
+  - first:
+      213: 3157161371263739145
+    second: FuelSprites_397
+  - first:
+      213: -7523564389903552981
+    second: FuelSprites_398
+  - first:
+      213: -1471228535173204516
+    second: FuelSprites_399
+  - first:
+      213: 2637549658903798520
+    second: FuelSprites_400
+  - first:
+      213: -2212565805881230613
+    second: FuelSprites_401
+  - first:
+      213: 8166832054861991905
+    second: FuelSprites_404
+  - first:
+      213: -8954587219963059642
+    second: FuelSprites_405
+  - first:
+      213: -7648267732209914395
+    second: FuelSprites_406
+  - first:
+      213: 5542917050518799608
+    second: FuelSprites_407
+  - first:
+      213: -7096682926582259099
+    second: FuelSprites_408
+  - first:
+      213: 4541674823035123234
+    second: FuelSprites_412
+  - first:
+      213: 4060962258909119509
+    second: FuelSprites_413
+  - first:
+      213: 1936679733824260943
+    second: FuelSprites_415
+  - first:
+      213: -4689054371205392535
+    second: FuelSprites_416
+  - first:
+      213: 5123980706319480606
+    second: FuelSprites_417
+  - first:
+      213: -872719184702233910
+    second: FuelSprites_418
+  - first:
+      213: -395429188083087468
+    second: FuelSprites_419
+  - first:
+      213: 4351571358747522434
+    second: FuelSprites_0
+  - first:
+      213: 6506040155595511386
+    second: FuelSprites_3
+  - first:
+      213: 1644082274153273443
+    second: FuelSprites_6
+  - first:
+      213: 2989579292610515669
+    second: FuelSprites_8
+  - first:
+      213: -1432154128856763303
+    second: FuelSprites_10
+  - first:
+      213: -3523937775190006852
+    second: FuelSprites_14
+  - first:
+      213: 5881002519306826741
+    second: FuelSprites_17
+  - first:
+      213: -2698565186853305090
+    second: FuelSprites_20
+  - first:
+      213: -5088298308783201803
+    second: FuelSprites_21
+  - first:
+      213: -1993987829058852582
+    second: FuelSprites_22
+  - first:
+      213: -451371835758775691
+    second: FuelSprites_25
+  - first:
+      213: -102165515660087995
+    second: FuelSprites_28
+  - first:
+      213: -6413442692470804636
+    second: FuelSprites_29
+  - first:
+      213: -8004351989998742223
+    second: FuelSprites_34
+  - first:
+      213: 8026565359808635339
+    second: FuelSprites_36
+  - first:
+      213: 1116852512233712557
+    second: FuelSprites_39
+  - first:
+      213: 825284536767198678
+    second: FuelSprites_42
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: FuelSprites_1
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 264
+        width: 14
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bece233d106db3d4bb4f6a2cdb230a8d
+      internalID: 3230866459033961248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_2
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 264
+        width: 14
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acffeaf7faaa0e949bf213f2b93c9ad0
+      internalID: 1427821531885985887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_4
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 264
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 300457142f2e1504e86868bec43207b1
+      internalID: 4192037508891288354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_5
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 264
+        width: 14
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 921cc1127315d5f4399265888eacc1dc
+      internalID: -6791797175459118184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_7
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 264
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee9cf3d60eeb438439d0af3df312b5e4
+      internalID: 5992678490632800781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_9
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 266
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27c02c5ced91e364393d9db31bafe4eb
+      internalID: -1291101837927657600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_11
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 266
+        width: 15
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cbba7bba8565474ea874561d6a982dd
+      internalID: -6852071914632035667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_12
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 266
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 316a2e6f5022d884aac1f04b1607982f
+      internalID: -3670560496531131695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_13
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 266
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1671bbb0e3f25a8418714fb39e00321d
+      internalID: -2868129596150045696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_15
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 266
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbf05366f9cd12743aeede72372f2596
+      internalID: 4641841833789178375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_16
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 266
+        width: 15
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11064594403688a489b597364162c433
+      internalID: 8959376243427980971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_18
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 266
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed259e09040f97e4d9dca9f9420a46b1
+      internalID: 4656452379555872470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_19
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 266
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08479fa53af1c584f9600b6207e4eb07
+      internalID: 5463967723096634199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_23
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 264
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3c987b1c5753d44ca9eecc664233576
+      internalID: -3409126348274702994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_24
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 264
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8de8041f2aa1a8a498e9aede8acdb163
+      internalID: -858382964048839169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_26
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 264
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 707f25499afef7c4a888180af1b0a8d5
+      internalID: -9204996313714575260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_27
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 264
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f4e32be4e15ba24a8d6c36f68512e21
+      internalID: 1723008557415887625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_30
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 264
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84f73d379cc6f3d488ce23e331f996c3
+      internalID: -4772843992543651337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_31
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 264
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de1c6336eae46dd4aae7534dcbd3e6cb
+      internalID: 4464907675933614097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_32
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 264
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1266d496dcd7254fa043195ee20f78f
+      internalID: -988588798479104026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_33
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 264
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fb6b20eaec9dab45b3590049a400df5
+      internalID: 6743925386781956461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_35
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 235
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aca994da120b8a64d8056d2416336a41
+      internalID: -6320956617436891291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_37
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 235
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f37d0c3ba8e652e4aab87bf9ec0a7aea
+      internalID: -4547869548818500250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_38
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 235
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c929ce53749cfb418d8d41ca0f14349
+      internalID: 3185947433776196404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_40
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 235
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a230d033cacf2d4479817346c948f242
+      internalID: -2323380331384316163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_41
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 235
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dac8f2ba7b74fe446841371cf3b352c6
+      internalID: -1522012585374750579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_43
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 235
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29f1f81e61c9b5e4a8ec0259bdc6ad2f
+      internalID: 413575616962840595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_44
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 233
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 025cdcd7ded540443bc8a2dcd94fe17b
+      internalID: 6326658481695375029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_45
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 233
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d2a112fc01fe1f4f8512cc200c1c466
+      internalID: -2317966898409926548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_47
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 233
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e88384de695daa14c82f4e1d93c2f236
+      internalID: 7390490072889740804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_49
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 233
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 732e34646159d2748bf880283158392f
+      internalID: 7852955619740201951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_50
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 233
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac2e50a94642edb40a6dc01750b35a09
+      internalID: -795556343948474394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_51
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 233
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3013c5bab3e1564ca23baeaae44c769
+      internalID: 5261234156750901666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_52
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 233
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1e9525a4cd8cd244a5e6fa45e76c21e
+      internalID: -5506891719717449731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_54
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 233
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7c4ff3f5f445bc44b0a716cece970f4
+      internalID: -2763288736368441652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_59
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 235
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67afa74807abc924d91ec92f388129c6
+      internalID: 587556457975772945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_60
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 234
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7385054f1ce8753498c1d81a00079139
+      internalID: -6413688832645225236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_61
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 235
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a249c4cafa009ae4ba6ed02aa084c83a
+      internalID: 8699683591054059884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_63
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 235
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c31358e923c26a5479741aca02ee7b15
+      internalID: 8369233183377780959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_64
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 235
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e59dd50dbe88e074eb1fd553066138c7
+      internalID: -2475876232001050990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_66
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 235
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ed0aec5f82ff4e42940c4e2397f7b82
+      internalID: -6508455854499375127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_67
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 235
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24bd0cbbc6609054699fd396a16e6aad
+      internalID: -8635224711607817660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_68
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 235
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27e712ff3cab78040b210214817b3772
+      internalID: 3493463644444156598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_105
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 209
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6b9bdd3ff75834439bea2d9f16c97b4
+      internalID: 5150639173479529604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_107
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 209
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ecf6a1212bec454ca213fd5b007304d
+      internalID: -8586717147540140518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_108
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 209
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5a4cbd694bf8824dae84146b5ac6041
+      internalID: 2079163072702477767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_109
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 209
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d284f5cd7d12b2f4089b0318d73d951f
+      internalID: -7807512020881159514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_111
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 209
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f8ce81a158ec7a48bc05ae3c718dfdf
+      internalID: 2611752366825347090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_112
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 209
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e48ab7f295bf34489b7d822c3a447a4
+      internalID: -432240586224248602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_113
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 208
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bab103ed18b737f40b7c21c595a7a731
+      internalID: -7048055815321444590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_114
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 184
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f8e1737b45ba52448b80a784c842791
+      internalID: -2594842579693341595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_115
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 208
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c5c0fa6f772f7c4b91c7e9add6bfa49
+      internalID: -2830580511011242772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_116
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 208
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5014da3f9437a9341ad5da19e3e4a41b
+      internalID: -1621774159051529056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_117
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 208
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 290849536ad24c148b79477736bf8728
+      internalID: 1687523093939458030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_118
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 208
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2d1300f35fa4784cb060d20f7353519
+      internalID: 3031531927453839154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_121
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 208
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3eb67f578c0bb6c4ab17bde91cb8381e
+      internalID: 9080862629605274818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_122
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 208
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18a49fcf1e30d9b46bab2abff5351670
+      internalID: 9166096254566979540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_123
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 208
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7646666f4f8cf6044b59bca2a1956745
+      internalID: 868874977476248944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_132
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 193
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fc0b9284a7d2954ea11fef6da7cb34d
+      internalID: 7593671835861050728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_134
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 193
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: befc2d82bc8b94b4991bbd11028dfdeb
+      internalID: -3993639301941002584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_135
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 193
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a3d244ba851d0c44a5d6196deb40822
+      internalID: -4806958856545526205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_140
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 183
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb69e87285059624fab7f7014f14f79e
+      internalID: 1225394183231532326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_141
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 183
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a93b684401fcd54489b8dbe25d99de89
+      internalID: 6029771214946579196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_142
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 183
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da4cfd4941dc13e44bf7fc40fe016550
+      internalID: -7404560079871273276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_144
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 183
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4026d274db686e34f9a391833a175b39
+      internalID: 4182805005251850036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_145
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 183
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 216fa4d9d90645342b9a328adab416c9
+      internalID: 6968245901028806537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_146
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 183
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e1bfdf4efb75ff4381f0ca9395ed04e
+      internalID: -4655838447340274342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_148
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 183
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b71cdf890e3ed946b744052c37dbff5
+      internalID: -918404980244098039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_167
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 167
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 679db41bd43c4e14483a9e6ffe750b22
+      internalID: -7524788913073560660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_169
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 168
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 200cac1607af4c143b7ec4c36cb0bba5
+      internalID: -1734103480804384834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_175
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 157
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 049a8507caeca0945b5deb7c58b07f08
+      internalID: -6801484882977969474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_177
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 157
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a847540ff2a5924aa55a2b197506cf5
+      internalID: 6704505831015311650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_178
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 157
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1401cb78848b174a813708ee72064f9
+      internalID: -3301142603954721903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_179
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 157
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7d2321012e570545a5f31097c870bf3
+      internalID: -1399557127614539573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_180
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 157
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d56659d20f0ad9c43b50a658a5cfc73a
+      internalID: -980865609969154727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_182
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 157
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29e7fcd0926e21340a1eab28d1c9ba83
+      internalID: -1913753206109303784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_183
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 158
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ce04ae503354fe4294d9102c660d6e8
+      internalID: -5443476520155854211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_185
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 159
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: feb7c1eb685bbbc49a78332bc8abab1c
+      internalID: 926886214908794280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_186
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 158
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92d5022e3ef35b34faf761c00955b5c8
+      internalID: -2164066609326295375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_188
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 159
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6b882926b79fb44e9c7d1d3695bc7e3
+      internalID: 2985419800069473048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_190
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 158
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53ab30bdfeaf99e488a2fa2e47c259a3
+      internalID: -2784358111840187225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_191
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 158
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df6090575e9d7b84f99f318a4ea77944
+      internalID: -8760687670800341151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_192
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 158
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4070a72c5ca983747b33dc78ec2550e7
+      internalID: -5660842303567481811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_194
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 158
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c11253227414f44e80db9a34e445824
+      internalID: 8437164147248860717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_245
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 97
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37a89c5cd93e8b64fa7eede2d7e919b5
+      internalID: -3117340310488260882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_249
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 97
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd57c142c725d9046a18d21af7902c74
+      internalID: 684479501419778824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_251
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 97
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f34b08e46eb408c4396078f43c503f00
+      internalID: 681834832343212859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_281
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 71
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21b803dd1051b9d4594eddcd94327309
+      internalID: 8829887006735592503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_282
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 71
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf5579ac3a5c64c43a779135ed16a559
+      internalID: 979135045788580257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_283
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 71
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ee56ec148db07f479272439d7433b84
+      internalID: 1705788717619106107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_316
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 45
+        width: 14
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fd20e95496b19742bb469bcbf50be24
+      internalID: 934403853312223644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_317
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 45
+        width: 14
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e1a71f8a5a0e2f419f8e7b63a8fe125
+      internalID: 6288904434353057785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_318
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 45
+        width: 14
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea13ab26eae48e04499fac733836a708
+      internalID: 6201475181797097409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_320
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 45
+        width: 14
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52e3c978ae7c5134db70f8a63173da49
+      internalID: 3364404084724527700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_351
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 19
+        width: 14
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7ba00dab3bd1b84dafa7bd4d1ebdb8d
+      internalID: -2686659510333616653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_352
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 19
+        width: 14
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dab1b9d75a60b7d438a6bb425d01a961
+      internalID: 6552573762685075269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_353
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 19
+        width: 14
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cc1ec0a545d9074b9ec70fd071ed082
+      internalID: 8835607398561429571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_354
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 19
+        width: 14
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a45aec9b32de4114d8a364e8aa529840
+      internalID: 6787480485667138084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_0
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 192
+        width: 2
+        height: 2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b82565636dea3b442a02f4567528385f
+      internalID: 4351571358747522434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_3
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 184
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ea2a348feb4c2a4b86b773506a46f1e
+      internalID: 6506040155595511386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_6
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 183
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 132812151226c4d4cb9487431bb78a1e
+      internalID: 1644082274153273443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_8
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 183
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 631ce2eef0f10c2488e561b642e3f13c
+      internalID: 2989579292610515669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_10
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 183
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65100ca12bd9b2f479ff3a65e79b0539
+      internalID: -1432154128856763303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_14
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 183
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 471bab8c089ac404da3dd4c0203714d0
+      internalID: -3523937775190006852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_17
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 183
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e24df58d5e0e44498555c71d5839653
+      internalID: 5881002519306826741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_20
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 8
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71dc8faf8c23b65489098a17a2642419
+      internalID: -2698565186853305090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_21
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 8
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cce0e0d15b3d4e43a4677ff59a3b21a
+      internalID: -5088298308783201803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_22
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 8
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7312fe664e74804694e756ac2c1002d
+      internalID: -1993987829058852582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuelSprites_25
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 8
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0c4f4225b054374692991ec16cf08bc
+      internalID: -451371835758775691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

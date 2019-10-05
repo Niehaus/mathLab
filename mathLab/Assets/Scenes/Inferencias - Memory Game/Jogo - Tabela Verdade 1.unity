@@ -4637,7 +4637,7 @@ GameObject:
   - component: {fileID: 809875808}
   m_Layer: 0
   m_Name: _menuManager
-  m_TagString: Untagged
+  m_TagString: manager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4685,6 +4685,7 @@ MonoBehaviour:
   mainText: {fileID: 1391367690}
   dicasPanel: {fileID: 1635756368}
   proxButton: {fileID: 494791130}
+  userPanel: {fileID: 0}
   textDica: {fileID: 1519355465}
 --- !u!1 &822549186
 GameObject:

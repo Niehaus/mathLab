@@ -13,6 +13,7 @@ TagManager:
   - TutoPanel
   - manager
   - TutoPanelTalk
+  - Talk
   layers:
   - Default
   - TransparentFX

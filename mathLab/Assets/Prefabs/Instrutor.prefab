@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6113418381330990792}
   - component: {fileID: 3368369475640838888}
+  - component: {fileID: 7693460428449039559}
   - component: {fileID: 7975358813466733145}
   m_Layer: 0
   m_Name: Instrutor
@@ -82,6 +83,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7693460428449039559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7975358813466733150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1ecda88e6015c2479a98081afdb6ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: Dr.Wood
+    sentences:
+    - aaa
+    - asdaf
+    - zzxxc
 --- !u!95 &7975358813466733145
 Animator:
   serializedVersion: 3

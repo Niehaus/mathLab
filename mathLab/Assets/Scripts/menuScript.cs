@@ -45,14 +45,14 @@ public class menuScript : MonoBehaviour {
     }
 
     public void tutorialskip(int op){
+        GameObject manager = GameObject.FindGameObjectWithTag("manager");
         GameObject panel = GameObject.FindGameObjectWithTag("TutoPanel");
         GameObject panelTalk = GameObject.FindGameObjectWithTag("TutoPanelTalk");
-        GameObject manager = GameObject.FindGameObjectWithTag("manager");
         switch (op) {
             case (0):
                 SceneManager.LoadScene("Jogo - Tabela Verdade Next (2)");
                 break;
-            case(1):
+            case (1):
                 panel.SetActive(false);
                 panelTalk.SetActive(true);
                 tutorial man = manager.GetComponent<tutorial>();

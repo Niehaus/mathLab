@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class tutorial : MonoBehaviour
-{
-    public GameObject instrutor;
+public class tutorial : MonoBehaviour {
+    public GameObject panelTalk;
     public void iniciaTutorial(){
-        Instantiate(instrutor, new Vector3(161.5373f, 161.5373f, 1f), Quaternion.identity);
-        
+        panelTalk.SetActive(true);
+         
     }
 }

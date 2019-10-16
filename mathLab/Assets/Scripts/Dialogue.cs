@@ -12,22 +12,33 @@ public class Dialogue : MonoBehaviour {
    public GameObject[] panelsActive;
    
    public Animator instrutor;
-   void Start() {
+    void Start() {
        StartCoroutine(Type());
-   }
-   void Update()    {
+    }
+    void Update() {
        if (textDisplay.text == sentences[index]) {
             instrutor.SetBool("fala", false);
            continueButton.SetActive(true);
        }
-       if (index == 4) {
-           panelsActive[0].SetActive(true);
-           panelsActive[1].SetActive(true);
-       }else {
+        if (index == 4) {
+            panelsActive[0].SetActive(true);
+            panelsActive[1].SetActive(true);
+        }else if (index == 5) {
             panelsActive[0].SetActive(false);
             panelsActive[1].SetActive(false);
-       }
-   }
+            panelsActive[2].SetActive(true);
+        }else if(index == 6) {
+                panelsActive[2].SetActive(false);
+                panelsActive[3].SetActive(true);
+                panelsActive[4].SetActive(true);
+                panelsActive[5].SetActive(true);
+        }else {
+            for (int i = 0; i < panelsActive.Length; i++) {
+                panelsActive[i].SetActive(false);
+            }
+        }
+    }
+
     IEnumerator Type(){
         foreach (char letter in sentences[index].ToCharArray()) {
             textDisplay.text += letter;

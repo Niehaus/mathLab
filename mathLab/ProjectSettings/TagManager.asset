@@ -14,6 +14,7 @@ TagManager:
   - manager
   - TutoPanelTalk
   - Talk
+  - TabelaPai
   layers:
   - Default
   - TransparentFX

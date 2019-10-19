@@ -6,11 +6,10 @@ using TMPro;
 public class Dialogue : MonoBehaviour {
    public TextMeshProUGUI textDisplay;
    public string[] sentences;
-   private int index;
+   public int index;
    public float typingSpeed;
    public GameObject continueButton;
-   public GameObject[] panelsActive;
-   
+   public GameObject[] panelsActive;   
    public Animator instrutor;
     void Start() {
        StartCoroutine(Type());
@@ -28,16 +27,20 @@ public class Dialogue : MonoBehaviour {
             panelsActive[1].SetActive(false);
             panelsActive[2].SetActive(true);
         }else if(index == 6) {
-                panelsActive[2].SetActive(false);
-                panelsActive[3].SetActive(true);
-                panelsActive[4].SetActive(true);
-                panelsActive[5].SetActive(true);
-        }else if (index == 7 && index == 8){ //manter ativo em 2 estados
+            panelsActive[2].SetActive(false);
+            panelsActive[3].SetActive(true);
+            panelsActive[4].SetActive(true);
+            panelsActive[5].SetActive(true);
+        }else if (index == 7 || index == 8) { //manter ativo em 2 estados
             panelsActive[3].SetActive(false);
             panelsActive[4].SetActive(false);
             panelsActive[5].SetActive(false);
             panelsActive[6].SetActive(true);
             panelsActive[7].SetActive(true);
+        }else if (index == 9) {
+                panelsActive[6].SetActive(false);
+                panelsActive[7].SetActive(false);
+                panelsActive[8].SetActive(true);
         }else {
             for (int i = 0; i < panelsActive.Length; i++) {
                 panelsActive[i].SetActive(false);

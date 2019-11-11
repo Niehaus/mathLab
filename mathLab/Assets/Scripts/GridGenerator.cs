@@ -101,7 +101,6 @@ public class GridGenerator : MonoBehaviour {
         }
         verficaAcertos();     
     }
-    
     public void verficaAcertos(){
         certo = 0;
         for (int i = 0; i <= acertos.Length; i++) {

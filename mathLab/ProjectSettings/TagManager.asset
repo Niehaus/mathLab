@@ -52,12 +52,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: background
+  - name: Background
     uniqueID: 3719173437
-    locked: 0
-  - name: fasewall
-    uniqueID: 1075385957
     locked: 0
   - name: Player
     uniqueID: 2163904283
+    locked: 0
+  - name: fasewall
+    uniqueID: 1075385957
     locked: 0

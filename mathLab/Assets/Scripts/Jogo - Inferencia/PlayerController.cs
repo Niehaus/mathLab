@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-        myRB.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * speed * Time.deltaTime;
+        myRB.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized * speed * Time.deltaTime;
         myAnim.SetFloat("moveX",myRB.velocity.x);
         myAnim.SetFloat("moveY",myRB.velocity.y);
 

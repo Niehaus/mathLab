@@ -13099,8 +13099,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1013187401}
   smoothing: 0.1
-  minPosition: {x: 0.15, y: -4.49}
-  maxPosition: {x: 0.15, y: -0.43}
+  minPosition: {x: -6.4, y: -6.45}
+  maxPosition: {x: 2.85, y: 1.08}
 --- !u!20 &2095227904
 Camera:
   m_ObjectHideFlags: 0
@@ -13127,7 +13127,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6.6608877
+  orthographic size: 3.5702844
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -13151,7 +13151,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2095227901}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.22, y: -2.74, z: -12.13}
+  m_LocalPosition: {x: -6.4, y: -6.45, z: -12.13}
   m_LocalScale: {x: 1, y: 0.9875, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

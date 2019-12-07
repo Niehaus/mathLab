@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPC : MonoBehaviour {
+public class NPCWalk : MonoBehaviour {
 
     private Rigidbody2D myRB;
     private Animator myAnim;

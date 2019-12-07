@@ -11,6 +11,7 @@
             <e p="AreaTransitions.cs" t="Include" />
             <e p="CameraController.cs" t="Include" />
             <e p="NPC.cs" t="Include" />
+            <e p="Placa.cs" t="Include" />
             <e p="PlayerController.cs" t="Include" />
             <e p="Wood.cs" t="Include" />
           </e>

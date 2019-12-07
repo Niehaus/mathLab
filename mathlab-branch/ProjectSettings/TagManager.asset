@@ -47,6 +47,9 @@ TagManager:
   - name: Background
     uniqueID: 3808940999
     locked: 0
+  - name: Placas
+    uniqueID: 4065430373
+    locked: 0
   - name: Player
     uniqueID: 3273046081
     locked: 0

@@ -2750,11 +2750,12 @@ GameObject:
   - component: {fileID: 1180498170}
   - component: {fileID: 1180498174}
   - component: {fileID: 1180498173}
+  - component: {fileID: 1180498176}
   - component: {fileID: 1180498175}
   - component: {fileID: 1180498172}
   m_Layer: 0
   m_Name: Dr.Wood
-  m_TagString: Wood
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2859,9 +2860,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa4c0a25d9c834c48b5727db86a1dc45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 200
+  speed: 2
   nameNPC: Dr.Wood
   mission: 1
+  target: {fileID: 1373759579}
+  posInicial: {fileID: 0}
+  chaseRaio: 4
+  talkRaio: 2
 --- !u!50 &1180498174
 Rigidbody2D:
   serializedVersion: 4
@@ -2882,7 +2887,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 6
+  m_Constraints: 4
 --- !u!95 &1180498175
 Animator:
   serializedVersion: 3
@@ -2902,6 +2907,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1180498176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1180498169}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e18dd470441014e802e9aec89efb2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 200
 --- !u!1 &1373759573
 GameObject:
   m_ObjectHideFlags: 0

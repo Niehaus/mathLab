@@ -2,12 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPCWalk : MonoBehaviour {
-
-    private Rigidbody2D myRB;
-    private Animator myAnim;
-    [SerializeField]
-    private float speed;
+public class NPC : MonoBehaviour {
+    protected Rigidbody2D myRB;
+    protected Animator myAnim;
+    [SerializeField] protected float speed;
 
     public string nameNPC;
     public int mission;

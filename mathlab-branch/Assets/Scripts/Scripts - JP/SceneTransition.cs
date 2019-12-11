@@ -14,7 +14,7 @@ public class SceneTransition : MonoBehaviour  {
     private Boolean playerInRange;
 
     private void Update() {
-        if (Input.GetKeyDown(KeyCode.Space)) {
+        if (Input.GetKeyDown(KeyCode.Space) && playerInRange) {
             Debug.Log("APERTEI ESPAÇO");
             playerStorage.valorInicial = playerPosition;
             SceneManager.LoadScene(sceneToLoad);

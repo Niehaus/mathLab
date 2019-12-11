@@ -19,6 +19,12 @@
             </e>
             <e p="Wood.cs" t="Include" />
           </e>
+          <e p="Scripts - TB" t="Include">
+            <e p="gameMasterTable.cs" t="Include" />
+            <e p="setAddTables.cs" t="Include" />
+            <e p="setId.cs" t="Include" />
+            <e p="timeScript.cs" t="Include" />
+          </e>
         </e>
       </e>
       <e p="mathlab-branch.sln" t="IncludeFlat" />

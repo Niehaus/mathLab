@@ -2996,18 +2996,20 @@ MonoBehaviour:
   mission: 1
   speed: 5
   caixaDialogo: {fileID: 1751434170}
+  botaoContinuar: {fileID: 583422174}
   dialogo: {fileID: 1987829400}
-  target: {fileID: 1373759579}
-  posInicial: {fileID: 0}
-  chaseRaio: 12
-  talkRaio: 2
   sentences:
+  - 
   - "Voc\xEA demorou!! Vejo que veio para a vaga de est\xE1gio.. n\xE3o temos tempo
     a perder.. vamos logo para a primeira miss\xE3o.. "
   - Quase me esqueci.. eu sou o Dr.Wood, e agora vamos testar seus conhecimentos em
     Tabelas Verdade!
-  - Quase me esqueci.. eu sou o Dr.Wood, e agora vamos testar seus conhecimentos em
-    Tabelas Verdade!
+  index: 0
+  typingSpeed: 0.02
+  target: {fileID: 1373759579}
+  posInicial: {fileID: 0}
+  chaseRaio: 12
+  talkRaio: 2
 --- !u!50 &1180498174
 Rigidbody2D:
   serializedVersion: 4
@@ -3197,7 +3199,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 200
-  faceIt: {x: 0, y: 0}
   startingPosition: {fileID: 11400000, guid: 3c269b93b7304eb4281ff4ad26a99e53, type: 2}
 --- !u!95 &1373759576
 Animator:

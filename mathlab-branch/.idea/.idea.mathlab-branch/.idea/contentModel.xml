@@ -6,6 +6,16 @@
     <e p="C:\Users\Barba\Documents\GitHub\mathLab\mathlab-branch" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="NewAdds" t="Include">
+          <e p="eqvLogica.txt" t="Include" />
+          <e p="grupo1.txt" t="Include" />
+          <e p="grupo2.txt" t="Include" />
+          <e p="grupo3.txt" t="Include" />
+          <e p="grupo4.txt" t="Include" />
+          <e p="grupo5.txt" t="Include" />
+          <e p="grupo6.txt" t="Include" />
+          <e p="tabelaVerdade.txt" t="Include" />
+        </e>
         <e p="Scripts" t="Include">
           <e p="Scripts - JP" t="Include">
             <e p="AreaTransitions.cs" t="Include" />

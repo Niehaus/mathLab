@@ -7,6 +7,9 @@ TagManager:
   - Wood
   - BarX
   - BarY
+  - True
+  - manager
+  - Respostas
   layers:
   - Default
   - TransparentFX

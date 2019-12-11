@@ -42,9 +42,10 @@ public class gameMasterTable : MonoBehaviour {
             SceneManager.LoadScene("Jogo - Tabela Verdade Next (2)");
         }
     }
+    
     public void jogarNovamente(){
         userPanel.SetActive(false);
-        //setAddTables tableSet = manager.GetComponent<setAddTables>();
+        
         setAddTables.counter = 0;
         SceneManager.LoadScene("Jogo - Tabela Verdade Next (2)");
     }

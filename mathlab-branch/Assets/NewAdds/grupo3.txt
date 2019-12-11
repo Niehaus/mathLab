@@ -1,0 +1,29 @@
+NOVA TABELA VERDADE
+0
+-q ^(r -> -p)
+3
+V F V 
+V V F
+F V V
+V V V
+F F F
+F F V
+V F F
+F V F
+
+f f f f v v v f
+
+NOVA TABELA VERDADE
+1
+q ^(r -> -p) 
+3
+V F V 
+V V F
+F V V
+V V V
+F F F
+F F V
+V F F
+F V F
+
+f v v f f f f f

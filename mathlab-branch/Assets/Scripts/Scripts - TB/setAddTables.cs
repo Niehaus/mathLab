@@ -126,9 +126,9 @@ public class setAddTables : MonoBehaviour {
                 }
                 endFile.SetActive(true); //Debug.Log("não tem mais tabela");
                 file.DiscardBufferedData();
-                line = file.ReadLine();
-                path = "";
-                pathTable = "/Assets/NewAdds/";
+                //line = file.ReadLine();
+                //path = "";
+                //pathTable = "/Assets/NewAdds/";
                // file.BaseStream.Seek(0, System.IO.SeekOrigin.Begin);
             }
         }

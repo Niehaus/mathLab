@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -22,6 +23,7 @@ public class Npc : MonoBehaviour {
     public int mission;
     public float typingSpeed;
     protected int countSentences = 0;
+    protected Boolean fimDialogo = false;
     
 
     // Start is called before the first frame update
@@ -60,6 +62,8 @@ public class Npc : MonoBehaviour {
         }else {
             dialogo.text = "";
             botaoContinuar.SetActive(false);
+            Debug.Log("acabou?");
+            fimDialogo = true;
         }
     }
 }

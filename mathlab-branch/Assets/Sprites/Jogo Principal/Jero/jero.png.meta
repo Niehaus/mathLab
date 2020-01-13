@@ -1,23 +1,23 @@
 fileFormatVersion: 2
-guid: e579af92b778d114491545599fe6be69
+guid: 683479648a40d114ea5ad7911c5c0341
 TextureImporter:
   fileIDToRecycleName:
-    21300000: dr.wood_0
-    21300002: dr.wood_1
-    21300004: dr.wood_2
-    21300006: dr.wood_3
-    21300008: dr.wood_4
-    21300010: dr.wood_5
-    21300012: dr.wood_6
-    21300014: dr.wood_7
-    21300016: dr.wood_8
-    21300018: dr.wood_9
-    21300020: dr.wood_10
-    21300022: dr.wood_11
-    21300024: dr.wood_12
-    21300026: dr.wood_13
-    21300028: dr.wood_14
-    21300030: dr.wood_15
+    21300000: jero_0
+    21300002: jero_1
+    21300004: jero_2
+    21300006: jero_3
+    21300008: jero_4
+    21300010: jero_5
+    21300012: jero_6
+    21300014: jero_7
+    21300016: jero_8
+    21300018: jero_9
+    21300020: jero_10
+    21300022: jero_11
+    21300024: jero_12
+    21300026: jero_13
+    21300028: jero_14
+    21300030: jero_15
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -111,7 +111,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dr.wood_0
+      name: jero_0
       rect:
         serializedVersion: 2
         x: 1
@@ -125,13 +125,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 225bd42c1389f794393fb230669793d5
+      spriteID: 844596b6f50c5464880cb2178808e7cb
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dr.wood_1
+      name: jero_1
       rect:
         serializedVersion: 2
         x: 17
@@ -145,13 +145,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e8fefa169c383c34aaf924244313d9a5
+      spriteID: db7ba44a20120214c9790ed21d31fb89
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dr.wood_2
+      name: jero_2
       rect:
         serializedVersion: 2
         x: 33
@@ -165,13 +165,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05100841172188d48a36e5d0a5f79fc3
+      spriteID: 0afead8387e1cc447abeb239572a7c04
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dr.wood_3
+      name: jero_3
       rect:
         serializedVersion: 2
         x: 49
@@ -185,13 +185,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fefa56fed09043849bdea4f08471ed26
+      spriteID: 797541806ed724845b24be0afad4956e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dr.wood_4
+      name: jero_4
       rect:
         serializedVersion: 2
         x: 2
@@ -205,13 +205,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eafa2df9c58ed9e40a6bd9e18c4b4ffc
+      spriteID: e093a5795ab94124b90499094bd405b4
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dr.wood_5
+      name: jero_5
       rect:
         serializedVersion: 2
         x: 18
@@ -225,13 +225,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cec1fbfe7a747614da73149243965b87
+      spriteID: eba794f1b41c937439a3030920b0c4e1
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dr.wood_6
+      name: jero_6
       rect:
         serializedVersion: 2
         x: 34
@@ -245,13 +245,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff21b3881f787fd4aa65d9e58285e04f
+      spriteID: 5d703e5d703a94445b5fea269f0e6c30
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dr.wood_7
+      name: jero_7
       rect:
         serializedVersion: 2
         x: 50
@@ -265,13 +265,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e5df0f8ef80a6343b834dee6d9ccde5
+      spriteID: 54356f40592cfcd4e887d4240ab54fa7
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dr.wood_8
+      name: jero_8
       rect:
         serializedVersion: 2
         x: 0
@@ -285,13 +285,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 54ec674ce4589074d9b3e0a023c57979
+      spriteID: 9a1e58fc91e45014896ceb15892bea83
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dr.wood_9
+      name: jero_9
       rect:
         serializedVersion: 2
         x: 16
@@ -305,18 +305,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 882f6fdb96511d348bcc7ec9fed83789
+      spriteID: 7583caf6998320e499cfe04b7c27032a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dr.wood_10
+      name: jero_10
       rect:
         serializedVersion: 2
-        x: 33
+        x: 32
         y: 36
-        width: 14
+        width: 15
         height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -325,13 +325,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fda6661fb65e7544e83effde53acdb04
+      spriteID: 6aba6eac5cce7784aab825e802717224
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dr.wood_11
+      name: jero_11
       rect:
         serializedVersion: 2
         x: 48
@@ -345,13 +345,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d56fda29b1dbafc4ca0b4772a7bd0ba5
+      spriteID: 750d91a8554c41b4cab10c7b7a501695
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dr.wood_12
+      name: jero_12
       rect:
         serializedVersion: 2
         x: 1
@@ -365,13 +365,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c9b8a9c18a57bc048afd1b71b70bb6c8
+      spriteID: e16001164bd40b0498c8ace42972e305
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dr.wood_13
+      name: jero_13
       rect:
         serializedVersion: 2
         x: 17
@@ -385,13 +385,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c7eecabccd8aeb14d9202e31be4627e6
+      spriteID: 470fb05ec75d33a4c9d87825f39684b9
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dr.wood_14
+      name: jero_14
       rect:
         serializedVersion: 2
         x: 33
@@ -405,13 +405,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ad6d6730950f0f43a41199b6172d8cb
+      spriteID: fddefb6502f2cc249a46fd4224bc6a59
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dr.wood_15
+      name: jero_15
       rect:
         serializedVersion: 2
         x: 49
@@ -425,7 +425,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 08f86d92fa30fff4faf3f2c3313729ec
+      spriteID: 99d69bae5f492fb4a83070cf313bc299
       vertices: []
       indices: 
       edges: []
@@ -433,7 +433,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 797f1fa0b6dcc7149b08ba9f2d6ed9c0
+    spriteID: 8c6095834b714ed459a4f549a434bf97
     vertices: []
     indices: 
     edges: []

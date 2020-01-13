@@ -31,6 +31,7 @@ public class Npc : MonoBehaviour {
         MyRb = GetComponent<Rigidbody2D>();
         MyAnim = GetComponent<Animator>();
     }
+    
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.CompareTag("BarX")) {
             //Debug.Log("colide BarX");

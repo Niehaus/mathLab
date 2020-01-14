@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using System;
 
-public class timeScript : MonoBehaviour {
+public class TimeScript : MonoBehaviour {
 
     public Text counterText;
     public bool timeCounter = true;
@@ -20,7 +20,7 @@ public class timeScript : MonoBehaviour {
             counterText.text = "Seconds: " + Time.timeSinceLevelLoad.ToString("00");
         }
     }
-    public string endGame() {
+    public string EndGame() {
         timeCounter = false;
         counterText.color = Color.yellow;
         return seconds;

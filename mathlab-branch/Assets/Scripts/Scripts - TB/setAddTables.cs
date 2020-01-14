@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using System.IO;
 using System;
 
-public class setAddTables : MonoBehaviour { 
+public class SetAddTables : MonoBehaviour { 
     public Text[] colunas;
     public Text expressao, time, userTable;
     public InputField inputPrefab, userInput;
@@ -14,35 +14,35 @@ public class setAddTables : MonoBehaviour {
     public GameObject[] buttons;
     protected string pathTable = "/Assets/NewAdds/grupo1.txt", line, resps;
     protected string[] resp, expr, exprComposta, expr2;
-    private int tableNumber = 0, numLinhas, count = 0, vars = 0;
-    private Hashtable convertColunas = new Hashtable();
-    private Transform ResultadoTransform;
-    private int[] acertos;
-    static string[] tempos = new String[32];
-    static string[] users = new String[32];
+    private int _tableNumber = 0, _numLinhas, _count = 0, _vars = 0;
+    private Hashtable _convertColunas = new Hashtable();
+    private Transform _resultadoTransform;
+    private int[] _acertos;
+    static string[] _tempos = new String[32];
+    static string[] _users = new String[32];
     public static int counter = 0, certo, userCount = 0;
     protected string  path;
-    public gameMasterTable manager;
+    public GameMasterTable manager;
     void Start() { // Ler o arquivo e pegar a tabela - setar o ponteiro no arquivo pra ler a prox tabela 
         //colunas positivas
-        convertColunas.Add("p",0);
-        convertColunas.Add("q",1);
-        convertColunas.Add("r",2);
-        convertColunas.Add("s",3);
-        convertColunas.Add("t",4);
+        _convertColunas.Add("p",0);
+        _convertColunas.Add("q",1);
+        _convertColunas.Add("r",2);
+        _convertColunas.Add("s",3);
+        _convertColunas.Add("t",4);
         //colunas negadas
-        convertColunas.Add("-p", 5);
-        convertColunas.Add("-q", 6);
-        convertColunas.Add("-r", 7);
-        convertColunas.Add("-s", 8);
-        convertColunas.Add("-t", 9);
+        _convertColunas.Add("-p", 5);
+        _convertColunas.Add("-q", 6);
+        _convertColunas.Add("-r", 7);
+        _convertColunas.Add("-s", 8);
+        _convertColunas.Add("-t", 9);
         path = Directory.GetCurrentDirectory(); //pega diretorio do arquivo
         pathTable = path + pathTable; //completa o caminho até o arquivo escolhido
-        ResultadoTransform = GameObject.FindWithTag("Respostas").transform;
-        setaTabela();
+        _resultadoTransform = GameObject.FindWithTag("Respostas").transform;
+        SetaTabela();
     }
 
-    public void setaTabela() {
+    public void SetaTabela() {
         System.IO.StreamReader file = new System.IO.StreamReader(pathTable);
         for (int i = 0; i < colunas.Length; i++) {   
             colunas[i].text = "";
@@ -54,74 +54,74 @@ public class setAddTables : MonoBehaviour {
            // Debug.Log("oque?" + line);
             if (line == "NOVA TABELA VERDADE" ) { //verifica se é um tabela
                 line = file.ReadLine();
-                tableNumber = convert(line[0]); // pega o numero dessa tabela e convert p int
-                if (tableNumber == counter) { //instruçoes de leitura aqui
+                _tableNumber = Convert(line[0]); // pega o numero dessa tabela e convert p int
+                if (_tableNumber == counter) { //instruçoes de leitura aqui
                    // Debug.Log("Tabela " + tableNumber);
                     line = file.ReadLine(); //pega expressao
                     expressao.text = line;
-                    expr = splitString(line); //separa expr pra associar uma coluna da tabela a uma variavel
+                    expr = SplitString(line); //separa expr pra associar uma coluna da tabela a uma variavel
                     line = file.ReadLine(); //pega num de linhas da tabela
-                    numLinhas = convert(line[0]);//Debug.Log(numLinhas); Debug.Log(expr);
-                    double TotalDeLinhas = Math.Pow(2, Convert.ToDouble(numLinhas));
-                    acertos = new int[Convert.ToInt32(TotalDeLinhas)];
-                    Debug.Log(TotalDeLinhas);
-                    for (int i = 0; i < TotalDeLinhas; i++) { //a partir da conta do total de linhas pega tdas as linhas
+                    _numLinhas = Convert(line[0]);//Debug.Log(numLinhas); Debug.Log(expr);
+                    double totalDeLinhas = Math.Pow(2, System.Convert.ToDouble(_numLinhas));
+                    _acertos = new int[System.Convert.ToInt32(totalDeLinhas)];
+                    Debug.Log(totalDeLinhas);
+                    for (int i = 0; i < totalDeLinhas; i++) { //a partir da conta do total de linhas pega tdas as linhas
                         line = file.ReadLine(); //linha da tabela
                         inputs[i] = Instantiate(inputPrefab, new Vector3(0, -75.5f - (85f * i), 0), Quaternion.identity); //seta novo input em sua coordenada
-                        inputs[i].transform.SetParent(ResultadoTransform, false); //seta como child de Resultados
-                        setId inputScript = inputs[i].GetComponent<setId>(); //busca script pra setar o id de cada input
+                        inputs[i].transform.SetParent(_resultadoTransform, false); //seta como child de Resultados
+                        SetId inputScript = inputs[i].GetComponent<SetId>(); //busca script pra setar o id de cada input
                         inputScript.Id = i;
                         inputs[i].characterLimit = 1; //seta limite de caracteres como apenas 1
-                        if (vars > numLinhas) {
-                            expr2 = knowWhatIterate(expr,i);
+                        if (_vars > _numLinhas) {
+                            expr2 = KnowWhatIterate(expr,i);
                             foreach (var item in expr2) {           
                                 if (item.Contains("-")) {
-                                    colunas[(convertColunas[item].GetHashCode() - 5)].text += line[count] + "\n"; //escreve a linha da tabela no postivo
-                                    if (line[count] == 'V') { // nega a linha da tabela e escreve no negativo    
-                                        colunas[convertColunas[item].GetHashCode()].text += 'F' + "\n";
+                                    colunas[(_convertColunas[item].GetHashCode() - 5)].text += line[_count] + "\n"; //escreve a linha da tabela no postivo
+                                    if (line[_count] == 'V') { // nega a linha da tabela e escreve no negativo    
+                                        colunas[_convertColunas[item].GetHashCode()].text += 'F' + "\n";
                                     }else {
-                                        colunas[convertColunas[item].GetHashCode()].text += 'V' + "\n";
+                                        colunas[_convertColunas[item].GetHashCode()].text += 'V' + "\n";
                                     }
-                                    count += 2;
+                                    _count += 2;
                                 }else{
-                                    colunas[convertColunas[item].GetHashCode()].text += line[count] + "\n";
-                                    count += 2;
+                                    colunas[_convertColunas[item].GetHashCode()].text += line[_count] + "\n";
+                                    _count += 2;
                                 } 
                             }
-                            count = 0;
+                            _count = 0;
                         }else {
                             foreach (var item in expr) { //associa cada coluna da tabela a uma variavel e printa na tela
                                 if (item != null) {
                                     if (item.Contains("-")) {
-                                        colunas[(convertColunas[item].GetHashCode() - 5)].text += line[count] + "\n"; //escreve a linha da tabela no postivo
-                                        if (line[count] == 'V') { // nega a linha da tabela e escreve no negativo    
-                                            colunas[convertColunas[item].GetHashCode()].text += 'F' + "\n";
+                                        colunas[(_convertColunas[item].GetHashCode() - 5)].text += line[_count] + "\n"; //escreve a linha da tabela no postivo
+                                        if (line[_count] == 'V') { // nega a linha da tabela e escreve no negativo    
+                                            colunas[_convertColunas[item].GetHashCode()].text += 'F' + "\n";
                                         }else {
-                                            colunas[convertColunas[item].GetHashCode()].text += 'V' + "\n";
+                                            colunas[_convertColunas[item].GetHashCode()].text += 'V' + "\n";
                                         }
-                                        count += 2;
+                                        _count += 2;
                                     }else {
-                                        colunas[convertColunas[item].GetHashCode()].text += line[count] + "\n";
-                                        count += 2;
+                                        colunas[_convertColunas[item].GetHashCode()].text += line[_count] + "\n";
+                                        _count += 2;
                                     }
                                 }
                             }
-                            count = 0;
+                            _count = 0;
                         }  
                     }
                     file.ReadLine(); //lê o espaço entre a tabela e as respostas
                     resps = file.ReadLine();
-                    resp = splitString(resps); //separa o vetor de respostas p associar aos inputs
+                    resp = SplitString(resps); //separa o vetor de respostas p associar aos inputs
                     counter++;
                     break;
                 }
             }
             if ((line = file.ReadLine()) == null) { //vai para algum lugar, fim do arquivo de tabelas**
-                timeScript timer = time.GetComponent<timeScript>();
-                tempos[userCount] = timer.endGame();// Debug.Log("atualiza text");
-                for (int i = 0; i < tempos.Length; i++) {
-                    if (users[i] != null) { //Debug.Log("USERS " + users[i] + "TEMPOS " + tempos[i]);
-                        userTable.text += String.Format("{0,-12}{1,24}\n", users[i], tempos[i] + " segundos");
+                TimeScript timer = time.GetComponent<TimeScript>();
+                _tempos[userCount] = timer.EndGame();// Debug.Log("atualiza text");
+                for (int i = 0; i < _tempos.Length; i++) {
+                    if (_users[i] != null) { //Debug.Log("USERS " + users[i] + "TEMPOS " + tempos[i]);
+                        userTable.text += String.Format("{0,-12}{1,24}\n", _users[i], _tempos[i] + " segundos");
                     }
                 }
                 endFile.SetActive(true); //Debug.Log("não tem mais tabela");
@@ -133,14 +133,14 @@ public class setAddTables : MonoBehaviour {
             }
         }
     }
-    public int convert(char numVar) {
+    public int Convert(char numVar) {
         int convertido = (int)Char.GetNumericValue(numVar);
         return convertido;
     }
 
-    public String[] splitString(string expr) { //separa a string a partir dos operadores - get variaveis
+    public String[] SplitString(string expr) { //separa a string a partir dos operadores - get variaveis
         int k = 0;
-        vars = 0;
+        _vars = 0;
         string[] retornaArray = new String[32];
         string[] multiArray = expr.Split(new Char[] { ' ', '^', '|', '(', ')', '[', ']'});
         foreach (string author in multiArray) {
@@ -149,7 +149,7 @@ public class setAddTables : MonoBehaviour {
                 k++;
             }
         }
-        vars = k;
+        _vars = k;
         for (int i = 0; i < retornaArray.Length; i++) {
             if (retornaArray[i] == ("->")) {//explit -> 
                 retornaArray[i] = null;
@@ -158,39 +158,39 @@ public class setAddTables : MonoBehaviour {
         return retornaArray;
     }
 
-    private int findMyIndex(string[] expr, string item){ //encontra o index do item procurado 
+    private int FindMyIndex(string[] expr, string item){ //encontra o index do item procurado 
         int index = 0;
         foreach (var it in expr) {
                 if (it == item && index != 0) {
                     return index;
                 }else if(it == item){
                     return index;
-                }else if(index < Math.Pow(2,numLinhas)){
+                }else if(index < Math.Pow(2,_numLinhas)){
                     index++;
                 }
         }
         return index;
     }
-    public String[] knowWhatIterate(string[] expr, int exec){ //retira as particulas repetidas de uma expr
+    public String[] KnowWhatIterate(string[] expr, int exec){ //retira as particulas repetidas de uma expr
         if (exec == 0) {
-            exprComposta = new String[numLinhas];
+            exprComposta = new String[_numLinhas];
             string[] aux = new String[1];
             int count = 0;
-            for (int i = 0; i < numLinhas; i++) {
+            for (int i = 0; i < _numLinhas; i++) {
                 foreach (var item in expr) {
                     if (item != null) { //iterar apenas em itens não nulos
                         if (exprComposta[i] == null) {
                             if (item.Contains("-")) {        
                                 aux = item.Split('-');
-                                count = findMyIndex(expr,aux[1]);
+                                count = FindMyIndex(expr,aux[1]);
                                 expr[count] = null;         
                             }
                             exprComposta[i] = item;
-                            count = findMyIndex(expr,item);
+                            count = FindMyIndex(expr,item);
                             expr[count] = null;
                             foreach (var it3 in expr) {
                                 if (it3 == exprComposta[i]) {
-                                    count = findMyIndex(expr,it3);
+                                    count = FindMyIndex(expr,it3);
                                     expr[count] = null;
                                 }
                             }
@@ -199,7 +199,7 @@ public class setAddTables : MonoBehaviour {
                                 aux[0] = "-" + exprComposta[i];
                                 if (item == aux[0]) {
                                     exprComposta[i] = item;
-                                    count = findMyIndex(expr,item);
+                                    count = FindMyIndex(expr,item);
                                     expr[count] = null;
                                 }
                             }
@@ -213,8 +213,8 @@ public class setAddTables : MonoBehaviour {
         }
     }
 
-    public void verificaInput(InputField input) { 
-        setId inputAtual = input.GetComponent<setId>();
+    public void VerificaInput(InputField input) { 
+        SetId inputAtual = input.GetComponent<SetId>();
         Debug.Log("Meu ID é = " + inputAtual.Id);
         Debug.Log("entrada: " + inputs[inputAtual.Id].text); 
         Debug.Log("reposta: " + resp[inputAtual.Id]);  
@@ -222,21 +222,21 @@ public class setAddTables : MonoBehaviour {
         if (resp[inputAtual.Id].Equals(inputs[inputAtual.Id].text)) {
             //Debug.Log("resposta certa");
             //inputs[inputAtual.Id].image.color = new Color32(69, 202, 35, 255); //cor verde
-            acertos[inputAtual.Id] = 1;
+            _acertos[inputAtual.Id] = 1;
         }else {
             //Debug.Log("resposta errada");
            // inputs[inputAtual.Id].image.color = new Color32(202, 41, 49, 255);//cor vermelha
-            acertos[inputAtual.Id] = 0;
+            _acertos[inputAtual.Id] = 0;
         }
-        verficaAcertos();
+        VerficaAcertos();
     }
 
-    public void verficaAcertos() {
+    public void VerficaAcertos() {
         certo = 0;
-        for (int i = 0; i <= acertos.Length - 1; i++) {  //Debug.Log("indice = " + i);
-            if (acertos[i] == 1) {
+        for (int i = 0; i <= _acertos.Length - 1; i++) {  //Debug.Log("indice = " + i);
+            if (_acertos[i] == 1) {
                 certo += 1;//Debug.Log("acerto: " + certo); 
-                if (certo == acertos.Length) { // Debug.Log("fim de jogo");
+                if (certo == _acertos.Length) { // Debug.Log("fim de jogo");
                     endGame.SetActive(true);
                     for (int j = 0; j < inputs.Length; j++) 
                         inputs[j].image.color = new Color32(69, 202, 35, 255); //cor verde
@@ -246,25 +246,25 @@ public class setAddTables : MonoBehaviour {
             }
         }
     }
-    public void keepUser() { //cadastra usuario
-        users[userCount] = userInput.text;
+    public void KeepUser() { //cadastra usuario
+        _users[userCount] = userInput.text;
         userInput.text = "";
-        userTable.text += String.Format("{0,-12}{1,24}\n",users[userCount],tempos[userCount] + " segundos");
+        userTable.text += String.Format("{0,-12}{1,24}\n",_users[userCount],_tempos[userCount] + " segundos");
         userCount++;
     }
 
-    public void selectArquivo(string nomeDoArquivo) {
+    public void SelectArquivo(string nomeDoArquivo) {
         path = Directory.GetCurrentDirectory(); //pega diretorio do arquivo
         pathTable = path + pathTable + nomeDoArquivo; //completa o caminho até o arquivo escolhido
         textIni.SetActive(false);
         for (int i = 0; i < buttons.Length; i++) //desativa os botões
             buttons[i].SetActive(false);
         manager.tablePanel.SetActive(true);
-        ResultadoTransform = GameObject.FindWithTag("Respostas").transform; //transform p/ setar inputs como Childs de Respostas na hierarquia 
-        setaTabela(); //chama função principal
+        _resultadoTransform = GameObject.FindWithTag("Respostas").transform; //transform p/ setar inputs como Childs de Respostas na hierarquia 
+        SetaTabela(); //chama função principal
     }
 
-    public void proximaTabela() {
-        setaTabela();
+    public void ProximaTabela() {
+        SetaTabela();
     }
 }

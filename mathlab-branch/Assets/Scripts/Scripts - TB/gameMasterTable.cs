@@ -6,34 +6,34 @@ using UnityEngine.SceneManagement;
 using System.IO;
 using System;
 
-public class gameMasterTable : MonoBehaviour {   
+public class GameMasterTable : MonoBehaviour {   
     public GameObject jogarButton, tablePanel, mainText, 
         dicasPanel, proxButton, userPanel;
     public Text textDica;
     protected string pathTable = "Assets/NewAdds/tabelaVerdade.txt";
     
-    public void jogarTable() {
+    public void JogarTable() {
         mainText.SetActive(false);
         tablePanel.SetActive(true); // desativa gameobjet e childrens
         jogarButton.SetActive(false); 
     }
-    public void openDicas() {
+    public void OpenDicas() {
         dicasPanel.SetActive(true);
         proxButton.SetActive(true);
     }
-    public void closeDicas() {
+    public void CloseDicas() {
         dicasPanel.SetActive(false);
         proxButton.SetActive(false);
         textDica.text = "OTIMAS DICAS AQUI \n CLIQUE EM PROX \n PARA MAIS DICAS!";
     }
-    public void closeTable(){
+    public void CloseTable(){
         tablePanel.SetActive(false);
         dicasPanel.SetActive(false);
     }
-    public void proxDica() {
+    public void ProxDica() {
         textDica.text = " Segunda otima dica aqui!";
     }
-    public void nextTabela(){
+    public void NextTabela(){
         if (!File.Exists(pathTable)) {
             Debug.Log("Fim das tabelas");
             Application.Quit();
@@ -43,10 +43,10 @@ public class gameMasterTable : MonoBehaviour {
         }
     }
     
-    public void jogarNovamente(){
+    public void JogarNovamente(){
         userPanel.SetActive(false);
         
-        setAddTables.counter = 0;
+        SetAddTables.counter = 0;
         SceneManager.LoadScene("Jogo - Tabela Verdade Next (2)");
     }
 

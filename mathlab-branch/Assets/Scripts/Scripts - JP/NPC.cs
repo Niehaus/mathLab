@@ -7,42 +7,50 @@ using UnityEngine.UI;
 
 public class Npc : MonoBehaviour {
     
-    protected Rigidbody2D MyRb;
-    protected Animator MyAnim;
+    protected Rigidbody2D myRb;
+    protected Animator myAnim;
     
     [FormerlySerializedAs("nameNPC")] public string nameNpc;
     private static readonly int MoveX = Animator.StringToHash("moveX");
     private static readonly int MoveY = Animator.StringToHash("moveY");
     
-    [SerializeField] protected float speed;
+  
+    
     public GameObject caixaDialogo;
     public GameObject botaoContinuar;
     public Text dialogo;
+    
     public string[] sentences;
     public int index = 0;
     public int mission;
-    public float typingSpeed;
     protected int countSentences = 0;
-    protected Boolean fimDialogo = false;
+    
+    public float typingSpeed;
+    [SerializeField] protected float speed;
+    
+    protected bool fimDialogo = false;
+    protected bool[] acabouMissao = {false, false, false, false};
     
 
     // Start is called before the first frame update
     void Start() {
-        MyRb = GetComponent<Rigidbody2D>();
-        MyAnim = GetComponent<Animator>();
+        myRb = GetComponent<Rigidbody2D>();
+        myAnim = GetComponent<Animator>();
+        
+        
     }
     
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.CompareTag("BarX")) {
             //Debug.Log("colide BarX");
-            MyRb.velocity = new Vector2(0.2f, 0).normalized * speed * Time.deltaTime;
-            MyAnim.SetFloat(MoveX,MyRb.velocity.x);
-            MyAnim.SetFloat(MoveY,MyRb.velocity.y);
+            myRb.velocity = new Vector2(0.2f, 0).normalized * speed * Time.deltaTime;
+            myAnim.SetFloat(MoveX,myRb.velocity.x);
+            myAnim.SetFloat(MoveY,myRb.velocity.y);
         } else if(other.gameObject.CompareTag("BarY")) {
            // Debug.Log("colide BarY");
-            MyRb.velocity = new Vector2(-0.2f, 0).normalized * speed * Time.deltaTime;
-            MyAnim.SetFloat(MoveX,MyRb.velocity.x);
-            MyAnim.SetFloat(MoveY,MyRb.velocity.y);
+            myRb.velocity = new Vector2(-0.2f, 0).normalized * speed * Time.deltaTime;
+            myAnim.SetFloat(MoveX,myRb.velocity.x);
+            myAnim.SetFloat(MoveY,myRb.velocity.y);
         }
     }
 

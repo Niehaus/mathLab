@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class setId : MonoBehaviour {
-    private int id;
+public class SetId : MonoBehaviour {
+    private int _id;
     public int Id { get; set; }
 }

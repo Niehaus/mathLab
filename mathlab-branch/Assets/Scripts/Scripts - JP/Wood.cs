@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 public class Wood : Npc {
+    
     public Transform target;
     public Transform posInicial;
     public float chaseRaio;
@@ -19,9 +20,9 @@ public class Wood : Npc {
     void Start() {
         _disablekey = FindObjectOfType<PlayerController>();
         target = GameObject.FindWithTag("Player").transform;
-        MyAnim = GetComponent<Animator>();
+        myAnim = GetComponent<Animator>();
         
-        _disablekey.KeyboardAble = false;
+        _disablekey.keyboardAble = false;
         _disablekey.faceIt.y = 0.15f;
         caixaDialogo.SetActive(false);
         Debug.Log("index antes" + index);
@@ -32,7 +33,7 @@ public class Wood : Npc {
     // Update is called once per frame
     void Update() {
         NpcAction();
-        if (!_disablekey.KeyboardAble && caixaDialogo && !fimDialogo) { //dentro de um dialogo
+        if (!_disablekey.keyboardAble && caixaDialogo && !fimDialogo) { //dentro de um dialogo
             if (dialogo.text == sentences[index]) { //verifica se está okay a frase dita e ativa o botão p/ prox
                 botaoContinuar.SetActive(true);        
                 if (Input.GetKeyDown(KeyCode.Space)) {
@@ -50,9 +51,9 @@ public class Wood : Npc {
             var position = transform.position;
             position = Vector3.MoveTowards(position, target.position, speed* Time.deltaTime);  
             transform.position = position;
-            if (position.y <= 0) MyAnim.SetFloat(MoveY, position.y); else MyAnim.SetFloat(MoveY, - position.y);
+            if (position.y <= 0) myAnim.SetFloat(MoveY, position.y); else myAnim.SetFloat(MoveY, - position.y);
         } else if (Vector3.Distance(target.position,transform.position) <= talkRaio) {
-            MyAnim.SetFloat(MoveY, 0); MyAnim.SetFloat(MoveX, 0);
+            myAnim.SetFloat(MoveY, 0); myAnim.SetFloat(MoveX, 0);
             caixaDialogo.SetActive(true);
         }
     }

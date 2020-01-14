@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float speed;
     [NonSerialized]
-    public Boolean KeyboardAble = true;
+    public Boolean keyboardAble = true;
     [NonSerialized]
     public Vector2 faceIt;
     public VectorValue startingPosition;
@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
     }
     // Update is called once per frame
     void Update() {
-        if (KeyboardAble) {
+        if (keyboardAble) {
             _myRb.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized * speed * Time.deltaTime;
             _myAnim.SetFloat(MoveX,_myRb.velocity.x);
             _myAnim.SetFloat(MoveY,_myRb.velocity.y);

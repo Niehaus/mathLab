@@ -19,7 +19,11 @@
         <e p="Scripts" t="Include">
           <e p="Scripts - Jogo Eqv Log" t="Include">
             <e p="button.cs" t="Include" />
+            <e p="Cenoura.cs" t="Include" />
+            <e p="Coins.cs" t="Include" />
+            <e p="item.cs" t="Include" />
             <e p="manager.cs" t="Include" />
+            <e p="Pao.cs" t="Include" />
           </e>
           <e p="Scripts - JP" t="Include">
             <e p="AreaTransitions.cs" t="Include" />

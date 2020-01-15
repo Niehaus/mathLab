@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class Npc : MonoBehaviour {
     
-    protected Rigidbody2D myRb;
+    private Rigidbody2D myRb;
     protected Animator myAnim;
     
     [FormerlySerializedAs("nameNPC")] public string nameNpc;
@@ -19,7 +17,7 @@ public class Npc : MonoBehaviour {
     public Text dialogo;
     
     public string[] sentences;
-    public int index = 0;
+    public int index;
     public int mission;
     protected int countSentences = 0;
     
@@ -38,19 +36,19 @@ public class Npc : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.CompareTag("BarX")) {
             //Debug.Log("colide BarX");
-            myRb.velocity = new Vector2(0.2f, 0).normalized * speed * Time.deltaTime;
+            myRb.velocity = new Vector2(0.2f, 0).normalized * (speed * Time.deltaTime);
             myAnim.SetFloat(MoveX,myRb.velocity.x);
             myAnim.SetFloat(MoveY,myRb.velocity.y);
         } else if(other.gameObject.CompareTag("BarY")) {
            // Debug.Log("colide BarY");
-            myRb.velocity = new Vector2(-0.2f, 0).normalized * speed * Time.deltaTime;
+            myRb.velocity = new Vector2(-0.2f, 0).normalized * (speed * Time.deltaTime);
             myAnim.SetFloat(MoveX,myRb.velocity.x);
             myAnim.SetFloat(MoveY,myRb.velocity.y);
         }
     }
 
     IEnumerator Type(){
-        foreach (char letter in sentences[index].ToCharArray()) {
+        foreach (char letter in sentences[index]) {
             // ReSharper disable once HeapView.BoxingAllocation
             dialogo.text = $"{dialogo.text}{letter}";
             yield return new WaitForSeconds(typingSpeed);

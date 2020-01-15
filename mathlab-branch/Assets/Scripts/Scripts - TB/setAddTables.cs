@@ -158,7 +158,7 @@ public class SetAddTables : MonoBehaviour {
         return retornaArray;
     }
 
-    private int FindMyIndex(string[] expr, string item){ //encontra o index do item procurado 
+    private int FindMyIndex(string[] expr, string item){ //encontra o index do Item procurado 
         int index = 0;
         foreach (var it in expr) {
                 if (it == item && index != 0) {

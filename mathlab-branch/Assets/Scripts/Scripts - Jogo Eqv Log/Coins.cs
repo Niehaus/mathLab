@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class manager : MonoBehaviour
+public class Coins : Item
 {
     // Start is called before the first frame update
-    void Start()
-    {
-        
+    void Start() {
+        myAnim = GetComponent<Animator>();
+        _manager = FindObjectOfType<Manager>();
     }
 
     // Update is called once per frame
@@ -15,4 +15,6 @@ public class manager : MonoBehaviour
     {
         
     }
+    
+    
 }

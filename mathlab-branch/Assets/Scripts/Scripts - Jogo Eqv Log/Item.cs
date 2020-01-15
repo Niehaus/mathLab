@@ -8,17 +8,18 @@ public class Item : MonoBehaviour {
     protected Animator myAnim;
     public new string name;
     public int statusUp;
+    public int spawn;
     private static readonly int Picked = Animator.StringToHash("picked");
     protected Manager _manager;
     protected PlayerController playerController;
+
     // Start is called before the first frame update
     void Start() {
         
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         
     }
     
@@ -39,8 +40,9 @@ public class Item : MonoBehaviour {
         }
     }
 
-    IEnumerator WaitToDestroy() {
+    private IEnumerator WaitToDestroy() {
         yield return new WaitForSeconds(0.5f); //TODO: ajustar tempo ao som de destruir
         Destroy(gameObject);
     }
+    
 }

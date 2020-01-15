@@ -6,6 +6,7 @@ public class Pao : Item {
     
     private static readonly int Picked = Animator.StringToHash("picked");
 
+    
     // Start is called before the first frame update
     void Start() {
         myAnim = GetComponent<Animator>();

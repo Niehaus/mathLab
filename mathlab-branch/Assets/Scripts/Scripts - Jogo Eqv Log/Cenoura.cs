@@ -9,7 +9,6 @@ public class Cenoura : Item {
     void Start() {
         myAnim = GetComponent<Animator>();
         playerController = FindObjectOfType<PlayerController>();
-        Debug.Log(playerController.speed);   
     }
 
     // Update is called once per frame

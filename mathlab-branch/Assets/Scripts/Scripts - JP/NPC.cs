@@ -14,8 +14,6 @@ public class Npc : MonoBehaviour {
     private static readonly int MoveX = Animator.StringToHash("moveX");
     private static readonly int MoveY = Animator.StringToHash("moveY");
     
-  
-    
     public GameObject caixaDialogo;
     public GameObject botaoContinuar;
     public Text dialogo;
@@ -29,15 +27,12 @@ public class Npc : MonoBehaviour {
     [SerializeField] protected float speed;
     
     protected bool fimDialogo = false;
-    protected bool[] acabouMissao = {false, false, false, false};
+    protected bool[] acabouMissao = {false, true, false, false};
     
-
     // Start is called before the first frame update
     void Start() {
         myRb = GetComponent<Rigidbody2D>();
         myAnim = GetComponent<Animator>();
-        
-        
     }
     
     private void OnTriggerEnter2D(Collider2D other) {

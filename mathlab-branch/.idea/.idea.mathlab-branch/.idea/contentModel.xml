@@ -17,13 +17,17 @@
           <e p="tabelaVerdade.txt" t="Include" />
         </e>
         <e p="Scripts" t="Include">
+          <e p="Scripts - Jogo Eqv Log" t="Include">
+            <e p="button.cs" t="Include" />
+            <e p="manager.cs" t="Include" />
+          </e>
           <e p="Scripts - JP" t="Include">
             <e p="AreaTransitions.cs" t="Include" />
             <e p="CameraController.cs" t="Include" />
-            <e p="Jairo.cs" t="Include" />
             <e p="NPC.cs" t="Include" />
             <e p="Placa.cs" t="Include" />
             <e p="PlayerController.cs" t="Include" />
+            <e p="Rene.cs" t="Include" />
             <e p="SceneTransition.cs" t="Include" />
             <e p="Script de Objetos" t="Include">
               <e p="VectorValue.cs" t="Include" />

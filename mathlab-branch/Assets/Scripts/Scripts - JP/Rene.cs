@@ -3,33 +3,40 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Jairo : Npc {
+public class Rene : Npc {
 
     private bool playerInRange = false;
+    private PlayerController _disablekey; //bloqueador de teclado enquanto NPC fala
     // Start is called before the first frame update
     void Start() {
-        
+        _disablekey = FindObjectOfType<PlayerController>();
     }
 
     // Update is called once per frame
     void Update() {
-       
+        if (index > 2 && acabouMissao[1]) {
+            fimDialogo = true;
+            _disablekey.keyboardAble = true;
+            //TODO: ir para tela da missão se ela ja n tiver acontecido
+        }
         if (dialogo.text == sentences[index]) {
             botaoContinuar.SetActive(true);
+            _disablekey.keyboardAble = true;
         }
-        if (Input.GetKeyDown(KeyCode.Space) && playerInRange) {
+        if (Input.GetKeyDown(KeyCode.Space) && playerInRange && _disablekey.keyboardAble) {
             caixaDialogo.SetActive(true);
-            Debug.Log("abre caixa");
+            _disablekey.keyboardAble = false;
+            Debug.Log("desativa teclado");
             NpcFala();
-            if (fimDialogo) {
-               caixaDialogo.SetActive(false);
-               Debug.Log("acabou aqui");
-                //ir para tela da missão se ela ja n tiver acontecido
+            if (fimDialogo) { 
+                _disablekey.keyboardAble = true;
+                caixaDialogo.SetActive(false);
+                fimDialogo = false;
+                Index();
             }
         }
-        
     }
-
+    
     private void OnTriggerEnter2D(Collider2D other) {
         Index();
         if (other.CompareTag("Player")) {
@@ -42,7 +49,7 @@ public class Jairo : Npc {
         if (other.CompareTag("Player")) {
             playerInRange = false;
             caixaDialogo.SetActive(false);
-            //se a missão for feita muda o index pra um dialogo diferente
+            //TODO: se a missão for feita muda o index pra um dialogo diferente
             fimDialogo = false;
         }
     }
@@ -52,7 +59,7 @@ public class Jairo : Npc {
             index = 0;
         }
         else {
-            index = 2;
+            index = 3;
         }
     }
 }

@@ -10,6 +10,9 @@ TagManager:
   - True
   - manager
   - Respostas
+  - Button V
+  - Button F
+  - Sumidouro
   layers:
   - Default
   - TransparentFX

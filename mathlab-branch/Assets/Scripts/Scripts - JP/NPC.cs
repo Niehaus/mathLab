@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Npc : MonoBehaviour {
     
-    private Rigidbody2D myRb;
+    private Rigidbody2D _myRb;
     protected Animator myAnim;
     
     [FormerlySerializedAs("nameNPC")] public string nameNpc;
@@ -29,21 +29,21 @@ public class Npc : MonoBehaviour {
     
     // Start is called before the first frame update
     void Start() {
-        myRb = GetComponent<Rigidbody2D>();
+        _myRb = GetComponent<Rigidbody2D>();
         myAnim = GetComponent<Animator>();
     }
     
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.CompareTag("BarX")) {
             //Debug.Log("colide BarX");
-            myRb.velocity = new Vector2(0.2f, 0).normalized * (speed * Time.deltaTime);
-            myAnim.SetFloat(MoveX,myRb.velocity.x);
-            myAnim.SetFloat(MoveY,myRb.velocity.y);
+            _myRb.velocity = new Vector2(0.2f, 0).normalized * (speed * Time.deltaTime);
+            myAnim.SetFloat(MoveX,_myRb.velocity.x);
+            myAnim.SetFloat(MoveY,_myRb.velocity.y);
         } else if(other.gameObject.CompareTag("BarY")) {
            // Debug.Log("colide BarY");
-            myRb.velocity = new Vector2(-0.2f, 0).normalized * (speed * Time.deltaTime);
-            myAnim.SetFloat(MoveX,myRb.velocity.x);
-            myAnim.SetFloat(MoveY,myRb.velocity.y);
+            _myRb.velocity = new Vector2(-0.2f, 0).normalized * (speed * Time.deltaTime);
+            myAnim.SetFloat(MoveX,_myRb.velocity.x);
+            myAnim.SetFloat(MoveY,_myRb.velocity.y);
         }
     }
 

@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Coins : Item
-{
+public class Palavra : Item  {
+    private static readonly int BlowUp = Animator.StringToHash("blowUp");
+
     // Start is called before the first frame update
     void Start() {
         myAnim = GetComponent<Animator>();
@@ -15,6 +16,10 @@ public class Coins : Item
     {
         
     }
-    
-    
+
+    public void PalavraRoutine() {
+        myAnim.SetBool(BlowUp,true);
+        StartCoroutine(WaitToDestroy());
+        //gameObject.GetComponent<Rigidbody2D>().mass = 10;
+    }
 }

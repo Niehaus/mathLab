@@ -10,7 +10,7 @@ public class Item : MonoBehaviour {
     public int statusUp;
     public int spawn;
     private static readonly int Picked = Animator.StringToHash("picked");
-    protected Manager _manager;
+    protected Manager manager;
     protected PlayerController playerController;
 
     // Start is called before the first frame update
@@ -27,11 +27,11 @@ public class Item : MonoBehaviour {
         if (other.CompareTag("Player")) {
             myAnim.SetBool(Picked, true);
             if (name == "Coins") {
-                Manager._coins = Manager._coins + statusUp;
-                _manager.contador[0].text = Manager._coins + "x";
+                Manager.coins = Manager.coins + statusUp;
+                manager.contador[0].text = Manager.coins + "x";
             }else if (name == "Pao") {
-                Manager._hearts = Manager._hearts + statusUp;
-                _manager.contador[1].text = Manager._hearts + "x";
+                Manager.hearts = Manager.hearts + statusUp;
+                manager.contador[1].text = Manager.hearts + "x";
             }else if (name == "Cenoura") {
                 playerController.speed = playerController.speed + statusUp;
                 Debug.Log(playerController.speed);  
@@ -40,7 +40,7 @@ public class Item : MonoBehaviour {
         }
     }
 
-    private IEnumerator WaitToDestroy() {
+    protected IEnumerator WaitToDestroy() {
         yield return new WaitForSeconds(0.5f); //TODO: ajustar tempo ao som de destruir
         Destroy(gameObject);
     }

@@ -23,7 +23,9 @@
             <e p="Coins.cs" t="Include" />
             <e p="item.cs" t="Include" />
             <e p="manager.cs" t="Include" />
+            <e p="Palavra.cs" t="Include" />
             <e p="Pao.cs" t="Include" />
+            <e p="Somidouro.cs" t="Include" />
           </e>
           <e p="Scripts - JP" t="Include">
             <e p="AreaTransitions.cs" t="Include" />

@@ -10,7 +10,7 @@ public class Pao : Item {
     // Start is called before the first frame update
     void Start() {
         myAnim = GetComponent<Animator>();
-        _manager = FindObjectOfType<Manager>();
+        manager = FindObjectOfType<Manager>();
 
         
     }

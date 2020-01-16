@@ -4,16 +4,16 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class button : MonoBehaviour {
+public class Button : MonoBehaviour {
 
-    private Animator myAnim;
+    private Animator _myAnim;
     public bool buttonlink;
-    private Text texto;
+    private Text _texto;
     private static readonly int Pressed = Animator.StringToHash("pressed");
 
     // Start is called before the first frame update
     void Start() {
-        myAnim = GetComponent<Animator>();
+        _myAnim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -24,26 +24,26 @@ public class button : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Player")) {
-            myAnim.SetBool(Pressed, true);
+            _myAnim.SetBool(Pressed, true);
             if (buttonlink) {
-                texto = GameObject.FindGameObjectWithTag("Button V").GetComponent<Text>();
-                texto.color = Color.green;
+                _texto = GameObject.FindGameObjectWithTag("Button V").GetComponent<Text>();
+                _texto.color = Color.green;
             }else {
-                texto = GameObject.FindGameObjectWithTag("Button F").GetComponent<Text>();
-                texto.color = Color.green;
+                _texto = GameObject.FindGameObjectWithTag("Button F").GetComponent<Text>();
+                _texto.color = Color.green;
             }
         }
     }
 
     private void OnTriggerExit2D(Collider2D other) {
         if (other.CompareTag("Player")){
-            myAnim.SetBool(Pressed, false);
+            _myAnim.SetBool(Pressed, false);
             if (buttonlink) {
-                texto = GameObject.FindGameObjectWithTag("Button V").GetComponent<Text>();
-                texto.color = new Color(0.768627f, 0.768627f, 0.768627f, 1f);
+                _texto = GameObject.FindGameObjectWithTag("Button V").GetComponent<Text>();
+                _texto.color = new Color(0.768627f, 0.768627f, 0.768627f, 1f);
             }else {
-                texto = GameObject.FindGameObjectWithTag("Button F").GetComponent<Text>();
-                texto.color = new Color(0.768627f, 0.768627f, 0.768627f, 1f);
+                _texto = GameObject.FindGameObjectWithTag("Button F").GetComponent<Text>();
+                _texto.color = new Color(0.768627f, 0.768627f, 0.768627f, 1f);
             }
         }
     }

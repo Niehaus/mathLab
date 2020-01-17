@@ -7810,9 +7810,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f75077c8b6a52aa43b1c64131c674f49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myAnim: {fileID: 0}
   buttonlink: 0
-  texto: {fileID: 0}
 --- !u!1 &765621102
 GameObject:
   m_ObjectHideFlags: 0
@@ -10791,9 +10789,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f75077c8b6a52aa43b1c64131c674f49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myAnim: {fileID: 0}
   buttonlink: 1
-  texto: {fileID: 0}
 --- !u!1 &1022320405
 GameObject:
   m_ObjectHideFlags: 0
@@ -11473,6 +11469,7 @@ GameObject:
   - component: {fileID: 1537400658}
   - component: {fileID: 1537400657}
   - component: {fileID: 1537400660}
+  - component: {fileID: 1537400659}
   m_Layer: 0
   m_Name: Somidouro
   m_TagString: Sumidouro
@@ -11542,6 +11539,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1537400659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537400656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06ea45e459e52df428486e756b4c51a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!58 &1537400660
 CircleCollider2D:
   m_ObjectHideFlags: 0

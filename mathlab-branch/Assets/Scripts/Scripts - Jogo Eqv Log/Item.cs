@@ -13,27 +13,17 @@ public class Item : MonoBehaviour {
     protected Manager manager;
     protected PlayerController playerController;
 
-    // Start is called before the first frame update
-    void Start() {
-        
-    }
-
-    // Update is called once per frame
-    void Update() {
-        
-    }
-    
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Player")) {
             myAnim.SetBool(Picked, true);
             if (name == "Coins") {
-                Manager.coins = Manager.coins + statusUp;
+                Manager.coins += statusUp;
                 manager.contador[0].text = Manager.coins + "x";
             }else if (name == "Pao") {
-                Manager.hearts = Manager.hearts + statusUp;
+                Manager.hearts += statusUp;
                 manager.contador[1].text = Manager.hearts + "x";
             }else if (name == "Cenoura") {
-                playerController.speed = playerController.speed + statusUp;
+                playerController.speed += statusUp;
                 Debug.Log(playerController.speed);  
             }
             StartCoroutine(WaitToDestroy());

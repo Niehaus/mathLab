@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     private static readonly int LastMoveY = Animator.StringToHash("lastMoveY");
 
     // Start is called before the first frame update
-    void Start() { //TODO: não esquecer de fazer a volta da cena para qual posição o player deve ficar**
+    private void Start() { //TODO: não esquecer de fazer a volta da cena para qual posição o player deve ficar**
         _myRb = GetComponent<Rigidbody2D>();
         _myAnim = GetComponent<Animator>();
         transform.position = startingPosition.valorInicial;
@@ -28,16 +28,15 @@ public class PlayerController : MonoBehaviour
         _myAnim.SetFloat(LastMoveY, value: faceIt.y);
     }
     // Update is called once per frame
-    void Update() {
-        if (keyboardAble) {
-            _myRb.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized * (speed * Time.deltaTime);
-            _myAnim.SetFloat(MoveX,_myRb.velocity.x);
-            _myAnim.SetFloat(MoveY,_myRb.velocity.y);
+    private void Update() {
+        if (!keyboardAble) return;
+        _myRb.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized * (speed * Time.deltaTime);
+        _myAnim.SetFloat(MoveX,_myRb.velocity.x);
+        _myAnim.SetFloat(MoveY,_myRb.velocity.y);
 
-            if (Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1 || Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1 ) {
-                _myAnim.SetFloat(LastMoveX, Input.GetAxisRaw("Horizontal"));
-                _myAnim.SetFloat(LastMoveY, Input.GetAxisRaw("Vertical"));
-            }    
+        if (Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1 || Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1 ) {
+            _myAnim.SetFloat(LastMoveX, Input.GetAxisRaw("Horizontal"));
+            _myAnim.SetFloat(LastMoveY, Input.GetAxisRaw("Vertical"));
         }
     }
 }

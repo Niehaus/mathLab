@@ -1,44 +1,62 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Palavra : Item  {
     
-    private static readonly int BlowUp = Animator.StringToHash("blowUp");
-
     private Vector3 _originalPosition;
     private Rigidbody2D _rigidbody2D;
-
+    private static readonly string PathTable = Directory.GetCurrentDirectory() + "/Assets/NewAdds/eqvLogica.txt";
+    private readonly StreamReader _file = new StreamReader(PathTable);
+    public Text desafio;
+    [NonSerialized] public string respostaAtual;
+    private static readonly int BlowUpErrou = Animator.StringToHash("blowUpErrou");
+    private static readonly int BlowUp = Animator.StringToHash("blowUp");
     // Start is called before the first frame update
     private void Start() {
         myAnim = GetComponent<Animator>();
         manager = FindObjectOfType<Manager>();
         _rigidbody2D = gameObject.GetComponent<Rigidbody2D>();
         _originalPosition = gameObject.transform.position;
+        
+        desafio.text = _file.ReadLine();
+        respostaAtual = _file.ReadLine();
     }
-
-    // Update is called once per frame
-    void Update() {
     
-    }
-    public void PalavraRoutine() {
-        //myAnim.SetBool(BlowUp,true);
-        //StartCoroutine(WaitToDestroy());
-        //gameObject.GetComponent<Rigidbody2D>().mass = 10;
-        StartCoroutine(AnimSet());
-        //TODO: prox passo: fazer item caindo, somar e acelerar com o tempo e contar o tempo
+    public void PalavraRoutine(bool acertou) {
+        
+        manager.ContabilizaPontos(acertou);
+        StartCoroutine(AnimSet(acertou));
+        desafio.text = _file.ReadLine();
+        respostaAtual = _file.ReadLine();
+        
+        //TODO: qd o arquivo acabar parar o jogo 
+        //TODO: fazer o timer do jogo
     }
 
-    public void MakeMeFaster() {
-        //TODO: DEIXAR PALAVRA MAIS RAPIDA NO TEMPO DA CENOURA
+    public void MakeMeFaster() { //DEIXA PALAVRA MAIS RAPIDA NO TEMPO DA CENOURA
         _rigidbody2D.drag -= 0.2f;
     }
 
-    private IEnumerator AnimSet() {
-        myAnim.SetBool(BlowUp, true);
+    private IEnumerator AnimSet(bool acertou) {
+        myAnim.SetBool(acertou ? BlowUp : BlowUpErrou, true);
         yield return new WaitForSeconds(0.5f);
         gameObject.transform.position = _originalPosition;
         myAnim.SetBool(BlowUp, false);
+        myAnim.SetBool(BlowUpErrou, false);
+    }
+
+    public bool TurnMeBool(string respostaAtual) {
+        switch (respostaAtual) {
+            case "v":
+                return true;
+            case "f":
+                return false;
+            default:
+                return false;
+        }
     }
 }

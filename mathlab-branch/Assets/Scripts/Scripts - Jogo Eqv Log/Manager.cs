@@ -22,20 +22,14 @@ public class Manager : MonoBehaviour {
      private Pao _pao;
      private Palavra _palavra;
      Random _rand = new Random();
-
-     //private Desafio _desafios;
-
+     
      // Start is called before the first frame update
      private void Start() {
         _coins1 = FindObjectOfType<Coins>();
         _cenoura = FindObjectOfType<Cenoura>();
         _pao = FindObjectOfType<Pao>();
         _palavra = FindObjectOfType<Palavra>();
-        //_desafios = FindObjectOfType<Desafio>();
-          
-        //_desafios.Expressao = "ola";
-        //Debug.Log(_desafios.Expressao);
-        
+                
         contador[0].text = coins + "x";
         contador[1].text =  hearts + "x" ;
         
@@ -65,7 +59,7 @@ public class Manager : MonoBehaviour {
          }
 
          if (nome == "Cenoura") {
-             Debug.Log("Cenoura aqui, make me faster");
+             //Debug.Log("Cenoura aqui, make me faster");
              _palavra.MakeMeFaster();
          }
          //Debug.Log("ok");
@@ -74,9 +68,8 @@ public class Manager : MonoBehaviour {
      private Vector2 GeraCoord(Vector2 minAltura, Vector2 minLargura) {
         
          var valorX =  (_rand.NextDouble() + 10 * _rand.NextDouble()) + Math.Abs(minLargura.x);
-         var valorY =  _rand.NextDouble() + 10 * _rand.NextDouble() + minAltura.y;    
-            
-         //Debug.Log(valorX);
+         var valorY =  _rand.NextDouble() + 10 * _rand.NextDouble() + minAltura.y;
+         
          while (Math.Abs(value: valorX) > Math.Abs(minAltura.x)) {
              valorX = (_rand.NextDouble() + 10 * _rand.NextDouble()) + Math.Abs(minLargura.x);
              //Debug.Log("ERROU - Novo valor em X: " + valorX);
@@ -90,6 +83,18 @@ public class Manager : MonoBehaviour {
          return coordenadas;
      }
 
-
+     public void ContabilizaPontos(bool acerto) {
+         if (acerto) {
+             coins += 5;
+             contador[0].text = coins + "x";
+         }
+         else {
+             hearts -= 1;
+             contador[1].text = hearts + "x";
+             if (hearts == 0 || hearts < 0) {  
+                 //TODO: JOGO ACABA
+             }
+         }
+     }
    
 }

@@ -21,9 +21,9 @@ public class Somidouro : MonoBehaviour
         if (other.CompareTag("Word")) {
             Debug.Log("palavra aqui");
             var palavra = FindObjectOfType<Palavra>();
-            
-            palavra.PalavraRoutine(); 
-           
+            Debug.Log(palavra.name);
+            palavra.PalavraRoutine();
+
         }
     }
 }

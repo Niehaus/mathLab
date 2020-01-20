@@ -23,7 +23,7 @@ public class Manager : MonoBehaviour {
      private Palavra _palavra;
      Random _rand = new Random();
 
-     private Desafio _desafios;
+     //private Desafio _desafios;
 
      // Start is called before the first frame update
      private void Start() {
@@ -31,10 +31,10 @@ public class Manager : MonoBehaviour {
         _cenoura = FindObjectOfType<Cenoura>();
         _pao = FindObjectOfType<Pao>();
         _palavra = FindObjectOfType<Palavra>();
-        _desafios = FindObjectOfType<Desafio>();
+        //_desafios = FindObjectOfType<Desafio>();
           
-        _desafios.Expressao = "ola";
-        Debug.Log(_desafios.Expressao);
+        //_desafios.Expressao = "ola";
+        //Debug.Log(_desafios.Expressao);
         
         contador[0].text = coins + "x";
         contador[1].text =  hearts + "x" ;

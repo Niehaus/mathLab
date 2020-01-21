@@ -47,16 +47,10 @@ public class Painel : MonoBehaviour {
         _coinPos = coinsExe.transform.position;
     }
 
-    // Update is called once per frame
-    private void Update() {
-        
-    }
-    
-    
     private void OnTriggerEnter2D(Collider2D other) {
       //TODO:FAZER ELE ANDAR E VOLTAR AO ENCONTRAR A BARREIRA   
       if (!other.CompareTag("Player")) return;
-      Debug.Log("player aqui vira");
+      //Player que pisa no botão
       if (_rigidbody2D.velocity.x > 0 && other.name == buttonPlayer.name) { //indo para direita, muda p/ esquerda
           _rigidbody2D.velocity = new Vector2(-0.1f,0f).normalized * (75 * Time.deltaTime);
           _animator.SetFloat(MoveX, _rigidbody2D.velocity.x);
@@ -65,8 +59,7 @@ public class Painel : MonoBehaviour {
           _rigidbody2D.velocity = new Vector2(0.1f,0f).normalized * (75 * Time.deltaTime);
           _animator.SetFloat(MoveX, _rigidbody2D.velocity.x);
       }
-      
-      
+      //Player que pega os itens
       if (_rigidbody2DPick.velocity.x > 0 && other.name == pickPlayer.name) { //indo para direita, muda p/ esquerda
           _rigidbody2DPick.velocity = new Vector2(-0.1f,0f).normalized * (75 * Time.deltaTime);
           _animatorPick.SetFloat(MoveX, _rigidbody2DPick.velocity.x);
@@ -78,10 +71,6 @@ public class Painel : MonoBehaviour {
       else if(_rigidbody2DPick.velocity.x < 0 && other.name == pickPlayer.name){ //indo para esquerda, muda p/ direita
           _rigidbody2DPick.velocity = new Vector2(0.1f,0f).normalized * (75 * Time.deltaTime);
           _animatorPick.SetFloat(MoveX, _rigidbody2DPick.velocity.x);
-          
-          //Instantiate(cenouraExe, _cenouraPos, Quaternion.identity);
-          //Instantiate(paoExe, _paoPos, Quaternion.identity);
-          //Instantiate(coinsExe, _coinPos, Quaternion.identity);
           
           Instantiate(cenouraExe, _cenouraPos, Quaternion.identity).transform.SetParent(gameObject.transform, false);;
           Instantiate(paoExe, _paoPos, Quaternion.identity).transform.SetParent(gameObject.transform, false);;

@@ -17,22 +17,30 @@ public class Manager : MonoBehaviour {
      private int _qntHearts = 3;
      private int _qntCenouras = 4;
      
-     private Cenoura _cenoura;
-     private Coins _coins1;
-     private Pao _pao;
+     public Cenoura _cenoura;
+     public Coins _coins1;
+     public Pao _pao;
      private Palavra _palavra;
-     Random _rand = new Random();
-     
+     private Painel _painel;
+     private PlayerController _disablekey; //bloqueador de teclado enquanto NPC fala
+     public GameObject startAnim;
+
+     private Random _rand = new Random();
+     private static readonly int Start1 = Animator.StringToHash("start");
+     private Animator _animator;
+     private Rigidbody2D _rigidbody2D;
+
      // Start is called before the first frame update
      private void Start() {
-        _coins1 = FindObjectOfType<Coins>();
-        _cenoura = FindObjectOfType<Cenoura>();
-        _pao = FindObjectOfType<Pao>();
-        _palavra = FindObjectOfType<Palavra>();
-                
-        contador[0].text = coins + "x";
-        contador[1].text =  hearts + "x" ;
-          
+         _palavra = FindObjectOfType<Palavra>();
+         _painel = FindObjectOfType<Painel>();
+         _rigidbody2D = _palavra.GetComponent<Rigidbody2D>(); //Rigid da palavra
+         _animator = startAnim.GetComponent<Animator>(); //Animator do Start
+         _disablekey = FindObjectOfType<PlayerController>();
+         _disablekey.keyboardAble = false;
+        
+         contador[0].text = coins + "x";
+         contador[1].text =  hearts + "x" ;
      }
     
      private IEnumerator Spawn(int time, Transform prefab, double orientacao, string nome) {
@@ -47,7 +55,6 @@ public class Manager : MonoBehaviour {
          }
 
          if (nome == "Cenoura") {
-             //Debug.Log("Cenoura aqui, make me faster");
              _palavra.MakeMeFaster();
          }
          //Debug.Log("ok");
@@ -85,9 +92,8 @@ public class Manager : MonoBehaviour {
          }
      }
 
-     public void IniciaJogo() {
-         
-         _palavra.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+     private void IniciaJogo() {
+         _rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
          for (var i = 1; i < _qntCenouras + 1; i++) {
              StartCoroutine(Spawn(i * _cenoura.spawn, _cenoura.transform, _rand.NextDouble(), _cenoura.name));
          }
@@ -101,5 +107,23 @@ public class Manager : MonoBehaviour {
              StartCoroutine(Spawn(i * _pao.spawn, _pao.transform, _rand.NextDouble(), _pao.name));
          }
      }
-   
+
+     public void Play() {
+         StartCoroutine(JustInTime());
+     }
+
+     private IEnumerator JustInTime() { //seta animações tempos etc
+         _animator.SetBool(Start1,true);
+         _painel.gameObject.SetActive(false);
+         
+         yield return new WaitForSeconds(2);
+         
+         _animator.SetBool(Start1,false);
+         startAnim.gameObject.SetActive(false);
+         _disablekey.keyboardAble = true;
+         IniciaJogo();
+         //TODO:COMEÇA CONTAR TEMPO QD TIVER O TIMER
+
+     }
 }
+

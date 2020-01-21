@@ -34,9 +34,9 @@ public class PlayerController : MonoBehaviour
         _myAnim.SetFloat(MoveX,_myRb.velocity.x);
         _myAnim.SetFloat(MoveY,_myRb.velocity.y);
 
-        if (Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1 || Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1 ) {
-            _myAnim.SetFloat(LastMoveX, Input.GetAxisRaw("Horizontal"));
-            _myAnim.SetFloat(LastMoveY, Input.GetAxisRaw("Vertical"));
-        }
+        if (Input.GetAxisRaw("Horizontal") != 1 && Input.GetAxisRaw("Horizontal") != -1 &&
+            Input.GetAxisRaw("Vertical") != 1 && Input.GetAxisRaw("Vertical") != -1) return;
+        _myAnim.SetFloat(LastMoveX, Input.GetAxisRaw("Horizontal"));
+        _myAnim.SetFloat(LastMoveY, Input.GetAxisRaw("Vertical"));
     }
 }

@@ -21,9 +21,9 @@
             <e p="button.cs" t="Include" />
             <e p="Cenoura.cs" t="Include" />
             <e p="Coins.cs" t="Include" />
-            <e p="Desafio.cs" t="Include" />
             <e p="item.cs" t="Include" />
             <e p="manager.cs" t="Include" />
+            <e p="Painel.cs" t="Include" />
             <e p="Palavra.cs" t="Include" />
             <e p="Pao.cs" t="Include" />
             <e p="Somidouro.cs" t="Include" />

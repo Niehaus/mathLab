@@ -32,19 +32,7 @@ public class Manager : MonoBehaviour {
                 
         contador[0].text = coins + "x";
         contador[1].text =  hearts + "x" ;
-        
-        for (var i = 1; i < _qntCenouras + 1; i++) {
-            StartCoroutine(Spawn(i * _cenoura.spawn, _cenoura.transform, _rand.NextDouble(), _cenoura.name));
-        }
-        for (var i = 1; i < _qntCoins + 1; i++) {
-            StartCoroutine(Spawn(i * _coins1.spawn, _coins1.transform, _rand.NextDouble(), _coins1.name));
-        }
-        for (var i = 1; i < 5 + 1; i++) {
-            StartCoroutine(Spawn(i * 40, _coins1.transform, _rand.NextDouble(), _coins1.name));
-        }
-        for (var i = 1; i < _qntHearts + 1; i++) {
-            StartCoroutine(Spawn(i * _pao.spawn, _pao.transform, _rand.NextDouble(), _pao.name));
-        }
+          
      }
     
      private IEnumerator Spawn(int time, Transform prefab, double orientacao, string nome) {
@@ -94,6 +82,23 @@ public class Manager : MonoBehaviour {
              if (hearts == 0 || hearts < 0) {  
                  //TODO: JOGO ACABA
              }
+         }
+     }
+
+     public void IniciaJogo() {
+         
+         _palavra.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+         for (var i = 1; i < _qntCenouras + 1; i++) {
+             StartCoroutine(Spawn(i * _cenoura.spawn, _cenoura.transform, _rand.NextDouble(), _cenoura.name));
+         }
+         for (var i = 1; i < _qntCoins + 1; i++) {
+             StartCoroutine(Spawn(i * _coins1.spawn, _coins1.transform, _rand.NextDouble(), _coins1.name));
+         }
+         for (var i = 1; i < 5 + 1; i++) {
+             StartCoroutine(Spawn(i * 40, _coins1.transform, _rand.NextDouble(), _coins1.name));
+         }
+         for (var i = 1; i < _qntHearts + 1; i++) {
+             StartCoroutine(Spawn(i * _pao.spawn, _pao.transform, _rand.NextDouble(), _pao.name));
          }
      }
    

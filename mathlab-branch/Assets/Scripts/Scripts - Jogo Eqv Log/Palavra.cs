@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class Palavra : Item  {
     
     private Vector3 _originalPosition;
-    private Rigidbody2D _rigidbody2D;
+    [NonSerialized] Rigidbody2D _rigidbody2D;
     private static readonly string PathTable = Directory.GetCurrentDirectory() + "/Assets/NewAdds/eqvLogica.txt";
     private readonly StreamReader _file = new StreamReader(PathTable);
     public Text desafio;
@@ -19,15 +19,17 @@ public class Palavra : Item  {
     private void Start() {
         myAnim = GetComponent<Animator>();
         manager = FindObjectOfType<Manager>();
-        _rigidbody2D = gameObject.GetComponent<Rigidbody2D>();
-        _originalPosition = gameObject.transform.position;
+        GameObject o;
+        _rigidbody2D = (o = gameObject).GetComponent<Rigidbody2D>();
+        _originalPosition = o.transform.position;
         
         desafio.text = _file.ReadLine();
         respostaAtual = _file.ReadLine();
+        
+        _rigidbody2D.bodyType = RigidbodyType2D.Static;
     }
     
     public void PalavraRoutine(bool acertou) {
-        
         manager.ContabilizaPontos(acertou);
         StartCoroutine(AnimSet(acertou));
         desafio.text = _file.ReadLine();
@@ -59,4 +61,6 @@ public class Palavra : Item  {
                 return false;
         }
     }
+    
+    
 }

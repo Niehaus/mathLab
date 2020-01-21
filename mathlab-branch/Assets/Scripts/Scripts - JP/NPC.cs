@@ -28,7 +28,7 @@ public class Npc : MonoBehaviour {
     protected bool[] acabouMissao = {false, true, false, false};
     
     // Start is called before the first frame update
-    void Start() {
+    private void Start() {
         _myRb = GetComponent<Rigidbody2D>();
         myAnim = GetComponent<Animator>();
     }
@@ -39,7 +39,7 @@ public class Npc : MonoBehaviour {
             _myRb.velocity = new Vector2(0.2f, 0).normalized * (speed * Time.deltaTime);
             myAnim.SetFloat(MoveX,_myRb.velocity.x);
             myAnim.SetFloat(MoveY,_myRb.velocity.y);
-        } else if(other.gameObject.CompareTag("BarY")) {
+        }else if(other.gameObject.CompareTag("BarY")) {
            // Debug.Log("colide BarY");
             _myRb.velocity = new Vector2(-0.2f, 0).normalized * (speed * Time.deltaTime);
             myAnim.SetFloat(MoveX,_myRb.velocity.x);
@@ -47,7 +47,7 @@ public class Npc : MonoBehaviour {
         }
     }
 
-    IEnumerator Type(){
+    private IEnumerator Type(){
         foreach (char letter in sentences[index]) {
             // ReSharper disable once HeapView.BoxingAllocation
             dialogo.text = $"{dialogo.text}{letter}";

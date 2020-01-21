@@ -8,23 +8,17 @@ public class AreaTransitions : MonoBehaviour
     public Vector2 newMinPos;
     public Vector2 newMaxPos;
     public Vector3 movePlayer;
+    
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         _cam = Camera.main.GetComponent<CameraController>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    
     private void OnTriggerEnter2D(Collider2D other) {
-        if (other.tag == "Player") {
-            _cam.minPosition = newMinPos;
-            _cam.maxPosition = newMaxPos;
-            other.transform.position += movePlayer;
-        }
+        if (!other.CompareTag("Player")) return;
+        _cam.minPosition = newMinPos;
+        _cam.maxPosition = newMaxPos;
+        other.transform.position += movePlayer;
     }
 }

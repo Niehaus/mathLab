@@ -11,13 +11,11 @@ public class Wood : Npc {
     public float talkRaio;
     private PlayerController _disablekey;
     
-    
-
     private static readonly int MoveY = Animator.StringToHash("moveY");
     private static readonly int MoveX = Animator.StringToHash("moveX");
 
     // Start is called before the first frame update
-    void Start() {
+    private void Start() {
         _disablekey = FindObjectOfType<PlayerController>();
         target = GameObject.FindWithTag("Player").transform;
         myAnim = GetComponent<Animator>();
@@ -31,14 +29,13 @@ public class Wood : Npc {
     }
 
     // Update is called once per frame
-    void Update() {
+    private void Update() {
         NpcAction();
         if (!_disablekey.keyboardAble && caixaDialogo && !fimDialogo) { //dentro de um dialogo
-            if (dialogo.text == sentences[index]) { //verifica se está okay a frase dita e ativa o botão p/ prox
-                botaoContinuar.SetActive(true);        
-                if (Input.GetKeyDown(KeyCode.Space)) {
-                    NpcFala();
-                }
+            if (dialogo.text != sentences[index]) return; //verifica se está okay a frase dita e ativa o botão p/ prox
+            botaoContinuar.SetActive(true);        
+            if (Input.GetKeyDown(KeyCode.Space)) {
+                NpcFala();
             }
         }
         else {

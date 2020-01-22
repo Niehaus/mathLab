@@ -24,6 +24,7 @@
             <e p="item.cs" t="Include" />
             <e p="manager.cs" t="Include" />
             <e p="Painel.cs" t="Include" />
+            <e p="PainelLose.cs" t="Include" />
             <e p="Palavra.cs" t="Include" />
             <e p="Pao.cs" t="Include" />
             <e p="Somidouro.cs" t="Include" />

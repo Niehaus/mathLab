@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.Experimental.PlayerLoop;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Random = System.Random;
 
@@ -20,8 +22,10 @@ public class Manager : MonoBehaviour {
      public Cenoura _cenoura;
      public Coins _coins1;
      public Pao _pao;
+     public GameObject bau;
      private Palavra _palavra;
      private Painel _painel;
+     public PainelLose _painelLose;
      private PlayerController _disablekey; //bloqueador de teclado enquanto NPC fala
      public GameObject startAnim;
 
@@ -29,6 +33,11 @@ public class Manager : MonoBehaviour {
      private static readonly int Start1 = Animator.StringToHash("start");
      private Animator _animator;
      private Rigidbody2D _rigidbody2D;
+
+     private bool _fimDeJogo;
+
+     private static readonly int MoveX = Animator.StringToHash("moveX");
+     private static readonly int MoveY = Animator.StringToHash("moveY");
 
      // Start is called before the first frame update
      private void Start() {
@@ -38,9 +47,11 @@ public class Manager : MonoBehaviour {
          _animator = startAnim.GetComponent<Animator>(); //Animator do Start
          _disablekey = FindObjectOfType<PlayerController>();
          _disablekey.keyboardAble = false;
-        
+         _palavra.gameObject.SetActive(false);
+         coins = 0;
+         hearts = 3;
          contador[0].text = coins + "x";
-         contador[1].text =  hearts + "x" ;
+         contador[1].text =  hearts + "x";
      }
     
      private IEnumerator Spawn(int time, Transform prefab, double orientacao, string nome) {
@@ -59,7 +70,15 @@ public class Manager : MonoBehaviour {
          }
          //Debug.Log("ok");
      }
-    
+
+     private void Update() {
+         if (!_fimDeJogo) return;
+         _disablekey.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0f,0f,0f); //faz jogador parar
+         _disablekey.gameObject.GetComponent<Animator>().SetFloat(MoveX,_disablekey.gameObject.GetComponent<Rigidbody2D>().velocity.x);
+         _disablekey.gameObject.GetComponent<Animator>().SetFloat(MoveY,_disablekey.gameObject.GetComponent<Rigidbody2D>().velocity.y);
+         _rigidbody2D.bodyType = RigidbodyType2D.Static; //para objeto
+     }
+
      private Vector2 GeraCoord(Vector2 minAltura, Vector2 minLargura) {
         
          var valorX =  (_rand.NextDouble() + 10 * _rand.NextDouble()) + Math.Abs(minLargura.x);
@@ -86,14 +105,18 @@ public class Manager : MonoBehaviour {
          else {
              hearts -= 1;
              contador[1].text = hearts + "x";
-             if (hearts == 0 || hearts < 0) {  
-                 //TODO: JOGO ACABA
-             }
+             if (hearts != 0 && hearts >= 0) return;
+             //TODO: JOGO ACABA
+             _disablekey.keyboardAble = false;
+             _fimDeJogo = true;
+             _painelLose.AtualizaTexto();
+             _painelLose.gameObject.SetActive(true);
          }
      }
 
      private void IniciaJogo() {
          _rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
+         _palavra.gameObject.SetActive(true);
          for (var i = 1; i < _qntCenouras + 1; i++) {
              StartCoroutine(Spawn(i * _cenoura.spawn, _cenoura.transform, _rand.NextDouble(), _cenoura.name));
          }
@@ -108,10 +131,6 @@ public class Manager : MonoBehaviour {
          }
      }
 
-     public void Play() {
-         StartCoroutine(JustInTime());
-     }
-
      private IEnumerator JustInTime() { //seta animações tempos etc
          _animator.SetBool(Start1,true);
          _painel.gameObject.SetActive(false);
@@ -123,7 +142,20 @@ public class Manager : MonoBehaviour {
          _disablekey.keyboardAble = true;
          IniciaJogo();
          //TODO:COMEÇA CONTAR TEMPO QD TIVER O TIMER
+     }
+    
+     public void ReloadScene() {
+         _painelLose.gameObject.SetActive(false);
+         _fimDeJogo = false;
+         SceneManager.LoadScene("Jogo Eqv Logica");
+         _painel.gameObject.SetActive(true);
+     }
 
+     public void CenaPrincipal() {
+         SceneManager.LoadScene("Jogo Principal");
+     }
+     public void Jogar() {
+         StartCoroutine(JustInTime());
      }
 }
 

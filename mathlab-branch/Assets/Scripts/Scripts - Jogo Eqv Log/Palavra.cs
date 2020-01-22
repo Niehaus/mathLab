@@ -15,14 +15,17 @@ public class Palavra : Item  {
     [NonSerialized] public string respostaAtual;
     private static readonly int BlowUpErrou = Animator.StringToHash("blowUpErrou");
     private static readonly int BlowUp = Animator.StringToHash("blowUp");
+
+    private static readonly int Open = Animator.StringToHash("open");
+
     // Start is called before the first frame update
     private void Start() {
+        GameObject o;
         myAnim = GetComponent<Animator>();
         manager = FindObjectOfType<Manager>();
-        GameObject o;
         _rigidbody2D = (o = gameObject).GetComponent<Rigidbody2D>();
         _originalPosition = o.transform.position;
-        
+        manager.bau.GetComponent<Animator>().SetBool(Open,true);
         desafio.text = _file.ReadLine();
         respostaAtual = _file.ReadLine();
         
@@ -45,7 +48,9 @@ public class Palavra : Item  {
 
     private IEnumerator AnimSet(bool acertou) {
         myAnim.SetBool(acertou ? BlowUp : BlowUpErrou, true);
+        manager.bau.GetComponent<Animator>().SetBool(Open,false);
         yield return new WaitForSeconds(0.5f);
+        manager.bau.GetComponent<Animator>().SetBool(Open,true);
         gameObject.transform.position = _originalPosition;
         myAnim.SetBool(BlowUp, false);
         myAnim.SetBool(BlowUpErrou, false);

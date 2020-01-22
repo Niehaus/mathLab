@@ -14,20 +14,23 @@ public class Item : MonoBehaviour {
     protected PlayerController playerController;
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if (other.CompareTag("Player")) {
-            myAnim.SetBool(Picked, true);
-            if (name == "Coins") {
+        if (!other.CompareTag("Player")) return;
+        myAnim.SetBool(Picked, true);
+        switch (name) {
+            case "Coins":
                 Manager.coins += statusUp;
                 manager.contador[0].text = Manager.coins + "x";
-            }else if (name == "Pao") {
+                break;
+            case "Pao":
                 Manager.hearts += statusUp;
                 manager.contador[1].text = Manager.hearts + "x";
-            }else if (name == "Cenoura") {
+                break;
+            case "Cenoura":
                 playerController.speed += statusUp;
-                Debug.Log(playerController.speed);  
-            }
-            StartCoroutine(WaitToDestroy());
+                Debug.Log(playerController.speed);
+                break;
         }
+        StartCoroutine(WaitToDestroy());
     }
 
     protected IEnumerator WaitToDestroy() {

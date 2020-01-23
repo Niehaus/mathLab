@@ -17,6 +17,11 @@
           <e p="grupo6.txt" t="Include" />
           <e p="tabelaVerdade.txt" t="Include" />
         </e>
+        <e p="Resources" t="Include">
+          <e p="Data" t="Include">
+            <e p="eqvLog.txt" t="Include" />
+          </e>
+        </e>
         <e p="Scripts" t="Include">
           <e p="Scripts - Jogo Eqv Log" t="Include">
             <e p="button.cs" t="Include" />

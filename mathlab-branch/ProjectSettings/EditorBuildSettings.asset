@@ -5,13 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Jogo Principal.unity
     guid: 4c6c9f658d79fab4384a6bdba21a97e3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Casa Dr.Wood.unity
     guid: f92ebbc4e60f083418dff983eccc4773
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Jogo Tabela Verdade.unity
     guid: 14b669a7a702c574e9451853f7f95321
   - enabled: 1

@@ -1,13 +1,13 @@
-r -> q == ~r v q
-v
+-p == p
+f
 ~p ^ ~q == ~(p v q)
 v
 -(-p) == p
 v
 p -> q == p v ~q
 f
--p == p
-f
+r -> q == ~r v q
+v
 ~(p v q) == ~p ^ ~q
 v
 -p == -p v Falso

@@ -1,23 +1,23 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
+using static System.String;
 
 public class Palavra : Item  {
     
     private Vector3 _originalPosition;
     [NonSerialized] Rigidbody2D _rigidbody2D;
-    private static readonly string PathTable = Directory.GetCurrentDirectory() + "/Assets/NewAdds/eqvLog.txt";
-    private readonly StreamReader _file = new StreamReader(PathTable);
+    //private static readonly string PathTable = Directory.GetCurrentDirectory() + "/Assets/NewAdds/eqvLogica.txt";
+    //[Serializable] public StreamReader _file;
     public Text desafio;
     [NonSerialized] public string respostaAtual;
     private static readonly int BlowUpErrou = Animator.StringToHash("blowUpErrou");
     private static readonly int BlowUp = Animator.StringToHash("blowUp");
-
+    private string[] _lines;
+    private int _index;
     private static readonly int Open = Animator.StringToHash("open");
-
+    string[] stringSeparators = new string[] { "\r\n" };
     // Start is called before the first frame update
     private void Start() {
         GameObject o;
@@ -26,26 +26,37 @@ public class Palavra : Item  {
         _rigidbody2D = (o = gameObject).GetComponent<Rigidbody2D>();
         _originalPosition = o.transform.position;
         manager.bau.GetComponent<Animator>().SetBool(Open,true);
-        desafio.text = _file.ReadLine();
-        respostaAtual = _file.ReadLine();
-        
+        _index = 0;
+        var textFile = Resources.Load<TextAsset>("Data/eqvLog");
+        if (textFile == null) {
+            Debug.Log("Arquivo Texto Não Está Aqui");
+            return;
+        }
+        _lines = textFile.text.Split(stringSeparators, StringSplitOptions.None);
+        desafio.text = _lines[_index];
+        respostaAtual = _lines[_index + 1];
+        Debug.Log(desafio.text + "index " + _index + "e " + (_index + 1));
+        Debug.Log(respostaAtual);
+        _index += 2;
+
         _rigidbody2D.bodyType = RigidbodyType2D.Static;
     }
     
     public void PalavraRoutine(bool acertou) {
         manager.ContabilizaPontos(acertou);
         StartCoroutine(AnimSet(acertou));
-        if (_file.EndOfStream && Manager.hearts > 0) {
+        if (_index + 1 > _lines.Length && Manager.hearts > 0) {
             Debug.Log("venceu");
             manager.painelWin.gameObject.SetActive(true);
-            Debug.Log("LIGA PAINEL");
             manager.painelWin.AtualizaTexto();
             manager.fimDeJogo = true;
-
         }
-        else {
-            desafio.text = _file.ReadLine();
-            respostaAtual = _file.ReadLine();    
+        else { 
+            desafio.text = _lines[_index];
+           respostaAtual = _lines[_index + 1];
+           Debug.Log(desafio.text + "index " + _index + "e " + (_index + 1));
+           Debug.Log(respostaAtual);
+           _index += 2;
         }
         //TODO: qd o arquivo acabar parar o jogo 
         //TODO: fazer o timer do jogo
@@ -65,15 +76,13 @@ public class Palavra : Item  {
         myAnim.SetBool(BlowUpErrou, false);
     }
 
-    public bool TurnMeBool(string respostaAtual) {
-        switch (respostaAtual) {
-            case "v":
-                return true;
-            case "f":
-                return false;
-            default:
-                return false;
+    public bool TurnMeBool(string resposta) {
+        if (resposta.Equals("v")) {
+            return true;
+        }else if (resposta.Equals("f")) {
+            return false;
         }
+        return false;
     }
     
     

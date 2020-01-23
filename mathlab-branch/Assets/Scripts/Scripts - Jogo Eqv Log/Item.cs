@@ -27,7 +27,7 @@ public class Item : MonoBehaviour {
                 break;
             case "Cenoura":
                 playerController.speed += statusUp;
-                Debug.Log(playerController.speed);
+//                Debug.Log(playerController.speed);
                 break;
         }
         StartCoroutine(WaitToDestroy());

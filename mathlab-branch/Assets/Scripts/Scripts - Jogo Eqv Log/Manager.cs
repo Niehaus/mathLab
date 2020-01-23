@@ -19,13 +19,14 @@ public class Manager : MonoBehaviour {
      private int _qntHearts = 3;
      private int _qntCenouras = 4;
      
-     public Cenoura _cenoura;
-     public Coins _coins1;
-     public Pao _pao;
+     public Cenoura cenoura;
+     public Coins coins1;
+     public Pao pao;
      public GameObject bau;
      private Palavra _palavra;
      private Painel _painel;
-     public PainelLose _painelLose;
+     public PainelLose painelLose;
+     public PainelLose painelWin;
      private PlayerController _disablekey; //bloqueador de teclado enquanto NPC fala
      public GameObject startAnim;
 
@@ -34,7 +35,7 @@ public class Manager : MonoBehaviour {
      private Animator _animator;
      private Rigidbody2D _rigidbody2D;
 
-     private bool _fimDeJogo;
+     [NonSerialized] public bool fimDeJogo;
 
      private static readonly int MoveX = Animator.StringToHash("moveX");
      private static readonly int MoveY = Animator.StringToHash("moveY");
@@ -72,7 +73,7 @@ public class Manager : MonoBehaviour {
      }
 
      private void Update() {
-         if (!_fimDeJogo) return;
+         if (!fimDeJogo) return;
          _disablekey.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0f,0f,0f); //faz jogador parar
          _disablekey.gameObject.GetComponent<Animator>().SetFloat(MoveX,_disablekey.gameObject.GetComponent<Rigidbody2D>().velocity.x);
          _disablekey.gameObject.GetComponent<Animator>().SetFloat(MoveY,_disablekey.gameObject.GetComponent<Rigidbody2D>().velocity.y);
@@ -108,9 +109,9 @@ public class Manager : MonoBehaviour {
              if (hearts != 0 && hearts >= 0) return;
              //TODO: JOGO ACABA
              _disablekey.keyboardAble = false;
-             _fimDeJogo = true;
-             _painelLose.AtualizaTexto();
-             _painelLose.gameObject.SetActive(true);
+             fimDeJogo = true;
+             painelLose.AtualizaTexto();
+             painelLose.gameObject.SetActive(true);
          }
      }
 
@@ -118,16 +119,16 @@ public class Manager : MonoBehaviour {
          _rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
          _palavra.gameObject.SetActive(true);
          for (var i = 1; i < _qntCenouras + 1; i++) {
-             StartCoroutine(Spawn(i * _cenoura.spawn, _cenoura.transform, _rand.NextDouble(), _cenoura.name));
+             StartCoroutine(Spawn(i * cenoura.spawn, cenoura.transform, _rand.NextDouble(), cenoura.name));
          }
          for (var i = 1; i < _qntCoins + 1; i++) {
-             StartCoroutine(Spawn(i * _coins1.spawn, _coins1.transform, _rand.NextDouble(), _coins1.name));
+             StartCoroutine(Spawn(i * coins1.spawn, coins1.transform, _rand.NextDouble(), coins1.name));
          }
          for (var i = 1; i < 5 + 1; i++) {
-             StartCoroutine(Spawn(i * 40, _coins1.transform, _rand.NextDouble(), _coins1.name));
+             StartCoroutine(Spawn(i * 40, coins1.transform, _rand.NextDouble(), coins1.name));
          }
          for (var i = 1; i < _qntHearts + 1; i++) {
-             StartCoroutine(Spawn(i * _pao.spawn, _pao.transform, _rand.NextDouble(), _pao.name));
+             StartCoroutine(Spawn(i * pao.spawn, pao.transform, _rand.NextDouble(), pao.name));
          }
      }
 
@@ -145,8 +146,9 @@ public class Manager : MonoBehaviour {
      }
     
      public void ReloadScene() {
-         _painelLose.gameObject.SetActive(false);
-         _fimDeJogo = false;
+         painelLose.gameObject.SetActive(false);
+         painelWin.gameObject.SetActive(false);
+         fimDeJogo = false;
          SceneManager.LoadScene("Jogo Eqv Logica");
          _painel.gameObject.SetActive(true);
      }
@@ -157,5 +159,6 @@ public class Manager : MonoBehaviour {
      public void Jogar() {
          StartCoroutine(JustInTime());
      }
+     
 }
 

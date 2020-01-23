@@ -7,6 +7,7 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="NewAdds" t="Include">
+          <e p="eqvLog.txt" t="Include" />
           <e p="eqvLogica.txt" t="Include" />
           <e p="grupo1.txt" t="Include" />
           <e p="grupo2.txt" t="Include" />

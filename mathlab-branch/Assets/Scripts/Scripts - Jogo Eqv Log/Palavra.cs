@@ -9,7 +9,7 @@ public class Palavra : Item  {
     
     private Vector3 _originalPosition;
     [NonSerialized] Rigidbody2D _rigidbody2D;
-    private static readonly string PathTable = Directory.GetCurrentDirectory() + "/Assets/NewAdds/eqvLogica.txt";
+    private static readonly string PathTable = Directory.GetCurrentDirectory() + "/Assets/NewAdds/eqvLog.txt";
     private readonly StreamReader _file = new StreamReader(PathTable);
     public Text desafio;
     [NonSerialized] public string respostaAtual;
@@ -35,9 +35,18 @@ public class Palavra : Item  {
     public void PalavraRoutine(bool acertou) {
         manager.ContabilizaPontos(acertou);
         StartCoroutine(AnimSet(acertou));
-        desafio.text = _file.ReadLine();
-        respostaAtual = _file.ReadLine();
-        
+        if (_file.EndOfStream && Manager.hearts > 0) {
+            Debug.Log("venceu");
+            manager.painelWin.gameObject.SetActive(true);
+            Debug.Log("LIGA PAINEL");
+            manager.painelWin.AtualizaTexto();
+            manager.fimDeJogo = true;
+
+        }
+        else {
+            desafio.text = _file.ReadLine();
+            respostaAtual = _file.ReadLine();    
+        }
         //TODO: qd o arquivo acabar parar o jogo 
         //TODO: fazer o timer do jogo
     }

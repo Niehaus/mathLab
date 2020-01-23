@@ -10,11 +10,3 @@ f
 f
 ~(p v q) == ~p ^ ~q
 v
--p == -p v Falso
-v
-p v q == -q v p
-f
-p == (p v -p)
-f
-p v q == q v p
-v

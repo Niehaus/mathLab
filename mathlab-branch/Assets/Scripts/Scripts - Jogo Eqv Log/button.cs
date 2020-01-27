@@ -15,6 +15,7 @@ public class Button : MonoBehaviour {
     // Start is called before the first frame update
     private void Start() {
         _myAnim = GetComponent<Animator>();
+        
     }
     
     private void OnTriggerEnter2D(Collider2D other) {
@@ -30,7 +31,6 @@ public class Button : MonoBehaviour {
             _texto.color = Color.green;
         }
     }
-
     private void OnTriggerExit2D(Collider2D other) {
         if (!other.CompareTag("Player")) return;
         _myAnim.SetBool(Pressed, false);

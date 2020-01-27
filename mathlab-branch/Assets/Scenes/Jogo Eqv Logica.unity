@@ -14176,7 +14176,7 @@ GameObject:
   - component: {fileID: 1599070745}
   - component: {fileID: 1599070743}
   m_Layer: 5
-  m_Name: 'Tempo:'
+  m_Name: 'Vidas:'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14199,7 +14199,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -125.20007, y: -18.969986}
+  m_AnchoredPosition: {x: -125.20007, y: -15.7}
   m_SizeDelta: {x: 194.9, y: 26.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1599070743
@@ -14253,13 +14253,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.5
-  m_Text: 'Tempo: 0 sec'
+  m_Text: 'Vidas: 0x'
 --- !u!1 &1630778320
 GameObject:
   m_ObjectHideFlags: 0
@@ -16125,7 +16125,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 126, y: -18.969986}
+  m_AnchoredPosition: {x: 126, y: -15.700027}
   m_SizeDelta: {x: 194.9, y: 26.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2141035959
@@ -16368,6 +16368,21 @@ PrefabInstance:
       propertyPath: m_PixelPerfect
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1939434661189116167, guid: 39c2d54254df0b444bbcca632882c73d,
+        type: 3}
+      propertyPath: m_Text
+      value: 'Vidas: 0x'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1939434661189116167, guid: 39c2d54254df0b444bbcca632882c73d,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1939434661189116164, guid: 39c2d54254df0b444bbcca632882c73d,
+        type: 3}
+      propertyPath: m_Name
+      value: 'Vidas:'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39c2d54254df0b444bbcca632882c73d, type: 3}
 --- !u!1001 &3985475517625943111
@@ -16476,6 +16491,26 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2041942449}
+    - target: {fileID: 4716784772758940624, guid: f334bb20d799a1246bc63143a6322cef,
+        type: 3}
+      propertyPath: m_Name
+      value: 'Vidas:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4716784772758940627, guid: f334bb20d799a1246bc63143a6322cef,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -15.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4716784772758940636, guid: f334bb20d799a1246bc63143a6322cef,
+        type: 3}
+      propertyPath: m_Text
+      value: 'Vidas: 0x'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4716784772758940636, guid: f334bb20d799a1246bc63143a6322cef,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4716784772896837576, guid: f334bb20d799a1246bc63143a6322cef,
         type: 3}
       propertyPath: m_FontData.m_BestFit
@@ -16570,6 +16605,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4716784773203314631, guid: f334bb20d799a1246bc63143a6322cef,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -15.700027
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f334bb20d799a1246bc63143a6322cef, type: 3}

@@ -8,8 +8,6 @@ public class Palavra : Item  {
     
     private Vector3 _originalPosition;
     [NonSerialized] Rigidbody2D _rigidbody2D;
-    //private static readonly string PathTable = Directory.GetCurrentDirectory() + "/Assets/NewAdds/eqvLogica.txt";
-    //[Serializable] public StreamReader _file;
     public Text desafio;
     [NonSerialized] public string respostaAtual;
     private static readonly int BlowUpErrou = Animator.StringToHash("blowUpErrou");
@@ -35,8 +33,6 @@ public class Palavra : Item  {
         _lines = textFile.text.Split(stringSeparators, StringSplitOptions.None);
         desafio.text = _lines[_index];
         respostaAtual = _lines[_index + 1];
-        Debug.Log(desafio.text + "index " + _index + "e " + (_index + 1));
-        Debug.Log(respostaAtual);
         _index += 2;
 
         _rigidbody2D.bodyType = RigidbodyType2D.Static;
@@ -46,7 +42,6 @@ public class Palavra : Item  {
         manager.ContabilizaPontos(acertou);
         StartCoroutine(AnimSet(acertou));
         if (_index + 1 > _lines.Length && Manager.hearts > 0) {
-            Debug.Log("venceu");
             manager.painelWin.gameObject.SetActive(true);
             manager.painelWin.AtualizaTexto();
             manager.fimDeJogo = true;
@@ -54,8 +49,6 @@ public class Palavra : Item  {
         else { 
             desafio.text = _lines[_index];
            respostaAtual = _lines[_index + 1];
-           Debug.Log(desafio.text + "index " + _index + "e " + (_index + 1));
-           Debug.Log(respostaAtual);
            _index += 2;
         }
         //TODO: qd o arquivo acabar parar o jogo 

@@ -53,6 +53,7 @@ public class Manager : MonoBehaviour {
          hearts = 3;
          contador[0].text = coins + "x";
          contador[1].text =  hearts + "x";
+         
      }
     
      private IEnumerator Spawn(int time, Transform prefab, double orientacao, string nome) {

@@ -23,6 +23,11 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="Scripts - Inf Log" t="Include">
+            <e p="Alavanca.cs" t="Include" />
+            <e p="Canhao.cs" t="Include" />
+            <e p="ManagerInf.cs" t="Include" />
+          </e>
           <e p="Scripts - Jogo Eqv Log" t="Include">
             <e p="button.cs" t="Include" />
             <e p="Cenoura.cs" t="Include" />

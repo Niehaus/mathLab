@@ -11,6 +11,9 @@ public class Municao : MonoBehaviour {
     private Rigidbody2D _rigidbody2D;
     private Vector3 _posInicial;
     private Renderer _renderer;
+
+
+    
     // Start is called before the first frame update
     private void Start() {
         _animator = gameObject.GetComponent<Animator>();

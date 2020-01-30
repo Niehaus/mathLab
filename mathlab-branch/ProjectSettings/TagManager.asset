@@ -17,6 +17,7 @@ TagManager:
   - Word
   - PlayerPress
   - PlayerPick
+  - Municao
   layers:
   - Default
   - TransparentFX

@@ -10,7 +10,7 @@ public class Alavanca : MonoBehaviour {
     private Animator _myAnim;
     public Canhao canhoes;
     public int identificador;
-    private bool playerInRange;
+    private bool _playerInRange;
 
     private static readonly int Ativa = Animator.StringToHash("ativa");
 
@@ -20,18 +20,18 @@ public class Alavanca : MonoBehaviour {
     }
 
     private void Update() {
-        if (!playerInRange || !Input.GetKeyDown(KeyCode.Space)) return;
+        if (!_playerInRange || !Input.GetKeyDown(KeyCode.Space)) return;
         _myAnim.SetBool(Ativa, !_myAnim.GetBool(Ativa));
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Player")) {
-            playerInRange = true;
+            _playerInRange = true;
         }
     }
 
     private void OnTriggerExit2D(Collider2D other) {
         if (!other.CompareTag("Player")) return;
-        playerInRange = false;
+        _playerInRange = false;
     }
 }

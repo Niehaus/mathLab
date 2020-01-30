@@ -6,14 +6,17 @@ using UnityEngine;
 public class Canhao : MonoBehaviour {
     
     private Animator _myAnim;
-    public GameObject municao;
+    public Municao municao;
     public int identificador;
     // Start is called before the first frame update
     private void Start() {
         _myAnim = gameObject.GetComponent<Animator>();
     }
 
-    public void Atira() {
-        //ativa animação de tiro 
+    public void AtivaCanhao() {
+        //TODO: ativa obgjeto da bala
+        municao.gameObject.GetComponent<Renderer>().enabled = true;
+        municao.Disparo();
+        
     }
 }

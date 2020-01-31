@@ -20,6 +20,7 @@
         <e p="Resources" t="Include">
           <e p="Data" t="Include">
             <e p="eqvLog.txt" t="Include" />
+            <e p="infLog.txt" t="Include" />
           </e>
         </e>
         <e p="Scripts" t="Include">

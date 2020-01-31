@@ -8151,8 +8151,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -21.6, y: -223.4}
-  m_SizeDelta: {x: 242.31, y: 30}
+  m_AnchoredPosition: {x: -28.00002, y: -218.98047}
+  m_SizeDelta: {x: 134.87, y: 60.99}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1108001861
 MonoBehaviour:
@@ -8174,18 +8174,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 1bc0cdc9923b23942996d33be95fd9db, type: 3}
-    m_FontSize: 14
+    m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Siga os comandos!
+  m_Text: Responda ao desafio!
 --- !u!222 &1108001862
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13871,7 +13871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05e18dd470441014e802e9aec89efb2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 500
+  speed: 200
   startingPosition: {fileID: 11400000, guid: 3c269b93b7304eb4281ff4ad26a99e53, type: 2}
 --- !u!95 &1468385058
 Animator:
@@ -15778,7 +15778,7 @@ MonoBehaviour:
   contadores:
   - {fileID: 114137914}
   - {fileID: 1143647090}
-  comandos: {fileID: 0}
+  comandos: {fileID: 1108001861}
 --- !u!1 &1798692990
 GameObject:
   m_ObjectHideFlags: 0
@@ -16264,9 +16264,9 @@ RectTransform:
   m_Father: {fileID: 538567364}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -977, y: 60.4}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -17, y: 60.4}
   m_SizeDelta: {x: 240.62, y: 92}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1948526843

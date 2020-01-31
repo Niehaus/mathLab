@@ -15,7 +15,7 @@ public class Palavra : Item  {
     private string[] _lines;
     private int _index;
     private static readonly int Open = Animator.StringToHash("open");
-    string[] stringSeparators = new string[] { "\r\n" };
+    string[] _stringSeparators = new string[] { "\r\n" };
     // Start is called before the first frame update
     private void Start() {
         GameObject o;
@@ -30,7 +30,7 @@ public class Palavra : Item  {
             Debug.Log("Arquivo Texto Não Está Aqui");
             return;
         }
-        _lines = textFile.text.Split(stringSeparators, StringSplitOptions.None);
+        _lines = textFile.text.Split(_stringSeparators, StringSplitOptions.None);
         desafio.text = _lines[_index];
         respostaAtual = _lines[_index + 1];
         _index += 2;

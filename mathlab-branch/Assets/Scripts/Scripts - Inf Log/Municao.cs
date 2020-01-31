@@ -7,12 +7,9 @@ using UnityEngine;
 public class Municao : MonoBehaviour {
 
     private Animator _animator;
-
     private Rigidbody2D _rigidbody2D;
     private Vector3 _posInicial;
     private Renderer _renderer;
-
-
     
     // Start is called before the first frame update
     private void Start() {
@@ -26,12 +23,10 @@ public class Municao : MonoBehaviour {
     
     public void RecarregaBala() {
         _rigidbody2D.bodyType = RigidbodyType2D.Static;
-        Debug.Log("Para a bala");
         gameObject.transform.position = _posInicial;
         _renderer.enabled = false;
     }
     public void Disparo() {
         _rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
-        //_rigidbody2D.gravityScale = 1;
     }
 }

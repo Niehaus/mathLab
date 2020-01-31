@@ -1,0 +1,7 @@
+p -> q :p
+Modus Ponens
+Modus Tolens
+Silogismo
+Conjunção
+Resposta
+Modus Ponens

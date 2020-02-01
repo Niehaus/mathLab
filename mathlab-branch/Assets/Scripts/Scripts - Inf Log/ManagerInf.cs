@@ -10,12 +10,15 @@ public class ManagerInf : MonoBehaviour {
     public Text[] textoResposta;
     public Text[] contadores;
     public Text comandos;
+    public Text timer;
     private int _hearts = 3;
     private int _coins;
     private string[] _stringSeparators = { "\r\n" };
     private string[] _lines;
     private int respostaAtual;
     private int index;
+    private float _currCountdownValue;
+    private bool _fimDoJogo;
     private static readonly int Ativa = Animator.StringToHash("ativa");
 
     // Start is called before the first frame update
@@ -28,15 +31,29 @@ public class ManagerInf : MonoBehaviour {
             return;
         }
         _lines = textFile.text.Split(_stringSeparators, StringSplitOptions.None);
-        setaDesafio();
-        StartCoroutine(VerificaCanhoes());
-        
+        IniciaRodada();
+    }
+
+    private void Update() {
+        if (_fimDoJogo && _hearts <= 0) {
+            //TODO: PAINEL DE DERROTA 
+        }else if (_fimDoJogo && _hearts > 0) {
+            //TODO: PAINEL DE VITORIA
+        }
+    }
+
+    private void IniciaRodada() {
+        SetaDesafio();
+        StartCoroutine(StartTimer());
+    }
+
+    private void RepeteRodada() {
+        StartCoroutine(StartTimer());
     }
     
     private IEnumerator VerificaCanhoes() { //seta animações tempos etc
-        
-         Debug.Log(message: "começa a contar ");
-        yield return new WaitForSeconds(seconds: 5);
+        //TODO: ATIVAR ANIMAÇÃO DO CANHAO ATIRANDO
+        yield return new WaitForSeconds(seconds: 1);
         foreach (var alavanca in alavancas) {
             if (alavanca.GetComponent<Animator>().GetBool(id: Ativa)) {
                 Debug.Log(message: "Alavanca " + alavanca.identificador + " ativa");
@@ -45,18 +62,38 @@ public class ManagerInf : MonoBehaviour {
                     Debug.Log("Ativou a alavanca correta!");
                     _coins += 10;
                     contadores[0].text = _coins + "x";
+                    if (index == _lines.Length) {
+                        Debug.Log("ACABOU");
+                        _fimDoJogo = true;
+                    }
+                    IniciaRodada();
                 }
                 else {
                     Debug.Log("Ativou a alavanca incorreta :(");
                     _hearts -= 1;
                     contadores[1].text = _hearts + "x";
+                    RepeteRodada();
                 }
             }
         }
     }
 
+    private IEnumerator StartTimer(float countdownValue = 12) {
+        Debug.Log("Começa Timer");
+        _currCountdownValue = countdownValue;
+        while (_currCountdownValue >= 0) {
+            Debug.Log("Countdown: " + _currCountdownValue);
+            timer.text = _currCountdownValue.ToString("0");
+            yield return new WaitForSeconds(1.0f);
+            _currCountdownValue--;
+            if (_currCountdownValue == 0) {
+                timer.color = new Color(0.79f, 0.16f, 0.19f);
+                StartCoroutine(VerificaCanhoes());
+            }
+        }
+    }
 
-    public void setaDesafio() {
+    private void SetaDesafio() {
         comandos.text = _lines[index];
         index += 1;
         for (var i = 0; i < textoResposta.Length; i++) {

@@ -17,6 +17,5 @@ public class Canhao : MonoBehaviour {
         //TODO: ativa obgjeto da bala
         municao.gameObject.GetComponent<Renderer>().enabled = true;
         municao.Disparo();
-        
     }
 }

@@ -27,6 +27,7 @@
           <e p="Scripts - Inf Log" t="Include">
             <e p="Alavanca.cs" t="Include" />
             <e p="Alvo.cs" t="Include" />
+            <e p="BalaInicial.cs" t="Include" />
             <e p="Canhao.cs" t="Include" />
             <e p="CountdownTimer.cs" t="Include" />
             <e p="ManagerInf.cs" t="Include" />

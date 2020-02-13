@@ -5,3 +5,10 @@ Silogismo
 Conjunção
 Resposta
 Modus Ponens
+p -> q :q
+Silogismo
+Modus Ponens
+Conjunção
+Modus Tolens
+Resposta
+Modus Tolens

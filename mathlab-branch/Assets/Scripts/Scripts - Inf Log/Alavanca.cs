@@ -23,7 +23,7 @@ public class Alavanca : MonoBehaviour {
         if (!_playerInRange || !Input.GetKeyDown(KeyCode.Space)) return;
         _myAnim.SetBool(Ativa, !_myAnim.GetBool(Ativa));
     }
-
+    
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Player")) {
             _playerInRange = true;

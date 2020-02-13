@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ManagerInf : MonoBehaviour {
@@ -22,12 +23,14 @@ public class ManagerInf : MonoBehaviour {
     private float _currCountdownValue;
     private bool _fimDoJogo;
     private static readonly int Ativa = Animator.StringToHash("ativa");
+    private static readonly int MoveX = Animator.StringToHash("moveX");
+    private static readonly int MoveY = Animator.StringToHash("moveY");
     private PlayerController _disablekey; //bloqueador de teclado enquanto NPC fala
 
     public GameObject painelVitoria;
     public GameObject painelDerrota;
     public GameObject painelInicial;
-
+    public Cronometro cronometro;
     private bool _controller;
     
     // Start is called before the first frame update
@@ -42,7 +45,6 @@ public class ManagerInf : MonoBehaviour {
         }
         _lines = textFile.text.Split(_stringSeparators, StringSplitOptions.None);
         _disablekey.keyboardAble = false;
-        //IniciaRodada();
     }
 
     private void Update() {
@@ -50,12 +52,20 @@ public class ManagerInf : MonoBehaviour {
             //TODO: PAINEL DE DERROTA
             painelDerrota.SetActive(true);
             _disablekey.keyboardAble = false;
+            _disablekey.GetComponent<Rigidbody2D>().velocity = new Vector2(0f,0f);
+            _disablekey.GetComponent<Animator>().SetFloat(MoveX, 0f);
+            _disablekey.GetComponent<Animator>().SetFloat(MoveY, 0f);
+            Debug.Log("velocidade zerada");
             textPainelDerrota[0].text = "Moedas Coletadas:" + _coins + "x";
             textPainelDerrota[1].text = "Total de Pontos:" + _coins + "x"; //TODO: CALCULAR PONTOS
         } else if (_fimDoJogo && _hearts > 0) {
             //TODO: PAINEL DE VITORIA
             painelVitoria.SetActive(true);
             _disablekey.keyboardAble = false;
+            _disablekey.GetComponent<Rigidbody2D>().velocity = new Vector2(0f,0f);
+            _disablekey.GetComponent<Animator>().SetFloat(MoveX, 0f);
+            _disablekey.GetComponent<Animator>().SetFloat(MoveY, 0f);
+            Debug.Log("velocidade zerada");
             textPainelVitoria[0].text = "Moedas Coletadas:" + _coins + "x";
             textPainelVitoria[1].text = "Vidas Restantes:" + _hearts + "x";
             textPainelVitoria[2].text = "Total de Pontos:" + _coins + "x"; //TODO: CALCULAR PONTOS
@@ -64,14 +74,14 @@ public class ManagerInf : MonoBehaviour {
 
     private void IniciaRodada() {
         SetaDesafio();
-        StartCoroutine(StartTimer(12f));
+        cronometro.timerActive = true;
     }
 
     private void RepeteRodada() {
-        StartCoroutine(StartTimer(12f));
+        cronometro.timerActive = true;
     }
-    
-    private IEnumerator VerificaCanhoes() { //seta animações tempos etc
+  
+    public void VerificaCanhoes() { //seta animações tempos etc
         //TODO: ATIVAR ANIMAÇÃO DO CANHAO ATIRANDO
         var alavancasAtivas = 0;
         foreach (var alavanca in alavancas) {
@@ -86,10 +96,10 @@ public class ManagerInf : MonoBehaviour {
                 _fimDoJogo = true;
                 ResetaAlavancas();
             }
+            ResetaAlavancas();
             RepeteRodada();
-            _controller = false;
         }
-        yield return new WaitForSeconds(seconds: 1);
+        
         foreach (var alavanca in alavancas) {
             if (alavanca.GetComponent<Animator>().GetBool(id: Ativa)) {
                 Debug.Log(message: "Alavanca " + alavanca.identificador + " ativa");
@@ -104,7 +114,6 @@ public class ManagerInf : MonoBehaviour {
                     }
                     ResetaAlavancas();
                     IniciaRodada();
-                    _controller = true;
                 }
                 else {
                     Debug.Log("Ativou a alavanca incorreta :(");
@@ -114,31 +123,15 @@ public class ManagerInf : MonoBehaviour {
                         _fimDoJogo = true;
                         ResetaAlavancas();
                     }
+                    ResetaAlavancas();
                     RepeteRodada();
-                    _controller = false;
                 }
             }
         }
     }
-
-    private IEnumerator StartTimer(float countdownValue) {
-        //Debug.Log("Começa Timer");
-        timer.color = Color.white;
-        _currCountdownValue = countdownValue;
-        while (_currCountdownValue >= 0) {
-            //Debug.Log("Countdown: " + _currCountdownValue);
-            timer.text = _currCountdownValue.ToString("0");
-            yield return new WaitForSeconds(1.0f);
-            _currCountdownValue--;
-            Debug.Log("estou aqui");
-            if (_currCountdownValue == 0) {
-                timer.color = new Color(0.79f, 0.16f, 0.19f);
-                StartCoroutine(VerificaCanhoes());
-            }
-        }
-    }
-
+    
     private void SetaDesafio() {
+        Debug.Log("fui chamda");
         comandos.text = _lines[index];
         index += 1;
         for (var i = 0; i < textoResposta.Length; i++) {
@@ -164,14 +157,17 @@ public class ManagerInf : MonoBehaviour {
         foreach (var alavanca in alavancas) {
             alavanca.GetComponent<Animator>().SetBool(Ativa, false);
         }
-
-        respostaAtual = 10;
+        cronometro.timeStart = 12f;
     }
 
     public void Play() {
         _disablekey.keyboardAble = true;
         painelInicial.SetActive(false);
         IniciaRodada();
+    }
+
+    public void JogarNovamente() {
+        SceneManager.LoadScene("Jogo Inf Logica");
     }
     
 }

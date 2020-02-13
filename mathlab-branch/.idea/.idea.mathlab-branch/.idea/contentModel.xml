@@ -30,6 +30,7 @@
             <e p="BalaInicial.cs" t="Include" />
             <e p="Canhao.cs" t="Include" />
             <e p="CountdownTimer.cs" t="Include" />
+            <e p="Cronometro.cs" t="Include" />
             <e p="ManagerInf.cs" t="Include" />
             <e p="Municao.cs" t="Include" />
           </e>

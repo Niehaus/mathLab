@@ -15941,6 +15941,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1698185363}
   m_CullTransparentMesh: 0
+--- !u!1 &1708860937
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1708860939}
+  - component: {fileID: 1708860938}
+  m_Layer: 0
+  m_Name: Cronometro
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1708860938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1708860937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 641eec5295f9b3846b7de1e64cdcf919, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeStart: 12
+  textBox: {fileID: 120857739}
+  startBtnText: {fileID: 0}
+  timerActive: 0
+  manager: {fileID: 1765121905}
+--- !u!4 &1708860939
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1708860937}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 861.3147, y: 531.2977, z: -790.625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1721546397
 GameObject:
   m_ObjectHideFlags: 0
@@ -16169,13 +16217,19 @@ MonoBehaviour:
   contadores:
   - {fileID: 114137914}
   - {fileID: 1143647090}
-  textPainelDerrota: []
-  textPainelVitoria: []
+  textPainelDerrota:
+  - {fileID: 2037332652}
+  - {fileID: 1193582227}
+  textPainelVitoria:
+  - {fileID: 750726980}
+  - {fileID: 1048330941}
+  - {fileID: 372684493}
   comandos: {fileID: 1108001861}
   timer: {fileID: 120857739}
   painelVitoria: {fileID: 1698185363}
   painelDerrota: {fileID: 341320584}
   painelInicial: {fileID: 213412573}
+  cronometro: {fileID: 1708860938}
 --- !u!1 &1798692990
 GameObject:
   m_ObjectHideFlags: 0

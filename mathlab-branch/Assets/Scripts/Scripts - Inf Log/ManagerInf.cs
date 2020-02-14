@@ -13,7 +13,7 @@ public class ManagerInf : MonoBehaviour {
     public Text[] textPainelDerrota;
     public Text[] textPainelVitoria;
     public Text comandos;
-    public Text timer;
+    //public Text dropoDownText;
     private int _hearts = 3;
     private int _coins;
     private string[] _stringSeparators = { "\r\n" };
@@ -31,7 +31,9 @@ public class ManagerInf : MonoBehaviour {
     public GameObject painelDerrota;
     public GameObject painelInicial;
     public Cronometro cronometro;
+    public Dropdown dropdown;
     private bool _controller;
+    private int _totalDePontos;
     
     // Start is called before the first frame update
     private void Start() {
@@ -55,9 +57,9 @@ public class ManagerInf : MonoBehaviour {
             _disablekey.GetComponent<Rigidbody2D>().velocity = new Vector2(0f,0f);
             _disablekey.GetComponent<Animator>().SetFloat(MoveX, 0f);
             _disablekey.GetComponent<Animator>().SetFloat(MoveY, 0f);
-            Debug.Log("velocidade zerada");
+            _totalDePontos = _coins / 10 + _coins;
             textPainelDerrota[0].text = "Moedas Coletadas:" + _coins + "x";
-            textPainelDerrota[1].text = "Total de Pontos:" + _coins + "x"; //TODO: CALCULAR PONTOS
+            textPainelDerrota[1].text = "Total de Pontos:" + _totalDePontos + "x"; 
         } else if (_fimDoJogo && _hearts > 0) {
             //TODO: PAINEL DE VITORIA
             painelVitoria.SetActive(true);
@@ -65,10 +67,10 @@ public class ManagerInf : MonoBehaviour {
             _disablekey.GetComponent<Rigidbody2D>().velocity = new Vector2(0f,0f);
             _disablekey.GetComponent<Animator>().SetFloat(MoveX, 0f);
             _disablekey.GetComponent<Animator>().SetFloat(MoveY, 0f);
-            Debug.Log("velocidade zerada");
+            _totalDePontos = (_coins / 10 + _hearts) + _coins;
             textPainelVitoria[0].text = "Moedas Coletadas:" + _coins + "x";
             textPainelVitoria[1].text = "Vidas Restantes:" + _hearts + "x";
-            textPainelVitoria[2].text = "Total de Pontos:" + _coins + "x"; //TODO: CALCULAR PONTOS
+            textPainelVitoria[2].text = "Total de Pontos:" + _totalDePontos + "x";
         }
     }
 
@@ -94,9 +96,7 @@ public class ManagerInf : MonoBehaviour {
             contadores[1].text = _hearts + "x";
             if (_hearts <= 0) {
                 _fimDoJogo = true;
-                ResetaAlavancas();
             }
-            ResetaAlavancas();
             RepeteRodada();
         }
         
@@ -112,8 +112,7 @@ public class ManagerInf : MonoBehaviour {
                         Debug.Log("ACABOU");
                         _fimDoJogo = true;
                     }
-                    ResetaAlavancas();
-                    IniciaRodada();
+                    _controller = true;
                 }
                 else {
                     Debug.Log("Ativou a alavanca incorreta :(");
@@ -123,13 +122,22 @@ public class ManagerInf : MonoBehaviour {
                         _fimDoJogo = true;
                         ResetaAlavancas();
                     }
-                    ResetaAlavancas();
-                    RepeteRodada();
+                    _controller = false;
                 }
             }
         }
+        ProximaAcao(_controller);
     }
-    
+
+    private void ProximaAcao(bool comando) {
+        ResetaAlavancas();
+        if (comando) {
+            IniciaRodada();
+        }
+        else {
+            RepeteRodada();
+        }
+    }
     private void SetaDesafio() {
         Debug.Log("fui chamda");
         comandos.text = _lines[index];
@@ -168,6 +176,24 @@ public class ManagerInf : MonoBehaviour {
 
     public void JogarNovamente() {
         SceneManager.LoadScene("Jogo Inf Logica");
+    }
+
+    public void MudaTexto(Text text) {
+        switch (dropdown.value) {
+            case 0:
+                text.text = "Nenhuma Função Selecionada";
+                break;
+            case 1:
+                text.text = "modus tolens";
+                break;
+            case 2:
+                text.text = "modus ponens";
+                break;
+            case 3:
+                text.text = "silogismo";
+                break;
+        }
+        
     }
     
 }

@@ -178,6 +178,10 @@ public class ManagerInf : MonoBehaviour {
         SceneManager.LoadScene("Jogo Inf Logica");
     }
 
+    public void Sair() {
+        SceneManager.LoadScene("Jogo Principal");
+    }
+
     public void MudaTexto(Text text) {
         switch (dropdown.value) {
             case 0:

@@ -14,6 +14,7 @@ public class Npc : MonoBehaviour {
     
     public GameObject caixaDialogo;
     public GameObject botaoContinuar;
+    public GameObject balaodeFala;
     public Text dialogo;
     
     public string[] sentences;

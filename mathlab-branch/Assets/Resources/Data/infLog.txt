@@ -2,7 +2,7 @@ p -> q :p
 Modus Ponens
 Modus Tolens
 Silogismo
-Conjunção
+Pontos Extra
 Resposta
 Modus Ponens
 p -> q :q

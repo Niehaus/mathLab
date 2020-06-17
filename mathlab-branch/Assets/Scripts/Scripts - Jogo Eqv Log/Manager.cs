@@ -61,7 +61,7 @@ public class Manager : MonoBehaviour {
              var vector = GeraCoord(new Vector2(9.3f, -4.3f), new Vector2(3.23f, 5.36f));
              Instantiate(prefab, new Vector3(vector.x, vector.y, 0), Quaternion.identity);
          }
-         else { //esquerda
+         else {//esquerda
              var vector = GeraCoord(new Vector2(-8.4f, -4.3f), new Vector2(-2.16f, 5.36f));
              Instantiate(prefab, new Vector3(-vector.x, vector.y, 0), Quaternion.identity);
          }

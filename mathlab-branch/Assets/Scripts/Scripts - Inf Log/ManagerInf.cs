@@ -18,8 +18,9 @@ public class ManagerInf : MonoBehaviour {
     private int _coins;
     private string[] _stringSeparators = { "\r\n" };
     private string[] _lines;
-    private int respostaAtual;
-    private int index;
+    private int _respostaAtual;
+    private int _index;
+    private int _respostaBonus;
     private float _currCountdownValue;
     private bool _fimDoJogo;
     private static readonly int Ativa = Animator.StringToHash("ativa");
@@ -30,11 +31,12 @@ public class ManagerInf : MonoBehaviour {
     public GameObject painelVitoria;
     public GameObject painelDerrota;
     public GameObject painelInicial;
+    public GameObject painelRespCorreta;
     public Cronometro cronometro;
     public Dropdown dropdown;
     private bool _controller;
     private int _totalDePontos;
-    
+
     // Start is called before the first frame update
     private void Start() {
         contadores[0].text = _coins + "x";
@@ -104,29 +106,38 @@ public class ManagerInf : MonoBehaviour {
             if (alavanca.GetComponent<Animator>().GetBool(id: Ativa)) {
                 Debug.Log(message: "Alavanca " + alavanca.identificador + " ativa");
                 alavanca.canhoes.AtivaCanhao();
-                if (respostaAtual == alavanca.identificador) {
+                if (_respostaAtual == alavanca.identificador) {
                     Debug.Log("Ativou a alavanca correta!");
+                    StartCoroutine(PainelRespostaCorreta("Resposta Correta!"));
                     _coins += 10;
                     contadores[0].text = _coins + "x";
-                    if (index == _lines.Length) {
+                    if (_index == _lines.Length) {
                         Debug.Log("ACABOU");
                         _fimDoJogo = true;
                     }
                     _controller = true;
                 }
                 else {
-                    Debug.Log("Ativou a alavanca incorreta :(");
-                    _hearts -= 1;
-                    contadores[1].text = _hearts + "x";
-                    if (_hearts <= 0) {
-                        _fimDoJogo = true;
-                        ResetaAlavancas();
+                    if (_respostaBonus == alavanca.identificador) {
+                        Debug.Log("Ativou a alavanca bonus!");
+                        _coins += 10;
+                        contadores[0].text = _coins + "x";
                     }
-                    _controller = false;
+                    else {
+                        Debug.Log("Ativou a alavanca incorreta :(");
+                        StartCoroutine(PainelRespostaCorreta("Resposta Incorreta ):"));
+                        _hearts -= 1;
+                        contadores[1].text = _hearts + "x";
+                        if (_hearts <= 0) {
+                            _fimDoJogo = true;
+                            ResetaAlavancas();
+                        }
+                        _controller = false;
+                    }
                 }
             }
         }
-        ProximaAcao(_controller);
+        
     }
 
     private void ProximaAcao(bool comando) {
@@ -139,16 +150,16 @@ public class ManagerInf : MonoBehaviour {
         }
     }
     private void SetaDesafio() {
-        Debug.Log("fui chamda");
-        comandos.text = _lines[index];
-        index += 1;
+        Debug.Log("Seta Desafio");
+        comandos.text = _lines[_index];
+        _index += 1;
         for (var i = 0; i < textoResposta.Length; i++) {
-            textoResposta[i].text = _lines[index + i];
+            textoResposta[i].text = _lines[_index + i];
         }
-        index += 5;
-        //respostaAtual = _lines[index];
-        respostaAtual = AlavancaCorreta(_lines[index]);
-        index += 1;
+        _index += 5;
+        _respostaAtual = AlavancaCorreta(_lines[_index]);
+        _respostaBonus = AlavancaCorreta("Pontos Extra");
+        _index += 1;
     }
 
     private int AlavancaCorreta(string respostaCorreta) {
@@ -181,8 +192,17 @@ public class ManagerInf : MonoBehaviour {
     public void Sair() {
         SceneManager.LoadScene("Jogo Principal");
     }
+    
+    private IEnumerator PainelRespostaCorreta(string textoPrint) { //ativa painel de resposta correta
+        painelRespCorreta.SetActive(true);
+        painelRespCorreta.transform.GetChild(0).GetComponent<Text>().text = textoPrint;
+        yield return new WaitForSeconds(2);
+        ProximaAcao(_controller);
+        painelRespCorreta.SetActive(false);
+    }
 
     public void MudaTexto(Text text) {
+        //TODO: Preencher texto das funções
         switch (dropdown.value) {
             case 0:
                 text.text = "Nenhuma Função Selecionada";

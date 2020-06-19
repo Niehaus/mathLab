@@ -10,6 +10,8 @@ public class Municao : MonoBehaviour {
     private Rigidbody2D _rigidbody2D;
     private Vector3 _posInicial;
     private Renderer _renderer;
+
+    public GameObject playerCol;
     
     // Start is called before the first frame update
     private void Start() {
@@ -19,6 +21,7 @@ public class Municao : MonoBehaviour {
         _renderer.enabled = false;
         _rigidbody2D.bodyType = RigidbodyType2D.Static;
         _posInicial = gameObject.transform.position;
+        Physics2D.IgnoreCollision(playerCol.GetComponent<CircleCollider2D>(), GetComponent<BoxCollider2D>());
     }
     
     public void RecarregaBala() {

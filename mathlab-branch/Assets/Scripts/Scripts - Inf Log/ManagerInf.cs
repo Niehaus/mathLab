@@ -36,7 +36,8 @@ public class ManagerInf : MonoBehaviour {
     public Dropdown dropdown;
     private bool _controller;
     private int _totalDePontos;
-
+    private bool _bonusAtivo;
+    
     // Start is called before the first frame update
     private void Start() {
         contadores[0].text = _coins + "x";
@@ -55,6 +56,7 @@ public class ManagerInf : MonoBehaviour {
         if (_fimDoJogo && _hearts <= 0) {
             //TODO: PAINEL DE DERROTA
             painelDerrota.SetActive(true);
+            painelRespCorreta.SetActive(false);
             _disablekey.keyboardAble = false;
             _disablekey.GetComponent<Rigidbody2D>().velocity = new Vector2(0f,0f);
             _disablekey.GetComponent<Animator>().SetFloat(MoveX, 0f);
@@ -65,6 +67,7 @@ public class ManagerInf : MonoBehaviour {
         } else if (_fimDoJogo && _hearts > 0) {
             //TODO: PAINEL DE VITORIA
             painelVitoria.SetActive(true);
+            painelRespCorreta.SetActive(false);
             _disablekey.keyboardAble = false;
             _disablekey.GetComponent<Rigidbody2D>().velocity = new Vector2(0f,0f);
             _disablekey.GetComponent<Animator>().SetFloat(MoveX, 0f);
@@ -95,36 +98,40 @@ public class ManagerInf : MonoBehaviour {
         }
         if (alavancasAtivas == 0) {
             _hearts -= 1;
+            _controller = false;
             contadores[1].text = _hearts + "x";
+            StartCoroutine(PainelRespostaCorreta("Nenhuma Alavanca Ativa ):"));
             if (_hearts <= 0) {
                 _fimDoJogo = true;
             }
-            RepeteRodada();
         }
         
         foreach (var alavanca in alavancas) {
             if (alavanca.GetComponent<Animator>().GetBool(id: Ativa)) {
-                Debug.Log(message: "Alavanca " + alavanca.identificador + " ativa");
+                //Debug.Log(message: "Alavanca " + alavanca.identificador + " ativa");
                 alavanca.canhoes.AtivaCanhao();
                 if (_respostaAtual == alavanca.identificador) {
-                    Debug.Log("Ativou a alavanca correta!");
+                    //Debug.Log("Ativou a alavanca correta!");
                     StartCoroutine(PainelRespostaCorreta("Resposta Correta!"));
                     _coins += 10;
                     contadores[0].text = _coins + "x";
                     if (_index == _lines.Length) {
-                        Debug.Log("ACABOU");
+                        //Debug.Log("ACABOU");
                         _fimDoJogo = true;
                     }
                     _controller = true;
                 }
                 else {
                     if (_respostaBonus == alavanca.identificador) {
-                        Debug.Log("Ativou a alavanca bonus!");
+                        //Debug.Log("Ativou a alavanca bonus!!");
+                        if (_bonusAtivo) continue;
                         _coins += 10;
+                        _bonusAtivo = true;
                         contadores[0].text = _coins + "x";
+                        textoResposta[_respostaBonus - 1].text = "Bonus Já Ativo";
                     }
                     else {
-                        Debug.Log("Ativou a alavanca incorreta :(");
+                        //Debug.Log("Ativou a alavanca incorreta :(");
                         StartCoroutine(PainelRespostaCorreta("Resposta Incorreta ):"));
                         _hearts -= 1;
                         contadores[1].text = _hearts + "x";
@@ -150,7 +157,7 @@ public class ManagerInf : MonoBehaviour {
         }
     }
     private void SetaDesafio() {
-        Debug.Log("Seta Desafio");
+        //Debug.Log("Seta Desafio");
         comandos.text = _lines[_index];
         _index += 1;
         for (var i = 0; i < textoResposta.Length; i++) {
@@ -165,7 +172,8 @@ public class ManagerInf : MonoBehaviour {
     private int AlavancaCorreta(string respostaCorreta) {
         for (var i = 0; i < textoResposta.Length; i++) {
             if (textoResposta[i].text == respostaCorreta) {
-                Debug.Log("Alavanca correta: " + (i + 1));
+               // Debug.Log("Alavanca correta: " + (i + 1));
+                _bonusAtivo = false;
                 return i + 1;
             }
         }
@@ -185,7 +193,9 @@ public class ManagerInf : MonoBehaviour {
         IniciaRodada();
     }
 
+    //TODO: Ao sair salvar a pontuação do jogador no ManagerOfAll 
     public void JogarNovamente() {
+        painelDerrota.SetActive(false);
         SceneManager.LoadScene("Jogo Inf Logica");
     }
 

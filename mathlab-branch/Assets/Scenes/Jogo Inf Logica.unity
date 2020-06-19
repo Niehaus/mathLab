@@ -729,8 +729,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -113.1, y: -90.59}
-  m_SizeDelta: {x: 214.79, y: 173.28}
+  m_AnchoredPosition: {x: -112.8, y: -90.59}
+  m_SizeDelta: {x: 214.18, y: 173.28}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &158705288
 MonoBehaviour:
@@ -769,7 +769,7 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: 1bc0cdc9923b23942996d33be95fd9db, type: 3}
     m_FontSize: 16
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 0
     m_MaxSize: 50
     m_Alignment: 4
@@ -2484,6 +2484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fd8ab7d1bf5e224f98a2b71f7f6933b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerCol: {fileID: 1468385055}
 --- !u!61 &483801810
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2496,7 +2497,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 1
+  m_UsedByComposite: 0
   m_Offset: {x: -0.03249955, y: -0.093446285}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -3062,6 +3063,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fd8ab7d1bf5e224f98a2b71f7f6933b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerCol: {fileID: 1468385055}
 --- !u!61 &587786385
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3074,7 +3076,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 1
+  m_UsedByComposite: 0
   m_Offset: {x: -0.029638529, y: -0.074950755}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -6883,7 +6885,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 945744892}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1765121905}
+        m_MethodName: Sair
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &945744892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8571,6 +8584,15 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
+  - first: {x: 966, y: 447, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 16
+      m_TileSpriteIndex: 16
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
   - m_RefCount: 4
@@ -8605,8 +8627,8 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: b04343cd0c331f641923c874219e4746, type: 2}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: e9dc6408882ed7942b1a9cd75e0a07ac, type: 2}
   - m_RefCount: 21
     m_Data: {fileID: 11400000, guid: d81a8a1699ba0c343a53245b8d7b03c8, type: 2}
   m_TileSpriteArray:
@@ -8642,12 +8664,12 @@ Tilemap:
     m_Data: {fileID: 21300676, guid: 3b912faef297b0c449074118da9054d7, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300254, guid: 3b912faef297b0c449074118da9054d7, type: 3}
   - m_RefCount: 21
     m_Data: {fileID: 21300834, guid: 3b912faef297b0c449074118da9054d7, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 117
+  - m_RefCount: 118
     m_Data:
       e00: 1
       e01: 0
@@ -8666,13 +8688,13 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 117
+  - m_RefCount: 118
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -17, y: -8, z: 0}
-  m_Size: {x: 27, y: 16, z: 1}
+  m_Size: {x: 984, y: 456, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -13812,7 +13834,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1292211191}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1765121905}
+        m_MethodName: Sair
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1292211191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14791,6 +14824,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fd8ab7d1bf5e224f98a2b71f7f6933b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerCol: {fileID: 1468385055}
 --- !u!61 &1517047626
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14803,7 +14837,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 1
+  m_UsedByComposite: 0
   m_Offset: {x: -0.030641794, y: -0.09103203}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -15427,7 +15461,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1632147941}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1765121905}
+        m_MethodName: JogarNovamente
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1632147941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15646,7 +15691,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1652397418}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1765121905}
+        m_MethodName: JogarNovamente
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1652397418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16077,6 +16133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fd8ab7d1bf5e224f98a2b71f7f6933b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerCol: {fileID: 1468385055}
 --- !u!61 &1691984956
 BoxCollider2D:
   m_ObjectHideFlags: 0

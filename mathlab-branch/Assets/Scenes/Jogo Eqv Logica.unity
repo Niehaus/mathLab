@@ -793,7 +793,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Cenoura
-  statusUp: 50
+  statusUp: 0
   spawn: 0
 --- !u!212 &143373745
 SpriteRenderer:
@@ -16773,7 +16773,7 @@ PrefabInstance:
     - target: {fileID: 6268226452614670570, guid: 6058c50fc8979544885cff9739ebad2d,
         type: 3}
       propertyPath: statusUp
-      value: 50
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 6268226452614670581, guid: 6058c50fc8979544885cff9739ebad2d,
         type: 3}
@@ -16794,6 +16794,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4402749809796161950, guid: d2b0d322f3350fe4eaf94eda955a027b,
+        type: 3}
+      propertyPath: statusUp
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7774483028079883488, guid: d2b0d322f3350fe4eaf94eda955a027b,
         type: 3}
       propertyPath: m_FontData.m_BestFit

@@ -34,6 +34,9 @@
             <e p="ManagerInf.cs" t="Include" />
             <e p="Municao.cs" t="Include" />
           </e>
+          <e p="Scripts - Info Center" t="Include">
+            <e p="infoBook.cs" t="Include" />
+          </e>
           <e p="Scripts - Jogo Eqv Log" t="Include">
             <e p="button.cs" t="Include" />
             <e p="Cenoura.cs" t="Include" />

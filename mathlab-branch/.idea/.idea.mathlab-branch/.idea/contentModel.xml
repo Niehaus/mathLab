@@ -35,7 +35,9 @@
             <e p="Municao.cs" t="Include" />
           </e>
           <e p="Scripts - Info Center" t="Include">
+            <e p="Book.cs" t="Include" />
             <e p="infoBook.cs" t="Include" />
+            <e p="PageIterate.cs" t="Include" />
           </e>
           <e p="Scripts - Jogo Eqv Log" t="Include">
             <e p="button.cs" t="Include" />

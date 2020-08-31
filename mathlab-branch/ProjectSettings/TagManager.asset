@@ -18,6 +18,7 @@ TagManager:
   - PlayerPress
   - PlayerPick
   - Municao
+  - BookManager
   layers:
   - Default
   - TransparentFX

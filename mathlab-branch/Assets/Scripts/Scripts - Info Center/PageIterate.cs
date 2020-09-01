@@ -12,48 +12,52 @@ public class PageIterate : MonoBehaviour {
     [NonSerialized]
     public int pageCounter = 0;
     
-    // Start is called before the first frame update
-    void Start() {
-        gameObject.GetComponent<Image>().sprite = numerosSprite[2];
-      
-        
-        
-    }
-    
-    // Update is called once per frame
-    void Update() {
-    }
-
-    public void passa_pagina() {
-        gameObject.GetComponent<Image>().sprite = numerosSprite[2];
-        
-    }
-
     public void Livro_Ativo() {
-        var maxContent = Math.Max(livroAberto.pageRightContent.Length, livroAberto.pageLeftContent.Length);
-        Debug.Log(maxContent);
-        //Int32.MaxValue;
+        var maxContent = Math.Max(livroAberto.pageRightContent.Length - 1, livroAberto.pageLeftContent.Length - 1);
         if (pageCounter == maxContent) {
             /*Pagina da direita*/
-            livroAberto.pageRightContent[livroAberto.pageRightContent.Length - 1].SetActive(false);   
-            livroAberto.pageRightContent[livroAberto.pageRightContent.Length].SetActive(true);
+            livroAberto.pageRightContent[livroAberto.pageRightContent.Length - 2].SetActive(false);   
+            livroAberto.pageRightContent[livroAberto.pageRightContent.Length - 1].SetActive(true);
             
             /*Pagina da esquerda*/
-            livroAberto.pageLeftContent[livroAberto.pageLeftContent.Length - 1].SetActive(false);   
-            livroAberto.pageLeftContent[livroAberto.pageLeftContent.Length].SetActive(true);
+            livroAberto.pageLeftContent[livroAberto.pageLeftContent.Length - 2].SetActive(false);   
+            livroAberto.pageLeftContent[livroAberto.pageLeftContent.Length - 1].SetActive(true);
             
+            Parity_of_page();
             return;
         }
-
+        
         if (pageCounter > 0 ) {
             livroAberto.pageRightContent[pageCounter - 1].SetActive(false);   
             livroAberto.pageRightContent[pageCounter].SetActive(true);
-            
-            livroAberto.pageLeftContent[pageCounter - 1].SetActive(false);   
-            livroAberto.pageLeftContent[pageCounter].SetActive(true);   
-        }
-        pageCounter++;
 
+
+            livroAberto.pageLeftContent[pageCounter - 1].SetActive(false);
+            livroAberto.pageLeftContent[pageCounter].SetActive(true);
+            
+            Parity_of_page();
+            
+        }else if (pageCounter == 0) {
+            livroAberto.pageRightContent[pageCounter].SetActive(true);
+            livroAberto.pageLeftContent[pageCounter].SetActive(true);
+            
+            livroAberto.pageMarkRight.GetComponent<Image>().sprite = numerosSprite[pageCounter + 1];
+            livroAberto.pageMarkLeft.GetComponent<Image>().sprite = numerosSprite[pageCounter];
+        }
+        
+        pageCounter++;
+        
     }
+    private void Parity_of_page() {
+        if (pageCounter % 2 != 0) { //pageCounter impar
+            livroAberto.pageMarkRight.GetComponent<Image>().sprite = numerosSprite[pageCounter + 2];
+            livroAberto.pageMarkLeft.GetComponent<Image>().sprite = numerosSprite[pageCounter + 1];
+        }
+        else { //pageCounter par
+            livroAberto.pageMarkRight.GetComponent<Image>().sprite = numerosSprite[pageCounter + 1];
+            livroAberto.pageMarkLeft.GetComponent<Image>().sprite = numerosSprite[pageCounter];
+        }
+    }
+    
 }
 

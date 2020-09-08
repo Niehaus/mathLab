@@ -5,19 +5,22 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Jogo Principal.unity
     guid: 4c6c9f658d79fab4384a6bdba21a97e3
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Casa Dr.Wood.unity
     guid: f92ebbc4e60f083418dff983eccc4773
   - enabled: 0
     path: Assets/Scenes/Jogo Tabela Verdade.unity
     guid: 14b669a7a702c574e9451853f7f95321
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Jogo Eqv Logica.unity
     guid: ae98ec894d609f54e96a0f2f991014ee
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Jogo Inf Logica.unity
     guid: 65d9c8b20e46d2e4abf3144f8220c381
+  - enabled: 0
+    path: Assets/Scenes/Nova Fase 1.unity
+    guid: 749189ba14f0d744c888c98015793c0e
   m_configObjects: {}

@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
     private void Update() {
         if (!keyboardAble) return;
         _myRb.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized * (speed * Time.deltaTime);
+        Debug.Log(_myRb.velocity);
         _myAnim.SetFloat(MoveX,_myRb.velocity.x);
         _myAnim.SetFloat(MoveY,_myRb.velocity.y);
 

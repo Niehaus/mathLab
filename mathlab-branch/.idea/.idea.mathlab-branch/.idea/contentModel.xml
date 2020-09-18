@@ -65,6 +65,10 @@
             <e p="Tesla.cs" t="Include" />
             <e p="Wood.cs" t="Include" />
           </e>
+          <e p="Scripts - Nova Fase 1 TB" t="Include">
+            <e p="Switch.cs" t="Include" />
+            <e p="TabVerdadeManager.cs" t="Include" />
+          </e>
           <e p="Scripts - TB" t="Include">
             <e p="gameMasterTable.cs" t="Include" />
             <e p="setAddTables.cs" t="Include" />

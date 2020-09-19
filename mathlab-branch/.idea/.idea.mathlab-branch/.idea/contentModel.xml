@@ -25,6 +25,8 @@
           </e>
           <e p="TabVerdade" t="Include">
             <e p="Tabela1.txt" t="Include" />
+            <e p="Tabela2.txt" t="Include" />
+            <e p="Tabela3.txt" t="Include" />
           </e>
         </e>
         <e p="Scripts" t="Include">
@@ -72,6 +74,7 @@
           <e p="Scripts - Nova Fase 1 TB" t="Include">
             <e p="Switch.cs" t="Include" />
             <e p="TabVerdadeManager.cs" t="Include" />
+            <e p="UIManager.cs" t="Include" />
           </e>
           <e p="Scripts - TB" t="Include">
             <e p="gameMasterTable.cs" t="Include" />

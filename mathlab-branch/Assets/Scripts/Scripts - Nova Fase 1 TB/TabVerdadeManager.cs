@@ -42,7 +42,7 @@ public class TabVerdadeManager : MonoBehaviour {
             _tuplaDeLinhasRespostas.Add(LinhasRespostas(infoTable.Item1[i], infoTable.Item3[i]));
         }
         foreach (var tuple in _tuplaDeLinhasRespostas) {
-            Debug.Log(tuple);
+            //Debug.Log(tuple);
         }
     }
 
@@ -142,8 +142,12 @@ public class TabVerdadeManager : MonoBehaviour {
     }
     public void EnviarResposta() {
         var respostaJogador = getRespostaJogador();
-        
-        if (_logRespostas.Contains(respostaJogador))  EventSystem.current.SetSelectedGameObject(null); //Linha que já foi respondida
+
+        if (_logRespostas.Contains(respostaJogador)) {
+            StartCoroutine(AnimEvent("yellowScreen")); //Resposta Errada
+            EventSystem.current.SetSelectedGameObject(null); //Linha que já foi respondida
+            return;
+        }
         
         if (_tuplaDeLinhasRespostas.Contains(respostaJogador)) { //Resposta Correta
             logLinhas.text += string.Format("{0,-2} - {1,-2} -> {2}\n", (_logRespostas.Count + 1), respostaJogador.Item1, respostaJogador.Item2);

@@ -13,28 +13,33 @@ public class TabVerdadeManager : MonoBehaviour {
     public Text expressaoText;
     public Text logLinhas;
     public Switch[] switchVector;
+    public UiManager uiManager;
     private TextAsset[] _textFiles;
-    private int _vars;
+    private int _vars, _totalLinhas = -1;
     private List<Tuple<string, string>> _tuplaDeLinhasRespostas = new List<Tuple<string, string>>();
     private List<Tuple<string, string>> _logRespostas = new List<Tuple<string, string>>();
     private List<Switch> _switchesValidos = new List<Switch>();
-    
+        
+
     // Start is called before the first frame update
     void Start() {
-        _textFiles = Resources.LoadAll("TabVerdade", typeof(TextAsset)).Cast<TextAsset>().ToArray();
+        /*_textFiles = Resources.LoadAll("TabVerdade", typeof(TextAsset)).Cast<TextAsset>().ToArray();
         foreach (var textAsset in _textFiles) {
             IniciaEtapa(textAsset);
             
-        }
+        }*/
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
+    void Update() {
+        if (_logRespostas.Count == _totalLinhas) {
+            Debug.Log("FIM DE JOGO");
+            uiManager.TabelPanelFinaliza();
+        } 
     }
 
     public void IniciaEtapa(TextAsset textAsset) {
+        Debug.Log("arquivo selecionado: " + textAsset.name);
         var infoTable = GetLinesFromTable(textAsset);
         expressaoText.text = infoTable.Item2;
         _switchesValidos =  ValidaSwitches(infoTable.Item2);
@@ -42,7 +47,7 @@ public class TabVerdadeManager : MonoBehaviour {
             _tuplaDeLinhasRespostas.Add(LinhasRespostas(infoTable.Item1[i], infoTable.Item3[i]));
         }
         foreach (var tuple in _tuplaDeLinhasRespostas) {
-            //Debug.Log(tuple);
+            Debug.Log(tuple);
         }
     }
 
@@ -99,7 +104,7 @@ public class TabVerdadeManager : MonoBehaviour {
         var tableLines = Regex.Split(textAsset.text, "\r\n|\r|\n");
         var expressao = tableLines[0]; var numeroLinhasTabela = tableLines[1];
         var vetorResposta = Regex.Split(tableLines[tableLines.Length - 1].ToUpper(), @"\s+");
-        var linhasTabela = new string[(int) Math.Pow(2,int.Parse(numeroLinhasTabela))];
+        var linhasTabela = new string[_totalLinhas = (int) Math.Pow(2,int.Parse(numeroLinhasTabela))];
 
         for (var i = 2; i <  (int) Math.Pow(2,int.Parse(numeroLinhasTabela)) + 2; i++) {
             //Debug.Log("linha index " + i + " " +  tableLines[i]);
@@ -142,7 +147,8 @@ public class TabVerdadeManager : MonoBehaviour {
     }
     public void EnviarResposta() {
         var respostaJogador = getRespostaJogador();
-
+        
+        
         if (_logRespostas.Contains(respostaJogador)) {
             StartCoroutine(AnimEvent("yellowScreen")); //Resposta Errada
             EventSystem.current.SetSelectedGameObject(null); //Linha que já foi respondida
@@ -153,6 +159,7 @@ public class TabVerdadeManager : MonoBehaviour {
             logLinhas.text += string.Format("{0,-2} - {1,-2} -> {2}\n", (_logRespostas.Count + 1), respostaJogador.Item1, respostaJogador.Item2);
             StartCoroutine(AnimEvent("greenScreen"));
             _logRespostas.Add(respostaJogador);
+            Debug.Log("Log de respostas" + _logRespostas.Count);
             ReiniciaSwitches();
             EventSystem.current.SetSelectedGameObject(null);
             return;
@@ -161,7 +168,8 @@ public class TabVerdadeManager : MonoBehaviour {
         StartCoroutine(AnimEvent("redScreen")); //Resposta Errada
         ReiniciaSwitches();
         
-        Debug.Log("Log de respostas");
+        
+        
         foreach (var respostas in _logRespostas) {
             Debug.Log(respostas);
         }

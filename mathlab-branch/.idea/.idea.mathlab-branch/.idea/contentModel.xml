@@ -27,6 +27,7 @@
             <e p="Tabela1.txt" t="Include" />
             <e p="Tabela2.txt" t="Include" />
             <e p="Tabela3.txt" t="Include" />
+            <e p="Tabela4.txt" t="Include" />
           </e>
         </e>
         <e p="Scripts" t="Include">

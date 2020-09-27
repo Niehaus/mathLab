@@ -1,12 +1,7 @@
-(p || q) ^ ( q ^ -r) 
-3
-VFV
-VVF
-FVV
-VVV
-FFF
-FFV
-VFF
-FVF
+p   
+1
+F
+V
 
-f f v v f f f f
+
+f v 

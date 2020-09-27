@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,67 +13,81 @@ public class UiManager : MonoBehaviour  {
     // Start is called before the first frame update
     
     private TextAsset[] _textFiles;
-    public ToggleGroup toggleGroup;
+    public ToggleGroup toggleGroupInicio, toggleGroupFinal;
     private List<Toggle> _toggles;
-    public GameObject togglePrefab;
-    public GameObject[] uiPanels;
+    public GameObject togglePrefab, togglePrefab2;
+    public GameObject[] uiPanels, slideArea;
     private int _myIndex = 0;
     private float baseY = 68f;
     public TabVerdadeManager tabVerdadeManager;
     private Hashtable _hashtableFiles = new Hashtable();
     private List<Tuple<Hashtable, bool>> _tabelasFeitas = new List<Tuple<Hashtable, bool>>(); //TODO: haash ou string??
+    private List<string> _filesSolved = new List<string>();
     
     void Start() {
         _textFiles = Resources.LoadAll("TabVerdade", typeof(TextAsset)).Cast<TextAsset>().ToArray();
-        GenerateToggles(_textFiles);
+        GenerateToggles(_textFiles, toggleGroupInicio);
         
-        
+        //TabelPanelFinaliza("nada");
         //togglePrefab.GetComponentInChildren<Text> ().text  = "o que??";
         
     }
 
-    private void GenerateToggles(IEnumerable<TextAsset> textFiles) {
+    private void GenerateToggles(IEnumerable<TextAsset> textFiles, ToggleGroup toggleGroup) {
         foreach (var textFile in textFiles) {
             var newToggle = Instantiate (togglePrefab, new Vector3(transform.position.x  + 100f, 70f, transform.position.z) , Quaternion.identity);
             newToggle.GetComponentInChildren<Text>().text = textFile.name;
-            _hashtableFiles.Add( textFile.name, _myIndex);
-            //_toggles.Add(newToggle.GetComponent<Toggle>());
+            _hashtableFiles.Add(textFile.name, _myIndex);
             newToggle.transform.SetParent(toggleGroup.transform);
-            var position = newToggle.transform.parent.position;
-            //  newToggle.transform.position = TogglePosition(_myIndex, position);
-            newToggle.transform.position =  new Vector3( position.x - (HorizontalPosition(_myIndex, 82f)),  position.y + 68f - ( 41f * _myIndex - 2),  position.z);
+            newToggle.transform.localPosition = new Vector3(-53.7f, 135f - ( 60f * _myIndex) , 0);
             _myIndex++;
         }
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
+
+    
+    private void GenericToggleGenerator(GameObject parent, string labelName, Vector3 togglePosition) {
+        var newToggle = Instantiate (togglePrefab2, new Vector3(transform.position.x , transform.position.y, transform.position.z) , Quaternion.identity);
+        newToggle.GetComponentInChildren<Text>().text = labelName;
+        newToggle.transform.SetParent(parent.transform);
+        newToggle.transform.localPosition = togglePosition;
+    }
+    
+    private void GenerateFinalToggles(IEnumerable<TextAsset> textAssets , IEnumerable<string> solvedFilesNames, ToggleGroup finalToggleGroup, GameObject[] slideArea) {
+        var toggleindexArea1 = 0;
+        var toggleindexArea2 = 0;
+        foreach (var textAsset in textAssets) {
+            if (solvedFilesNames.Contains(textAsset.name)) {
+                //Arquivo ja resolvido
+                GenericToggleGenerator(slideArea[0], textAsset.name, new Vector3(-40f, 135f - (60f * toggleindexArea1) , 0));
+                toggleindexArea1++;
+            }
+            else {
+                //arquivo ainda não resolvido 
+                GenericToggleGenerator(slideArea[1], textAsset.name, new Vector3(-40f, 135f - (60f * toggleindexArea2) , 0));
+                toggleindexArea2++;
+            }
+        }
     }
 
-    private Vector3 TogglePosition(int index, Transform parentPosition) {
-        if (index % 2 == 0) { //numero par
-            return new Vector3 (parentPosition.position.x + 82f, parentPosition.position.y + baseY, parentPosition.position.z);
+    private void DestroyAllChild(Transform parentTransform) {
+        foreach (Transform child in parentTransform) {
+            Destroy(child.gameObject);
         }
-        if (index > 2) {
-            baseY = 68f - (41f * index - 2);
-            return new Vector3 (parentPosition.position.x - 82f, parentPosition.position.y + baseY, parentPosition.position.z);   
-        }
-        return new Vector3 (parentPosition.position.x - 82f, parentPosition.position.y + baseY, parentPosition.position.z);
     }
-    private float HorizontalPosition(int index, float position) {
-        if (index % 2 == 0) { //numero par
-            return position;
-        }
-        return -position;
-    }
-
-    public void TabelPanelFinaliza() {
+    public void TabelPanelFinaliza(string currentFile, bool alreadyEnd) {
+        if (!alreadyEnd) return;
+        _filesSolved.Add(currentFile);
+        Debug.Log("arquivo feito" + currentFile);
+        GenerateFinalToggles(_textFiles, _filesSolved, toggleGroupFinal, slideArea);
         uiPanels[3].SetActive(true);
-        GenerateToggles(_textFiles);
     }
-    public void Jogar() {
-        var toggleActive = toggleGroup.ActiveToggles();
+    public void Jogar(ToggleGroup currentToggleGroup) {
+        var toggleActive = currentToggleGroup.ActiveToggles();
+        if (!toggleActive.Any()) {
+            Debug.Log("vetor vazio?" + !toggleActive.Any());
+            //TODO: CHAAMR POPUP??
+            return;
+        }
         foreach (var toggle in toggleActive) {
             foreach (var textFile in _textFiles) {
                 if (toggle.GetComponentInChildren<Text>().text == textFile.name) {
@@ -80,9 +95,14 @@ public class UiManager : MonoBehaviour  {
                 }
             }
         }
+        tabVerdadeManager.alreadyEnd = false;
+        tabVerdadeManager.logLinhas.text = " ";
         /*Ativar paineis de jogo*/
         uiPanels[0].SetActive(false);
         uiPanels[1].SetActive(true);
         uiPanels[2].SetActive(true);
+        uiPanels[3].SetActive(false);
+        DestroyAllChild(slideArea[0].transform);
+        DestroyAllChild(slideArea[1].transform);
     }
 }

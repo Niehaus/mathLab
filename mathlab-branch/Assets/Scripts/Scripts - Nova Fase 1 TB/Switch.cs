@@ -13,6 +13,8 @@ public class Switch : MonoBehaviour {
     private Animator _myAnim; 
     private bool _playerInRange;
     public bool switchAtivo = true;
+    public AudioClip[] audioClips;
+    private AudioSource _audioSource;
     
     private static readonly int On = Animator.StringToHash("on");
     private static readonly int Colorful = Animator.StringToHash("colorful");
@@ -22,6 +24,7 @@ public class Switch : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
         _myAnim = GetComponent<Animator>();
+        _audioSource = GetComponent<AudioSource>();
     }
     
     
@@ -29,10 +32,19 @@ public class Switch : MonoBehaviour {
         if (!_playerInRange || !Input.GetKeyDown(KeyCode.Space)) return;
         _myAnim.SetBool(On, !_myAnim.GetBool(On));
         if (_myAnim.GetBool(On)) {
-            textoTv.text = "V";    
+            textoTv.text = "V";
+            if (switchAtivo) {
+                _audioSource.clip = audioClips[0];
+                _audioSource.Play();    
+            }
+            
         }
         else {
             textoTv.text = "F";
+            if (switchAtivo) {
+                _audioSource.clip = audioClips[1];
+                _audioSource.Play();    
+            }
         }
 
         if (!switchAtivo) {
@@ -51,8 +63,8 @@ public class Switch : MonoBehaviour {
         _playerInRange = false;
     }
 
-    public void ConjuntoSwitchAction(string instrucao, bool conjuntoTVAction, bool textoTVAction) {
-        conjuntoTV.GetComponent<Animator>().SetBool(instrucao, conjuntoTVAction);
-        textoTv.gameObject.SetActive(textoTVAction);
+    public void ConjuntoSwitchAction(string instrucao, bool conjuntoTvAction, bool textoTvAction) {
+        conjuntoTV.GetComponent<Animator>().SetBool(instrucao, conjuntoTvAction);
+        textoTv.gameObject.SetActive(textoTvAction);
     }
 }

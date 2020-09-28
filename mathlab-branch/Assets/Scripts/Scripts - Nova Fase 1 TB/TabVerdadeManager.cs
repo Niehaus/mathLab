@@ -14,6 +14,7 @@ public class TabVerdadeManager : MonoBehaviour {
     public Text logLinhas;
     public Switch[] switchVector;
     public UiManager uiManager;
+    public AudioClip[] audioClips;
     public bool alreadyEnd;
     private TextAsset[] _textFiles;
     private int _vars, _totalLinhas = -1;
@@ -21,7 +22,8 @@ public class TabVerdadeManager : MonoBehaviour {
     private List<Tuple<string, string>> _logRespostas = new List<Tuple<string, string>>();
     private List<Switch> _switchesValidos = new List<Switch>();
     private string _currentFile;
-    
+
+    public AudioSource audioSource;
     // Start is called before the first frame update
     void Start() {
         /*_textFiles = Resources.LoadAll("TabVerdade", typeof(TextAsset)).Cast<TextAsset>().ToArray();
@@ -33,12 +35,10 @@ public class TabVerdadeManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (_logRespostas.Count == _totalLinhas && !alreadyEnd ) {
-            // Debug.Log("FIM DE JOGO");
+        if (_logRespostas.Count == _totalLinhas && !alreadyEnd ) { //Procedimento de fim de jogo
             alreadyEnd = true;
             _totalLinhas = -1;
             _logRespostas.Clear();
-            //_switchesValidos.Clear();
             foreach (var @switch in switchVector) {
                 @switch.ConjuntoSwitchAction("colorful", false, true);
                 @switch.switchAtivo = true;
@@ -55,9 +55,6 @@ public class TabVerdadeManager : MonoBehaviour {
         _switchesValidos =  ValidaSwitches(infoTable.Item2);
         for (var i = 0; i < infoTable.Item1.Length; i++) {
             _tuplaDeLinhasRespostas.Add(LinhasRespostas(infoTable.Item1[i], infoTable.Item3[i]));
-        }
-        foreach (var tuple in _tuplaDeLinhasRespostas) {
-          //  Debug.Log(tuple);
         }
     }
 
@@ -83,10 +80,7 @@ public class TabVerdadeManager : MonoBehaviour {
                 switchesValidos.Add(@switch);   
             }
         }
-        /* foreach (var @valido in _switchesValidos) {
-             Debug.Log(@valido.variavelRef);
-         }*/
-       return switchesValidos;
+        return switchesValidos;
     }
 
     private String[] SplitString(string expr) { //separa a string a partir dos operadores - get variaveis
@@ -137,16 +131,19 @@ public class TabVerdadeManager : MonoBehaviour {
     
     
     private IEnumerator AnimEvent(string instrucao) { //seta animações tempos etc
+        
         foreach (var @switch in _switchesValidos) {
+            @switch.switchAtivo = false;
             @switch.ConjuntoSwitchAction(instrucao, true, false);
         }
         
         yield return new WaitForSeconds(2);
         
         foreach (var @switch in _switchesValidos) {
+            @switch.switchAtivo = true;
+            @switch.textoTv.text = "F";
             @switch.ConjuntoSwitchAction(instrucao, false, true);
         }
-        
     }
 
     private void ReiniciaSwitches() {
@@ -155,12 +152,18 @@ public class TabVerdadeManager : MonoBehaviour {
             @switch.textoTv.text = "F";
         }
     }
+    
+    public void PlayMySound(AudioClip audioClip) {
+        audioSource.clip = audioClip;
+        audioSource.Play();
+    }
     public void EnviarResposta() {
         var respostaJogador = getRespostaJogador();
         
-        
-        if (_logRespostas.Contains(respostaJogador)) {
-            StartCoroutine(AnimEvent("yellowScreen")); //Resposta Errada
+        if (_logRespostas.Contains(respostaJogador)) { //Resposta Repetida
+            StartCoroutine(AnimEvent("yellowScreen")); 
+            ReiniciaSwitches();
+            PlayMySound(audioClips[1]);      
             EventSystem.current.SetSelectedGameObject(null); //Linha que já foi respondida
             return;
         }
@@ -169,23 +172,18 @@ public class TabVerdadeManager : MonoBehaviour {
             logLinhas.text += string.Format("{0,-2} - {1,-2} -> {2}\n", (_logRespostas.Count + 1), respostaJogador.Item1, respostaJogador.Item2);
             StartCoroutine(AnimEvent("greenScreen"));
             _logRespostas.Add(respostaJogador);
-            //Debug.Log("Log de respostas" + _logRespostas.Count);
             ReiniciaSwitches();
+            PlayMySound(audioClips[0]);
             EventSystem.current.SetSelectedGameObject(null);
             return;
         }
         
         StartCoroutine(AnimEvent("redScreen")); //Resposta Errada
+        PlayMySound(audioClips[2]);
         ReiniciaSwitches();
         
-        
-        
-        foreach (var respostas in _logRespostas) {
-        //S    Debug.Log(respostas);
-        }
-
-        EventSystem.current.SetSelectedGameObject(null); 
         /*Faz com que nada mais esteja selecionado pelo
          *event system, serve para perder o selest do botao*/
+        EventSystem.current.SetSelectedGameObject(null);
     }
 }

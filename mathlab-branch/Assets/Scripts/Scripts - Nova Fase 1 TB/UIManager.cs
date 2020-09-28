@@ -15,7 +15,7 @@ public class UiManager : MonoBehaviour  {
     private TextAsset[] _textFiles;
     public ToggleGroup toggleGroupInicio, toggleGroupFinal;
     private List<Toggle> _toggles;
-    public GameObject togglePrefab, togglePrefab2;
+    public GameObject togglePrefab, togglePrefab2, finalizaEtapaBtn;
     public GameObject[] uiPanels, slideArea;
     private int _myIndex = 0;
     private float baseY = 68f;
@@ -23,11 +23,12 @@ public class UiManager : MonoBehaviour  {
     private Hashtable _hashtableFiles = new Hashtable();
     private List<Tuple<Hashtable, bool>> _tabelasFeitas = new List<Tuple<Hashtable, bool>>(); //TODO: haash ou string??
     private List<string> _filesSolved = new List<string>();
-    
+    private PlayerController _disablekey; //bloqueador de teclado enquanto NPC fala
     void Start() {
         _textFiles = Resources.LoadAll("TabVerdade", typeof(TextAsset)).Cast<TextAsset>().ToArray();
         GenerateToggles(_textFiles, toggleGroupInicio);
-        
+        _disablekey = FindObjectOfType<PlayerController>();
+        _disablekey.keyboardAble = false;
         //TabelPanelFinaliza("nada");
         //togglePrefab.GetComponentInChildren<Text> ().text  = "o que??";
         
@@ -77,14 +78,18 @@ public class UiManager : MonoBehaviour  {
     public void TabelPanelFinaliza(string currentFile, bool alreadyEnd) {
         if (!alreadyEnd) return;
         _filesSolved.Add(currentFile);
-        Debug.Log("arquivo feito" + currentFile);
-        GenerateFinalToggles(_textFiles, _filesSolved, toggleGroupFinal, slideArea);
+        if (_filesSolved.Count == _textFiles.Length) {
+            Debug.Log("all files solved");
+            finalizaEtapaBtn.SetActive(true);
+            
+        }
+        _disablekey.keyboardAble = false;
         uiPanels[3].SetActive(true);
+        GenerateFinalToggles(_textFiles, _filesSolved, toggleGroupFinal, slideArea);
     }
     public void Jogar(ToggleGroup currentToggleGroup) {
         var toggleActive = currentToggleGroup.ActiveToggles();
-        if (!toggleActive.Any()) {
-            Debug.Log("vetor vazio?" + !toggleActive.Any());
+        if (!toggleActive.Any()) { //Quando nenhum arquivo de jogo é selecionado
             //TODO: CHAAMR POPUP??
             return;
         }
@@ -95,13 +100,14 @@ public class UiManager : MonoBehaviour  {
                 }
             }
         }
-        tabVerdadeManager.alreadyEnd = false;
-        tabVerdadeManager.logLinhas.text = " ";
         /*Ativar paineis de jogo*/
         uiPanels[0].SetActive(false);
         uiPanels[1].SetActive(true);
         uiPanels[2].SetActive(true);
         uiPanels[3].SetActive(false);
+        tabVerdadeManager.alreadyEnd = false;
+        tabVerdadeManager.logLinhas.text = " ";
+        _disablekey.keyboardAble = true; //ativa teclado
         DestroyAllChild(slideArea[0].transform);
         DestroyAllChild(slideArea[1].transform);
     }

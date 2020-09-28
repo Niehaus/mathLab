@@ -9,30 +9,9 @@ Equivalência Lógica
 Inferência Lógica
 ```
 ### Como é o jogo
-Dividido em três blocos, um para cada tópico citado acima e cada um deles possui uma sequência de tarefas que deve constituir o processo de aprendizagem que o jogo propõe.
-### Configurações
-Nesse caso é possível configurar as opções de áudio, como também contribuir para que o jogo cresça localmente. É possível adicionar novos conteúdos acerca dos exercicios já existentes no jogo, como: 
+Dividido em três blocos, um para cada tópico citado acima e cada um deles possui uma sequência de tarefas que deve constituir o processo de aprendizagem que o jogo propõe. São eles:
 
-#### Adicionar Tabela Verdade
-```
-  Aqui é possível adicionar novas tabelas verdade que vão compor o cenário da primeira parte do jogo, assim,
-  o professor que assim desejar encaixar o jogo com os exercicios passados em sala pode assim fazê-lo. 
-```
-#### Adicionar Equivalências
-```
-  Aqui analogamente pode-se adicionar novas equivalências para compor o cenário do jogo de acordo ao 
-  que já foi proposto por ele. 
-```
-
-
-#### Adicionar Inferências
-```
-Aqui analogamente pode-se adicionar novas inferências para compor o cenário do jogo de acordo ao 
-que já foi proposto por ele. 
-```
-
-
-#### Tabelas Verdade
+#### Fase 1 - Tabelas Verdade
 Nessa etapa é possível resolver tabelas verdades selecionadas previamente ao inicar a fase, esta é a primeira de três fases, as quais são o seguimento para apresentar os conteúdos contemplados neste trabalho. 
  - Visão Inicial da Fase 1:
 ![](https://raw.githubusercontent.com/Niehaus/mathLab/master/Screenshoot%20Folder/Fase1/Screenshot1.png)
@@ -46,19 +25,9 @@ Nessa etapa é possível resolver tabelas verdades selecionadas previamente ao i
 ![](https://raw.githubusercontent.com/Niehaus/mathLab/master/Screenshoot%20Folder/Fase1/Screenshot5.png)
 
 
-#### Equivalência Lógica
-#### Inferência Lógica 
-#### Jogo da Memória
-##### Jogo da Memória p/ Inferências Lógicas - As Cartas
-   ![](https://github.com/Niehaus/mathLab/blob/master/mathLab/Assets/Screenshots/memoryGame.png?raw=true)
-
-
-
-
-
-
-
-
+#### Fase 2 - Equivalência Lógica
+#### Fase 3 - Inferência Lógica 
+#### Jogo da Memória - Extensão de Inferências Lógicas
 
 ### Authors
 

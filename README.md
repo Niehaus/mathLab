@@ -10,7 +10,6 @@ Inferência Lógica
 ```
 ### Como é o jogo
 Dividido em três blocos, um para cada tópico citado acima e cada um deles possui uma sequência de tarefas que deve constituir o processo de aprendizagem que o jogo propõe.
-  ![](https://github.com/Niehaus/mathLab/blob/master/mathLab/Assets/Screenshots/MenuScreenshoot.png?raw=true)
 ### Configurações
 Nesse caso é possível configurar as opções de áudio, como também contribuir para que o jogo cresça localmente. É possível adicionar novos conteúdos acerca dos exercicios já existentes no jogo, como: 
 
@@ -34,9 +33,18 @@ que já foi proposto por ele.
 
 
 #### Tabelas Verdade
-Nessa etapa é possível utilizar-se de tabelas verdade e salvar o tempo (em segundos) que levou para resolver todos os exercicíos previamente cadastradas configurando uma gama de exercícios que podem ser refeitos quantas vezes necessario ou uma possível competição entre amigos, pois é possível também escolher um nome de usuário para salvar a pontuação. 
-![](https://github.com/Niehaus/mathLab/blob/master/mathLab/Assets/Screenshots/tableTruth.png?raw=true)
-![](https://github.com/Niehaus/mathLab/blob/master/mathLab/Assets/Screenshots/users.png?raw=true)
+Nessa etapa é possível resolver tabelas verdades selecionadas previamente ao inicar a fase, esta é a primeira de três fases, as quais são o seguimento para apresentar os conteúdos contemplados neste trabalho. 
+ - Visão Inicial da Fase 1:
+![](https://raw.githubusercontent.com/Niehaus/mathLab/master/Screenshoot%20Folder/Fase1/Screenshot1.png)
+- Instruções e seleção de uma tabela:
+![](https://raw.githubusercontent.com/Niehaus/mathLab/master/Screenshoot%20Folder/Fase1/Screenshot3.png)
+- Após a seleção: 
+![](https://raw.githubusercontent.com/Niehaus/mathLab/master/Screenshoot%20Folder/Fase1/Screenshot2.png)
+- Switchs ativos para configurar uma resposta: 
+![](https://raw.githubusercontent.com/Niehaus/mathLab/master/Screenshoot%20Folder/Fase1/Screenshot4.png)
+- Log de Respostas já inseridas, e cabeçalho da tabela: 
+![](https://raw.githubusercontent.com/Niehaus/mathLab/master/Screenshoot%20Folder/Fase1/Screenshot5.png)
+
 
 #### Equivalência Lógica
 #### Inferência Lógica 

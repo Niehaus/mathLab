@@ -7,20 +7,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3985475519303541327, guid: a479e0ba1c6eb3e4d95400d313ffa3c4,
-        type: 3}
-      propertyPath: m_Name
-      value: Coins (1) Variant
-      objectReference: {fileID: 0}
-    - target: {fileID: 3985475519303541327, guid: a479e0ba1c6eb3e4d95400d313ffa3c4,
-        type: 3}
-      propertyPath: m_TagString
-      value: Item
-      objectReference: {fileID: 0}
-    - target: {fileID: 3985475519303541327, guid: a479e0ba1c6eb3e4d95400d313ffa3c4,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
+    - target: {fileID: 287967922, guid: a479e0ba1c6eb3e4d95400d313ffa3c4, type: 3}
+      propertyPath: m_Volume
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3985475519303541323, guid: a479e0ba1c6eb3e4d95400d313ffa3c4,
         type: 3}
@@ -92,16 +81,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.40564337
       objectReference: {fileID: 0}
-    - target: {fileID: 3985475519303541326, guid: a479e0ba1c6eb3e4d95400d313ffa3c4,
-        type: 3}
-      propertyPath: spawn
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3985475519303541326, guid: a479e0ba1c6eb3e4d95400d313ffa3c4,
-        type: 3}
-      propertyPath: statusUp
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3985475519303541324, guid: a479e0ba1c6eb3e4d95400d313ffa3c4,
         type: 3}
       propertyPath: m_SortingOrder
@@ -116,6 +95,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingLayer
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3985475519303541326, guid: a479e0ba1c6eb3e4d95400d313ffa3c4,
+        type: 3}
+      propertyPath: spawn
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3985475519303541326, guid: a479e0ba1c6eb3e4d95400d313ffa3c4,
+        type: 3}
+      propertyPath: statusUp
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3985475519303541327, guid: a479e0ba1c6eb3e4d95400d313ffa3c4,
+        type: 3}
+      propertyPath: m_Name
+      value: Coins (1) Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 3985475519303541327, guid: a479e0ba1c6eb3e4d95400d313ffa3c4,
+        type: 3}
+      propertyPath: m_TagString
+      value: Item
+      objectReference: {fileID: 0}
+    - target: {fileID: 3985475519303541327, guid: a479e0ba1c6eb3e4d95400d313ffa3c4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a479e0ba1c6eb3e4d95400d313ffa3c4, type: 3}

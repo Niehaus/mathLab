@@ -6,6 +6,7 @@ using UnityEngine;
 public class Item : MonoBehaviour {
 
     protected Animator myAnim;
+    protected AudioSource audioSource;
     public new string name;
     public int statusUp;
     public int spawn;
@@ -16,6 +17,7 @@ public class Item : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D other) {
         if (!other.CompareTag("Player")) return;
         myAnim.SetBool(Picked, true);
+        audioSource.Play();
         switch (name) {
             case "Coins":
                 Manager.coins += statusUp;

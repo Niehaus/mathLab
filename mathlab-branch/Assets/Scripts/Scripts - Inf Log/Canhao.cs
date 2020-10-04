@@ -8,6 +8,7 @@ public class Canhao : MonoBehaviour {
     private Animator _myAnim;
     public Municao municao;
     public int identificador;
+    
     // Start is called before the first frame update
     private void Start() {
         _myAnim = gameObject.GetComponent<Animator>();

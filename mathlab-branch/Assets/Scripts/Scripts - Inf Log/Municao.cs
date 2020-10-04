@@ -10,7 +10,7 @@ public class Municao : MonoBehaviour {
     private Rigidbody2D _rigidbody2D;
     private Vector3 _posInicial;
     private Renderer _renderer;
-
+    private AudioSource _audioSource;
     public GameObject playerCol;
     
     // Start is called before the first frame update
@@ -18,7 +18,9 @@ public class Municao : MonoBehaviour {
         _animator = gameObject.GetComponent<Animator>();
         _rigidbody2D = gameObject.GetComponent<Rigidbody2D>();
         _renderer = gameObject.GetComponent<Renderer>();
+        _audioSource  = gameObject.GetComponent<AudioSource>();
         _renderer.enabled = false;
+       
         _rigidbody2D.bodyType = RigidbodyType2D.Static;
         _posInicial = gameObject.transform.position;
         Physics2D.IgnoreCollision(playerCol.GetComponent<CircleCollider2D>(), GetComponent<BoxCollider2D>());
@@ -31,5 +33,6 @@ public class Municao : MonoBehaviour {
     }
     public void Disparo() {
         _rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
+        _audioSource.Play();
     }
 }

@@ -7,5 +7,6 @@ public class Pao : Item {
     private void Start() {
         myAnim = GetComponent<Animator>();
         manager = FindObjectOfType<Manager>();
+        audioSource = GetComponent<AudioSource>();
     }
 }

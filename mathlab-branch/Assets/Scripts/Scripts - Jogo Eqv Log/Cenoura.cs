@@ -7,5 +7,6 @@ public class Cenoura : Item {
     private void Start() {
         myAnim = GetComponent<Animator>();
         playerController = FindObjectOfType<PlayerController>();
+        audioSource = GetComponent<AudioSource>();
     }
 }

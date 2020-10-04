@@ -27,7 +27,6 @@ public class Painel : MonoBehaviour {
     private Vector3 _paoPos;
     private Vector3 _coinPos;
 
-
     // Start is called before the first frame update
     private void Start() {
         _animator = buttonPlayer.GetComponent<Animator>();
@@ -45,11 +44,14 @@ public class Painel : MonoBehaviour {
         _cenouraPos = cenouraExe.transform.position;
         _paoPos = paoExe.transform.position;
         _coinPos = coinsExe.transform.position;
+        
+        cenouraExe.GetComponent<AudioSource>().volume = 0;
+        paoExe.GetComponent<AudioSource>().volume = 0;
+        coinsExe.GetComponent<AudioSource>().volume = 0;
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-      //TODO:FAZER ELE ANDAR E VOLTAR AO ENCONTRAR A BARREIRA   
-      if (!other.CompareTag("Player")) return;
+        if (!other.CompareTag("Player")) return;
       //Player que pisa no botão
       if (_rigidbody2D.velocity.x > 0 && other.name == buttonPlayer.name) { //indo para direita, muda p/ esquerda
           _rigidbody2D.velocity = new Vector2(-0.1f,0f).normalized * (75 * Time.deltaTime);
@@ -64,17 +66,17 @@ public class Painel : MonoBehaviour {
           _rigidbody2DPick.velocity = new Vector2(-0.1f,0f).normalized * (75 * Time.deltaTime);
           _animatorPick.SetFloat(MoveX, _rigidbody2DPick.velocity.x);
           
-          Instantiate(cenouraExe, _cenouraPos, Quaternion.identity).transform.SetParent(gameObject.transform, false);;
-          Instantiate(paoExe, _paoPos, Quaternion.identity).transform.SetParent(gameObject.transform, false);;
-          Instantiate(coinsExe, _coinPos, Quaternion.identity).transform.SetParent(gameObject.transform, false);;
+          Instantiate(cenouraExe, _cenouraPos, Quaternion.identity).transform.SetParent(gameObject.transform, false);
+          Instantiate(paoExe, _paoPos, Quaternion.identity).transform.SetParent(gameObject.transform, false);
+          Instantiate(coinsExe, _coinPos, Quaternion.identity).transform.SetParent(gameObject.transform, false);
       }
       else if(_rigidbody2DPick.velocity.x < 0 && other.name == pickPlayer.name){ //indo para esquerda, muda p/ direita
           _rigidbody2DPick.velocity = new Vector2(0.1f,0f).normalized * (75 * Time.deltaTime);
           _animatorPick.SetFloat(MoveX, _rigidbody2DPick.velocity.x);
           
-          Instantiate(cenouraExe, _cenouraPos, Quaternion.identity).transform.SetParent(gameObject.transform, false);;
-          Instantiate(paoExe, _paoPos, Quaternion.identity).transform.SetParent(gameObject.transform, false);;
-          Instantiate(coinsExe, _coinPos, Quaternion.identity).transform.SetParent(gameObject.transform, false);;
+          Instantiate(cenouraExe, _cenouraPos, Quaternion.identity).transform.SetParent(gameObject.transform, false);
+          Instantiate(paoExe, _paoPos, Quaternion.identity).transform.SetParent(gameObject.transform, false);
+          Instantiate(coinsExe, _coinPos, Quaternion.identity).transform.SetParent(gameObject.transform, false);
       }
     }
 }

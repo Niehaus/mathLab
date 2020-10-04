@@ -7,6 +7,8 @@ using static System.String;
 public class Palavra : Item  {
     
     private Vector3 _originalPosition;
+    private AudioSource _audioSource;
+    public AudioClip[] clip;
     [NonSerialized] Rigidbody2D _rigidbody2D;
     public Text desafio;
     [NonSerialized] public string respostaAtual;
@@ -21,6 +23,7 @@ public class Palavra : Item  {
         GameObject o;
         myAnim = GetComponent<Animator>();
         manager = FindObjectOfType<Manager>();
+        _audioSource = GetComponent<AudioSource>();
         _rigidbody2D = (o = gameObject).GetComponent<Rigidbody2D>();
         _originalPosition = o.transform.position;
         manager.bau.GetComponent<Animator>().SetBool(Open,true);
@@ -61,6 +64,8 @@ public class Palavra : Item  {
 
     private IEnumerator AnimSet(bool acertou) {
         myAnim.SetBool(acertou ? BlowUp : BlowUpErrou, true);
+        _audioSource.clip = acertou ? clip[0] : clip[1];
+        _audioSource.Play();
         manager.bau.GetComponent<Animator>().SetBool(Open,false);
         yield return new WaitForSeconds(0.5f);
         manager.bau.GetComponent<Animator>().SetBool(Open,true);

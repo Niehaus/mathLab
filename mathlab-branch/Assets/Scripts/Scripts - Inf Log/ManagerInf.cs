@@ -27,11 +27,13 @@ public class ManagerInf : MonoBehaviour {
     private static readonly int MoveX = Animator.StringToHash("moveX");
     private static readonly int MoveY = Animator.StringToHash("moveY");
     private PlayerController _disablekey; //bloqueador de teclado enquanto NPC fala
-
+    
+    public AudioSource audioSource;
     public GameObject painelVitoria;
     public GameObject painelDerrota;
     public GameObject painelInicial;
     public GameObject painelRespCorreta;
+    public AudioClip[] audioClips;
     public Cronometro cronometro;
     public Dropdown dropdown;
     private bool _controller;
@@ -100,7 +102,7 @@ public class ManagerInf : MonoBehaviour {
             _hearts -= 1;
             _controller = false;
             contadores[1].text = _hearts + "x";
-            StartCoroutine(PainelRespostaCorreta("Nenhuma Alavanca Ativa ):"));
+            StartCoroutine(PainelRespostaCorreta("Nenhuma Alavanca Ativa ):", audioClips[2]));
             if (_hearts <= 0) {
                 _fimDoJogo = true;
             }
@@ -112,7 +114,7 @@ public class ManagerInf : MonoBehaviour {
                 alavanca.canhoes.AtivaCanhao();
                 if (_respostaAtual == alavanca.identificador) {
                     //Debug.Log("Ativou a alavanca correta!");
-                    StartCoroutine(PainelRespostaCorreta("Resposta Correta!"));
+                    StartCoroutine(PainelRespostaCorreta("Resposta Correta!", audioClips[0]));
                     _coins += 10;
                     contadores[0].text = _coins + "x";
                     if (_index == _lines.Length) {
@@ -132,7 +134,7 @@ public class ManagerInf : MonoBehaviour {
                     }
                     else {
                         //Debug.Log("Ativou a alavanca incorreta :(");
-                        StartCoroutine(PainelRespostaCorreta("Resposta Incorreta ):"));
+                        StartCoroutine(PainelRespostaCorreta("Resposta Incorreta ):", audioClips[1]));
                         _hearts -= 1;
                         contadores[1].text = _hearts + "x";
                         if (_hearts <= 0) {
@@ -183,6 +185,7 @@ public class ManagerInf : MonoBehaviour {
     private void ResetaAlavancas() {
         foreach (var alavanca in alavancas) {
             alavanca.GetComponent<Animator>().SetBool(Ativa, false);
+            alavanca.AlavancasSound(false);
         }
         cronometro.timeStart = 12f;
     }
@@ -203,7 +206,9 @@ public class ManagerInf : MonoBehaviour {
         SceneManager.LoadScene("Jogo Principal");
     }
     
-    private IEnumerator PainelRespostaCorreta(string textoPrint) { //ativa painel de resposta correta
+    private IEnumerator PainelRespostaCorreta(string textoPrint, AudioClip audioClip) { //ativa painel de resposta correta
+        audioSource.clip = audioClip;
+        audioSource.Play();
         painelRespCorreta.SetActive(true);
         painelRespCorreta.transform.GetChild(0).GetComponent<Text>().text = textoPrint;
         yield return new WaitForSeconds(2);

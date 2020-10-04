@@ -89,13 +89,13 @@ public class Manager : MonoBehaviour {
              valorX = (_rand.NextDouble() + 10 * _rand.NextDouble()) + Math.Abs(minLargura.x);
              //Debug.Log("ERROU - Novo valor em X: " + valorX);
          }
-        
+
          while (valorY > minLargura.y) {
-             valorY =  _rand.NextDouble() + 10 * _rand.NextDouble() + minAltura.y;
+             valorY = _rand.NextDouble() + 10 * _rand.NextDouble() + minAltura.y;
              //Debug.Log("ERROU - Novo valor em Y: " + valorY);
          }
-         var coordenadas = new Vector2((float) valorX, (float) valorY);
-         return coordenadas;
+
+         return new Vector2((float) valorX, (float) valorY);;
      }
 
      public void ContabilizaPontos(bool acerto) {
@@ -134,9 +134,10 @@ public class Manager : MonoBehaviour {
 
      private IEnumerator JustInTime() { //seta animações tempos etc
          _animator.SetBool(Start1,true);
+         startAnim.GetComponent<AudioSource>().Play();
          _painel.gameObject.SetActive(false);
          
-         yield return new WaitForSeconds(2);
+         yield return new WaitForSeconds(4);
          
          _animator.SetBool(Start1,false);
          startAnim.gameObject.SetActive(false);

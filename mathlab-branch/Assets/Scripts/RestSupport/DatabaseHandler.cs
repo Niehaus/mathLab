@@ -26,6 +26,7 @@ public static class DatabaseHandler {
     {
         RestClient.Put<User>($"{databaseURL}users/{userId}.json", user).Then(response => { callback(); });
     }
+    
 
     /// <summary>
     /// Retrieves a user from the Firebase Database, given their id
@@ -45,6 +46,7 @@ public static class DatabaseHandler {
         string attUserKey = "";
         GetUsers(users => {
             foreach (var user in users) {
+               
                 if (userName != null && userName.Equals(user.Value.name) ) {
                     attUserKey = user.Key;
                     Debug.Log($"this user key is {user.Key}");    

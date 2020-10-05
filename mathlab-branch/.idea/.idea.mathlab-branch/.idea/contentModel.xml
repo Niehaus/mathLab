@@ -4,6 +4,7 @@
     <e p="C:\Users\Barba\.Rider2019.3\system\extResources" t="IncludeRecursive" />
     <e p="C:\Users\Barba\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_mathlab-branch.-703320025.00" t="ExcludeRecursive" />
     <e p="C:\Users\Barba\Documents\GitHub\mathLab\mathlab-branch" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="NewAdds" t="Include">
@@ -31,6 +32,177 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="RestSupport" t="Include">
+            <e p="CadastroUser.cs" t="Include" />
+            <e p="DatabaseHandler.cs" t="Include" />
+            <e p="FullSerializer" t="Include">
+              <e p="Source" t="Include">
+                <e p="Aot" t="Include">
+                  <e p="Editor" t="Include">
+                    <e p="fsAotConfigurationEditor.cs" t="Include" />
+                  </e>
+                  <e p="fsAotCompilationManager.cs" t="Include" />
+                  <e p="fsAotConfiguration.cs" t="Include" />
+                  <e p="fsAotVersionInfo.cs" t="Include" />
+                  <e p="fsIAotConverter.cs" t="Include" />
+                </e>
+                <e p="Converters" t="Include">
+                  <e p="fsArrayConverter.cs" t="Include" />
+                  <e p="fsDateConverter.cs" t="Include" />
+                  <e p="fsDictionaryConverter.cs" t="Include" />
+                  <e p="fsEnumConverter.cs" t="Include" />
+                  <e p="fsForwardConverter.cs" t="Include" />
+                  <e p="fsGuidConverter.cs" t="Include" />
+                  <e p="fsIEnumerableConverter.cs" t="Include" />
+                  <e p="fsKeyValuePairConverter.cs" t="Include" />
+                  <e p="fsNullableConverter.cs" t="Include" />
+                  <e p="fsPrimitiveConverter.cs" t="Include" />
+                  <e p="fsReflectedConverter.cs" t="Include" />
+                  <e p="fsTypeConverter.cs" t="Include" />
+                  <e p="fsWeakReferenceConverter.cs" t="Include" />
+                  <e p="Unity" t="Include">
+                    <e p="AnimationCurve_DirectConverter.cs" t="Include" />
+                    <e p="Bounds_DirectConverter.cs" t="Include" />
+                    <e p="Gradient_DirectConverter.cs" t="Include" />
+                    <e p="GUIStyle_DirectConverter.cs" t="Include" />
+                    <e p="GUIStyleState_DirectConverter.cs" t="Include" />
+                    <e p="Keyframe_DirectConverter.cs" t="Include" />
+                    <e p="LayerMask_DirectConverter.cs" t="Include" />
+                    <e p="Rect_DirectConverter.cs" t="Include" />
+                    <e p="RectOffset_DirectConverter.cs" t="Include" />
+                    <e p="UnityEvent_Converter.cs" t="Include" />
+                  </e>
+                </e>
+                <e p="fsBaseConverter.cs" t="Include" />
+                <e p="fsConfig.cs" t="Include" />
+                <e p="fsContext.cs" t="Include" />
+                <e p="fsConverter.cs" t="Include" />
+                <e p="fsConverterRegistrar.cs" t="Include" />
+                <e p="fsData.cs" t="Include" />
+                <e p="fsDirectConverter.cs" t="Include" />
+                <e p="fsExceptions.cs" t="Include" />
+                <e p="fsIgnoreAttribute.cs" t="Include" />
+                <e p="fsISerializationCallbacks.cs" t="Include" />
+                <e p="fsJsonParser.cs" t="Include" />
+                <e p="fsJsonPrinter.cs" t="Include" />
+                <e p="fsMemberSerialization.cs" t="Include" />
+                <e p="fsObjectAttribute.cs" t="Include" />
+                <e p="fsObjectProcessor.cs" t="Include" />
+                <e p="fsPropertyAttribute.cs" t="Include" />
+                <e p="fsResult.cs" t="Include" />
+                <e p="fsSerializer.cs" t="Include" />
+                <e p="Internal" t="Include">
+                  <e p="fsCyclicReferenceManager.cs" t="Include" />
+                  <e p="fsOption.cs" t="Include" />
+                  <e p="fsPortableReflection.cs" t="Include" />
+                  <e p="fsTypeExtensions.cs" t="Include" />
+                  <e p="fsVersionedType.cs" t="Include" />
+                  <e p="fsVersionManager.cs" t="Include" />
+                </e>
+                <e p="Reflection" t="Include">
+                  <e p="fsMetaProperty.cs" t="Include" />
+                  <e p="fsMetaType.cs" t="Include" />
+                  <e p="fsReflectionUtility.cs" t="Include" />
+                  <e p="fsTypeCache.cs" t="Include" />
+                </e>
+              </e>
+              <e p="Testing" t="Include">
+                <e p="Editor" t="Include">
+                  <e p="AbstractTypeRemappingTests.cs" t="Include" />
+                  <e p="ArrayTests.cs" t="Include" />
+                  <e p="CallbackTests.cs" t="Include" />
+                  <e p="CaseUnsensitiveDeserializationTests.cs" t="Include" />
+                  <e p="ConstructorTests.cs" t="Include" />
+                  <e p="CyclicReferenceTests.cs" t="Include" />
+                  <e p="DateTimeTests.cs" t="Include" />
+                  <e p="DictionaryTests.cs" t="Include" />
+                  <e p="EnumTests.cs" t="Include" />
+                  <e p="ErrorRecoveryTests.cs" t="Include" />
+                  <e p="FloatJitterTests.cs" t="Include" />
+                  <e p="fsForwardTests.cs" t="Include" />
+                  <e p="IgnoreTypeTests.cs" t="Include" />
+                  <e p="IndexerTests.cs" t="Include" />
+                  <e p="InitialInstanceTests.cs" t="Include" />
+                  <e p="LegacyDataTests.cs" t="Include" />
+                  <e p="MemberSerializationTests.cs" t="Include" />
+                  <e p="MinimalMetadataTests.cs" t="Include" />
+                  <e p="ParseTests.cs" t="Include" />
+                  <e p="ProcessorTests.cs" t="Include" />
+                  <e p="PropertiesTests.cs" t="Include" />
+                  <e p="SpecifiedConverterTests.cs" t="Include" />
+                  <e p="VersionedTypeTests.cs" t="Include" />
+                  <e p="WarningPropagationTests.cs" t="Include" />
+                </e>
+                <e p="RuntimeTests" t="Include">
+                  <e p="Providers" t="Include">
+                    <e p="CustomIEnumerableProvider.cs" t="Include" />
+                    <e p="CustomListProvider.cs" t="Include" />
+                    <e p="CyclesProvider.cs" t="Include" />
+                    <e p="DateProvider.cs" t="Include" />
+                    <e p="EncodedDataProvider.cs" t="Include" />
+                    <e p="EnumProvider.cs" t="Include" />
+                    <e p="GuidProvider.cs" t="Include" />
+                    <e p="IDictionaryProvider.cs" t="Include" />
+                    <e p="KeyedCollectionProvider.cs" t="Include" />
+                    <e p="KeyValuePairProvider.cs" t="Include" />
+                    <e p="NumberProvider.cs" t="Include" />
+                    <e p="OptOutProvider.cs" t="Include" />
+                    <e p="PrivateFieldsProvider.cs" t="Include" />
+                    <e p="PropertiesProvider.cs" t="Include" />
+                    <e p="QueueProvider.cs" t="Include" />
+                    <e p="StackProvider.cs" t="Include" />
+                    <e p="TypeProvider.cs" t="Include" />
+                    <e p="ValueHolder.cs" t="Include" />
+                  </e>
+                  <e p="RuntimeTestRunner.cs" t="Include" />
+                </e>
+              </e>
+            </e>
+            <e p="Main.cs" t="Include" />
+            <e p="RestClient" t="Include">
+              <e p="DemoScene" t="Include">
+                <e p="Scripts" t="Include">
+                  <e p="MainScript.cs" t="Include" />
+                  <e p="Model" t="Include">
+                    <e p="Photo.cs" t="Include" />
+                    <e p="Post.cs" t="Include" />
+                    <e p="Todo.cs" t="Include" />
+                    <e p="User.cs" t="Include" />
+                  </e>
+                </e>
+              </e>
+              <e p="Packages" t="Include">
+                <e p="Proyecto26.RestClient" t="Include">
+                  <e p="Helpers" t="Include">
+                    <e p="Common.cs" t="Include" />
+                    <e p="Extensions.cs" t="Include" />
+                    <e p="HttpBase.cs" t="Include" />
+                    <e p="JsonHelper.cs" t="Include" />
+                    <e p="RequestException.cs" t="Include" />
+                    <e p="RequestHelper.cs" t="Include" />
+                    <e p="RequestHelperExtension.cs" t="Include" />
+                    <e p="ResponseHelper.cs" t="Include" />
+                    <e p="StaticCoroutine.cs" t="Include" />
+                  </e>
+                  <e p="RestClient.cs" t="Include" />
+                  <e p="RestClientPromise.cs" t="Include" />
+                </e>
+                <e p="RSG.Promise" t="Include">
+                  <e p="EnumerableExt.cs" t="Include" />
+                  <e p="Exceptions" t="Include">
+                    <e p="PromiseException.cs" t="Include" />
+                    <e p="PromiseStateException.cs" t="Include" />
+                  </e>
+                  <e p="Promise.cs" t="Include" />
+                  <e p="Promise_NonGeneric.cs" t="Include" />
+                  <e p="PromiseHelpers.cs" t="Include" />
+                  <e p="PromiseTimer.cs" t="Include" />
+                  <e p="Tuple.cs" t="Include" />
+                </e>
+              </e>
+            </e>
+            <e p="User.cs" t="Include" />
+          </e>
           <e p="Scripts - Inf Log" t="Include">
             <e p="Alavanca.cs" t="Include" />
             <e p="Alvo.cs" t="Include" />

@@ -18,6 +18,8 @@ namespace RestSupport {
             var insertId = " ";
             var usuarioAtual = new User(username.text, "teste", Random.Range(0,50), Random.Range(20,30), Random.Range(20,30));
      
+            
+            
             DatabaseHandler.GetUsers(users =>
             {
                 foreach (var user in users) {

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 using Toggle = UnityEngine.UIElements.Toggle;
@@ -24,6 +25,7 @@ public class UiManager : MonoBehaviour  {
     private List<Tuple<Hashtable, bool>> _tabelasFeitas = new List<Tuple<Hashtable, bool>>(); //TODO: haash ou string??
     private List<string> _filesSolved = new List<string>();
     private PlayerController _disablekey; //bloqueador de teclado enquanto NPC fala
+    private GameObject _managerGeral;
     void Start() {
         _textFiles = Resources.LoadAll("TabVerdade", typeof(TextAsset)).Cast<TextAsset>().ToArray();
         GenerateToggles(_textFiles, toggleGroupInicio);
@@ -31,7 +33,7 @@ public class UiManager : MonoBehaviour  {
         _disablekey.keyboardAble = false;
         //TabelPanelFinaliza("nada");
         //togglePrefab.GetComponentInChildren<Text> ().text  = "o que??";
-        
+        _managerGeral = GameObject.FindGameObjectWithTag("ManagerGeral");
     }
 
     private void GenerateToggles(IEnumerable<TextAsset> textFiles, ToggleGroup toggleGroup) {
@@ -81,12 +83,19 @@ public class UiManager : MonoBehaviour  {
         if (_filesSolved.Count == _textFiles.Length) {
             Debug.Log("all files solved");
             finalizaEtapaBtn.SetActive(true);
-            
         }
         _disablekey.keyboardAble = false;
         uiPanels[3].SetActive(true);
         GenerateFinalToggles(_textFiles, _filesSolved, toggleGroupFinal, slideArea);
     }
+
+    public void FinalizaEtapa() {
+        ManagerGeral.faseFeita[1] = true;
+        foreach (var fase in ManagerGeral.faseFeita) {
+            Debug.Log("fase feita:" + fase);
+        }
+    }
+    
     public void Jogar(ToggleGroup currentToggleGroup) {
         var toggleActive = currentToggleGroup.ActiveToggles();
         if (!toggleActive.Any()) { //Quando nenhum arquivo de jogo é selecionado

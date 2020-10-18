@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 166.29999}
+  m_AnchoredPosition: {x: 0, y: 166.30078}
   m_SizeDelta: {x: -170, y: 270}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &26604498
@@ -516,6 +516,8 @@ MonoBehaviour:
   playerPosition: {x: -0.41, y: -3.64}
   playerStorage: {fileID: 11400000, guid: 3c269b93b7304eb4281ff4ad26a99e53, type: 2}
   caixaDialogo: {fileID: 1731428171}
+  newMinPos: {x: 0, y: 0}
+  newMaxPos: {x: 0, y: 0}
 --- !u!61 &147804401
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -702,6 +704,7 @@ MonoBehaviour:
   newMinPos: {x: 12.5, y: -4.6}
   newMaxPos: {x: 21.6, y: 1.3}
   movePlayer: {x: 2, y: 0, z: 0}
+  vectorValue: {fileID: 0}
 --- !u!61 &168674097
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -898,6 +901,7 @@ MonoBehaviour:
   newMinPos: {x: -6.4, y: -6.45}
   newMaxPos: {x: 2.85, y: 1.08}
   movePlayer: {x: 0, y: 2, z: 0}
+  vectorValue: {fileID: 0}
 --- !u!61 &470157152
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -971,6 +975,7 @@ MonoBehaviour:
   newMinPos: {x: -4.28, y: -20.83}
   newMaxPos: {x: -0.28, y: -12.1}
   movePlayer: {x: 0, y: -2, z: 0}
+  vectorValue: {fileID: 0}
 --- !u!61 &591502648
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1367,7 +1372,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1013187399}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.54, y: -2.5, z: 0}
+  m_LocalPosition: {x: -1.43, y: -2.31, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -9124,7 +9129,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 1.3500977, y: -1.3}
+  m_AnchoredPosition: {x: 1.3515625, y: -1.3}
   m_SizeDelta: {x: -118.7, y: 198.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1130968335
@@ -9399,6 +9404,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebab98b774ed78a45a9ed392d1438755, type: 3}
+--- !u!1 &1322731323
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1322731324}
+  - component: {fileID: 1322731325}
+  m_Layer: 0
+  m_Name: ManagerGeral
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1322731324
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322731323}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.4788218, y: 1.5556638, z: -3.5674596}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1322731325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322731323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d415db56f299f214e871ad8fece76e81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _vectorValue: {fileID: 11400000, guid: 3c269b93b7304eb4281ff4ad26a99e53, type: 2}
+  playerController: {fileID: 1013187404}
 --- !u!1 &1333301683
 GameObject:
   m_ObjectHideFlags: 0
@@ -15853,6 +15903,7 @@ MonoBehaviour:
   newMinPos: {x: -6.4, y: -6.45}
   newMaxPos: {x: 2.85, y: 1.08}
   movePlayer: {x: 2, y: 0, z: 0}
+  vectorValue: {fileID: 11400000, guid: 3c269b93b7304eb4281ff4ad26a99e53, type: 2}
 --- !u!1 &1602999622
 GameObject:
   m_ObjectHideFlags: 0
@@ -15900,6 +15951,7 @@ MonoBehaviour:
   newMinPos: {x: -6.4, y: -6.45}
   newMaxPos: {x: 2.85, y: 1.08}
   movePlayer: {x: -2, y: 0, z: 0}
+  vectorValue: {fileID: 0}
 --- !u!61 &1602999625
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16090,6 +16142,7 @@ MonoBehaviour:
   smoothing: 0.05
   minPosition: {x: -6.4, y: -6.45}
   maxPosition: {x: 2.85, y: 1.08}
+  vectorValue: {fileID: 11400000, guid: 3c269b93b7304eb4281ff4ad26a99e53, type: 2}
 --- !u!20 &2095227904
 Camera:
   m_ObjectHideFlags: 0
@@ -16194,6 +16247,7 @@ MonoBehaviour:
   newMinPos: {x: -27, y: -4.2}
   newMaxPos: {x: -16.21, y: 4.63}
   movePlayer: {x: -2, y: 0, z: 0}
+  vectorValue: {fileID: 11400000, guid: 3c269b93b7304eb4281ff4ad26a99e53, type: 2}
 --- !u!61 &2127798878
 BoxCollider2D:
   m_ObjectHideFlags: 0

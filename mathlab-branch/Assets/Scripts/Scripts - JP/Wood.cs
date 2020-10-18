@@ -7,6 +7,7 @@ public class Wood : Npc {
     
     public Transform target;
     public Transform posInicial;
+    public GameObject notice;
     public float chaseRaio;
     public float talkRaio;
     private PlayerController _disablekey;
@@ -23,6 +24,7 @@ public class Wood : Npc {
         _disablekey.keyboardAble = false;
         _disablekey.faceIt.y = 0.15f;
         caixaDialogo.SetActive(false);
+        notice.SetActive(true);
         Debug.Log("index antes" + index);
         NpcFala();
         Debug.Log(index);
@@ -39,7 +41,8 @@ public class Wood : Npc {
             }
         }
         else {
-            SceneManager.LoadScene("Scenes/Jogo Tabela Verdade");
+            caixaDialogo.SetActive(false);
+            SceneManager.LoadScene("Scenes/Nova Fase 1");
         }
     }
 
@@ -52,6 +55,7 @@ public class Wood : Npc {
         } else if (Vector3.Distance(target.position,transform.position) <= talkRaio) {
             myAnim.SetFloat(MoveY, 0); myAnim.SetFloat(MoveX, 0);
             caixaDialogo.SetActive(true);
+            notice.SetActive(false);
         }
     }
 }

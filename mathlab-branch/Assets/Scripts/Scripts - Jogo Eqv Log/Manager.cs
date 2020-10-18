@@ -155,6 +155,9 @@ public class Manager : MonoBehaviour {
      }
 
      public void CenaPrincipal() {
+         if (painelWin) {
+             
+         }
          SceneManager.LoadScene("Jogo Principal");
      }
      public void Jogar() {

@@ -1372,7 +1372,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1013187399}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.43, y: -2.31, z: 0}
+  m_LocalPosition: {x: -1.77, y: -2.65, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -9447,7 +9447,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d415db56f299f214e871ad8fece76e81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _vectorValue: {fileID: 11400000, guid: 3c269b93b7304eb4281ff4ad26a99e53, type: 2}
   playerController: {fileID: 1013187404}
 --- !u!1 &1333301683
 GameObject:
@@ -13172,9 +13171,9 @@ MonoBehaviour:
   - "Mas preste aten\xE7\xE3o! \xC9 poss\xEDvel ganhar mais pontos e ganhar mais
     velocidade, pegue os itens que aparecerem."
   - "A cenoura o far\xE1 correr como um coelho, sempre mais r\xE1pido quando peg\xE1-la.
-    Alguns Coins a mais n\xE3o fazem mal n\xE3o \xE9? "
-  - "Pegue o saco de moedas douradas e fa\xE7a pontua\xE7\xF5es ainda maiores. O
-    P\xE3o te trar\xE1 vigor, e com isso mais uma vida."
+    Alguns Coins a mais n\xE3o fazem mal, n\xE3o \xE9? "
+  - "Pegue as moedas douradas e fa\xE7a pontua\xE7\xF5es ainda maiores. O P\xE3o
+    te trar\xE1 vigor, e com isso mais uma vida."
   - "Ali\xE1s, voc\xEA tem apenas 3 vidas inicialmente, cuidado, n\xE3o se esque\xE7a
     de estar no lugar certo na hora certa."
   - "Vejo que voc\xEA ainda n\xE3o conheceu o Dr.Wood.. V\xE1 at\xE9 a casa dele,

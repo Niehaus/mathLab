@@ -33,7 +33,6 @@ public class UiManager : MonoBehaviour  {
         _disablekey.keyboardAble = false;
         //TabelPanelFinaliza("nada");
         //togglePrefab.GetComponentInChildren<Text> ().text  = "o que??";
-        _managerGeral = GameObject.FindGameObjectWithTag("ManagerGeral");
     }
 
     private void GenerateToggles(IEnumerable<TextAsset> textFiles, ToggleGroup toggleGroup) {
@@ -90,7 +89,7 @@ public class UiManager : MonoBehaviour  {
     }
 
     public void FinalizaEtapa() {
-        ManagerGeral.faseFeita[1] = true;
+        ManagerGeral.faseFeita[0] = true;
         foreach (var fase in ManagerGeral.faseFeita) {
             Debug.Log("fase feita:" + fase);
         }

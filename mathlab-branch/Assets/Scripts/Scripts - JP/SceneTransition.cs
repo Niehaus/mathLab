@@ -22,11 +22,10 @@ public class SceneTransition : MonoBehaviour  {
 
     public void LoadNext(string sceneName) {
         playerStorage.valorInicial = playerPosition;
-        playerStorage.minPosition = newMinPos;
-        playerStorage.maxPosition = newMaxPos;
-
-        Debug.Log(newMinPos);
-        Debug.Log(newMaxPos);
+       
+        ManagerGeral.newMaxPos = newMaxPos;
+        ManagerGeral.newMinPos = newMinPos;
+      
         SceneManager.LoadScene(sceneName);
     }
     

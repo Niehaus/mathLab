@@ -12,8 +12,9 @@ public class ManagerGeral : MonoBehaviour
     public PlayerController playerController;
     public static bool _changepos;
     private Vector2 _atualPos;
-    private static CameraController _cam;
-
+    private CameraController _cam;
+    public static Vector2 newMinPos = new Vector2(-6.4f, -6.45f);
+    public static Vector2 newMaxPos = new Vector2(2.85f, 1.08f);
     
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
     private static void OnStartGame() {
@@ -23,5 +24,10 @@ public class ManagerGeral : MonoBehaviour
         foreach (var fase in faseFeita) {
             Debug.Log("fase feita:" + fase );
         }
+    }
+    
+    private void Start() {
+        _cam.minPosition = newMinPos;
+        _cam.maxPosition = newMaxPos;
     }
 }

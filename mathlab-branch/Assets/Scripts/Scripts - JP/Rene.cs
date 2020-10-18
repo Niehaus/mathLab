@@ -15,7 +15,8 @@ public class Rene : Npc {
 
     // Update is called once per frame
     private void Update() {
-        if (index > 7 && acabouMissao[1]) {
+        if (index > 7 && ManagerGeral.faseFeita[0]) {
+            Debug.Log("entrou aqui");
             fimDialogo = true;
             _disablekey.keyboardAble = true;
             SceneManager.LoadScene("Scenes/Jogo Eqv Logica");
@@ -56,6 +57,7 @@ public class Rene : Npc {
     }
 
     private void Index() {
-        index = acabouMissao[1] ? 0 : 8;
+        index = ManagerGeral.faseFeita[0] ? 0 : 8;
+        Debug.Log(index);
     }
 }

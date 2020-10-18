@@ -4912,6 +4912,7 @@ MonoBehaviour:
   smoothing: 0.05
   minPosition: {x: -0.24, y: -2.81}
   maxPosition: {x: -0.24, y: 7.41}
+  vectorValue: {fileID: 11400000, guid: 3c269b93b7304eb4281ff4ad26a99e53, type: 2}
 --- !u!20 &2024513465
 Camera:
   m_ObjectHideFlags: 0

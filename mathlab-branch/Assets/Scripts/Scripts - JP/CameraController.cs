@@ -27,10 +27,21 @@ public class CameraController : MonoBehaviour {
         Debug.Log("max" + vectorValue.maxPosition);
         Debug.Log("min" + vectorValue.minPosition);
 
+        if (targetPosition.x <= -22.99f) {
+            minPosition = new Vector2(-27f, -4.2f );
+            maxPosition = new Vector2(-16.21f, 4.63f);
+        }
+        else if (targetPosition.x <= 22.15f) {
+            minPosition = new Vector2(12.5f, -4.6f );
+            maxPosition = new Vector2(21.6f, 1.3f);
+        }
+        
+        
         targetPosition.x = Mathf.Clamp(targetPosition.x, minPosition.x, maxPosition.x); //pega um valor minimo e maximo e retorna um outro valor entre ambos
         targetPosition.y = Mathf.Clamp(targetPosition.y, minPosition.y, maxPosition.y);
-        minPosition = vectorValue.minPosition;
-        maxPosition = vectorValue.maxPosition;
+        /*minPosition = vectorValue.minPosition;
+        maxPosition = vectorValue.maxPosition;*/
+        
         
         transform.position = Vector3.Lerp(transform.position, targetPosition, smoothing);
     }

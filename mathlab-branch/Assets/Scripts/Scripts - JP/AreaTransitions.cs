@@ -20,9 +20,7 @@ public class AreaTransitions : MonoBehaviour
         if (!other.CompareTag("Player")) return;
         _cam.minPosition = newMinPos;
         _cam.maxPosition = newMaxPos;
-
-        vectorValue.maxPosition = newMaxPos;
-        vectorValue.minPosition = newMinPos;
+        
         other.transform.position += movePlayer;
     }
 }

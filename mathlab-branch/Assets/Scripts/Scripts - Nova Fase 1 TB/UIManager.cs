@@ -19,7 +19,6 @@ public class UiManager : MonoBehaviour  {
     public GameObject togglePrefab, togglePrefab2, finalizaEtapaBtn;
     public GameObject[] uiPanels, slideArea;
     private int _myIndex = 0;
-    private float baseY = 68f;
     public TabVerdadeManager tabVerdadeManager;
     private Hashtable _hashtableFiles = new Hashtable();
     private List<Tuple<Hashtable, bool>> _tabelasFeitas = new List<Tuple<Hashtable, bool>>(); //TODO: haash ou string??

@@ -2343,9 +2343,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Sair
-
-'
+  m_Text: Finalizar Etapa
 --- !u!222 &469358862
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14496,8 +14494,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 246.2102, y: -109.9}
-  m_SizeDelta: {x: 63.04, y: 30}
+  m_AnchoredPosition: {x: 223.66, y: -109.9}
+  m_SizeDelta: {x: 108.14, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1292211190
 MonoBehaviour:
@@ -14542,15 +14540,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1765121905}
-        m_MethodName: Sair
-        m_Mode: 1
+      - m_Target: {fileID: 1604683752}
+        m_MethodName: LoadNext
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Jogo Principal
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1292211191
@@ -16218,6 +16216,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1603042106}
   m_CullTransparentMesh: 0
+--- !u!1 &1604683751
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1604683753}
+  - component: {fileID: 1604683752}
+  m_Layer: 0
+  m_Name: SceneTransition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1604683752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1604683751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88b5df55ab81bcd468b6f94e8bcc63bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToLoad: 
+  playerPosition: {x: -1.58, y: -17.47}
+  playerStorage: {fileID: 11400000, guid: 3c269b93b7304eb4281ff4ad26a99e53, type: 2}
+  caixaDialogo: {fileID: 0}
+  newMinPos: {x: -4.28, y: -20.83}
+  newMaxPos: {x: -0.28, y: -12.1}
+--- !u!4 &1604683753
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1604683751}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.0906706, y: -6.2662115, z: -21.689917}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1619034867
 GameObject:
   m_ObjectHideFlags: 0
@@ -16347,7 +16394,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 143.09985, y: -109.899994}
+  m_AnchoredPosition: {x: 100.4, y: -109.899994}
   m_SizeDelta: {x: 127.55, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1632147940

@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Cenoura
-  statusUp: 25
+  statusUp: 30
   spawn: 30
 --- !u!95 &6268226452614670569
 Animator:

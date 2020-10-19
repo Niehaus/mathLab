@@ -26,5 +26,6 @@ public class PainelLose : MonoBehaviour {
         pontos[0].text = "Moedas: " + coins + "x";
         pontos[1].text = "Vidas: " + hearts + "x"; 
         pontos[2].text = "Total: " + total + "x";
+        ManagerGeral.totalPontosFase2 = total;
     }
 }

@@ -24,16 +24,22 @@ public class CameraController : MonoBehaviour {
         ) return; //dá um certo smooth movement à câmera, a faz andar atrás do player, e colocá-la sobre ele quando ele parar de andar(followup)
             
         Vector3 targetPosition = new Vector3(target.position.x, target.position.y, transform.position.z);
-        Debug.Log("max" + vectorValue.maxPosition);
-        Debug.Log("min" + vectorValue.minPosition);
 
-        if (targetPosition.x <= -22.99f) {
+        if (targetPosition.x <= -7.74f && targetPosition.y >= -9f) {
             minPosition = new Vector2(-27f, -4.2f );
             maxPosition = new Vector2(-16.21f, 4.63f);
         }
-        else if (targetPosition.x <= 22.15f) {
+        else if (targetPosition.x <= 28.15f && targetPosition.x >= 5f) {
             minPosition = new Vector2(12.5f, -4.6f );
             maxPosition = new Vector2(21.6f, 1.3f);
+        }
+        else if (targetPosition.x >= -10.41f && targetPosition.y >= -7f  ){
+            minPosition = new Vector2(-6.4f, -6.45f );
+            maxPosition = new Vector2(2.85f, 1.06f);
+        }
+        else if (targetPosition.y >= -22f && targetPosition.y <= -6.36f  ){
+            minPosition = new Vector2(-4.28f, -20.83f );
+            maxPosition = new Vector2(-0.28f, -12.1f);
         }
         
         

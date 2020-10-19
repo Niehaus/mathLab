@@ -78,6 +78,8 @@ public class ManagerInf : MonoBehaviour {
             textPainelVitoria[0].text = "Moedas Coletadas:" + _coins + "x";
             textPainelVitoria[1].text = "Vidas Restantes:" + _hearts + "x";
             textPainelVitoria[2].text = "Total de Pontos:" + _totalDePontos + "x";
+            ManagerGeral.totalPontosFase3 = _totalDePontos;
+            ManagerGeral.faseFeita[2] = true;
         }
     }
 

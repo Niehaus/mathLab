@@ -8,6 +8,9 @@ public class Rene : Npc {
 
     private bool _playerInRange = false;
     private PlayerController _disablekey; //bloqueador de teclado enquanto NPC fala
+    
+    private static readonly int PlayerInRange = Animator.StringToHash("playerInRange");
+    
     // Start is called before the first frame update
     private void Start() {
         _disablekey = FindObjectOfType<PlayerController>();
@@ -22,6 +25,12 @@ public class Rene : Npc {
             SceneManager.LoadScene("Scenes/Jogo Eqv Logica");
             //TODO: ir para tela da missão se ela ja n tiver acontecido
         }
+        
+        if (_playerInRange) {
+            balaodeFala.SetActive(true);
+            balaodeFala.GetComponent<Animator>().SetBool(PlayerInRange, true);
+        }
+
         if (dialogo.text == sentences[index]) {
             botaoContinuar.SetActive(true);
             _disablekey.keyboardAble = true;
@@ -50,6 +59,8 @@ public class Rene : Npc {
     private void OnTriggerExit2D(Collider2D other) {
         Index();
         if (!other.CompareTag("Player")) return;
+        balaodeFala.GetComponent<Animator>().SetBool(PlayerInRange, false);
+        balaodeFala.SetActive(false);
         _playerInRange = false;
         caixaDialogo.SetActive(false);
         //TODO: se a missão for feita muda o index pra um dialogo diferente

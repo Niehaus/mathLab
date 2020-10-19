@@ -143,7 +143,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &21039163
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15597,7 +15597,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 200
-  startingPosition: {fileID: 11400000, guid: 3c269b93b7304eb4281ff4ad26a99e53, type: 2}
+  startingPosition: {fileID: 11400000, guid: b8fbfa738aab4bc409483307cae2981b, type: 2}
 --- !u!95 &1782873356
 Animator:
   serializedVersion: 3
@@ -16641,7 +16641,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2008783383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17440,7 +17440,7 @@ PrefabInstance:
     - target: {fileID: 4716784773168681939, guid: f334bb20d799a1246bc63143a6322cef,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4716784773168681948, guid: f334bb20d799a1246bc63143a6322cef,
         type: 3}
@@ -17585,6 +17585,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6268226452614670570, guid: 6058c50fc8979544885cff9739ebad2d,
+        type: 3}
+      propertyPath: statusUp
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 6268226452614670581, guid: 6058c50fc8979544885cff9739ebad2d,
         type: 3}
       propertyPath: m_Name
@@ -17647,7 +17652,7 @@ PrefabInstance:
     - target: {fileID: 7774483029164181291, guid: d2b0d322f3350fe4eaf94eda955a027b,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7774483029164181293, guid: d2b0d322f3350fe4eaf94eda955a027b,
         type: 3}

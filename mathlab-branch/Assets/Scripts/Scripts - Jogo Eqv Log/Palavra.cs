@@ -48,6 +48,7 @@ public class Palavra : Item  {
             manager.painelWin.gameObject.SetActive(true);
             manager.painelWin.AtualizaTexto();
             manager.fimDeJogo = true;
+            ManagerGeral.faseFeita[1] = true;
         }
         else { 
             desafio.text = _lines[_index];

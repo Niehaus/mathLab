@@ -18,7 +18,7 @@ public class ManagerGeral : MonoBehaviour
     public static string tempoJogador;
     public static int totalPontosFase2 = 0;
     public static int totalPontosFase3 = 0;
-    public static int totalTempoFase1 = 0;
+    public static float totalTempoFase1 = 0;
 
     public Text pontos1, pontos2, pontos3;
     public GameObject panelFimdeJogo;
@@ -57,10 +57,10 @@ public class ManagerGeral : MonoBehaviour
      TODO: - dialogo principal -> 7
      TODO: - http request pro bd -> 2 -> OK
      TODO: - finalizar jogo qd completa as 3 fases ->  1 -> OK
-     TODO: - cronometro fase 1 -> 3 ->
+     TODO: - cronometro fase 1 -> 3 -> OK
      TODO: - sala de estudos conteudo e sons-> 8
      TODO: - dicas da fase 3  -> 4
      TODO: - mais expressoes pra fase 3 e tabelas pra 1 -> 5
-     TODO: - sons fase 1  -> 6
+     TODO: - sons jogo principal  -> 6
     */
 }

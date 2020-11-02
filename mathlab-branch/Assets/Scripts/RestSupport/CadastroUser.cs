@@ -44,7 +44,7 @@ namespace RestSupport {
         }
 
 
-        public void AttUser(int tempoFase1, int pontosFase2, int pontosFase3) {
+        public void AttUser(float tempoFase1, int pontosFase2, int pontosFase3) {
             var usuarioAtual = new User(ManagerGeral.jogadorAtual, ManagerGeral.tempoJogador, tempoFase1,pontosFase2,pontosFase3);
             DatabaseHandler.AtualizaUser(usuarioAtual, ManagerGeral.jogadorAtual, () => Debug.Log("all good!"));
         }

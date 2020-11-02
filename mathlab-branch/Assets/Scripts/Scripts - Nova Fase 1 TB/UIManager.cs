@@ -27,6 +27,7 @@ public class UiManager : MonoBehaviour  {
     private PlayerController _disablekey; //bloqueador de teclado enquanto NPC fala
     private GameObject _managerGeral;
     public CadastroUser managerHTTP;
+    public Cronometro1 cronometro;
     void Start() {
         _textFiles = Resources.LoadAll("TabVerdade", typeof(TextAsset)).Cast<TextAsset>().ToArray();
         GenerateToggles(_textFiles, toggleGroupInicio);
@@ -86,17 +87,17 @@ public class UiManager : MonoBehaviour  {
         }
         _disablekey.keyboardAble = false;
         uiPanels[3].SetActive(true);
+        cronometro.ControlTimer();
         GenerateFinalToggles(_textFiles, _filesSolved, toggleGroupFinal, slideArea);
     }
 
     public void FinalizaEtapa() {
         ManagerGeral.faseFeita[0] = true;
-        // ManagerGeral.totalTempoFase1
+        ManagerGeral.totalTempoFase1 = cronometro.WhatTimeisIt();
         managerHTTP.AttUser(ManagerGeral.totalTempoFase1, ManagerGeral.totalPontosFase2, ManagerGeral.totalPontosFase3);
         /*foreach (var fase in ManagerGeral.faseFeita) {
             Debug.Log("fase feita:" + fase);
         }*/
-        
     }
     
     public void Jogar(ToggleGroup currentToggleGroup) {
@@ -113,6 +114,7 @@ public class UiManager : MonoBehaviour  {
             }
         }
         /*Ativar paineis de jogo*/
+        cronometro.ControlTimer();
         uiPanels[0].SetActive(false);
         uiPanels[1].SetActive(true);
         uiPanels[2].SetActive(true);

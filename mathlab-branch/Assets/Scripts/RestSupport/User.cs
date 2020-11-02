@@ -10,11 +10,11 @@ namespace RestSupport {
     {
         public string name;
         public string dataJogo;
-        public int tempoFase1;
+        public float tempoFase1;
         public int fase2;
         public int fase3;
 
-        public User(string name, string dataJogo, int tempoFase1, int fase2, int fase3)
+        public User(string name, string dataJogo, float tempoFase1, int fase2, int fase3)
         {
             this.name = name;
             this.dataJogo = dataJogo;

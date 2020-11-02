@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using RestSupport;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -28,7 +29,8 @@ public class Manager : MonoBehaviour {
      public PainelLose painelWin;
      private PlayerController _disablekey; //bloqueador de teclado enquanto NPC fala
      public GameObject startAnim;
-
+    
+    
      private Random _rand = new Random();
      private static readonly int Start1 = Animator.StringToHash("start");
      private Animator _animator;

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
+using RestSupport;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -25,6 +26,7 @@ public class UiManager : MonoBehaviour  {
     private List<string> _filesSolved = new List<string>();
     private PlayerController _disablekey; //bloqueador de teclado enquanto NPC fala
     private GameObject _managerGeral;
+    public CadastroUser managerHTTP;
     void Start() {
         _textFiles = Resources.LoadAll("TabVerdade", typeof(TextAsset)).Cast<TextAsset>().ToArray();
         GenerateToggles(_textFiles, toggleGroupInicio);
@@ -89,9 +91,12 @@ public class UiManager : MonoBehaviour  {
 
     public void FinalizaEtapa() {
         ManagerGeral.faseFeita[0] = true;
-        foreach (var fase in ManagerGeral.faseFeita) {
+        // ManagerGeral.totalTempoFase1
+        managerHTTP.AttUser(ManagerGeral.totalTempoFase1, ManagerGeral.totalPontosFase2, ManagerGeral.totalPontosFase3);
+        /*foreach (var fase in ManagerGeral.faseFeita) {
             Debug.Log("fase feita:" + fase);
-        }
+        }*/
+        
     }
     
     public void Jogar(ToggleGroup currentToggleGroup) {

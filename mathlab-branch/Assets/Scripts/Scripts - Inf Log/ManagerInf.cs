@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using RestSupport;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -36,6 +37,7 @@ public class ManagerInf : MonoBehaviour {
     public AudioClip[] audioClips;
     public Cronometro cronometro;
     public Dropdown dropdown;
+    public CadastroUser managerHTTP;
     private bool _controller;
     private int _totalDePontos;
     private bool _bonusAtivo;
@@ -80,6 +82,7 @@ public class ManagerInf : MonoBehaviour {
             textPainelVitoria[2].text = "Total de Pontos:" + _totalDePontos + "x";
             ManagerGeral.totalPontosFase3 = _totalDePontos;
             ManagerGeral.faseFeita[2] = true;
+            managerHTTP.AttUser(ManagerGeral.totalTempoFase1, ManagerGeral.totalPontosFase2, ManagerGeral.totalPontosFase3);
         }
     }
 

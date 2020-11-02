@@ -247,6 +247,7 @@
             <e p="Wood.cs" t="Include" />
           </e>
           <e p="Scripts - Nova Fase 1 TB" t="Include">
+            <e p="Cronometro1.cs" t="Include" />
             <e p="Switch.cs" t="Include" />
             <e p="TabVerdadeManager.cs" t="Include" />
             <e p="UIManager.cs" t="Include" />

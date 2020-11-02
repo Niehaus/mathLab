@@ -9,16 +9,16 @@ namespace RestSupport {
     public class User
     {
         public string name;
-        public string surname;
-        public int age;
+        public string dataJogo;
+        public int tempoFase1;
         public int fase2;
         public int fase3;
 
-        public User(string name, string surname, int age, int fase2, int fase3)
+        public User(string name, string dataJogo, int tempoFase1, int fase2, int fase3)
         {
             this.name = name;
-            this.surname = surname;
-            this.age = age;
+            this.dataJogo = dataJogo;
+            this.tempoFase1 = tempoFase1;
             this.fase2 = fase2;
             this.fase3 = fase3;
         }

@@ -729,8 +729,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -112.8, y: -90.59}
-  m_SizeDelta: {x: 214.18, y: 173.28}
+  m_AnchoredPosition: {x: -110.3, y: -90.59}
+  m_SizeDelta: {x: 209, y: 173.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &158705288
 MonoBehaviour:
@@ -767,17 +767,17 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 1bc0cdc9923b23942996d33be95fd9db, type: 3}
-    m_FontSize: 16
+    m_FontSize: 20
     m_FontStyle: 0
-    m_BestFit: 1
+    m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 50
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
+    m_LineSpacing: 2
   m_Text: "Nenhuma fun\xE7\xE3o selecionada ainda"
 --- !u!222 &158705290
 CanvasRenderer:
@@ -9253,8 +9253,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -22.47, y: -218.98047}
-  m_SizeDelta: {x: 145.93, y: 60.99}
+  m_AnchoredPosition: {x: -22.47, y: -216}
+  m_SizeDelta: {x: 136.2, y: 86.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1108001861
 MonoBehaviour:
@@ -9286,8 +9286,8 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Responda ao desafio!
+    m_LineSpacing: 1.3
+  m_Text: Expr.
 --- !u!222 &1108001862
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14549,6 +14549,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Jogo Principal
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1765121905}
+        m_MethodName: FinalizaEtapa
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1292211191
@@ -25368,7 +25379,9 @@ MonoBehaviour:
       m_Image: {fileID: 0}
     - m_Text: Modus Ponnens
       m_Image: {fileID: 0}
-    - m_Text: Silogismo
+    - m_Text: Silogismo Disjuntivo
+      m_Image: {fileID: 0}
+    - m_Text: "Conjun\xE7\xE3o"
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:

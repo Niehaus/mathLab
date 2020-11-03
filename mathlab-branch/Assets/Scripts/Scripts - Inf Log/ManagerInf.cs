@@ -68,6 +68,7 @@ public class ManagerInf : MonoBehaviour {
             _totalDePontos = _coins / 10 + _coins;
             textPainelDerrota[0].text = "Moedas Coletadas:" + _coins + "x";
             textPainelDerrota[1].text = "Total de Pontos:" + _totalDePontos + "x"; 
+            cronometro.timerActive = false;
         } else if (_fimDoJogo && _hearts > 0) {
             //TODO: PAINEL DE VITORIA
             painelVitoria.SetActive(true);
@@ -80,10 +81,12 @@ public class ManagerInf : MonoBehaviour {
             textPainelVitoria[0].text = "Moedas Coletadas:" + _coins + "x";
             textPainelVitoria[1].text = "Vidas Restantes:" + _hearts + "x";
             textPainelVitoria[2].text = "Total de Pontos:" + _totalDePontos + "x";
+            cronometro.timerActive = false;
             ManagerGeral.totalPontosFase3 = _totalDePontos;
             ManagerGeral.faseFeita[2] = true;
-            managerHTTP.AttUser(ManagerGeral.totalTempoFase1, ManagerGeral.totalPontosFase2, ManagerGeral.totalPontosFase3);
         }
+        
+        
     }
 
     private void IniciaRodada() {
@@ -94,7 +97,10 @@ public class ManagerInf : MonoBehaviour {
     private void RepeteRodada() {
         cronometro.timerActive = true;
     }
-  
+
+    public void FinalizaEtapa() {
+        managerHTTP.AttUser(ManagerGeral.totalTempoFase1, ManagerGeral.totalPontosFase2, ManagerGeral.totalPontosFase3);
+    }
     public void VerificaCanhoes() { //seta animações tempos etc
         //TODO: ATIVAR ANIMAÇÃO DO CANHAO ATIRANDO
         var alavancasAtivas = 0;
@@ -131,11 +137,27 @@ public class ManagerInf : MonoBehaviour {
                 else {
                     if (_respostaBonus == alavanca.identificador) {
                         //Debug.Log("Ativou a alavanca bonus!!");
-                        if (_bonusAtivo) continue;
-                        _coins += 10;
-                        _bonusAtivo = true;
-                        contadores[0].text = _coins + "x";
-                        textoResposta[_respostaBonus - 1].text = "Bonus Já Ativo";
+                        if (alavancasAtivas == 1) {
+                            StartCoroutine(PainelRespostaCorreta("Apenas Bônus Ativo", audioClips[1]));
+                            _hearts -= 1;
+                            contadores[1].text = _hearts + "x";
+                            if (_bonusAtivo) continue;
+                            _coins += 10;
+                            _bonusAtivo = true;
+                            contadores[0].text = _coins + "x";
+                            textoResposta[_respostaBonus - 1].text = "Bonus Já Ativo";    
+                            if (_hearts <= 0) {
+                                _fimDoJogo = true;
+                                ResetaAlavancas();
+                            }
+                            _controller = false;
+                        }else {
+                            if (_bonusAtivo) continue;
+                            _coins += 10;
+                            _bonusAtivo = true;
+                            contadores[0].text = _coins + "x";
+                            textoResposta[_respostaBonus - 1].text = "Bonus Já Ativo";    
+                        }
                     }
                     else {
                         //Debug.Log("Ativou a alavanca incorreta :(");
@@ -165,7 +187,11 @@ public class ManagerInf : MonoBehaviour {
     }
     private void SetaDesafio() {
         //Debug.Log("Seta Desafio");
+        if (_index >= _lines.Length) {
+            return;
+        }
         comandos.text = _lines[_index];
+        Debug.Log(comandos.text);
         _index += 1;
         for (var i = 0; i < textoResposta.Length; i++) {
             textoResposta[i].text = _lines[_index + i];
@@ -227,14 +253,24 @@ public class ManagerInf : MonoBehaviour {
             case 0:
                 text.text = "Nenhuma Função Selecionada";
                 break;
-            case 1:
-                text.text = "modus tolens";
+            case 1: /* modus tolens */
+                text.text = "p -> q\n" +
+                            "q\n" + 
+                            "Resp.: p";
                 break;
-            case 2:
-                text.text = "modus ponens";
+            case 2: /* modus ponens */
+                text.text = "p -> q\n" +
+                            "p\n" + 
+                            "Resp.: q";
                 break;
-            case 3:
-                text.text = "silogismo";
+            case 3: /* silogismo */ 
+                text.text = "(p v q) ^ ~q\n"+
+                            "Resp.: p";
+                break;
+            case 4: /* conjunção */ 
+                text.text = "p\n"+
+                            "q\n" +
+                            "Resp.: \np ^ q";
                 break;
         }
         

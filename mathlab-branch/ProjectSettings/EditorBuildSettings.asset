@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/TelaInicio.unity
+    guid: d8937530d84e78c4e833166455b8b905
+  - enabled: 1
     path: Assets/Scenes/Jogo Principal.unity
     guid: 4c6c9f658d79fab4384a6bdba21a97e3
   - enabled: 1
@@ -23,7 +26,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Nova Fase 1.unity
     guid: 749189ba14f0d744c888c98015793c0e
-  - enabled: 0
-    path: Assets/Scenes/TelaInicio.unity
-    guid: d8937530d84e78c4e833166455b8b905
   m_configObjects: {}

@@ -111,7 +111,7 @@ public class TabVerdadeManager : MonoBehaviour {
         var linhasTabela = new string[_totalLinhas = (int) Math.Pow(2,int.Parse(numeroLinhasTabela))];
 
         for (var i = 2; i <  (int) Math.Pow(2,int.Parse(numeroLinhasTabela)) + 2; i++) {
-            //Debug.Log("linha index " + i + " " +  tableLines[i]);
+            // Debug.Log("linha index " + i + " " +  tableLines[i]);
             linhasTabela[i - 2] = tableLines[i];
         }
         

@@ -1,0 +1,12 @@
+(p v q) <-> r 
+3
+VVV
+VVF
+VFV
+VFF
+FVV
+FVF
+FFV
+FFF
+
+v f v f v f f v

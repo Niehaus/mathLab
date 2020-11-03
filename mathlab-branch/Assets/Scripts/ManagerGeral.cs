@@ -2,11 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ManagerGeral : MonoBehaviour
 {
-    public static bool[] faseFeita = {true, false, false, false};
+    public static bool[] faseFeita = {true, false, false};
     public static string orientacao = "principal";
     public PlayerController playerController;
     private Vector2 _atualPos;
@@ -32,8 +33,8 @@ public class ManagerGeral : MonoBehaviour
     }
 
     private void Update() {
-        if (VerificaFim() != 4) return;
-        Debug.Log("Acabou de vdd :D");
+        if (VerificaFim() != 3) return;
+        // Debug.Log("Acabou de vdd :D");
         pontos1.text = totalTempoFase1.ToString();
         pontos2.text = totalPontosFase2.ToString();
         pontos3.text = totalPontosFase3.ToString();
@@ -52,15 +53,17 @@ public class ManagerGeral : MonoBehaviour
         return count;
     }
 
-
+    public void Sair() {
+        Application.Quit ();
+    }
     /*
      TODO: - dialogo principal -> 7
      TODO: - http request pro bd -> 2 -> OK
      TODO: - finalizar jogo qd completa as 3 fases ->  1 -> OK
      TODO: - cronometro fase 1 -> 3 -> OK
      TODO: - sala de estudos conteudo e sons-> 8
-     TODO: - dicas da fase 3  -> 4
-     TODO: - mais expressoes pra fase 3 e tabelas pra 1 -> 5
-     TODO: - sons jogo principal  -> 6
+     TODO: - dicas da fase 3  -> 4 -> OK
+     TODO: - mais expressoes pra fase 3 e tabelas pra 1[OK] -> 5 -> OK
+     TODO: - sons jogo principal  -> 6 -> OK
     */
 }

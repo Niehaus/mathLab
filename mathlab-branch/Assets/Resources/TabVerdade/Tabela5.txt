@@ -1,0 +1,8 @@
+(p ^ q) -> ( -q v -p) 
+2
+VVFF
+VFFV
+FVVF
+FFVV
+
+f v v v

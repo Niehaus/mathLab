@@ -23,17 +23,17 @@ namespace RestSupport {
             ManagerGeral.jogadorAtual = username.text;
             var usuarioAtual = new User(ManagerGeral.jogadorAtual, ManagerGeral.tempoJogador , 
                 ManagerGeral.totalTempoFase1, ManagerGeral.totalPontosFase2,ManagerGeral.totalPontosFase3);
-            
+            Debug.Log("entrei aqui");
             
             DatabaseHandler.GetUsers(users =>
             {
                 foreach (var user in users) {
                     _listOfIdUsed.Add(int.Parse(user.Key));
-                    // Debug.Log($"{user.Value.name} {user.Value.dataJogo} {user.Value.tempoFase1} {user.Key}");
+                    Debug.Log($"{user.Value.name} {user.Value.dataJogo} {user.Value.tempoFase1} {user.Key}");
                 }
 
                 insertId = (_listOfIdUsed[_listOfIdUsed.Count - 1] + 1).ToString();
-                // Debug.Log(insertId);
+                Debug.Log(insertId);
                 
                 DatabaseHandler.PostUser(usuarioAtual, insertId, () => { Debug.Log("Inserted!"); });
                 

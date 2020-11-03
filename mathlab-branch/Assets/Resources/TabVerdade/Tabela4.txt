@@ -1,0 +1,8 @@
+(-r -> -s) 
+2
+FF
+VF
+FV
+VV
+
+v f v v

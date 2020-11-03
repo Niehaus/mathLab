@@ -10633,7 +10633,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 70.6, y: 207.6}
+  m_AnchoredPosition: {x: 70.6001, y: 207.59998}
   m_SizeDelta: {x: -1676.1, y: -1004.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &780979715
@@ -16206,7 +16206,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1320552234}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5260da22bc762064684c9b5d2674f1e9, type: 3}

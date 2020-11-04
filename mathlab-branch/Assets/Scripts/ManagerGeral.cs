@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class ManagerGeral : MonoBehaviour
 {
-    public static bool[] faseFeita = {true, false, false};
+    public static bool[] faseFeita = {false, false, false};
     public static string orientacao = "principal";
     public PlayerController playerController;
     private Vector2 _atualPos;
@@ -20,18 +20,24 @@ public class ManagerGeral : MonoBehaviour
     public static int totalPontosFase2 = 0;
     public static int totalPontosFase3 = 0;
     public static float totalTempoFase1 = 0;
-
-    public Text pontos1, pontos2, pontos3;
-    public GameObject panelFimdeJogo;
     
+    
+    public Text pontos1, pontos2, pontos3;
+    public GameObject panelFimdeJogo, panelWelcome;
+    
+    
+    private static bool _first = true;
     private void Start() {
         Debug.Log("JOGADOR ATUAL: " + jogadorAtual);
         Debug.Log("pontos fase2:" + totalPontosFase2);
         Debug.Log("pontos fase3:" + totalPontosFase3);
-        /*_cam.minPosition = newMinPos;
-        _cam.maxPosition = newMaxPos;*/
-    }
 
+        if (_first) {
+            panelWelcome.SetActive(true);
+            _first = false;
+        }
+    }
+    
     private void Update() {
         if (VerificaFim() != 3) return;
         // Debug.Log("Acabou de vdd :D");
@@ -53,6 +59,12 @@ public class ManagerGeral : MonoBehaviour
         return count;
     }
 
+    
+    public void ClosePanel() {
+        panelWelcome.SetActive(false);
+        _first = false;
+    }
+    
     public void Sair() {
         Application.Quit ();
     }

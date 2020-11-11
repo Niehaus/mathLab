@@ -1,8 +1,8 @@
-(-r -> -s) 
+(p ^ q) -> ( -q v -p) 
 2
-FF
-VF
-FV
-VV
+VVFF
+VFFV
+FVVF
+FFVV
 
-v f v v
+f v v v
